@@ -505,15 +505,11 @@
                                     <span class="inline-block w-3 h-3 rounded-full bg-red-500 border border-black"></span>
                                     <span class="inline-block w-3 h-3 rounded-full bg-yellow-400 border border-black"></span>
                                     <span class="inline-block w-3 h-3 rounded-full bg-green-500 border border-black"></span>
-                                    <span class="font-mono text-xs font-bold text-neutral-700 ml-2">DEMOSTRACIÓN INTERACTIVA (SCREEN RECORDING / CONSOLA EN VIVO)</span>
+                                    <span class="font-mono text-xs font-bold text-neutral-700 ml-2">DEMOSTRACIÓN EN VIDEO (SCREEN RECORDING 45s)</span>
                                 </div>
                                 <div class="flex items-center gap-2">
-                                    <div class="inline-flex border border-black text-xs font-mono">
-                                        <button onclick="toggleMediaMode('patricio', 'video')" id="btn-media-video-patricio" class="px-2.5 py-1 bg-black text-yellow-300 font-bold">🎬 Video Demo</button>
-                                        <button onclick="toggleMediaMode('patricio', 'sim')" id="btn-media-sim-patricio" class="px-2.5 py-1 bg-white text-black font-bold">💻 Consola</button>
-                                    </div>
-                                    <a href="https://account-plan-1080228791137.us-central1.run.app/" target="_blank" class="px-2.5 py-1 bg-[#1899AF] text-white border border-black text-xs font-display font-bold uppercase tracking-wider hover:bg-black transition-colors flex items-center gap-1">
-                                        <span>🔗</span> Abrir Consola ↗
+                                    <a href="https://account-plan-1080228791137.us-central1.run.app/" target="_blank" class="px-3 py-1.5 bg-[#1899AF] text-white border-2 border-black text-xs font-display font-bold uppercase tracking-wider hover:bg-black transition-colors flex items-center gap-1.5 shadow-[2px_2px_0px_#000]">
+                                        <span>🔗</span> Abrir Herramienta en Producción ↗
                                     </a>
                                 </div>
                             </div>
@@ -521,15 +517,15 @@
                             <!-- Screen Container -->
                             <div class="relative bg-neutral-900 border-2 border-black overflow-hidden aspect-[16/10] flex items-center justify-center">
                                 
-                                <!-- VIDEO SLOT (Simulated or Real Video) -->
+                                <!-- VIDEO SLOT -->
                                 <div id="media-video-patricio" class="w-full h-full relative group">
                                     <img src="assets/projects/finops-msp-commercial.jpg" alt="FinOps Dashboard" class="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105" onerror="this.src='assets/extracted/img_14.jpg'">
                                     
                                     <!-- Video Overlay Controls -->
                                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/30 flex flex-col justify-between p-6">
                                         <div class="flex justify-between items-start">
-                                            <span class="badge-swiss bg-[#FAF338] text-black">Preview Grabación 35 Segundos</span>
-                                            <span class="font-mono text-xs text-white bg-black/60 px-2.5 py-1 border border-white/20">00:35 · 1080p HD</span>
+                                            <span class="badge-swiss bg-[#FAF338] text-black font-bold">Video Demo 45 Segundos</span>
+                                            <span class="font-mono text-xs text-white bg-black/60 px-2.5 py-1 border border-white/20">00:45 · 1080p HD</span>
                                         </div>
 
                                         <div class="text-center">
@@ -542,52 +538,8 @@
 
                                         <div class="flex items-center justify-between text-xs font-mono text-neutral-300">
                                             <span>Métricas de 160 Clientes Analizados</span>
-                                            <button onclick="openVideoSettings('patricio')" class="underline hover:text-white">⚙️ Reemplazar por archivo MP4</button>
+                                            <button onclick="openVideoSettings('patricio')" class="underline hover:text-white font-bold">⚙️ Subir / Enlazar Video (45s)</button>
                                         </div>
-                                    </div>
-                                </div>
-
-                                <!-- INTERACTIVE SIMULATOR SLOT -->
-                                <div id="media-sim-patricio" class="hidden w-full h-full bg-[#1E1E1E] text-white p-5 overflow-y-auto">
-                                    <div class="flex justify-between items-center border-b border-neutral-700 pb-3 mb-4">
-                                        <div>
-                                            <div class="text-xs font-mono text-[#1899AF] font-bold">XERTICA FINOPS ENGINE v2.4</div>
-                                            <div class="font-display font-bold text-base text-white">Simulador de Cuentas & Detección de Desviación</div>
-                                        </div>
-                                        <span class="badge-swiss bg-emerald-500 text-black text-[10px]">BigQuery Live Sync</span>
-                                    </div>
-
-                                    <!-- Interactive Table Mock -->
-                                    <div class="space-y-3 font-mono text-xs">
-                                        <div class="grid grid-cols-12 bg-neutral-800 p-2 text-neutral-400 font-bold border border-neutral-700">
-                                            <div class="col-span-4">Cliente / Cuenta</div>
-                                            <div class="col-span-3">Commit Anual</div>
-                                            <div class="col-span-2">Ejecutado</div>
-                                            <div class="col-span-3">Oportunidad Identificada</div>
-                                        </div>
-                                        <div class="grid grid-cols-12 bg-neutral-900/80 p-2 items-center border border-neutral-800 hover:border-[#1899AF] transition-colors">
-                                            <div class="col-span-4 font-bold text-white">FUJIFILM DE MÉXICO</div>
-                                            <div class="col-span-3 text-neutral-300">$10,100,000 USD</div>
-                                            <div class="col-span-2 text-amber-400">92% (+3m)</div>
-                                            <div class="col-span-3 text-emerald-400 font-bold">+$480K Upsell Commit</div>
-                                        </div>
-                                        <div class="grid grid-cols-12 bg-neutral-900/80 p-2 items-center border border-neutral-800 hover:border-[#1899AF] transition-colors">
-                                            <div class="col-span-4 font-bold text-white">TRIBUNAL FED. JUSTICIA</div>
-                                            <div class="col-span-3 text-neutral-300">$5,800,000 USD</div>
-                                            <div class="col-span-2 text-red-400">68% (Riesgo)</div>
-                                            <div class="col-span-3 text-amber-300 font-bold">Right-sizing & Workspace</div>
-                                        </div>
-                                        <div class="grid grid-cols-12 bg-neutral-900/80 p-2 items-center border border-neutral-800 hover:border-[#1899AF] transition-colors">
-                                            <div class="col-span-4 font-bold text-white">VIVAAEROBUS</div>
-                                            <div class="col-span-3 text-neutral-300">$2,500,000 USD</div>
-                                            <div class="col-span-2 text-emerald-400">105% (Over)</div>
-                                            <div class="col-span-3 text-emerald-400 font-bold">+$350K Ampliación Tier</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="mt-4 pt-3 border-t border-neutral-700 flex justify-between items-center text-xs">
-                                        <span class="text-neutral-400">Total 160 cuentas escaneadas</span>
-                                        <span class="text-[#FAF338] font-bold font-mono">Oportunidades Totales: $120,000+ USD en marcha</span>
                                     </div>
                                 </div>
                             </div>
@@ -796,15 +748,11 @@
                                     <span class="inline-block w-3 h-3 rounded-full bg-red-500 border border-black"></span>
                                     <span class="inline-block w-3 h-3 rounded-full bg-yellow-400 border border-black"></span>
                                     <span class="inline-block w-3 h-3 rounded-full bg-green-500 border border-black"></span>
-                                    <span class="font-mono text-xs font-bold text-neutral-700 ml-2">DEMOSTRACIÓN INTERACTIVA (CAMPANA SUMMIT & OUTREACH)</span>
+                                    <span class="font-mono text-xs font-bold text-neutral-700 ml-2">DEMOSTRACIÓN EN VIDEO (SCREEN RECORDING 45s)</span>
                                 </div>
                                 <div class="flex items-center gap-2">
-                                    <div class="inline-flex border border-black text-xs font-mono">
-                                        <button onclick="toggleMediaMode('jorge', 'video')" id="btn-media-video-jorge" class="px-2.5 py-1 bg-black text-yellow-300 font-bold">🎬 Video Demo</button>
-                                        <button onclick="toggleMediaMode('jorge', 'sim')" id="btn-media-sim-jorge" class="px-2.5 py-1 bg-white text-black font-bold">💻 Campaña</button>
-                                    </div>
-                                    <a href="https://script.google.com/a/macros/xertica.com/s/AKfycbwlwksFORqQZ5oMv6PvT5G-fPwupqWjCQPZPgcJraRPan50anciUZ7VZQ1FNjPC3H8v/exec" target="_blank" class="px-2.5 py-1 bg-[#DE5B48] text-white border border-black text-xs font-display font-bold uppercase tracking-wider hover:bg-black transition-colors flex items-center gap-1">
-                                        <span>🔗</span> Acceder al CRM ↗
+                                    <a href="https://script.google.com/a/macros/xertica.com/s/AKfycbwlwksFORqQZ5oMv6PvT5G-fPwupqWjCQPZPgcJraRPan50anciUZ7VZQ1FNjPC3H8v/exec" target="_blank" class="px-3 py-1.5 bg-[#DE5B48] text-white border-2 border-black text-xs font-display font-bold uppercase tracking-wider hover:bg-black transition-colors flex items-center gap-1.5 shadow-[2px_2px_0px_#000]">
+                                        <span>🔗</span> Abrir Herramienta en Producción ↗
                                     </a>
                                 </div>
                             </div>
@@ -818,8 +766,8 @@
                                     
                                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/30 flex flex-col justify-between p-6">
                                         <div class="flex justify-between items-start">
-                                            <span class="badge-swiss bg-[#FAF338] text-black">Preview Video 35 Segundos</span>
-                                            <span class="font-mono text-xs text-white bg-black/60 px-2.5 py-1 border border-white/20">00:35 · Campaña Summit</span>
+                                            <span class="badge-swiss bg-[#FAF338] text-black font-bold">Video Demo 45 Segundos</span>
+                                            <span class="font-mono text-xs text-white bg-black/60 px-2.5 py-1 border border-white/20">00:45 · Campaña Summit</span>
                                         </div>
 
                                         <div class="text-center">
@@ -832,51 +780,8 @@
 
                                         <div class="flex items-center justify-between text-xs font-mono text-neutral-300">
                                             <span>Métricas de Entrega: 98.4% Deliverability</span>
-                                            <button onclick="openVideoSettings('jorge')" class="underline hover:text-white">⚙️ Reemplazar por archivo MP4</button>
+                                            <button onclick="openVideoSettings('jorge')" class="underline hover:text-white font-bold">⚙️ Subir / Enlazar Video (45s)</button>
                                         </div>
-                                    </div>
-                                </div>
-
-                                <!-- INTERACTIVE SIMULATOR SLOT -->
-                                <div id="media-sim-jorge" class="hidden w-full h-full bg-[#1E1E1E] text-white p-5 overflow-y-auto">
-                                    <div class="flex justify-between items-center border-b border-neutral-700 pb-3 mb-4">
-                                        <div>
-                                            <div class="text-xs font-mono text-[#DE5B48] font-bold">CAMPAIGN ORCHESTRATOR · SUMMIT 2026</div>
-                                            <div class="font-display font-bold text-base text-white">Consola de Envío Masivo & Seguimiento</div>
-                                        </div>
-                                        <span class="badge-swiss bg-[#FAF338] text-black text-[10px]">140 Leads Cargados</span>
-                                    </div>
-
-                                    <!-- Campaign Metrics -->
-                                    <div class="grid grid-cols-3 gap-3 mb-4 text-center font-mono">
-                                        <div class="bg-neutral-800 p-2 border border-neutral-700">
-                                            <div class="text-xs text-neutral-400">Total Envíos</div>
-                                            <div class="font-display font-bold text-xl text-white">142</div>
-                                        </div>
-                                        <div class="bg-neutral-800 p-2 border border-neutral-700">
-                                            <div class="text-xs text-neutral-400">Aperturas Únicas</div>
-                                            <div class="font-display font-bold text-xl text-[#FAF338]">91 (64%)</div>
-                                        </div>
-                                        <div class="bg-neutral-800 p-2 border border-neutral-700">
-                                            <div class="text-xs text-neutral-400">Clicks a Reunión</div>
-                                            <div class="font-display font-bold text-xl text-emerald-400">31 (22%)</div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Email Mock Preview -->
-                                    <div class="bg-neutral-900 border border-neutral-700 p-3 font-mono text-xs">
-                                        <div class="text-neutral-400 border-b border-neutral-800 pb-2 mb-2">
-                                            De: <strong>Jorge Caraballo & EIR Team</strong> &lt;crecimiento@xertica.com&gt;<br>
-                                            Asunto: <strong>AI Superpowers & Workshop Exclusivo Post-Summit</strong>
-                                        </div>
-                                        <p class="text-neutral-300 leading-relaxed">
-                                            "Hola {{Nombre}}, un gusto saludarte tras el Google Cloud Summit. Como conversamos en nuestro stand, preparamos un diagnóstico específico para {{Empresa}} enfocado en modernización y optimización de infraestructura..."
-                                        </p>
-                                    </div>
-
-                                    <div class="mt-4 flex justify-between items-center text-xs">
-                                        <span class="text-neutral-400 font-mono">Segmentación activa: Líderes IT México</span>
-                                        <button class="px-3 py-1 bg-[#DE5B48] text-white font-bold font-mono border border-black hover:bg-black">Replicar en Colombia</button>
                                     </div>
                                 </div>
                             </div>
@@ -1085,16 +990,11 @@
                                     <span class="inline-block w-3 h-3 rounded-full bg-red-500 border border-black"></span>
                                     <span class="inline-block w-3 h-3 rounded-full bg-yellow-400 border border-black"></span>
                                     <span class="inline-block w-3 h-3 rounded-full bg-green-500 border border-black"></span>
-                                    <span class="font-mono text-xs font-bold text-neutral-700 ml-2">DEMOSTRACIÓN INTERACTIVA (TORRE PREVENTA + GEMINI)</span>
+                                    <span class="font-mono text-xs font-bold text-neutral-700 ml-2">DEMOSTRACIÓN EN VIDEO (SCREEN RECORDING 45s)</span>
                                 </div>
                                 <div class="flex items-center gap-2">
-                                    <div class="inline-flex border border-black text-xs font-mono">
-                                        <button onclick="toggleMediaMode('angel', 'video')" id="btn-media-video-angel" class="px-2.5 py-1 bg-black text-yellow-300 font-bold">🎬 Video Demo</button>
-                                        <button onclick="toggleMediaMode('angel', 'sim')" id="btn-media-sim-angel" class="px-2.5 py-1 bg-white text-black font-bold">⚡ Consola</button>
-                                        <button onclick="toggleMediaMode('angel', 'gemini')" id="btn-media-gemini-angel" class="px-2.5 py-1 bg-indigo-50 text-indigo-900 font-bold border-l border-black">✨ Gemini</button>
-                                    </div>
-                                    <a href="https://control-tower-preventas-1060959604572.us-central1.run.app" target="_blank" class="px-2.5 py-1 bg-[#5A4A96] text-white border border-black text-xs font-display font-bold uppercase tracking-wider hover:bg-black transition-colors flex items-center gap-1">
-                                        <span>🔗</span> Abrir Torre ↗
+                                    <a href="https://control-tower-preventas-1060959604572.us-central1.run.app" target="_blank" class="px-3 py-1.5 bg-[#5A4A96] text-white border-2 border-black text-xs font-display font-bold uppercase tracking-wider hover:bg-black transition-colors flex items-center gap-1.5 shadow-[2px_2px_0px_#000]">
+                                        <span>🔗</span> Abrir Herramienta en Producción ↗
                                     </a>
                                 </div>
                             </div>
@@ -1108,8 +1008,8 @@
                                     
                                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/30 flex flex-col justify-between p-6">
                                         <div class="flex justify-between items-start">
-                                            <span class="badge-swiss bg-[#FAF338] text-black">Preview Video 35 Segundos</span>
-                                            <span class="font-mono text-xs text-white bg-black/60 px-2.5 py-1 border border-white/20">Cloud Run · us-central1</span>
+                                            <span class="badge-swiss bg-[#FAF338] text-black font-bold">Video Demo 45 Segundos</span>
+                                            <span class="font-mono text-xs text-white bg-black/60 px-2.5 py-1 border border-white/20">00:45 · Cloud Run</span>
                                         </div>
 
                                         <div class="text-center">
@@ -1122,106 +1022,10 @@
 
                                         <div class="flex items-center justify-between text-xs font-mono text-neutral-300">
                                             <span>Monto Priorizado: $104,483 USD</span>
-                                            <button onclick="openVideoSettings('angel')" class="underline hover:text-white">⚙️ Reemplazar por archivo MP4</button>
+                                            <button onclick="openVideoSettings('angel')" class="underline hover:text-white font-bold">⚙️ Subir / Enlazar Video (45s)</button>
                                         </div>
                                     </div>
                                 </div>
-
-                                <!-- INTERACTIVE SIMULATOR SLOT -->
-                                <div id="media-sim-angel" class="hidden w-full h-full bg-[#1E1E1E] text-white p-5 overflow-y-auto">
-                                    <div class="flex justify-between items-center border-b border-neutral-700 pb-3 mb-4">
-                                        <div>
-                                            <div class="text-xs font-mono text-[#5A4A96] font-bold">CONTROL DE PREVENTAS v4.3</div>
-                                            <div class="font-display font-bold text-base text-white">Radar de Desviaciones Operacionales en Tiempo Real</div>
-                                        </div>
-                                        <span class="badge-swiss bg-emerald-500 text-black text-[10px]">Firestore Live Sync</span>
-                                    </div>
-
-                                    <!-- Status Cards -->
-                                    <div class="grid grid-cols-4 gap-2 mb-4 font-mono text-center">
-                                        <div class="bg-blue-950/60 border border-blue-500 p-2">
-                                            <div class="text-[10px] text-blue-300">PRIORIZADAS</div>
-                                            <div class="font-display font-bold text-2xl text-blue-400">3</div>
-                                        </div>
-                                        <div class="bg-red-950/60 border border-red-500 p-2">
-                                            <div class="text-[10px] text-red-300">DETENIDAS</div>
-                                            <div class="font-display font-bold text-2xl text-red-400">1</div>
-                                        </div>
-                                        <div class="bg-cyan-950/60 border border-cyan-500 p-2">
-                                            <div class="text-[10px] text-cyan-300">EN PROGRESO</div>
-                                            <div class="font-display font-bold text-2xl text-cyan-400">1</div>
-                                        </div>
-                                        <div class="bg-emerald-950/60 border border-emerald-500 p-2">
-                                            <div class="text-[10px] text-emerald-300">COMPLETADAS</div>
-                                            <div class="font-display font-bold text-2xl text-emerald-400">1</div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Radar items -->
-                                    <div class="space-y-2 font-mono text-xs">
-                                        <div class="p-2.5 bg-neutral-900 border border-neutral-700 flex justify-between items-center">
-                                            <span><strong>ENTREGAS VENCIDAS:</strong> 0 casos superados</span>
-                                            <span class="text-emerald-400 font-bold">✔ Sin riesgo</span>
-                                        </div>
-                                        <div class="p-2.5 bg-neutral-900 border border-neutral-700 flex justify-between items-center">
-                                            <span><strong>BLOQUEADAS / RIESGO:</strong> 1 caso pendiente de validación técnica</span>
-                                            <span class="text-amber-400 font-bold">En resolución</span>
-                                        </div>
-                                        <div class="p-2.5 bg-neutral-900 border border-neutral-700 flex justify-between items-center">
-                                            <span><strong>COMPROMISOS TBC:</strong> 0 entregables sin fecha</span>
-                                            <span class="text-emerald-400 font-bold">100% Calendarizado</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- SUB-PESTAÑA ESPECIAL: GEMINI ENTERPRISE ADOPCIÓN -->
-                                <div id="media-gemini-angel" class="hidden w-full h-full bg-[#131722] text-white p-5 overflow-y-auto">
-                                    <div class="flex justify-between items-center border-b border-indigo-500/30 pb-3 mb-4">
-                                        <div class="flex items-center gap-2">
-                                            <span class="text-xl">✨</span>
-                                            <div>
-                                                <div class="text-xs font-mono text-indigo-400 font-bold">MÓDULO ADICIONAL · ADOPCIÓN GEMINI ENTERPRISE</div>
-                                                <div class="font-display font-bold text-base text-white">Métricas de Uso de IA & Agentes Preconfigurados</div>
-                                            </div>
-                                        </div>
-                                        <span class="badge-swiss bg-indigo-500 text-white text-[10px]">Gemini 1.5 Pro Sync</span>
-                                    </div>
-
-                                    <div class="grid grid-cols-3 gap-3 mb-4 font-mono text-center">
-                                        <div class="bg-indigo-950/40 border border-indigo-500/40 p-2.5">
-                                            <div class="text-[10px] text-indigo-300">ADOPCIÓN ACTIVA</div>
-                                            <div class="font-display font-bold text-2xl text-[#FAF338]">82.4%</div>
-                                            <div class="text-[9px] text-neutral-400 mt-0.5">Usuarios frecuentes</div>
-                                        </div>
-                                        <div class="bg-indigo-950/40 border border-indigo-500/40 p-2.5">
-                                            <div class="text-[10px] text-indigo-300">HORAS AHORRADAS</div>
-                                            <div class="font-display font-bold text-2xl text-emerald-400">14 hrs/sem</div>
-                                            <div class="text-[9px] text-neutral-400 mt-0.5">Por consultor técnico</div>
-                                        </div>
-                                        <div class="bg-indigo-950/40 border border-indigo-500/40 p-2.5">
-                                            <div class="text-[10px] text-indigo-300">AGENTES ACTIVOS</div>
-                                            <div class="font-display font-bold text-2xl text-white">12 Gemas</div>
-                                            <div class="text-[9px] text-neutral-400 mt-0.5">En producción Xertica</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="space-y-2 font-mono text-xs">
-                                        <div class="p-2 bg-neutral-900 border border-neutral-800 flex justify-between items-center">
-                                            <span><strong>Chief of Staff Agent:</strong> Resumen de minutas y tareas</span>
-                                            <span class="text-indigo-400 font-bold">94 interacciones</span>
-                                        </div>
-                                        <div class="p-2 bg-neutral-900 border border-neutral-800 flex justify-between items-center">
-                                            <span><strong>Strategic Architect Agent:</strong> Generación de propuestas</span>
-                                            <span class="text-indigo-400 font-bold">62 propuestas aceleradas</span>
-                                        </div>
-                                    <div class="pt-2">
-                                        <a href="https://script.google.com/a/macros/xertica.com/s/AKfycbxL84crJM36plCKcHsz5d0sp_h4Sk21lgTD6chIFk9t42ABggzodjaTIrV5ovWOlpMShA/exec" target="_blank" class="w-full inline-block text-center py-2 bg-indigo-600 hover:bg-indigo-500 text-white font-display font-bold text-xs uppercase tracking-wider border border-white/20 transition-colors">
-                                            🚀 Abrir Generador Demos Gemini Enterprise
-                                        </a>
-                                    </div>
-                                </div>
-
-                            </div>
                             </div>
 
                             <!-- Screen Caption -->
@@ -1428,15 +1232,11 @@
                                     <span class="inline-block w-3 h-3 rounded-full bg-red-500 border border-black"></span>
                                     <span class="inline-block w-3 h-3 rounded-full bg-yellow-400 border border-black"></span>
                                     <span class="inline-block w-3 h-3 rounded-full bg-green-500 border border-black"></span>
-                                    <span class="font-mono text-xs font-bold text-neutral-700 ml-2">DEMOSTRACIÓN INTERACTIVA (CRUCE SALESFORCE ↔ PARTNER HUB)</span>
+                                    <span class="font-mono text-xs font-bold text-neutral-700 ml-2">DEMOSTRACIÓN EN VIDEO (SCREEN RECORDING 45s)</span>
                                 </div>
                                 <div class="flex items-center gap-2">
-                                    <div class="inline-flex border border-black text-xs font-mono">
-                                        <button onclick="toggleMediaMode('carlos', 'video')" id="btn-media-video-carlos" class="px-2.5 py-1 bg-black text-yellow-300 font-bold">🎬 Video Demo</button>
-                                        <button onclick="toggleMediaMode('carlos', 'sim')" id="btn-media-sim-carlos" class="px-2.5 py-1 bg-white text-black font-bold">💻 Matcher</button>
-                                    </div>
-                                    <a href="https://script.google.com/macros/s/AKfycbzdqBmml2SmWMDGuPkxVseJDAiqkADgPz15shyJk1Lg7RE1mjZ9F8q_1AgjXbMGrq2E/exec" target="_blank" class="px-2.5 py-1 bg-[#C45BAA] text-white border border-black text-xs font-display font-bold uppercase tracking-wider hover:bg-black transition-colors flex items-center gap-1">
-                                        <span>🔗</span> Abrir Torre Incentivos ↗
+                                    <a href="https://script.google.com/macros/s/AKfycbzdqBmml2SmWMDGuPkxVseJDAiqkADgPz15shyJk1Lg7RE1mjZ9F8q_1AgjXbMGrq2E/exec" target="_blank" class="px-3 py-1.5 bg-[#C45BAA] text-white border-2 border-black text-xs font-display font-bold uppercase tracking-wider hover:bg-black transition-colors flex items-center gap-1.5 shadow-[2px_2px_0px_#000]">
+                                        <span>🔗</span> Abrir Herramienta en Producción ↗
                                     </a>
                                 </div>
                             </div>
@@ -1450,8 +1250,8 @@
                                     
                                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/30 flex flex-col justify-between p-6">
                                         <div class="flex justify-between items-start">
-                                            <span class="badge-swiss bg-[#FAF338] text-black">Preview Video 35 Segundos</span>
-                                            <span class="font-mono text-xs text-white bg-black/60 px-2.5 py-1 border border-white/20">Reconciliation Engine</span>
+                                            <span class="badge-swiss bg-[#FAF338] text-black font-bold">Video Demo 45 Segundos</span>
+                                            <span class="font-mono text-xs text-white bg-black/60 px-2.5 py-1 border border-white/20">00:45 · Reconciliation Engine</span>
                                         </div>
 
                                         <div class="text-center">
@@ -1464,52 +1264,8 @@
 
                                         <div class="flex items-center justify-between text-xs font-mono text-neutral-300">
                                             <span>Caso de Éxito: $450K+ USD Recuperables</span>
-                                            <button onclick="openVideoSettings('carlos')" class="underline hover:text-white">⚙️ Reemplazar por archivo MP4</button>
+                                            <button onclick="openVideoSettings('carlos')" class="underline hover:text-white font-bold">⚙️ Subir / Enlazar Video (45s)</button>
                                         </div>
-                                    </div>
-                                </div>
-
-                                <!-- INTERACTIVE SIMULATOR SLOT -->
-                                <div id="media-sim-carlos" class="hidden w-full h-full bg-[#1E1E1E] text-white p-5 overflow-y-auto">
-                                    <div class="flex justify-between items-center border-b border-neutral-700 pb-3 mb-4">
-                                        <div>
-                                            <div class="text-xs font-mono text-[#C45BAA] font-bold">REVENUE ENGINE · SFDC ↔ GOOGLE PARTNER HUB</div>
-                                            <div class="font-display font-bold text-base text-white">Conciliación de Oportunidades & Incentivos</div>
-                                        </div>
-                                        <span class="badge-swiss bg-emerald-500 text-black text-[10px]">100% Match Ratio</span>
-                                    </div>
-
-                                    <!-- Table mock -->
-                                    <div class="space-y-2.5 font-mono text-xs">
-                                        <div class="grid grid-cols-12 bg-neutral-800 p-2 text-neutral-400 font-bold border border-neutral-700">
-                                            <div class="col-span-4">Oportunidad SFDC</div>
-                                            <div class="col-span-3">Monto SFDC</div>
-                                            <div class="col-span-3">Google Partner Hub</div>
-                                            <div class="col-span-2">Estado Incentivo</div>
-                                        </div>
-                                        <div class="grid grid-cols-12 bg-neutral-900/80 p-2 items-center border border-neutral-800 hover:border-[#C45BAA] transition-colors">
-                                            <div class="col-span-4 font-bold text-white">OPP-2026-9041 Banco A</div>
-                                            <div class="col-span-3 text-neutral-300">$180,000 USD</div>
-                                            <div class="col-span-3 text-emerald-400">ID: G-9921 (Aprobado)</div>
-                                            <div class="col-span-2 text-emerald-400 font-bold">100% Sincronizado</div>
-                                        </div>
-                                        <div class="grid grid-cols-12 bg-neutral-900/80 p-2 items-center border border-neutral-800 hover:border-[#C45BAA] transition-colors">
-                                            <div class="col-span-4 font-bold text-white">OPP-2026-8812 Retail MX</div>
-                                            <div class="col-span-3 text-neutral-300">$320,000 USD</div>
-                                            <div class="col-span-3 text-amber-400">ID: G-9740 (En Revisión)</div>
-                                            <div class="col-span-2 text-amber-400 font-bold">Rebate Elegible</div>
-                                        </div>
-                                        <div class="grid grid-cols-12 bg-neutral-900/80 p-2 items-center border border-neutral-800 hover:border-[#C45BAA] transition-colors">
-                                            <div class="col-span-4 font-bold text-white">OPP-2026-8501 Finanzas</div>
-                                            <div class="col-span-3 text-neutral-300">$95,000 USD</div>
-                                            <div class="col-span-3 text-red-400">Sin Registro en Hub</div>
-                                            <div class="col-span-2 text-red-400 font-bold">Alerta Resuelta</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="mt-4 pt-3 border-t border-neutral-700 flex justify-between items-center text-xs">
-                                        <span class="text-neutral-400 font-mono">Detección de fugas automatizada</span>
-                                        <span class="text-[#FAF338] font-bold font-mono">Incentivos Asegurados: +$450,000 USD</span>
                                     </div>
                                 </div>
                             </div>
@@ -1943,27 +1699,47 @@
     </div>
 
     <!-- ========================================== -->
-    <!-- MODAL: VIDEO SETTINGS (CUSTOM URL / FILE)  -->
+    <!-- MODAL: VIDEO SETTINGS (SUBIR / ENLAZAR 45s) -->
     <!-- ========================================== -->
     <div id="modal-video" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden items-center justify-center p-4">
-        <div class="bg-[#FFFEF8] border-2 border-black p-6 max-w-md w-full swiss-border">
+        <div class="bg-[#FFFEF8] border-2 border-black p-6 max-w-lg w-full swiss-border shadow-[8px_8px_0px_#000]">
             <div class="flex justify-between items-center pb-3 border-b-2 border-black mb-4">
-                <h3 class="font-display font-black text-lg text-[#1E1E1E]">Configurar Video de Grabación (35s)</h3>
-                <button onclick="closeVideoSettings()" class="text-2xl font-bold hover:text-red-500">✕</button>
+                <div class="flex items-center gap-2">
+                    <span class="text-xl">🎬</span>
+                    <h3 class="font-display font-black text-lg text-[#1E1E1E]">Cargar Video Demo (45 Segundos)</h3>
+                </div>
+                <button onclick="closeVideoSettings()" class="text-2xl font-bold hover:text-red-500 leading-none">✕</button>
             </div>
 
-            <p class="font-body text-xs text-neutral-600 mb-3">
-                Puedes ingresar la URL de tu video (Loom, MP4 en Vercel, Google Drive o YouTube) para reproducirlo en esta ranura:
+            <p class="font-body text-xs text-neutral-600 mb-4">
+                Sube tu grabación de pantalla de 45s directamente desde tu equipo (MP4, MOV o WebM) o ingresa un enlace web público.
             </p>
 
             <input type="hidden" id="video-target-eir" value="patricio">
-            <input type="text" id="video-input-url" placeholder="https://mi-video-demo.mp4" class="w-full p-2.5 border-2 border-black font-mono text-xs mb-4">
 
-            <div class="flex justify-end gap-2">
-                <button onclick="saveVideoUrl()" class="px-4 py-2 bg-[#1899AF] text-white border-2 border-black font-display font-bold text-xs uppercase">
-                    Guardar Video
+            <!-- Option 1: File Upload (Immediate preview via Blob) -->
+            <div class="mb-4">
+                <label class="block font-mono text-xs font-bold text-neutral-800 uppercase mb-1.5">Opción 1: Seleccionar archivo de video (.mp4, .mov, .webm)</label>
+                <div class="border-2 border-dashed border-black p-4 text-center bg-neutral-50 hover:bg-yellow-50/50 cursor-pointer transition-colors" onclick="document.getElementById('video-file-input').click()">
+                    <span class="text-2xl block mb-1">📁</span>
+                    <span class="font-display font-bold text-xs uppercase text-neutral-800 block">Haz clic para buscar tu video en tu computadora</span>
+                    <span class="font-mono text-[10px] text-neutral-500">Formato recomendado: MP4 1080p · Duración: 45 segundos</span>
+                    <input type="file" id="video-file-input" accept="video/mp4,video/webm,video/quicktime" class="hidden" onchange="handleVideoFileUpload(event)">
+                </div>
+                <div id="file-upload-status" class="hidden mt-1.5 font-mono text-xs text-emerald-700 font-bold"></div>
+            </div>
+
+            <!-- Option 2: Public URL -->
+            <div class="mb-5">
+                <label class="block font-mono text-xs font-bold text-neutral-800 uppercase mb-1.5">Opción 2: O ingresar URL web de video (MP4 directo o Loom)</label>
+                <input type="text" id="video-input-url" placeholder="https://ejemplo.com/video-demo-45s.mp4" class="w-full p-2.5 border-2 border-black font-mono text-xs">
+            </div>
+
+            <div class="flex justify-end gap-2 pt-3 border-t-2 border-black">
+                <button onclick="saveVideoUrl()" class="px-5 py-2 bg-[#FAF338] text-black border-2 border-black font-display font-bold text-xs uppercase shadow-[2px_2px_0px_#000] hover:bg-black hover:text-[#FAF338] transition-colors">
+                    Guardar y Reproducir
                 </button>
-                <button onclick="closeVideoSettings()" class="px-3 py-2 bg-neutral-200 border-2 border-black font-display font-bold text-xs uppercase">
+                <button onclick="closeVideoSettings()" class="px-4 py-2 bg-neutral-200 border-2 border-black font-display font-bold text-xs uppercase hover:bg-neutral-300">
                     Cancelar
                 </button>
             </div>
@@ -2059,39 +1835,79 @@ La plataforma cuenta con 2 modos:
             });
         }
 
-        // Media Toggle (Video vs Interactive Simulator vs Gemini)
-        function toggleMediaMode(eir, mode) {
-            const videoEl = document.getElementById(`media-video-${eir}`);
-            const simEl = document.getElementById(`media-sim-${eir}`);
-            const geminiEl = document.getElementById(`media-gemini-${eir}`);
-            
-            const btnVideo = document.getElementById(`btn-media-video-${eir}`);
-            const btnSim = document.getElementById(`btn-media-sim-${eir}`);
-            const btnGemini = document.getElementById(`btn-media-gemini-${eir}`);
+        // Video State & Storage
+        let uploadedVideoBlobs = {};
 
-            if (videoEl) videoEl.classList.add('hidden');
-            if (simEl) simEl.classList.add('hidden');
-            if (geminiEl) geminiEl.classList.add('hidden');
+        function openVideoSettings(eir) {
+            document.getElementById('video-target-eir').value = eir;
+            document.getElementById('video-input-url').value = localStorage.getItem(`video_url_${eir}`) || '';
+            const status = document.getElementById('file-upload-status');
+            if (status) status.classList.add('hidden');
+            const modal = document.getElementById('modal-video');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
 
-            if (btnVideo) { btnVideo.classList.remove('bg-black', 'text-yellow-300'); btnVideo.classList.add('bg-white', 'text-black'); }
-            if (btnSim) { btnSim.classList.remove('bg-black', 'text-yellow-300'); btnSim.classList.add('bg-white', 'text-black'); }
-            if (btnGemini) { btnGemini.classList.remove('bg-indigo-900', 'text-yellow-300'); btnGemini.classList.add('bg-indigo-50', 'text-indigo-900'); }
+        function closeVideoSettings() {
+            const modal = document.getElementById('modal-video');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
 
-            if (mode === 'video' && videoEl) {
-                videoEl.classList.remove('hidden');
-                if (btnVideo) { btnVideo.classList.add('bg-black', 'text-yellow-300'); btnVideo.classList.remove('bg-white', 'text-black'); }
-            } else if (mode === 'sim' && simEl) {
-                simEl.classList.remove('hidden');
-                if (btnSim) { btnSim.classList.add('bg-black', 'text-yellow-300'); btnSim.classList.remove('bg-white', 'text-black'); }
-            } else if (mode === 'gemini' && geminiEl) {
-                geminiEl.classList.remove('hidden');
-                if (btnGemini) { btnGemini.classList.add('bg-indigo-900', 'text-yellow-300'); btnGemini.classList.remove('bg-indigo-50', 'text-indigo-900'); }
+        function handleVideoFileUpload(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const eir = document.getElementById('video-target-eir').value;
+                const blobUrl = URL.createObjectURL(file);
+                uploadedVideoBlobs[eir] = blobUrl;
+                const status = document.getElementById('file-upload-status');
+                status.innerText = `✔ Archivo seleccionado: ${file.name} (${(file.size / (1024*1024)).toFixed(1)} MB)`;
+                status.classList.remove('hidden');
             }
         }
 
-        // Simulated Play Demo
+        function saveVideoUrl() {
+            const eir = document.getElementById('video-target-eir').value;
+            const urlInput = document.getElementById('video-input-url').value.trim();
+            const sourceUrl = uploadedVideoBlobs[eir] || urlInput;
+
+            if (sourceUrl) {
+                if (urlInput) {
+                    try { localStorage.setItem(`video_url_${eir}`, urlInput); } catch(e){}
+                }
+                const container = document.getElementById(`media-video-${eir}`);
+                if (container) {
+                    container.innerHTML = `
+                        <div class="relative w-full h-full bg-black group">
+                            <video controls autoplay playsinline class="w-full h-full object-contain">
+                                <source src="${sourceUrl}">
+                                Tu navegador no soporta el formato de video.
+                            </video>
+                            <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <button onclick="openVideoSettings('${eir}')" class="px-2.5 py-1 bg-black/80 text-[#FAF338] border border-white/40 text-xs font-mono font-bold hover:bg-black">
+                                    ⚙️ Cambiar Video
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                }
+            }
+            closeVideoSettings();
+        }
+
+        // Play Video Demo or open upload modal
         function playInteractiveDemo(eir) {
-            toggleMediaMode(eir, 'sim');
+            const container = document.getElementById(`media-video-${eir}`);
+            const video = container ? container.querySelector('video') : null;
+            if (video) {
+                if (video.paused) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            } else {
+                openVideoSettings(eir);
+            }
         }
 
         // Slide Presentation Navigation
@@ -2204,34 +2020,6 @@ La plataforma cuenta con 2 modos:
             }
         }
 
-        // Video Settings
-        function openVideoSettings(eir) {
-            document.getElementById('video-target-eir').value = eir;
-            document.getElementById('modal-video').classList.remove('hidden');
-            document.getElementById('modal-video').classList.add('flex');
-        }
-
-        function closeVideoSettings() {
-            document.getElementById('modal-video').classList.add('hidden');
-            document.getElementById('modal-video').classList.remove('flex');
-        }
-
-        function saveVideoUrl() {
-            const eir = document.getElementById('video-target-eir').value;
-            const url = document.getElementById('video-input-url').value.trim();
-            if (url) {
-                const container = document.getElementById(`media-video-${eir}`);
-                if (container) {
-                    container.innerHTML = `
-                        <video controls autoplay muted class="w-full h-full object-cover">
-                            <source src="${url}" type="video/mp4">
-                            Tu navegador no soporta el tag de video.
-                        </video>
-                    `;
-                }
-            }
-            closeVideoSettings();
-        }
     </script>
 </body>
 </html>
