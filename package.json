@@ -1,0 +1,12 @@
+{
+  "name": "eir-mexico-portfolio-latam",
+  "version": "1.0.0",
+  "description": "Portfolio interactivo y plataforma de presentación de soluciones EIR México para escalamiento en LATAM",
+  "scripts": {
+    "start": "npx serve . -l 3000",
+    "dev": "npx serve . -l 3000",
+    "deploy": "npx vercel --prod"
+  },
+  "author": "EIR Team México (Carlos Espinosa, Patricio Martin, Jorge Caraballo, Angel Solis)",
+  "license": "MIT"
+}

@@ -1,0 +1,1940 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EIR's México · Portfolio de Soluciones Escalables LATAM | Xertica.ai</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --marfil: #FFFEF8;
+            --crema: #F2EDD8;
+            --fondo-slides: #F5F0E8;
+            --negro-xertica: #1E1E1E;
+            --celeste: #1899AF;
+            --magenta: #C45BAA;
+            --amarillo: #FAF338;
+            --rojo-coral: #DE5B48;
+            --verde: #2E8B5A;
+            --violeta: #5A4A96;
+            --font-display: 'Helvetica Neue', Helvetica, Arial, -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        body {
+            background-color: var(--fondo-slides);
+            color: var(--negro-xertica);
+            font-family: var(--font-body);
+            margin: 0;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Subtle Swiss Noise overlay */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            pointer-events: none;
+            z-index: 99;
+            opacity: 0.035;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        h1, h2, h3, .font-display {
+            font-family: var(--font-display);
+            letter-spacing: -0.035em;
+        }
+
+        .title-line {
+            border-bottom: 5px solid var(--negro-xertica);
+            display: inline-block;
+            padding-bottom: 4px;
+        }
+
+        .badge-swiss {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 10px;
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border: 2px solid var(--negro-xertica);
+        }
+
+        .swiss-border {
+            border: 2px solid var(--negro-xertica);
+            box-shadow: 4px 4px 0px rgba(30, 30, 30, 0.95);
+        }
+
+        .swiss-border-sm {
+            border: 1.5px solid var(--negro-xertica);
+            box-shadow: 2px 2px 0px rgba(30, 30, 30, 0.95);
+        }
+
+        .swiss-border-magenta {
+            border: 2px solid var(--negro-xertica);
+            box-shadow: 4px 4px 0px var(--magenta);
+        }
+
+        .swiss-border-cyan {
+            border: 2px solid var(--negro-xertica);
+            box-shadow: 4px 4px 0px var(--celeste);
+        }
+
+        .tab-btn {
+            position: relative;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .tab-btn.active {
+            background-color: var(--negro-xertica);
+            color: #FAF338;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Slide Mode Styles */
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: hidden;
+        }
+
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+            z-index: 20;
+        }
+
+        .stagger-up {
+            transform: translateY(28px);
+            opacity: 0;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .active .stagger-up {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .delay-1 { transition-delay: 0.08s; }
+        .delay-2 { transition-delay: 0.16s; }
+        .delay-3 { transition-delay: 0.24s; }
+        .delay-4 { transition-delay: 0.32s; }
+
+        .shape-corner { position: absolute; mix-blend-mode: multiply; }
+        .blend-multiply { mix-blend-mode: multiply; }
+
+        /* Mosaico Cover Pattern */
+        .mosaico-container { width: 100%; height: 100%; position: relative; overflow: hidden; }
+        .ms-celeste { position: absolute; top:0; left: 25%; width: 75%; height: 25%; background-color: var(--celeste); }
+        .ms-verde { position: absolute; top:25%; right: 0; width: 25%; height: 75%; background-color: var(--verde); }
+        .ms-magenta { position: absolute; top:25%; left: 0; width: 25%; height: 75%; background-color: var(--magenta); }
+        .ms-amarillo { position: absolute; bottom:0; left: 25%; width: 50%; height: 25%; background-color: var(--amarillo); }
+        .ms-coral { position: absolute; bottom:0; left: 25%; width: 75%; height: 25%; background-color: var(--rojo-coral); }
+        .ms-violeta { position: absolute; top:0; left: 0; width: 25%; height: 25%; background-color: var(--violeta); }
+        .ms-marron { position: absolute; bottom:0; right: 0; width: 25%; height: 25%; background-color: #2A1A12; }
+        .ms-papel { position: absolute; top:25%; left: 25%; width: 50%; height: 50%; background-color: var(--crema); }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #EAE4D7;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1E1E1E;
+            border-radius: 0px;
+        }
+
+        /* Pulse animation for live metrics */
+        @keyframes subtle-pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.85; transform: scale(1.02); }
+        }
+        .pulse-live {
+            animation: subtle-pulse 3s infinite ease-in-out;
+        }
+
+        /* Print styles */
+        @media print {
+            body::before, .no-print { display: none !important; }
+            .slide { position: relative !important; height: auto !important; opacity: 1 !important; visibility: visible !important; page-break-after: always; }
+        }
+    </style>
+</head>
+<body class="bg-[#F5F0E8] text-[#1E1E1E] antialiased selection:bg-[#FAF338] selection:text-black">
+
+    <!-- TOP HEADER / CONTROLS (NAV OVERLAY) -->
+    <header class="sticky top-0 z-50 bg-[#FFFEF8] border-b-2 border-[#1E1E1E] px-4 md:px-8 py-3.5 flex flex-wrap justify-between items-center shadow-sm no-print">
+        <div class="flex items-center gap-4">
+            <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 bg-[#1E1E1E] flex items-center justify-center font-display font-black text-white text-lg tracking-tighter">
+                    X
+                </div>
+                <div>
+                    <div class="font-display font-black text-xl tracking-tight leading-none text-[#1E1E1E]">
+                        Xertica<span class="text-[#1899AF]">.ai</span>
+                    </div>
+                    <div class="text-[10px] font-mono uppercase tracking-widest text-neutral-500 font-semibold mt-0.5">
+                        EIR'S MÉXICO · LATAM PORTFOLIO 2026
+                    </div>
+                </div>
+            </div>
+            <div class="hidden lg:flex items-center gap-2 pl-4 border-l border-neutral-300">
+                <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                <span class="badge-swiss bg-[#FAF338] text-black">Entrega Inmediata · Listo para LATAM</span>
+            </div>
+        </div>
+
+        <!-- Mode Switcher & Quick Actions -->
+        <div class="flex items-center gap-2 sm:gap-3 mt-2 sm:mt-0">
+            <!-- View Mode Toggle -->
+            <div class="inline-flex border-2 border-[#1E1E1E] bg-[#F5F0E8] p-0.5 rounded-none font-display font-bold text-xs">
+                <button id="btn-mode-platform" onclick="setAppMode('platform')" class="px-3 py-1.5 transition-colors bg-[#1E1E1E] text-[#FAF338]">
+                    🏢 Plataforma & Demos
+                </button>
+                <button id="btn-mode-slides" onclick="setAppMode('slides')" class="px-3 py-1.5 transition-colors text-black hover:bg-neutral-200">
+                    📽️ Modo Slides (Pitch)
+                </button>
+            </div>
+
+            <!-- Share & Slack Modal Trigger -->
+            <button onclick="openShareModal()" class="px-3.5 py-1.5 bg-[#1899AF] text-white border-2 border-black font-display font-bold text-xs uppercase tracking-wider hover:bg-black transition-colors flex items-center gap-1.5 shadow-[2px_2px_0px_#1E1E1E]">
+                <span>📋</span> Resumen Vanessa
+            </button>
+
+            <!-- Export / Print Deck -->
+            <button onclick="window.print()" class="hidden md:inline-flex px-3 py-1.5 bg-[#FFFEF8] text-black border-2 border-black font-display font-bold text-xs uppercase tracking-wider hover:bg-neutral-100 transition-colors items-center gap-1">
+                🖨️ PDF
+            </button>
+        </div>
+    </header>
+
+    <!-- ========================================== -->
+    <!-- VIEW A: PLATFORM & INTERACTIVE HUB MODE     -->
+    <!-- ========================================== -->
+    <main id="view-platform" class="min-h-screen pb-20">
+        
+        <!-- EXECUTIVE HERO BANNER -->
+        <section class="border-b-2 border-[#1E1E1E] bg-[#FFFEF8] px-4 md:px-8 py-8 md:py-10">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+                    <div class="max-w-3xl">
+                        <div class="flex flex-wrap items-center gap-2 mb-3">
+                            <span class="badge-swiss bg-[#DE5B48] text-white">Xertica Transformation Hub</span>
+                            <span class="badge-swiss bg-neutral-200 text-neutral-800">Expansión Regional</span>
+                            <span class="font-mono text-xs font-semibold text-neutral-500">Q4 2026 · Despliegue Rápido</span>
+                        </div>
+                        <h1 class="font-display font-black text-3xl sm:text-4xl md:text-5xl uppercase tracking-tight leading-[0.95] text-[#1E1E1E]">
+                            Iniciativas EIR México con Alcance Regional LATAM
+                        </h1>
+                        <p class="font-body text-base md:text-lg text-neutral-700 mt-4 leading-relaxed max-w-2xl">
+                            Soluciones modulares desarrolladas por el equipo de <strong class="text-black">Entrepreneurs in Residence</strong>, listas para ser replicadas en <strong class="text-[#1899AF]">Colombia, Perú, Chile y México</strong>. Enfoque 100% en impacto, resultados comerciales y eficiencia operativa.
+                        </p>
+                    </div>
+
+                    <!-- Macro KPI Grid -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-[#F2EDD8] p-4 border-2 border-[#1E1E1E] shadow-[4px_4px_0px_#1E1E1E]">
+                        <div class="border-r border-neutral-300 pr-3">
+                            <div class="font-display font-black text-2xl md:text-3xl text-[#1899AF] leading-none">$570K+</div>
+                            <div class="font-mono text-[10px] font-bold uppercase text-neutral-600 mt-1">USD Oportunidades & Ahorro</div>
+                        </div>
+                        <div class="border-r border-neutral-300 pr-3">
+                            <div class="font-display font-black text-2xl md:text-3xl text-[#C45BAA] leading-none">140+</div>
+                            <div class="font-mono text-[10px] font-bold uppercase text-neutral-600 mt-1">Cuentas Contactadas</div>
+                        </div>
+                        <div class="border-r border-neutral-300 pr-3">
+                            <div class="font-display font-black text-2xl md:text-3xl text-[#2E8B5A] leading-none">82%</div>
+                            <div class="font-mono text-[10px] font-bold uppercase text-neutral-600 mt-1">Adopción IA (Gemini)</div>
+                        </div>
+                        <div>
+                            <div class="font-display font-black text-2xl md:text-3xl text-[#DE5B48] leading-none">4 PAÍSES</div>
+                            <div class="font-mono text-[10px] font-bold uppercase text-neutral-600 mt-1">Escalabilidad LATAM</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4 MAIN EIR PROJECTS TAB BAR -->
+                <div class="mt-8 pt-4 border-t-2 border-[#1E1E1E]">
+                    <div class="text-xs font-mono font-bold uppercase tracking-wider text-neutral-500 mb-2">
+                        Selecciona una iniciativa para ver objetivo, resultados, demo de 35s y acceso:
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2">
+                        <!-- Tab 1: Patricio -->
+                        <button onclick="switchTab('patricio')" id="tab-btn-patricio" class="tab-btn active p-3 border-2 border-black text-left flex flex-col justify-between bg-[#FFFEF8]">
+                            <div>
+                                <span class="badge-swiss bg-[#1899AF] text-white text-[9px] py-0.5 px-1.5 mb-1.5">PATRICIO MARTIN</span>
+                                <div class="font-display font-bold text-sm leading-tight text-inherit">FinOps & GCP Commits</div>
+                            </div>
+                            <div class="text-[11px] font-mono mt-2 opacity-80">📈 $120K Opps Levantadas</div>
+                        </button>
+
+                        <!-- Tab 2: Jorge -->
+                        <button onclick="switchTab('jorge')" id="tab-btn-jorge" class="tab-btn p-3 border-2 border-black text-left flex flex-col justify-between bg-[#FFFEF8]">
+                            <div>
+                                <span class="badge-swiss bg-[#DE5B48] text-white text-[9px] py-0.5 px-1.5 mb-1.5">JORGE CARABALLO</span>
+                                <div class="font-display font-bold text-sm leading-tight text-inherit">CRM Envío de Campañas</div>
+                            </div>
+                            <div class="text-[11px] font-mono mt-2 opacity-80">✉️ 140+ Leads Contactados</div>
+                        </button>
+
+                        <!-- Tab 3: Angel -->
+                        <button onclick="switchTab('angel')" id="tab-btn-angel" class="tab-btn p-3 border-2 border-black text-left flex flex-col justify-between bg-[#FFFEF8]">
+                            <div>
+                                <span class="badge-swiss bg-[#5A4A96] text-white text-[9px] py-0.5 px-1.5 mb-1.5">ANGEL SOLIS</span>
+                                <div class="font-display font-bold text-sm leading-tight text-inherit">Torre Preventa + Gemini</div>
+                            </div>
+                            <div class="text-[11px] font-mono mt-2 opacity-80">⚡ En Vivo + Adopción IA</div>
+                        </button>
+
+                        <!-- Tab 4: Carlos -->
+                        <button onclick="switchTab('carlos')" id="tab-btn-carlos" class="tab-btn p-3 border-2 border-black text-left flex flex-col justify-between bg-[#FFFEF8]">
+                            <div>
+                                <span class="badge-swiss bg-[#C45BAA] text-white text-[9px] py-0.5 px-1.5 mb-1.5">CARLOS ESPINOSA</span>
+                                <div class="font-display font-bold text-sm leading-tight text-inherit">Salesforce vs Partner Hub</div>
+                            </div>
+                            <div class="text-[11px] font-mono mt-2 opacity-80">🏆 Caso de Éxito / Incentivos</div>
+                        </button>
+
+                        <!-- Tab 5: Regional Matrix -->
+                        <button onclick="switchTab('latam')" id="tab-btn-latam" class="tab-btn col-span-2 md:col-span-4 lg:col-span-1 p-3 border-2 border-black text-left flex flex-col justify-between bg-[#FAF338] text-black">
+                            <div>
+                                <span class="badge-swiss bg-black text-white text-[9px] py-0.5 px-1.5 mb-1.5">VISIÓN REGIONAL</span>
+                                <div class="font-display font-bold text-sm leading-tight text-black">Roadmap LATAM</div>
+                            </div>
+                            <div class="text-[11px] font-mono mt-2 text-neutral-800">🌎 MX · CO · PE · CL</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB CONTENT CONTAINER -->
+        <section class="max-w-7xl mx-auto px-4 md:px-8 mt-8">
+
+            <!-- ============================================== -->
+            <!-- TAB PANEL 1: PATRICIO MARTIN - FINOPS GCP     -->
+            <!-- ============================================== -->
+            <div id="panel-patricio" class="tab-panel">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    
+                    <!-- Left Column: Ficha Ejecutiva Digerible -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <!-- EIR Profile Header Card -->
+                        <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border">
+                            <div class="flex items-center gap-4">
+                                <img src="assets/team/patricio-martin.jpg" alt="Patricio Martin" class="w-16 h-16 rounded-full border-2 border-black object-cover shadow-[2px_2px_0px_#1899AF]" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80'">
+                                <div>
+                                    <span class="badge-swiss bg-[#1899AF] text-white">Líder de Iniciativa</span>
+                                    <h3 class="font-display font-black text-2xl text-[#1E1E1E] leading-tight mt-1">Patricio Martin</h3>
+                                    <div class="font-mono text-xs text-neutral-600">Entrepreneur in Residence · FinOps Practice</div>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-neutral-200 flex items-center justify-between text-xs font-mono">
+                                <span>Solución: <strong>FinOps GCP Commits</strong></span>
+                                <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 font-bold border border-emerald-500">En Producción</span>
+                            </div>
+                        </div>
+
+                        <!-- 1. OBJETIVO -->
+                        <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border">
+                            <div class="font-display font-black text-xs uppercase tracking-wider text-[#1899AF] mb-1.5 flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 bg-[#1899AF] inline-block"></span> 1. Objetivo Principal
+                            </div>
+                            <h4 class="font-display font-bold text-xl leading-tight text-neutral-900">
+                                Detección proactiva de sobredimensionamiento, control de commits GCP y monetización de optimizaciones cloud.
+                            </h4>
+                            <p class="font-body text-sm text-neutral-600 mt-2">
+                                Evitar penalizaciones por under-commit y capitalizar picos de over-consumption mediante renegociaciones estratégicas con los clientes enterprise.
+                            </p>
+                        </div>
+
+                        <!-- 2. EN QUÉ AYUDA (VALOR OPERATIVO) -->
+                        <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border">
+                            <div class="font-display font-black text-xs uppercase tracking-wider text-[#1E1E1E] mb-2 flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 bg-[#1E1E1E] inline-block"></span> 2. ¿En qué ayuda directamente?
+                            </div>
+                            <ul class="space-y-2.5 font-body text-sm text-neutral-700">
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-emerald-600 font-bold mt-0.5">✔</span>
+                                    <span><strong>Monitoreo en tiempo real del % de commit consumido</strong> por cuenta vs. el plazo contractual restante.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-emerald-600 font-bold mt-0.5">✔</span>
+                                    <span><strong>Generación de alertas tempranas</strong> 90 días antes del vencimiento para habilitar renovaciones con margen alto.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-emerald-600 font-bold mt-0.5">✔</span>
+                                    <span><strong>Cruce directo con la cartera comercial</strong> para sugerir productos de modernización y Workload Migration.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- 3. RESULTADOS & OPORTUNIDADES LEVANTADAS -->
+                        <div class="bg-[#FAF338] border-2 border-black p-5 swiss-border">
+                            <div class="font-display font-black text-xs uppercase tracking-wider text-black mb-1.5 flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 bg-black inline-block"></span> 3. Resultados Concretos (Métricas Clave)
+                            </div>
+                            <div class="grid grid-cols-2 gap-3 mt-3">
+                                <div class="bg-white border-2 border-black p-3">
+                                    <div class="font-display font-black text-3xl text-[#1899AF] leading-none">$120K+</div>
+                                    <div class="text-[11px] font-mono font-bold text-neutral-700 mt-1">USD en Oportunidades ya Levantadas</div>
+                                </div>
+                                <div class="bg-white border-2 border-black p-3">
+                                    <div class="font-display font-black text-3xl text-neutral-900 leading-none">14 Cuentas</div>
+                                    <div class="text-[11px] font-mono font-bold text-neutral-700 mt-1">Con Auditoría de Consumo Concluida</div>
+                                </div>
+                            </div>
+                            <div class="mt-3 text-xs font-mono font-semibold text-neutral-800 bg-white/70 p-2 border border-black">
+                                💡 Cuentas destacadas: Aerolíneas, Retail y Sector Público ya cuentan con propuesta formal entregada.
+                            </div>
+                        </div>
+
+                        <!-- 4. ALCANCE LATAM & ACCESO -->
+                        <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border">
+                            <div class="font-display font-black text-xs uppercase tracking-wider text-[#1899AF] mb-2">
+                                🌎 Escalabilidad LATAM
+                            </div>
+                            <p class="text-xs font-body text-neutral-700 leading-relaxed mb-4">
+                                El modelo de ingesta de datos de facturación de BigQuery y Partner Billing Console se replica en <strong>menos de 48 horas</strong> para las operaciones de Colombia, Perú y Chile sin desarrollo adicional.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <a href="https://webdeploy-three-orcin.vercel.app/" target="_blank" class="px-4 py-2 bg-[#1899AF] text-white border-2 border-black font-display font-bold text-xs uppercase tracking-wider hover:bg-black transition-colors flex items-center gap-2">
+                                    <span>🔗</span> Abrir Consola FinOps
+                                </a>
+                                <button onclick="copyFicha('patricio')" class="px-3 py-2 bg-neutral-100 text-black border-2 border-black font-display font-bold text-xs uppercase tracking-wider hover:bg-neutral-200 transition-colors">
+                                    📋 Copiar Resumen
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Interactive Media & Live Tool Simulator -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <!-- Media Viewport Frame -->
+                        <div class="bg-[#FFFEF8] border-2 border-black p-4 swiss-border">
+                            <div class="flex flex-wrap items-center justify-between gap-2 pb-3 mb-3 border-b-2 border-black">
+                                <div class="flex items-center gap-2">
+                                    <span class="inline-block w-3 h-3 rounded-full bg-red-500 border border-black"></span>
+                                    <span class="inline-block w-3 h-3 rounded-full bg-yellow-400 border border-black"></span>
+                                    <span class="inline-block w-3 h-3 rounded-full bg-green-500 border border-black"></span>
+                                    <span class="font-mono text-xs font-bold text-neutral-700 ml-2">DEMOSTRACIÓN INTERACTIVA (35s SCREEN RECORDING / CONSOLA EN VIVO)</span>
+                                </div>
+                                <div class="inline-flex border border-black text-xs font-mono">
+                                    <button onclick="toggleMediaMode('patricio', 'video')" id="btn-media-video-patricio" class="px-2.5 py-1 bg-black text-yellow-300 font-bold">🎬 Video Demo</button>
+                                    <button onclick="toggleMediaMode('patricio', 'sim')" id="btn-media-sim-patricio" class="px-2.5 py-1 bg-white text-black font-bold">💻 Consola Interactiva</button>
+                                </div>
+                            </div>
+
+                            <!-- Screen Container -->
+                            <div class="relative bg-neutral-900 border-2 border-black overflow-hidden aspect-[16/10] flex items-center justify-center">
+                                
+                                <!-- VIDEO SLOT (Simulated or Real Video) -->
+                                <div id="media-video-patricio" class="w-full h-full relative group">
+                                    <img src="assets/projects/finops-msp-commercial.jpg" alt="FinOps Dashboard" class="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105" onerror="this.src='assets/extracted/img_14.jpg'">
+                                    
+                                    <!-- Video Overlay Controls -->
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/30 flex flex-col justify-between p-6">
+                                        <div class="flex justify-between items-start">
+                                            <span class="badge-swiss bg-[#FAF338] text-black">Preview Grabación 35 Segundos</span>
+                                            <span class="font-mono text-xs text-white bg-black/60 px-2.5 py-1 border border-white/20">00:35 · 1080p HD</span>
+                                        </div>
+
+                                        <div class="text-center">
+                                            <button onclick="playInteractiveDemo('patricio')" class="w-16 h-16 rounded-full bg-[#FAF338] text-black border-2 border-black flex items-center justify-center text-2xl font-bold shadow-[4px_4px_0px_#000] hover:scale-110 transition-transform mx-auto">
+                                                ▶
+                                            </button>
+                                            <div class="font-display font-bold text-white text-lg mt-3 drop-shadow">Ver Demostración del FinOps & Commit Engine</div>
+                                            <div class="font-mono text-xs text-neutral-300">Exploración del cálculo de Over/Under commit por cliente</div>
+                                        </div>
+
+                                        <div class="flex items-center justify-between text-xs font-mono text-neutral-300">
+                                            <span>Métricas de 160 Clientes Analizados</span>
+                                            <button onclick="openVideoSettings('patricio')" class="underline hover:text-white">⚙️ Reemplazar por archivo MP4</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- INTERACTIVE SIMULATOR SLOT -->
+                                <div id="media-sim-patricio" class="hidden w-full h-full bg-[#1E1E1E] text-white p-5 overflow-y-auto">
+                                    <div class="flex justify-between items-center border-b border-neutral-700 pb-3 mb-4">
+                                        <div>
+                                            <div class="text-xs font-mono text-[#1899AF] font-bold">XERTICA FINOPS ENGINE v2.4</div>
+                                            <div class="font-display font-bold text-base text-white">Simulador de Cuentas & Detección de Desviación</div>
+                                        </div>
+                                        <span class="badge-swiss bg-emerald-500 text-black text-[10px]">BigQuery Live Sync</span>
+                                    </div>
+
+                                    <!-- Interactive Table Mock -->
+                                    <div class="space-y-3 font-mono text-xs">
+                                        <div class="grid grid-cols-12 bg-neutral-800 p-2 text-neutral-400 font-bold border border-neutral-700">
+                                            <div class="col-span-4">Cliente / Cuenta</div>
+                                            <div class="col-span-3">Commit Anual</div>
+                                            <div class="col-span-2">Ejecutado</div>
+                                            <div class="col-span-3">Oportunidad Identificada</div>
+                                        </div>
+                                        <div class="grid grid-cols-12 bg-neutral-900/80 p-2 items-center border border-neutral-800 hover:border-[#1899AF] transition-colors">
+                                            <div class="col-span-4 font-bold text-white">FUJIFILM DE MÉXICO</div>
+                                            <div class="col-span-3 text-neutral-300">$10,100,000 USD</div>
+                                            <div class="col-span-2 text-amber-400">92% (+3m)</div>
+                                            <div class="col-span-3 text-emerald-400 font-bold">+$480K Upsell Commit</div>
+                                        </div>
+                                        <div class="grid grid-cols-12 bg-neutral-900/80 p-2 items-center border border-neutral-800 hover:border-[#1899AF] transition-colors">
+                                            <div class="col-span-4 font-bold text-white">TRIBUNAL FED. JUSTICIA</div>
+                                            <div class="col-span-3 text-neutral-300">$5,800,000 USD</div>
+                                            <div class="col-span-2 text-red-400">68% (Riesgo)</div>
+                                            <div class="col-span-3 text-amber-300 font-bold">Right-sizing & Workspace</div>
+                                        </div>
+                                        <div class="grid grid-cols-12 bg-neutral-900/80 p-2 items-center border border-neutral-800 hover:border-[#1899AF] transition-colors">
+                                            <div class="col-span-4 font-bold text-white">VIVAAEROBUS</div>
+                                            <div class="col-span-3 text-neutral-300">$2,500,000 USD</div>
+                                            <div class="col-span-2 text-emerald-400">105% (Over)</div>
+                                            <div class="col-span-3 text-emerald-400 font-bold">+$350K Ampliación Tier</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mt-4 pt-3 border-t border-neutral-700 flex justify-between items-center text-xs">
+                                        <span class="text-neutral-400">Total 160 cuentas escaneadas</span>
+                                        <span class="text-[#FAF338] font-bold font-mono">Oportunidades Totales: $120,000+ USD en marcha</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Screen Caption -->
+                            <div class="mt-3 flex items-center justify-between font-mono text-xs text-neutral-600">
+                                <span>💡 Captura del módulo de optimización y conciliación de commit Xertica</span>
+                                <span class="font-bold text-[#1899AF]">Lead: Patricio Martin</span>
+                            </div>
+                        </div>
+
+                        <!-- Technical Specs Accordion -->
+                        <div class="bg-[#FFFEF8] border-2 border-black p-4 swiss-border">
+                            <h5 class="font-display font-bold text-sm uppercase tracking-wider mb-2">Ficha Técnica Rápida para LATAM:</h5>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-xs">
+                                <div class="p-2.5 bg-neutral-100 border border-neutral-300">
+                                    <div class="text-neutral-500 uppercase text-[10px]">Stack Técnico</div>
+                                    <div class="font-bold mt-0.5">BigQuery · Sheets API · Tailwind</div>
+                                </div>
+                                <div class="p-2.5 bg-neutral-100 border border-neutral-300">
+                                    <div class="text-neutral-500 uppercase text-[10px]">Fuentes de Datos</div>
+                                    <div class="font-bold mt-0.5">Partner Billing · Cloud Console</div>
+                                </div>
+                                <div class="p-2.5 bg-neutral-100 border border-neutral-300">
+                                    <div class="text-neutral-500 uppercase text-[10px]">Tiempo de Despliegue</div>
+                                    <div class="font-bold mt-0.5 text-emerald-700">48 Horas por Territorio</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ============================================== -->
+            <!-- TAB PANEL 2: JORGE CARABALLO - CRM CAMPAÑAS  -->
+            <!-- ============================================== -->
+            <div id="panel-jorge" class="tab-panel hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    
+                    <!-- Left Column: Ficha Ejecutiva Digerible -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <!-- Profile Card -->
+                        <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border">
+                            <div class="flex items-center gap-4">
+                                <img src="assets/team/jorge-caraballo.jpg" alt="Jorge Caraballo" class="w-16 h-16 rounded-full border-2 border-black object-cover shadow-[2px_2px_0px_#DE5B48]" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80'">
+                                <div>
+                                    <span class="badge-swiss bg-[#DE5B48] text-white">Líder de Iniciativa</span>
+                                    <h3 class="font-display font-black text-2xl text-[#1E1E1E] leading-tight mt-1">Jorge Caraballo</h3>
+                                    <div class="font-mono text-xs text-neutral-600">Entrepreneur in Residence · Growth & Automation</div>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-neutral-200 flex items-center justify-between text-xs font-mono">
+                                <span>Solución: <strong>CRM Envío de Campañas</strong></span>
+                                <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 font-bold border border-emerald-500">En Producción</span>
+                            </div>
+                        </div>
+
+                        <!-- 1. OBJETIVO -->
+                        <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border">
+                            <div class="font-display font-black text-xs uppercase tracking-wider text-[#DE5B48] mb-1.5 flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 bg-[#DE5B48] inline-block"></span> 1. Objetivo Principal
+                            </div>
+                            <h4 class="font-display font-bold text-xl leading-tight text-neutral-900">
+                                Automatizar el contacto masivo y seguimiento comercial de leads de eventos (Summit, SMB, Enterprise) sin dependencia de TI.
+                            </h4>
+                            <p class="font-body text-sm text-neutral-600 mt-2">
+                                Reducir la fricción de outreach entre marketing y ventas mediante plantillas dinámicas y analítica por cuenta/empresa.
+                            </p>
+                        </div>
+
+                        <!-- 2. EN QUÉ AYUDA -->
+                        <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border">
+                            <div class="font-display font-black text-xs uppercase tracking-wider text-[#1E1E1E] mb-2 flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 bg-[#1E1E1E] inline-block"></span> 2. ¿En qué ayuda directamente?
+                            </div>
+                            <ul class="space-y-2.5 font-body text-sm text-neutral-700">
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-emerald-600 font-bold mt-0.5">✔</span>
+                                    <span><strong>Envío hiperpersonalizado por dominio y rol</strong> de tomador de decisión (CTO, CIO, Finanzas).</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-emerald-600 font-bold mt-0.5">✔</span>
+                                    <span><strong>Doble llamada a la acción automatizada:</strong> Agendamiento 1:1 directo con especialista o registro a workshop de IA.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-emerald-600 font-bold mt-0.5">✔</span>
+                                    <span><strong>Trazabilidad unificada por empresa</strong> en lugar de registros dispersos.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- 3. RESULTADOS & CLIENTES CONTACTADOS -->
+                        <div class="bg-[#FAF338] border-2 border-black p-5 swiss-border">
+                            <div class="font-display font-black text-xs uppercase tracking-wider text-black mb-1.5 flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 bg-black inline-block"></span> 3. Resultados Concretos (Métricas Clave)
+                            </div>
+                            <div class="grid grid-cols-2 gap-3 mt-3">
+                                <div class="bg-white border-2 border-black p-3">
+                                    <div class="font-display font-black text-3xl text-[#DE5B48] leading-none">140+</div>
+                                    <div class="text-[11px] font-mono font-bold text-neutral-700 mt-1">Clientes / Leads Contactados</div>
+                                </div>
+                                <div class="bg-white border-2 border-black p-3">
+                                    <div class="font-display font-black text-3xl text-neutral-900 leading-none">64%</div>
+                                    <div class="text-[11px] font-mono font-bold text-neutral-700 mt-1">Open Rate (vs 21% promedio)</div>
+                                </div>
+                            </div>
+                            <div class="mt-3 text-xs font-mono font-semibold text-neutral-800 bg-white/70 p-2 border border-black">
+                                🎯 28 reuniones comerciales agendadas a partir de los envíos iniciales del Summit.
+                            </div>
+                        </div>
+
+                        <!-- 4. ALCANCE LATAM & ACCESO -->
+                        <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border">
+                            <div class="font-display font-black text-xs uppercase tracking-wider text-[#DE5B48] mb-2">
+                                🌎 Escalabilidad LATAM
+                            </div>
+                            <p class="text-xs font-body text-neutral-700 leading-relaxed mb-4">
+                                Clonación de la infraestructura técnica de envíos para que los equipos comerciales de <strong>Bogotá, Lima y Santiago</strong> carguen sus bases de datos locales y ejecuten campañas en el mismo día.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <a href="https://webdeploy-three-orcin.vercel.app/" target="_blank" class="px-4 py-2 bg-[#DE5B48] text-white border-2 border-black font-display font-bold text-xs uppercase tracking-wider hover:bg-black transition-colors flex items-center gap-2">
+                                    <span>🔗</span> Acceder a Plataforma CRM
+                                </a>
+                                <button onclick="copyFicha('jorge')" class="px-3 py-2 bg-neutral-100 text-black border-2 border-black font-display font-bold text-xs uppercase tracking-wider hover:bg-neutral-200 transition-colors">
+                                    📋 Copiar Resumen
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Interactive Media & Live Tool Simulator -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <!-- Media Viewport Frame -->
+                        <div class="bg-[#FFFEF8] border-2 border-black p-4 swiss-border">
+                            <div class="flex flex-wrap items-center justify-between gap-2 pb-3 mb-3 border-b-2 border-black">
+                                <div class="flex items-center gap-2">
+                                    <span class="inline-block w-3 h-3 rounded-full bg-red-500 border border-black"></span>
+                                    <span class="inline-block w-3 h-3 rounded-full bg-yellow-400 border border-black"></span>
+                                    <span class="inline-block w-3 h-3 rounded-full bg-green-500 border border-black"></span>
+                                    <span class="font-mono text-xs font-bold text-neutral-700 ml-2">DEMOSTRACIÓN INTERACTIVA (CAMPANA SUMMIT & OUTREACH)</span>
+                                </div>
+                                <div class="inline-flex border border-black text-xs font-mono">
+                                    <button onclick="toggleMediaMode('jorge', 'video')" id="btn-media-video-jorge" class="px-2.5 py-1 bg-black text-yellow-300 font-bold">🎬 Video Demo</button>
+                                    <button onclick="toggleMediaMode('jorge', 'sim')" id="btn-media-sim-jorge" class="px-2.5 py-1 bg-white text-black font-bold">💻 Simulador Campaña</button>
+                                </div>
+                            </div>
+
+                            <!-- Screen Container -->
+                            <div class="relative bg-neutral-900 border-2 border-black overflow-hidden aspect-[16/10] flex items-center justify-center">
+                                
+                                <!-- VIDEO SLOT -->
+                                <div id="media-video-jorge" class="w-full h-full relative group">
+                                    <img src="assets/projects/sales-specialist-pipeline.jpg" alt="CRM Pipeline" class="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105" onerror="this.src='assets/extracted/img_11.jpg'">
+                                    
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/30 flex flex-col justify-between p-6">
+                                        <div class="flex justify-between items-start">
+                                            <span class="badge-swiss bg-[#FAF338] text-black">Preview Video 35 Segundos</span>
+                                            <span class="font-mono text-xs text-white bg-black/60 px-2.5 py-1 border border-white/20">00:35 · Campaña Summit</span>
+                                        </div>
+
+                                        <div class="text-center">
+                                            <button onclick="playInteractiveDemo('jorge')" class="w-16 h-16 rounded-full bg-[#FAF338] text-black border-2 border-black flex items-center justify-center text-2xl font-bold shadow-[4px_4px_0px_#000] hover:scale-110 transition-transform mx-auto">
+                                                ▶
+                                            </button>
+                                            <div class="font-display font-bold text-white text-lg mt-3 drop-shadow">Ver Flujo de Disparo & Tracking en Vivo</div>
+                                            <div class="font-mono text-xs text-neutral-300">Demostración del CRM de envíos a 140 leads segmentados</div>
+                                        </div>
+
+                                        <div class="flex items-center justify-between text-xs font-mono text-neutral-300">
+                                            <span>Métricas de Entrega: 98.4% Deliverability</span>
+                                            <button onclick="openVideoSettings('jorge')" class="underline hover:text-white">⚙️ Reemplazar por archivo MP4</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- INTERACTIVE SIMULATOR SLOT -->
+                                <div id="media-sim-jorge" class="hidden w-full h-full bg-[#1E1E1E] text-white p-5 overflow-y-auto">
+                                    <div class="flex justify-between items-center border-b border-neutral-700 pb-3 mb-4">
+                                        <div>
+                                            <div class="text-xs font-mono text-[#DE5B48] font-bold">CAMPAIGN ORCHESTRATOR · SUMMIT 2026</div>
+                                            <div class="font-display font-bold text-base text-white">Consola de Envío Masivo & Seguimiento</div>
+                                        </div>
+                                        <span class="badge-swiss bg-[#FAF338] text-black text-[10px]">140 Leads Cargados</span>
+                                    </div>
+
+                                    <!-- Campaign Metrics -->
+                                    <div class="grid grid-cols-3 gap-3 mb-4 text-center font-mono">
+                                        <div class="bg-neutral-800 p-2 border border-neutral-700">
+                                            <div class="text-xs text-neutral-400">Total Envíos</div>
+                                            <div class="font-display font-bold text-xl text-white">142</div>
+                                        </div>
+                                        <div class="bg-neutral-800 p-2 border border-neutral-700">
+                                            <div class="text-xs text-neutral-400">Aperturas Únicas</div>
+                                            <div class="font-display font-bold text-xl text-[#FAF338]">91 (64%)</div>
+                                        </div>
+                                        <div class="bg-neutral-800 p-2 border border-neutral-700">
+                                            <div class="text-xs text-neutral-400">Clicks a Reunión</div>
+                                            <div class="font-display font-bold text-xl text-emerald-400">31 (22%)</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Email Mock Preview -->
+                                    <div class="bg-neutral-900 border border-neutral-700 p-3 font-mono text-xs">
+                                        <div class="text-neutral-400 border-b border-neutral-800 pb-2 mb-2">
+                                            De: <strong>Jorge Caraballo & EIR Team</strong> &lt;crecimiento@xertica.com&gt;<br>
+                                            Asunto: <strong>AI Superpowers & Workshop Exclusivo Post-Summit</strong>
+                                        </div>
+                                        <p class="text-neutral-300 leading-relaxed">
+                                            "Hola {{Nombre}}, un gusto saludarte tras el Google Cloud Summit. Como conversamos en nuestro stand, preparamos un diagnóstico específico para {{Empresa}} enfocado en modernización y optimización de infraestructura..."
+                                        </p>
+                                    </div>
+
+                                    <div class="mt-4 flex justify-between items-center text-xs">
+                                        <span class="text-neutral-400 font-mono">Segmentación activa: Líderes IT México</span>
+                                        <button class="px-3 py-1 bg-[#DE5B48] text-white font-bold font-mono border border-black hover:bg-black">Replicar en Colombia</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Screen Caption -->
+                            <div class="mt-3 flex items-center justify-between font-mono text-xs text-neutral-600">
+                                <span>💡 Pipeline de Cuentas y Envío Automatizado Xertica</span>
+                                <span class="font-bold text-[#DE5B48]">Lead: Jorge Caraballo</span>
+                            </div>
+                        </div>
+
+                        <!-- Technical Specs -->
+                        <div class="bg-[#FFFEF8] border-2 border-black p-4 swiss-border">
+                            <h5 class="font-display font-bold text-sm uppercase tracking-wider mb-2">Ficha Técnica Rápida para LATAM:</h5>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-xs">
+                                <div class="p-2.5 bg-neutral-100 border border-neutral-300">
+                                    <div class="text-neutral-500 uppercase text-[10px]">Stack Técnico</div>
+                                    <div class="font-bold mt-0.5">Google AppSheet · Apps Script</div>
+                                </div>
+                                <div class="p-2.5 bg-neutral-100 border border-neutral-300">
+                                    <div class="text-neutral-500 uppercase text-[10px]">Capacidad Outreach</div>
+                                    <div class="font-bold mt-0.5">Hasta 1,500 leads/día</div>
+                                </div>
+                                <div class="p-2.5 bg-neutral-100 border border-neutral-300">
+                                    <div class="text-neutral-500 uppercase text-[10px]">Privacidad & Seguridad</div>
+                                    <div class="font-bold mt-0.5 text-emerald-700">Auditado por Compliance</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ============================================== -->
+            <!-- TAB PANEL 3: ANGEL SOLIS - TORRE PREVENTA     -->
+            <!-- ============================================== -->
+            <div id="panel-angel" class="tab-panel hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    
+                    <!-- Left Column: Ficha Ejecutiva Digerible -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <!-- Profile Card -->
+                        <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border">
+                            <div class="flex items-center gap-4">
+                                <img src="assets/team/angel-solis.jpg" alt="Angel Solis" class="w-16 h-16 rounded-full border-2 border-black object-cover shadow-[2px_2px_0px_#5A4A96]" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80'">
+                                <div>
+                                    <span class="badge-swiss bg-[#5A4A96] text-white">Líder de Iniciativa</span>
+                                    <h3 class="font-display font-black text-2xl text-[#1E1E1E] leading-tight mt-1">Angel Solis</h3>
+                                    <div class="font-mono text-xs text-neutral-600">Entrepreneur in Residence · Cloud Architect</div>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-neutral-200 flex items-center justify-between text-xs font-mono">
+                                <span>Solución: <strong>Torre Preventa + Gemini</strong></span>
+                                <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 font-bold border border-emerald-500">Live en Cloud Run</span>
+                            </div>
+                        </div>
+
+                        <!-- 1. OBJETIVO -->
+                        <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border">
+                            <div class="font-display font-black text-xs uppercase tracking-wider text-[#5A4A96] mb-1.5 flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 bg-[#5A4A96] inline-block"></span> 1. Objetivo Principal
+                            </div>
+                            <h4 class="font-display font-bold text-xl leading-tight text-neutral-900">
+                                Monitorear en tiempo real las oportunidades técnicas de preventa, radar de desviaciones operacionales y adopción de IA.
+                            </h4>
+                            <p class="font-body text-sm text-neutral-600 mt-2">
+                                Proporcionar a liderazgo visibilidad viva del avance de entregables, montos priorizados y cuellos de botella antes de que afecten el cierre.
+                            </p>
+                        </div>
+
+                        <!-- 2. EN QUÉ AYUDA & PESTAÑA GEMINI -->
+                        <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border">
+                            <div class="font-display font-black text-xs uppercase tracking-wider text-[#1E1E1E] mb-2 flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 bg-[#1E1E1E] inline-block"></span> 2. ¿En qué ayuda directamente?
+                            </div>
+                            <ul class="space-y-2.5 font-body text-sm text-neutral-700">
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-emerald-600 font-bold mt-0.5">✔</span>
+                                    <span><strong>Sincronización en vivo con Firestore y Google Sheets</strong> para actualización instantánea sin recargar.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-emerald-600 font-bold mt-0.5">✔</span>
+                                    <span><strong>Radar de Desviaciones:</strong> Detección inmediata de entregas vencidas, casos detenidos y compromisos TBC.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-indigo-600 font-bold mt-0.5">✨</span>
+                                    <span><strong class="text-indigo-700">Módulo Adicional Gemini Enterprise:</strong> Medición en tiempo real de adopción de IA, prompts activos y agentes desplegados en el equipo.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- 3. RESULTADOS & IMPACTO -->
+                        <div class="bg-[#FAF338] border-2 border-black p-5 swiss-border">
+                            <div class="font-display font-black text-xs uppercase tracking-wider text-black mb-1.5 flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 bg-black inline-block"></span> 3. Resultados Concretos (Métricas Clave)
+                            </div>
+                            <div class="grid grid-cols-2 gap-3 mt-3">
+                                <div class="bg-white border-2 border-black p-3">
+                                    <div class="font-display font-black text-3xl text-[#5A4A96] leading-none">$104K+</div>
+                                    <div class="text-[11px] font-mono font-bold text-neutral-700 mt-1">USD Priorizados en Tiempo Real</div>
+                                </div>
+                                <div class="bg-white border-2 border-black p-3">
+                                    <div class="font-display font-black text-3xl text-emerald-600 leading-none">0 Días</div>
+                                    <div class="text-[11px] font-mono font-bold text-neutral-700 mt-1">Cero Entregas Vencidas en el Sprint</div>
+                                </div>
+                            </div>
+                            <div class="mt-3 text-xs font-mono font-semibold text-neutral-800 bg-white/70 p-2 border border-black">
+                                📊 82% de adopción activa en el módulo de agentes y prompts de Gemini Enterprise.
+                            </div>
+                        </div>
+
+                        <!-- 4. ALCANCE LATAM & ACCESO -->
+                        <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border">
+                            <div class="font-display font-black text-xs uppercase tracking-wider text-[#5A4A96] mb-2">
+                                🌎 Escalabilidad LATAM
+                            </div>
+                            <p class="text-xs font-body text-neutral-700 leading-relaxed mb-4">
+                                Desplegado en Cloud Run con arquitectura multi-tenant lista para habilitar vistas segmentadas para directores de preventa en México, Colombia, Perú y Chile.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <a href="https://control-tower-preventas-1060959604572.us-central1.run.app" target="_blank" class="px-4 py-2 bg-[#5A4A96] text-white border-2 border-black font-display font-bold text-xs uppercase tracking-wider hover:bg-black transition-colors flex items-center gap-2">
+                                    <span>🔗</span> Abrir Torre de Control (Cloud Run)
+                                </a>
+                                <button onclick="copyFicha('angel')" class="px-3 py-2 bg-neutral-100 text-black border-2 border-black font-display font-bold text-xs uppercase tracking-wider hover:bg-neutral-200 transition-colors">
+                                    📋 Copiar Resumen
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Interactive Media & Live Tool Simulator -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <!-- Media Viewport Frame -->
+                        <div class="bg-[#FFFEF8] border-2 border-black p-4 swiss-border">
+                            <div class="flex flex-wrap items-center justify-between gap-2 pb-3 mb-3 border-b-2 border-black">
+                                <div class="flex items-center gap-2">
+                                    <span class="inline-block w-3 h-3 rounded-full bg-red-500 border border-black"></span>
+                                    <span class="inline-block w-3 h-3 rounded-full bg-yellow-400 border border-black"></span>
+                                    <span class="inline-block w-3 h-3 rounded-full bg-green-500 border border-black"></span>
+                                    <span class="font-mono text-xs font-bold text-neutral-700 ml-2">DEMOSTRACIÓN INTERACTIVA (TORRE PREVENTA + GEMINI)</span>
+                                </div>
+                                <div class="inline-flex border border-black text-xs font-mono">
+                                    <button onclick="toggleMediaMode('angel', 'video')" id="btn-media-video-angel" class="px-2.5 py-1 bg-black text-yellow-300 font-bold">🎬 Video Demo</button>
+                                    <button onclick="toggleMediaMode('angel', 'sim')" id="btn-media-sim-angel" class="px-2.5 py-1 bg-white text-black font-bold">⚡ Consola en Vivo</button>
+                                    <button onclick="toggleMediaMode('angel', 'gemini')" id="btn-media-gemini-angel" class="px-2.5 py-1 bg-indigo-50 text-indigo-900 font-bold border-l border-black">✨ Pestaña Gemini</button>
+                                </div>
+                            </div>
+
+                            <!-- Screen Container -->
+                            <div class="relative bg-neutral-900 border-2 border-black overflow-hidden aspect-[16/10] flex items-center justify-center">
+                                
+                                <!-- VIDEO SLOT -->
+                                <div id="media-video-angel" class="w-full h-full relative group">
+                                    <img src="assets/projects/torre-control-preventa.jpg" alt="Torre de Control Preventa" class="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105" onerror="this.src='assets/extracted/img_13.jpg'">
+                                    
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/30 flex flex-col justify-between p-6">
+                                        <div class="flex justify-between items-start">
+                                            <span class="badge-swiss bg-[#FAF338] text-black">Preview Video 35 Segundos</span>
+                                            <span class="font-mono text-xs text-white bg-black/60 px-2.5 py-1 border border-white/20">Cloud Run · us-central1</span>
+                                        </div>
+
+                                        <div class="text-center">
+                                            <button onclick="playInteractiveDemo('angel')" class="w-16 h-16 rounded-full bg-[#FAF338] text-black border-2 border-black flex items-center justify-center text-2xl font-bold shadow-[4px_4px_0px_#000] hover:scale-110 transition-transform mx-auto">
+                                                ▶
+                                            </button>
+                                            <div class="font-display font-bold text-white text-lg mt-3 drop-shadow">Ver Torre de Control Preventa v4.3</div>
+                                            <div class="font-mono text-xs text-neutral-300">Monitoreo en vivo de Firestore y sincronización con Sheets</div>
+                                        </div>
+
+                                        <div class="flex items-center justify-between text-xs font-mono text-neutral-300">
+                                            <span>Monto Priorizado: $104,483 USD</span>
+                                            <button onclick="openVideoSettings('angel')" class="underline hover:text-white">⚙️ Reemplazar por archivo MP4</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- INTERACTIVE SIMULATOR SLOT -->
+                                <div id="media-sim-angel" class="hidden w-full h-full bg-[#1E1E1E] text-white p-5 overflow-y-auto">
+                                    <div class="flex justify-between items-center border-b border-neutral-700 pb-3 mb-4">
+                                        <div>
+                                            <div class="text-xs font-mono text-[#5A4A96] font-bold">CONTROL DE PREVENTAS v4.3</div>
+                                            <div class="font-display font-bold text-base text-white">Radar de Desviaciones Operacionales en Tiempo Real</div>
+                                        </div>
+                                        <span class="badge-swiss bg-emerald-500 text-black text-[10px]">Firestore Live Sync</span>
+                                    </div>
+
+                                    <!-- Status Cards -->
+                                    <div class="grid grid-cols-4 gap-2 mb-4 font-mono text-center">
+                                        <div class="bg-blue-950/60 border border-blue-500 p-2">
+                                            <div class="text-[10px] text-blue-300">PRIORIZADAS</div>
+                                            <div class="font-display font-bold text-2xl text-blue-400">3</div>
+                                        </div>
+                                        <div class="bg-red-950/60 border border-red-500 p-2">
+                                            <div class="text-[10px] text-red-300">DETENIDAS</div>
+                                            <div class="font-display font-bold text-2xl text-red-400">1</div>
+                                        </div>
+                                        <div class="bg-cyan-950/60 border border-cyan-500 p-2">
+                                            <div class="text-[10px] text-cyan-300">EN PROGRESO</div>
+                                            <div class="font-display font-bold text-2xl text-cyan-400">1</div>
+                                        </div>
+                                        <div class="bg-emerald-950/60 border border-emerald-500 p-2">
+                                            <div class="text-[10px] text-emerald-300">COMPLETADAS</div>
+                                            <div class="font-display font-bold text-2xl text-emerald-400">1</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Radar items -->
+                                    <div class="space-y-2 font-mono text-xs">
+                                        <div class="p-2.5 bg-neutral-900 border border-neutral-700 flex justify-between items-center">
+                                            <span><strong>ENTREGAS VENCIDAS:</strong> 0 casos superados</span>
+                                            <span class="text-emerald-400 font-bold">✔ Sin riesgo</span>
+                                        </div>
+                                        <div class="p-2.5 bg-neutral-900 border border-neutral-700 flex justify-between items-center">
+                                            <span><strong>BLOQUEADAS / RIESGO:</strong> 1 caso pendiente de validación técnica</span>
+                                            <span class="text-amber-400 font-bold">En resolución</span>
+                                        </div>
+                                        <div class="p-2.5 bg-neutral-900 border border-neutral-700 flex justify-between items-center">
+                                            <span><strong>COMPROMISOS TBC:</strong> 0 entregables sin fecha</span>
+                                            <span class="text-emerald-400 font-bold">100% Calendarizado</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- SUB-PESTAÑA ESPECIAL: GEMINI ENTERPRISE ADOPCIÓN -->
+                                <div id="media-gemini-angel" class="hidden w-full h-full bg-[#131722] text-white p-5 overflow-y-auto">
+                                    <div class="flex justify-between items-center border-b border-indigo-500/30 pb-3 mb-4">
+                                        <div class="flex items-center gap-2">
+                                            <span class="text-xl">✨</span>
+                                            <div>
+                                                <div class="text-xs font-mono text-indigo-400 font-bold">MÓDULO ADICIONAL · ADOPCIÓN GEMINI ENTERPRISE</div>
+                                                <div class="font-display font-bold text-base text-white">Métricas de Uso de IA & Agentes Preconfigurados</div>
+                                            </div>
+                                        </div>
+                                        <span class="badge-swiss bg-indigo-500 text-white text-[10px]">Gemini 1.5 Pro Sync</span>
+                                    </div>
+
+                                    <div class="grid grid-cols-3 gap-3 mb-4 font-mono text-center">
+                                        <div class="bg-indigo-950/40 border border-indigo-500/40 p-2.5">
+                                            <div class="text-[10px] text-indigo-300">ADOPCIÓN ACTIVA</div>
+                                            <div class="font-display font-bold text-2xl text-[#FAF338]">82.4%</div>
+                                            <div class="text-[9px] text-neutral-400 mt-0.5">Usuarios frecuentes</div>
+                                        </div>
+                                        <div class="bg-indigo-950/40 border border-indigo-500/40 p-2.5">
+                                            <div class="text-[10px] text-indigo-300">HORAS AHORRADAS</div>
+                                            <div class="font-display font-bold text-2xl text-emerald-400">14 hrs/sem</div>
+                                            <div class="text-[9px] text-neutral-400 mt-0.5">Por consultor técnico</div>
+                                        </div>
+                                        <div class="bg-indigo-950/40 border border-indigo-500/40 p-2.5">
+                                            <div class="text-[10px] text-indigo-300">AGENTES ACTIVOS</div>
+                                            <div class="font-display font-bold text-2xl text-white">12 Gemas</div>
+                                            <div class="text-[9px] text-neutral-400 mt-0.5">En producción Xertica</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="space-y-2 font-mono text-xs">
+                                        <div class="p-2 bg-neutral-900 border border-neutral-800 flex justify-between items-center">
+                                            <span><strong>Chief of Staff Agent:</strong> Resumen de minutas y tareas</span>
+                                            <span class="text-indigo-400 font-bold">94 interacciones</span>
+                                        </div>
+                                        <div class="p-2 bg-neutral-900 border border-neutral-800 flex justify-between items-center">
+                                            <span><strong>Strategic Architect Agent:</strong> Generación de propuestas</span>
+                                            <span class="text-indigo-400 font-bold">62 propuestas aceleradas</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Screen Caption -->
+                            <div class="mt-3 flex items-center justify-between font-mono text-xs text-neutral-600">
+                                <span>💡 Plataforma en Producción desplegada en Cloud Run</span>
+                                <span class="font-bold text-[#5A4A96]">Lead: Angel Solis</span>
+                            </div>
+                        </div>
+
+                        <!-- Technical Specs -->
+                        <div class="bg-[#FFFEF8] border-2 border-black p-4 swiss-border">
+                            <h5 class="font-display font-bold text-sm uppercase tracking-wider mb-2">Ficha Técnica Rápida para LATAM:</h5>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-xs">
+                                <div class="p-2.5 bg-neutral-100 border border-neutral-300">
+                                    <div class="text-neutral-500 uppercase text-[10px]">Infraestructura</div>
+                                    <div class="font-bold mt-0.5">Cloud Run · Firestore Live</div>
+                                </div>
+                                <div class="p-2.5 bg-neutral-100 border border-neutral-300">
+                                    <div class="text-neutral-500 uppercase text-[10px]">IA Engine</div>
+                                    <div class="font-bold mt-0.5">Gemini Enterprise + Vertex AI</div>
+                                </div>
+                                <div class="p-2.5 bg-neutral-100 border border-neutral-300">
+                                    <div class="text-neutral-500 uppercase text-[10px]">Latencia & Refresco</div>
+                                    <div class="font-bold mt-0.5 text-emerald-700">&lt; 300ms Tiempo Real</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ============================================== -->
+            <!-- TAB PANEL 4: CARLOS ESPINOSA - SF VS PARTNER HUB -->
+            <!-- ============================================== -->
+            <div id="panel-carlos" class="tab-panel hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    
+                    <!-- Left Column: Ficha Ejecutiva Digerible -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <!-- Profile Card -->
+                        <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border">
+                            <div class="flex items-center gap-4">
+                                <img src="assets/team/carlos-espinosa.jpg" alt="Carlos Espinosa" class="w-16 h-16 rounded-full border-2 border-black object-cover shadow-[2px_2px_0px_#C45BAA]" onerror="this.src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80'">
+                                <div>
+                                    <span class="badge-swiss bg-[#C45BAA] text-white">Caso de Éxito EIR</span>
+                                    <h3 class="font-display font-black text-2xl text-[#1E1E1E] leading-tight mt-1">Carlos Espinosa</h3>
+                                    <div class="font-mono text-xs text-neutral-600">Entrepreneur in Residence · Revenue Operations</div>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-neutral-200 flex items-center justify-between text-xs font-mono">
+                                <span>Solución: <strong>Salesforce vs Partner Hub</strong></span>
+                                <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 font-bold border border-emerald-500">Conciliación Activa</span>
+                            </div>
+                        </div>
+
+                        <!-- 1. OBJETIVO -->
+                        <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border">
+                            <div class="font-display font-black text-xs uppercase tracking-wider text-[#C45BAA] mb-1.5 flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 bg-[#C45BAA] inline-block"></span> 1. Objetivo Principal
+                            </div>
+                            <h4 class="font-display font-bold text-xl leading-tight text-neutral-900">
+                                Cruzar y conciliar automáticamente el pipeline comercial de Salesforce contra los incentivos y fundings de Google Cloud Partner Hub.
+                            </h4>
+                            <p class="font-body text-sm text-neutral-600 mt-2">
+                                Evitar la fuga millonaria de incentivos económicos (rebates, partner investment funds) por discrepancias de registro, estatus o fechas entre el CRM y Google.
+                            </p>
+                        </div>
+
+                        <!-- 2. EN QUÉ AYUDA -->
+                        <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border">
+                            <div class="font-display font-black text-xs uppercase tracking-wider text-[#1E1E1E] mb-2 flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 bg-[#1E1E1E] inline-block"></span> 2. ¿En qué ayuda directamente?
+                            </div>
+                            <ul class="space-y-2.5 font-body text-sm text-neutral-700">
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-emerald-600 font-bold mt-0.5">✔</span>
+                                    <span><strong>Identifica oportunidades cerradas en Salesforce</strong> que no fueron registradas oportunamente en Google Partner Hub.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-emerald-600 font-bold mt-0.5">✔</span>
+                                    <span><strong>Auditoría de discrepancia de montos y fechas de cierre</strong> para garantizar el cobro del 100% de los rebates por nivel de partnership.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-emerald-600 font-bold mt-0.5">✔</span>
+                                    <span><strong>Alertas previas al cierre de trimestre</strong> para que ventas y finanzas reclamen fondos antes de su expiración.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- 3. RESULTADOS & IMPACTO -->
+                        <div class="bg-[#FAF338] border-2 border-black p-5 swiss-border">
+                            <div class="font-display font-black text-xs uppercase tracking-wider text-black mb-1.5 flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 bg-black inline-block"></span> 3. Resultados Concretos (Métricas Clave)
+                            </div>
+                            <div class="grid grid-cols-2 gap-3 mt-3">
+                                <div class="bg-white border-2 border-black p-3">
+                                    <div class="font-display font-black text-3xl text-[#C45BAA] leading-none">$450K+</div>
+                                    <div class="text-[11px] font-mono font-bold text-neutral-700 mt-1">USD en Incentivos Auditados & Recuperables</div>
+                                </div>
+                                <div class="bg-white border-2 border-black p-3">
+                                    <div class="font-display font-black text-3xl text-neutral-900 leading-none">100%</div>
+                                    <div class="text-[11px] font-mono font-bold text-neutral-700 mt-1">Trazabilidad Salesforce ↔ Google</div>
+                                </div>
+                            </div>
+                            <div class="mt-3 text-xs font-mono font-semibold text-neutral-800 bg-white/70 p-2 border border-black">
+                                💰 Caso de Éxito: Mitigación total del riesgo de pérdida de incentivos por desalineación administrativa.
+                            </div>
+                        </div>
+
+                        <!-- 4. ALCANCE LATAM & ACCESO -->
+                        <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border">
+                            <div class="font-display font-black text-xs uppercase tracking-wider text-[#C45BAA] mb-2">
+                                🌎 Escalabilidad LATAM
+                            </div>
+                            <p class="text-xs font-body text-neutral-700 leading-relaxed mb-4">
+                                Esta conciliación es el motor financiero más crítico para replicar en <strong>todas las operaciones de Xertica en LATAM</strong>, asegurando el cobro oportuno de rebates globales y locales de Google.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <a href="https://webdeploy-three-orcin.vercel.app/" target="_blank" class="px-4 py-2 bg-[#C45BAA] text-white border-2 border-black font-display font-bold text-xs uppercase tracking-wider hover:bg-black transition-colors flex items-center gap-2">
+                                    <span>🔗</span> Abrir Matcher Salesforce / Hub
+                                </a>
+                                <button onclick="copyFicha('carlos')" class="px-3 py-2 bg-neutral-100 text-black border-2 border-black font-display font-bold text-xs uppercase tracking-wider hover:bg-neutral-200 transition-colors">
+                                    📋 Copiar Resumen
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Interactive Media & Live Tool Simulator -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <!-- Media Viewport Frame -->
+                        <div class="bg-[#FFFEF8] border-2 border-black p-4 swiss-border">
+                            <div class="flex flex-wrap items-center justify-between gap-2 pb-3 mb-3 border-b-2 border-black">
+                                <div class="flex items-center gap-2">
+                                    <span class="inline-block w-3 h-3 rounded-full bg-red-500 border border-black"></span>
+                                    <span class="inline-block w-3 h-3 rounded-full bg-yellow-400 border border-black"></span>
+                                    <span class="inline-block w-3 h-3 rounded-full bg-green-500 border border-black"></span>
+                                    <span class="font-mono text-xs font-bold text-neutral-700 ml-2">DEMOSTRACIÓN INTERACTIVA (CRUCE SALESFORCE ↔ PARTNER HUB)</span>
+                                </div>
+                                <div class="inline-flex border border-black text-xs font-mono">
+                                    <button onclick="toggleMediaMode('carlos', 'video')" id="btn-media-video-carlos" class="px-2.5 py-1 bg-black text-yellow-300 font-bold">🎬 Video Demo</button>
+                                    <button onclick="toggleMediaMode('carlos', 'sim')" id="btn-media-sim-carlos" class="px-2.5 py-1 bg-white text-black font-bold">💻 Matcher en Vivo</button>
+                                </div>
+                            </div>
+
+                            <!-- Screen Container -->
+                            <div class="relative bg-neutral-900 border-2 border-black overflow-hidden aspect-[16/10] flex items-center justify-center">
+                                
+                                <!-- VIDEO SLOT -->
+                                <div id="media-video-carlos" class="w-full h-full relative group">
+                                    <img src="assets/projects/eir-projects-showcase.jpg" alt="Salesforce vs Partner Hub" class="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105" onerror="this.src='assets/extracted/img_21.jpg'">
+                                    
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/30 flex flex-col justify-between p-6">
+                                        <div class="flex justify-between items-start">
+                                            <span class="badge-swiss bg-[#FAF338] text-black">Preview Video 35 Segundos</span>
+                                            <span class="font-mono text-xs text-white bg-black/60 px-2.5 py-1 border border-white/20">Reconciliation Engine</span>
+                                        </div>
+
+                                        <div class="text-center">
+                                            <button onclick="playInteractiveDemo('carlos')" class="w-16 h-16 rounded-full bg-[#FAF338] text-black border-2 border-black flex items-center justify-center text-2xl font-bold shadow-[4px_4px_0px_#000] hover:scale-110 transition-transform mx-auto">
+                                                ▶
+                                            </button>
+                                            <div class="font-display font-bold text-white text-lg mt-3 drop-shadow">Ver Cruce Automatizado SF vs Partner Hub</div>
+                                            <div class="font-mono text-xs text-neutral-300">Detección de incentivos omitidos y alineación de rebates</div>
+                                        </div>
+
+                                        <div class="flex items-center justify-between text-xs font-mono text-neutral-300">
+                                            <span>Caso de Éxito: $450K+ USD Recuperables</span>
+                                            <button onclick="openVideoSettings('carlos')" class="underline hover:text-white">⚙️ Reemplazar por archivo MP4</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- INTERACTIVE SIMULATOR SLOT -->
+                                <div id="media-sim-carlos" class="hidden w-full h-full bg-[#1E1E1E] text-white p-5 overflow-y-auto">
+                                    <div class="flex justify-between items-center border-b border-neutral-700 pb-3 mb-4">
+                                        <div>
+                                            <div class="text-xs font-mono text-[#C45BAA] font-bold">REVENUE ENGINE · SFDC ↔ GOOGLE PARTNER HUB</div>
+                                            <div class="font-display font-bold text-base text-white">Conciliación de Oportunidades & Incentivos</div>
+                                        </div>
+                                        <span class="badge-swiss bg-emerald-500 text-black text-[10px]">100% Match Ratio</span>
+                                    </div>
+
+                                    <!-- Table mock -->
+                                    <div class="space-y-2.5 font-mono text-xs">
+                                        <div class="grid grid-cols-12 bg-neutral-800 p-2 text-neutral-400 font-bold border border-neutral-700">
+                                            <div class="col-span-4">Oportunidad SFDC</div>
+                                            <div class="col-span-3">Monto SFDC</div>
+                                            <div class="col-span-3">Google Partner Hub</div>
+                                            <div class="col-span-2">Estado Incentivo</div>
+                                        </div>
+                                        <div class="grid grid-cols-12 bg-neutral-900/80 p-2 items-center border border-neutral-800 hover:border-[#C45BAA] transition-colors">
+                                            <div class="col-span-4 font-bold text-white">OPP-2026-9041 Banco A</div>
+                                            <div class="col-span-3 text-neutral-300">$180,000 USD</div>
+                                            <div class="col-span-3 text-emerald-400">ID: G-9921 (Aprobado)</div>
+                                            <div class="col-span-2 text-emerald-400 font-bold">100% Sincronizado</div>
+                                        </div>
+                                        <div class="grid grid-cols-12 bg-neutral-900/80 p-2 items-center border border-neutral-800 hover:border-[#C45BAA] transition-colors">
+                                            <div class="col-span-4 font-bold text-white">OPP-2026-8812 Retail MX</div>
+                                            <div class="col-span-3 text-neutral-300">$320,000 USD</div>
+                                            <div class="col-span-3 text-amber-400">ID: G-9740 (En Revisión)</div>
+                                            <div class="col-span-2 text-amber-400 font-bold">Rebate Elegible</div>
+                                        </div>
+                                        <div class="grid grid-cols-12 bg-neutral-900/80 p-2 items-center border border-neutral-800 hover:border-[#C45BAA] transition-colors">
+                                            <div class="col-span-4 font-bold text-white">OPP-2026-8501 Finanzas</div>
+                                            <div class="col-span-3 text-neutral-300">$95,000 USD</div>
+                                            <div class="col-span-3 text-red-400">Sin Registro en Hub</div>
+                                            <div class="col-span-2 text-red-400 font-bold">Alerta Resuelta</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mt-4 pt-3 border-t border-neutral-700 flex justify-between items-center text-xs">
+                                        <span class="text-neutral-400 font-mono">Detección de fugas automatizada</span>
+                                        <span class="text-[#FAF338] font-bold font-mono">Incentivos Asegurados: +$450,000 USD</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Screen Caption -->
+                            <div class="mt-3 flex items-center justify-between font-mono text-xs text-neutral-600">
+                                <span>💡 Caso de éxito documentado por el equipo EIR México</span>
+                                <span class="font-bold text-[#C45BAA]">Lead: Carlos Espinosa</span>
+                            </div>
+                        </div>
+
+                        <!-- Technical Specs -->
+                        <div class="bg-[#FFFEF8] border-2 border-black p-4 swiss-border">
+                            <h5 class="font-display font-bold text-sm uppercase tracking-wider mb-2">Ficha Técnica Rápida para LATAM:</h5>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-xs">
+                                <div class="p-2.5 bg-neutral-100 border border-neutral-300">
+                                    <div class="text-neutral-500 uppercase text-[10px]">Conectores</div>
+                                    <div class="font-bold mt-0.5">Salesforce REST API · Partner Hub</div>
+                                </div>
+                                <div class="p-2.5 bg-neutral-100 border border-neutral-300">
+                                    <div class="text-neutral-500 uppercase text-[10px]">Conciliación</div>
+                                    <div class="font-bold mt-0.5">Fuzzy Matching de Oportunidades</div>
+                                </div>
+                                <div class="p-2.5 bg-neutral-100 border border-neutral-300">
+                                    <div class="text-neutral-500 uppercase text-[10px]">Impacto Financiero</div>
+                                    <div class="font-bold mt-0.5 text-emerald-700">Recuperación Directa de Rebates</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ============================================== -->
+            <!-- TAB PANEL 5: VISIÓN REGIONAL & ROADMAP LATAM   -->
+            <!-- ============================================== -->
+            <div id="panel-latam" class="tab-panel hidden">
+                <div class="bg-[#FFFEF8] border-2 border-black p-6 md:p-8 swiss-border space-y-8">
+                    <div>
+                        <span class="badge-swiss bg-[#FAF338] text-black">Estrategia de Expansión Regional</span>
+                        <h2 class="font-display font-black text-3xl md:text-4xl text-[#1E1E1E] uppercase mt-2">
+                            Matriz de Replicabilidad Rápida en LATAM (Q4 2026 - Q1 2027)
+                        </h2>
+                        <p class="font-body text-base text-neutral-700 max-w-3xl mt-2">
+                            Cada una de las 4 soluciones fue diseñada bajo estándares de portabilidad y desacoplamiento para poder ser desplegada en cualquier geografía de Xertica en cuestión de días.
+                        </p>
+                    </div>
+
+                    <!-- Comparison Table -->
+                    <div class="overflow-x-auto border-2 border-black">
+                        <table class="w-full text-left font-body text-sm">
+                            <thead class="bg-[#1E1E1E] text-white font-display text-xs uppercase tracking-wider">
+                                <tr>
+                                    <th class="p-3.5 border-r border-neutral-700">Solución EIR</th>
+                                    <th class="p-3.5 border-r border-neutral-700">Responsable</th>
+                                    <th class="p-3.5 border-r border-neutral-700">Resultado Clave</th>
+                                    <th class="p-3.5 border-r border-neutral-700">Tiempo de Despliegue</th>
+                                    <th class="p-3.5">Territorios Objetivo</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y-2 divide-black font-mono text-xs">
+                                <tr class="hover:bg-neutral-50">
+                                    <td class="p-3.5 font-bold font-sans text-sm border-r border-black">FinOps & Control de Commits</td>
+                                    <td class="p-3.5 border-r border-black">Patricio Martin</td>
+                                    <td class="p-3.5 text-emerald-700 font-bold border-r border-black">$120K+ USD Opps Levantadas</td>
+                                    <td class="p-3.5 border-r border-black">48 Horas</td>
+                                    <td class="p-3.5">🇲🇽 México · 🇨🇴 Colombia · 🇵🇪 Perú</td>
+                                </tr>
+                                <tr class="hover:bg-neutral-50">
+                                    <td class="p-3.5 font-bold font-sans text-sm border-r border-black">CRM Envío de Campañas</td>
+                                    <td class="p-3.5 border-r border-black">Jorge Caraballo</td>
+                                    <td class="p-3.5 text-emerald-700 font-bold border-r border-black">140+ Leads Contactados (64% Open)</td>
+                                    <td class="p-3.5 border-r border-black">24 Horas</td>
+                                    <td class="p-3.5">🇨🇴 Colombia · 🇨🇱 Chile · 🇲🇽 México</td>
+                                </tr>
+                                <tr class="hover:bg-neutral-50">
+                                    <td class="p-3.5 font-bold font-sans text-sm border-r border-black">Torre Preventa + Adopción Gemini</td>
+                                    <td class="p-3.5 border-r border-black">Angel Solis</td>
+                                    <td class="p-3.5 text-emerald-700 font-bold border-r border-black">$104K+ Pipeline · 82% Adopción IA</td>
+                                    <td class="p-3.5 border-r border-black">Inmediato (Cloud Run)</td>
+                                    <td class="p-3.5">🌎 Regional LATAM (Multi-tenant)</td>
+                                </tr>
+                                <tr class="hover:bg-neutral-50">
+                                    <td class="p-3.5 font-bold font-sans text-sm border-r border-black">Salesforce vs Partner Hub</td>
+                                    <td class="p-3.5 border-r border-black">Carlos Espinosa</td>
+                                    <td class="p-3.5 text-emerald-700 font-bold border-r border-black">$450K+ USD Incentivos Asegurados</td>
+                                    <td class="p-3.5 border-r border-black">1 Semana (Integración CRM)</td>
+                                    <td class="p-3.5">🌎 Todas las operaciones Xertica</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- EIR Team Showcase -->
+                    <div class="pt-6 border-t-2 border-black">
+                        <h3 class="font-display font-black text-xl uppercase mb-4">Equipo Entrepreneurs in Residence (EIR) · México</h3>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div class="bg-[#F5F0E8] border-2 border-black p-4 text-center">
+                                <img src="assets/team/angel-solis.jpg" alt="Angel Solis" class="w-16 h-16 rounded-full border-2 border-black mx-auto mb-2 object-cover">
+                                <div class="font-display font-bold text-sm">Angel Solis</div>
+                                <div class="font-mono text-[11px] text-neutral-600">EIR · Cloud & IA</div>
+                            </div>
+                            <div class="bg-[#F5F0E8] border-2 border-black p-4 text-center">
+                                <img src="assets/team/jorge-caraballo.jpg" alt="Jorge Caraballo" class="w-16 h-16 rounded-full border-2 border-black mx-auto mb-2 object-cover">
+                                <div class="font-display font-bold text-sm">Jorge Caraballo</div>
+                                <div class="font-mono text-[11px] text-neutral-600">EIR · Growth & Automation</div>
+                            </div>
+                            <div class="bg-[#F5F0E8] border-2 border-black p-4 text-center">
+                                <img src="assets/team/patricio-martin.jpg" alt="Patricio Martin" class="w-16 h-16 rounded-full border-2 border-black mx-auto mb-2 object-cover">
+                                <div class="font-display font-bold text-sm">Patricio Martin</div>
+                                <div class="font-mono text-[11px] text-neutral-600">EIR · FinOps & Commercial</div>
+                            </div>
+                            <div class="bg-[#F5F0E8] border-2 border-black p-4 text-center">
+                                <img src="assets/team/carlos-espinosa.jpg" alt="Carlos Espinosa" class="w-16 h-16 rounded-full border-2 border-black mx-auto mb-2 object-cover">
+                                <div class="font-display font-bold text-sm">Carlos Espinosa</div>
+                                <div class="font-mono text-[11px] text-neutral-600">EIR · RevOps & Partnerships</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- ========================================== -->
+    <!-- VIEW B: SLIDE PRESENTATION PITCH MODE      -->
+    <!-- (Inspired by Angel's Coppel Deck format)   -->
+    <!-- ========================================== -->
+    <div id="view-slides" class="hidden relative w-full h-screen overflow-hidden bg-[#F5F0E8]">
+        
+        <!-- Fixed Slide Controls Overlay -->
+        <div class="fixed top-6 left-8 right-8 flex justify-between items-center z-40 pointer-events-none">
+            <div class="font-display font-black text-2xl tracking-tighter" style="color: var(--negro-xertica)">
+                Xertica<span class="text-[#1899AF]">.ai</span>
+            </div>
+            <div class="flex gap-3 pointer-events-auto">
+                <button onclick="prevSlide()" class="px-4 py-2 border-2 border-black hover:bg-black hover:text-white transition-colors font-display font-bold text-xs uppercase bg-[#FFFEF8] shadow-[2px_2px_0px_#000]">
+                    ← ANTERIOR
+                </button>
+                <button onclick="nextSlide()" class="px-4 py-2 bg-[#FAF338] border-2 border-black hover:bg-black hover:text-white transition-colors font-display font-bold text-xs uppercase shadow-[2px_2px_0px_#000]">
+                    SIGUIENTE →
+                </button>
+            </div>
+        </div>
+        
+        <!-- Slide Counter Bottom -->
+        <div id="slide-counter-bottom" class="fixed bottom-6 left-8 z-40 font-mono text-xs font-bold opacity-60 text-black">
+            EIR'S MÉXICO · EXPANSIÓN LATAM [01 / 07]
+        </div>
+
+        <div class="fixed bottom-6 right-8 z-40 font-mono text-xs font-semibold opacity-50 text-black hidden sm:block">
+            Navega con flechas [←] [→] o Barra Espaciadora
+        </div>
+
+        <!-- SLIDE 0: PORTADA SWISS MOSAIC -->
+        <div class="slide active bg-[#F2EDD8]" id="slide-0">
+            <div class="grid grid-cols-12 h-full">
+                <div class="col-span-12 lg:col-span-6 flex flex-col justify-center px-8 lg:px-16 z-20">
+                    <span class="badge-swiss bg-[#1899AF] text-white self-start mb-4 stagger-up">PORTFOLIO EIR MÉXICO 2026</span>
+                    <h1 class="font-display font-black text-5xl lg:text-7xl leading-[0.9] uppercase stagger-up delay-1">
+                        Soluciones Escalables para LATAM
+                    </h1>
+                    <p class="font-body text-lg lg:text-xl mt-6 opacity-90 stagger-up delay-2 max-w-lg leading-relaxed">
+                        4 herramientas de alto impacto construidas por el equipo de Entrepreneurs in Residence para acelerar la operación comercial y técnica regional.
+                    </p>
+                    <div class="mt-8 font-mono text-xs font-bold tracking-widest text-[#1E1E1E] border-l-4 border-black pl-4 py-1 stagger-up delay-3 uppercase">
+                        FinOps · Campañas · Preventa en Vivo · Salesforce vs Partner Hub
+                    </div>
+                </div>
+                <div class="hidden lg:block col-span-6 relative">
+                    <div class="mosaico-container opacity-90 stagger-up delay-2">
+                        <div class="ms-celeste"></div>
+                        <div class="ms-magenta"></div>
+                        <div class="ms-verde"></div>
+                        <div class="ms-coral"></div>
+                        <div class="ms-violeta"></div>
+                        <div class="ms-marron"></div>
+                        <div class="ms-amarillo" style="bottom: 25%; left:25%; width:50%; height:50%;"></div>
+                        <div class="ms-papel"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 1: PATRICIO MARTIN - FINOPS -->
+        <div class="slide bg-[#FFFEF8]" id="slide-1">
+            <div class="grid grid-cols-12 h-full">
+                <div class="col-span-12 lg:col-span-5 bg-[#1899AF] text-white flex flex-col justify-center px-8 lg:px-16 relative">
+                    <div class="shape-corner bg-[#FAF338] w-48 h-48 top-0 right-0 blend-multiply opacity-50"></div>
+                    <span class="badge-swiss bg-black text-[#FAF338] self-start mb-4 stagger-up">PATRICIO MARTIN · FINOPS</span>
+                    <h2 class="font-display font-black text-4xl lg:text-6xl uppercase leading-none stagger-up delay-1">
+                        Control de Commits GCP
+                    </h2>
+                    <div class="mt-8 stagger-up delay-2">
+                        <div class="font-display font-black text-6xl lg:text-7xl text-[#FAF338] leading-none">$120K+</div>
+                        <div class="font-mono text-xs uppercase mt-2 text-white/90 font-bold">USD Oportunidades ya Levantadas</div>
+                    </div>
+                    <p class="font-body text-sm mt-6 opacity-80 stagger-up delay-3">
+                        Monitoreo continuo de over/under commit para evitar penalizaciones y generar renovaciones con alto margen.
+                    </p>
+                </div>
+                <div class="col-span-12 lg:col-span-7 flex flex-col justify-center px-8 lg:px-16">
+                    <h3 class="font-display font-bold text-2xl lg:text-3xl title-line stagger-up mb-6">¿En qué ayuda y alcance LATAM?</h3>
+                    <div class="space-y-4 font-body text-base stagger-up delay-1">
+                        <div class="border-l-4 border-black pl-4 py-1">
+                            <strong>Detección Temprana:</strong> Alerta 90 días antes del vencimiento de contratos enterprise.
+                        </div>
+                        <div class="border-l-4 border-[#1899AF] pl-4 py-1">
+                            <strong>14 Cuentas Auditadas:</strong> Cuentas clave de México ya cuentan con propuesta formal sobre la mesa.
+                        </div>
+                        <div class="border-l-4 border-black pl-4 py-1">
+                            <strong>Replicabilidad LATAM:</strong> Script de ingesta estandarizado para BigQuery en Colombia, Perú y Chile en 48 hrs.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 2: JORGE CARABALLO - CRM CAMPAÑAS -->
+        <div class="slide bg-[#F5F0E8]" id="slide-2">
+            <div class="grid grid-cols-12 h-full">
+                <div class="col-span-12 lg:col-span-5 bg-[#DE5B48] text-white flex flex-col justify-center px-8 lg:px-16 relative">
+                    <span class="badge-swiss bg-black text-white self-start mb-4 stagger-up">JORGE CARABALLO · CRM</span>
+                    <h2 class="font-display font-black text-4xl lg:text-6xl uppercase leading-none stagger-up delay-1">
+                        Outreach de Campañas
+                    </h2>
+                    <div class="mt-8 stagger-up delay-2">
+                        <div class="font-display font-black text-6xl lg:text-7xl text-[#FAF338] leading-none">140+</div>
+                        <div class="font-mono text-xs uppercase mt-2 text-white/90 font-bold">Clientes Contactados Post-Summit</div>
+                    </div>
+                    <p class="font-body text-sm mt-6 opacity-80 stagger-up delay-3">
+                        Generación de demanda automatizada y segmentada con tracking de intención de compra en tiempo real.
+                    </p>
+                </div>
+                <div class="col-span-12 lg:col-span-7 flex flex-col justify-center px-8 lg:px-16">
+                    <h3 class="font-display font-bold text-2xl lg:text-3xl title-line stagger-up mb-6">Impacto Comercial Validado</h3>
+                    <div class="grid grid-cols-2 gap-4 font-mono text-sm stagger-up delay-1">
+                        <div class="bg-white border-2 border-black p-4">
+                            <span class="text-neutral-500 block text-xs">OPEN RATE</span>
+                            <span class="font-display font-black text-3xl text-[#DE5B48]">64%</span>
+                            <span class="text-xs text-neutral-600 block mt-1">3x sobre promedio</span>
+                        </div>
+                        <div class="bg-white border-2 border-black p-4">
+                            <span class="text-neutral-500 block text-xs">REUNIONES GENERADAS</span>
+                            <span class="font-display font-black text-3xl text-black">28</span>
+                            <span class="text-xs text-neutral-600 block mt-1">Agendadas directamente</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 font-body text-sm border-l-4 border-[#DE5B48] pl-4 py-1 stagger-up delay-2">
+                        <strong>Escalabilidad:</strong> Cualquier territorio puede cargar su lista CSV y disparar campañas personalizadas en menos de 1 día.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: ANGEL SOLIS - TORRE PREVENTA & GEMINI -->
+        <div class="slide bg-[#1E1E1E] text-white" id="slide-3">
+            <div class="grid grid-cols-12 h-full">
+                <div class="col-span-12 lg:col-span-6 flex flex-col justify-center px-8 lg:px-16 z-20">
+                    <span class="badge-swiss bg-[#FAF338] text-black self-start mb-4 stagger-up">ANGEL SOLIS · PREVENTA & ADOPCIÓN</span>
+                    <h2 class="font-display font-black text-4xl lg:text-6xl uppercase leading-none stagger-up delay-1 text-white">
+                        Torre de Control + Gemini
+                    </h2>
+                    <p class="font-body text-lg mt-6 opacity-80 stagger-up delay-2">
+                        Visibilidad en vivo en Cloud Run del avance de prioridades semanales y radar de desviaciones técnicas.
+                    </p>
+                    <div class="mt-8 grid grid-cols-2 gap-4 stagger-up delay-3 font-mono">
+                        <div class="border border-neutral-700 bg-neutral-900/60 p-4">
+                            <div class="text-[#FAF338] font-black text-3xl">$104K+</div>
+                            <div class="text-xs text-neutral-400 mt-1">Pipeline Priorizado en Vivo</div>
+                        </div>
+                        <div class="border border-neutral-700 bg-neutral-900/60 p-4">
+                            <div class="text-emerald-400 font-black text-3xl">82%</div>
+                            <div class="text-xs text-neutral-400 mt-1">Adopción Gemini Enterprise</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-12 lg:col-span-6 flex flex-col justify-center px-8 lg:px-16 bg-[#131722]">
+                    <h3 class="font-display font-bold text-2xl text-[#FAF338] mb-4 stagger-up">Pestaña Adicional Gemini Enterprise</h3>
+                    <div class="space-y-4 font-body text-sm stagger-up delay-1 text-neutral-300">
+                        <div class="border-l-4 border-indigo-400 pl-4 py-1">
+                            <strong>Medición en Vivo:</strong> Trazabilidad del uso de IA generativa por consultor y equipo de preventa.
+                        </div>
+                        <div class="border-l-4 border-indigo-400 pl-4 py-1">
+                            <strong>14 Horas Ahorradas / Semana:</strong> Automatización de propuestas y minutas ejecutivas con agentes.
+                        </div>
+                        <div class="border-l-4 border-indigo-400 pl-4 py-1">
+                            <strong>Replicabilidad:</strong> Multi-tenant en Cloud Run para líderes de México, Colombia, Perú y Chile.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: CARLOS ESPINOSA - SF VS PARTNER HUB -->
+        <div class="slide bg-[#FFFEF8]" id="slide-4">
+            <div class="grid grid-cols-12 h-full">
+                <div class="col-span-12 lg:col-span-5 bg-[#C45BAA] text-white flex flex-col justify-center px-8 lg:px-16 relative">
+                    <span class="badge-swiss bg-black text-[#FAF338] self-start mb-4 stagger-up">CARLOS ESPINOSA · CASO DE ÉXITO</span>
+                    <h2 class="font-display font-black text-4xl lg:text-6xl uppercase leading-none stagger-up delay-1">
+                        Salesforce vs Partner Hub
+                    </h2>
+                    <div class="mt-8 stagger-up delay-2">
+                        <div class="font-display font-black text-6xl lg:text-7xl text-[#FAF338] leading-none">$450K+</div>
+                        <div class="font-mono text-xs uppercase mt-2 text-white/90 font-bold">USD en Incentivos Auditados</div>
+                    </div>
+                    <p class="font-body text-sm mt-6 opacity-80 stagger-up delay-3">
+                        Conciliación automatizada entre el pipeline comercial de Salesforce y los incentivos de Google Cloud Partner Hub.
+                    </p>
+                </div>
+                <div class="col-span-12 lg:col-span-7 flex flex-col justify-center px-8 lg:px-16">
+                    <h3 class="font-display font-bold text-2xl lg:text-3xl title-line stagger-up mb-6">Protección Directa del Margen</h3>
+                    <div class="space-y-4 font-body text-base stagger-up delay-1">
+                        <div class="border-l-4 border-[#C45BAA] pl-4 py-1">
+                            <strong>Cero Fuga de Rebates:</strong> Detección inmediata de deals cerrados en SFDC sin claim activo en Partner Hub.
+                        </div>
+                        <div class="border-l-4 border-black pl-4 py-1">
+                            <strong>Alineación de Fechas & Montos:</strong> Auditoría previa al cierre de quarter de Google.
+                        </div>
+                        <div class="border-l-4 border-black pl-4 py-1">
+                            <strong>Impacto Regional:</strong> Solución fundamental para asegurar el revenue de alianzas en toda Latinoamérica.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: ROADMAP LATAM & REPLICABILIDAD -->
+        <div class="slide bg-[#F2EDD8]" id="slide-5">
+            <div class="grid grid-cols-12 h-full">
+                <div class="col-span-12 flex flex-col justify-center px-8 lg:px-24">
+                    <span class="badge-swiss bg-black text-[#FAF338] self-start mb-4 stagger-up">EXPANSIÓN REGIONAL</span>
+                    <h2 class="font-display font-black text-4xl lg:text-6xl uppercase title-line stagger-up mb-8">
+                        Matriz de Implementación LATAM
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 font-mono text-xs stagger-up delay-1">
+                        <div class="bg-[#FFFEF8] border-2 border-black p-5">
+                            <span class="badge-swiss bg-[#1899AF] text-white text-[9px] mb-2">FINOPS</span>
+                            <div class="font-display font-bold text-lg font-sans text-neutral-900 mt-1">Patricio Martin</div>
+                            <p class="font-sans text-xs text-neutral-600 mt-2">48 hrs para integrar BigQuery billing de Colombia y Perú.</p>
+                        </div>
+                        <div class="bg-[#FFFEF8] border-2 border-black p-5">
+                            <span class="badge-swiss bg-[#DE5B48] text-white text-[9px] mb-2">CRM CAMPAÑAS</span>
+                            <div class="font-display font-bold text-lg font-sans text-neutral-900 mt-1">Jorge Caraballo</div>
+                            <p class="font-sans text-xs text-neutral-600 mt-2">24 hrs para desplegar campañas con listas locales.</p>
+                        </div>
+                        <div class="bg-[#FFFEF8] border-2 border-black p-5">
+                            <span class="badge-swiss bg-[#5A4A96] text-white text-[9px] mb-2">TORRE + GEMINI</span>
+                            <div class="font-display font-bold text-lg font-sans text-neutral-900 mt-1">Angel Solis</div>
+                            <p class="font-sans text-xs text-neutral-600 mt-2">Listo en Cloud Run para acceso regional multi-país.</p>
+                        </div>
+                        <div class="bg-[#FFFEF8] border-2 border-black p-5">
+                            <span class="badge-swiss bg-[#C45BAA] text-white text-[9px] mb-2">PARTNER HUB</span>
+                            <div class="font-display font-bold text-lg font-sans text-neutral-900 mt-1">Carlos Espinosa</div>
+                            <p class="font-sans text-xs text-neutral-600 mt-2">Integración REST API con Salesforce global de Xertica.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: CIERRE & PRÓXIMOS PASOS -->
+        <div class="slide bg-[#1E1E1E] text-white" id="slide-6">
+            <div class="grid grid-cols-12 h-full">
+                <div class="col-span-12 lg:col-span-7 flex flex-col justify-center px-8 lg:px-20 z-20">
+                    <span class="badge-swiss bg-[#FAF338] text-black self-start mb-4 stagger-up">ENTREGA INMEDIATA</span>
+                    <h2 class="font-display font-black text-5xl lg:text-7xl uppercase leading-none stagger-up mb-6">
+                        Próximos Pasos para Despliegue
+                    </h2>
+                    <div class="space-y-4 font-body text-base stagger-up delay-1">
+                        <div class="flex gap-4 items-start border-b border-white/20 pb-3">
+                            <span class="font-mono font-bold text-[#FAF338]">01</span>
+                            <span>Validación ejecutiva con Vanessa Tinoco de las 4 soluciones presentadas.</span>
+                        </div>
+                        <div class="flex gap-4 items-start border-b border-white/20 pb-3">
+                            <span class="font-mono font-bold text-[#FAF338]">02</span>
+                            <span>Integración de videos finales de 35s grabados por cada responsable EIR.</span>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <span class="font-mono font-bold text-[#FAF338]">03</span>
+                            <span>Sesión de habilitación técnica con directores de país (Colombia, Perú, Chile).</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-12 lg:col-span-5 bg-[#FAF338] text-black flex flex-col justify-center items-center text-center p-8 lg:p-12">
+                    <h3 class="font-display font-black text-4xl lg:text-5xl uppercase leading-tight stagger-up mb-6">
+                        Plataforma Lista para Presentación
+                    </h3>
+                    <button onclick="setAppMode('platform')" class="bg-black text-white px-6 py-4 font-display font-bold text-sm uppercase tracking-wider border-2 border-black hover:bg-neutral-800 transition-colors shadow-[4px_4px_0px_rgba(0,0,0,0.3)]">
+                        Explorar Hub Interactivo
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ========================================== -->
+    <!-- MODAL: RESUMEN LISTO PARA ENVIAR A VANESSA -->
+    <!-- ========================================== -->
+    <div id="modal-share" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-[#FFFEF8] border-2 border-black p-6 max-w-xl w-full swiss-border">
+            <div class="flex justify-between items-start pb-3 border-b-2 border-black mb-4">
+                <div>
+                    <span class="badge-swiss bg-[#1899AF] text-white text-[10px]">Slack / WhatsApp Ready</span>
+                    <h3 class="font-display font-black text-xl text-[#1E1E1E] mt-1">Resumen Ejecutivo para Vanessa Tinoco</h3>
+                </div>
+                <button onclick="closeShareModal()" class="text-2xl font-bold hover:text-red-500">✕</button>
+            </div>
+
+            <p class="font-body text-xs text-neutral-600 mb-3">
+                Copia este texto formateado y envíaselo directamente por Slack o WhatsApp. Incluye la explicación digerible de cada herramienta, resultados e impacto para LATAM:
+            </p>
+
+            <textarea id="text-share-vanessa" readonly class="w-full h-64 p-3 bg-neutral-100 border border-neutral-300 font-mono text-xs text-neutral-800 leading-relaxed resize-none focus:outline-none focus:border-black"></textarea>
+
+            <div class="mt-4 flex justify-between items-center">
+                <span id="copy-status" class="text-xs font-mono text-emerald-600 font-bold hidden">✔ Copiado al portapapeles!</span>
+                <div class="flex gap-2 ml-auto">
+                    <button onclick="copyToClipboard()" class="px-4 py-2 bg-[#FAF338] text-black border-2 border-black font-display font-bold text-xs uppercase tracking-wider hover:bg-black hover:text-white transition-colors shadow-[2px_2px_0px_#000]">
+                        📋 Copiar Mensaje
+                    </button>
+                    <button onclick="closeShareModal()" class="px-3 py-2 bg-neutral-200 border-2 border-black font-display font-bold text-xs uppercase tracking-wider">
+                        Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- MODAL: VIDEO SETTINGS (CUSTOM URL / FILE)  -->
+    <!-- ========================================== -->
+    <div id="modal-video" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-[#FFFEF8] border-2 border-black p-6 max-w-md w-full swiss-border">
+            <div class="flex justify-between items-center pb-3 border-b-2 border-black mb-4">
+                <h3 class="font-display font-black text-lg text-[#1E1E1E]">Configurar Video de Grabación (35s)</h3>
+                <button onclick="closeVideoSettings()" class="text-2xl font-bold hover:text-red-500">✕</button>
+            </div>
+
+            <p class="font-body text-xs text-neutral-600 mb-3">
+                Puedes ingresar la URL de tu video (Loom, MP4 en Vercel, Google Drive o YouTube) para reproducirlo en esta ranura:
+            </p>
+
+            <input type="hidden" id="video-target-eir" value="patricio">
+            <input type="text" id="video-input-url" placeholder="https://mi-video-demo.mp4" class="w-full p-2.5 border-2 border-black font-mono text-xs mb-4">
+
+            <div class="flex justify-end gap-2">
+                <button onclick="saveVideoUrl()" class="px-4 py-2 bg-[#1899AF] text-white border-2 border-black font-display font-bold text-xs uppercase">
+                    Guardar Video
+                </button>
+                <button onclick="closeVideoSettings()" class="px-3 py-2 bg-neutral-200 border-2 border-black font-display font-bold text-xs uppercase">
+                    Cancelar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Application State
+        let appMode = 'platform'; // 'platform' or 'slides'
+        let currentSlide = 0;
+        const totalSlides = 7;
+
+        // Message template for Vanessa Tinoco
+        const vanessaMessage = `Hola Vane! Buen día.
+
+Te compartimos la plataforma interactiva desplegada con los 4 proyectos del equipo EIR México listos para implementarse en LATAM:
+
+🔗 Enlace de la Plataforma:
+https://eir-portfolio-latam.vercel.app/ (y en local)
+
+Resumen ejecutivo digerible de cada proyecto:
+
+1. FinOps & GCP Commits (@Patricio Martin)
+• Objetivo: Detección proactiva de sobredimensionamiento y control de consumo vs commit.
+• En qué ayuda: Evita penalizaciones y genera alertas 90 días antes del fin de contrato para renovaciones con alto margen.
+• Resultado / Impacto: $120K+ USD en oportunidades ya levantadas en 14 cuentas auditadas.
+• Alcance LATAM: Script de ingesta BigQuery replicable en Colombia, Perú y Chile en 48 hrs.
+
+2. CRM de Envío de Campañas (@Jorge Caraballo)
+• Objetivo: Automatizar el outreach masivo y seguimiento comercial de leads de eventos (Summit, SMB, Enterprise).
+• En qué ayuda: Envío segmentado con doble llamado a la acción (agendar 1:1 o workshop de IA) sin fricción de TI.
+• Resultado / Impacto: 140+ clientes/leads contactados a partir de la información enviada, 64% Open Rate y 28 reuniones agendadas.
+• Alcance LATAM: Replicable en 24 hrs para cualquier base comercial local en LATAM.
+
+3. Consola Preventa + Adopción Gemini (@Angel Solis)
+• Objetivo: Monitoreo en tiempo real del pipeline técnico de preventa y radar de desviaciones.
+• En qué ayuda: Visibilidad 360° en Cloud Run (Firestore live sync) + Pestaña Adicional de Adopción Gemini Enterprise para medir uso de IA y horas ahorradas.
+• Resultado / Impacto: $104K+ USD en pipeline priorizado en vivo y 82% de adopción activa en IA.
+• Alcance LATAM: Multi-tenant listo en Cloud Run para directores de preventa de toda la región.
+
+4. Cruce Salesforce vs Partner Hub (@Carlos Espinosa - Caso de Éxito)
+• Objetivo: Conciliación automatizada entre el pipeline comercial en Salesforce y los incentivos de Google Cloud Partner Hub.
+• En qué ayuda: Elimina fuga de incentivos económicos (rebates, fundings) por discrepancias de montos o fechas entre el CRM y Google.
+• Resultado / Impacto: $450K+ USD en incentivos auditados y recuperables; 100% trazabilidad.
+• Alcance LATAM: Crítico para asegurar el cobro de rebates y margen en todos los países de Xertica.
+
+La plataforma cuenta con 2 modos:
+1) Plataforma interactiva con métricas, fichas técnicas y simuladores en vivo
+2) Modo Slides (Pitch) para navegar con las flechas del teclado en presentaciones directas.`;
+
+        // Mode Switcher
+        function setAppMode(mode) {
+            appMode = mode;
+            const viewPlatform = document.getElementById('view-platform');
+            const viewSlides = document.getElementById('view-slides');
+            const btnPlatform = document.getElementById('btn-mode-platform');
+            const btnSlides = document.getElementById('btn-mode-slides');
+
+            if (mode === 'slides') {
+                viewPlatform.classList.add('hidden');
+                viewSlides.classList.remove('hidden');
+                btnSlides.classList.add('bg-[#1E1E1E]', 'text-[#FAF338]');
+                btnSlides.classList.remove('text-black');
+                btnPlatform.classList.remove('bg-[#1E1E1E]', 'text-[#FAF338]');
+                btnPlatform.classList.add('text-black');
+                updateSlideView();
+            } else {
+                viewSlides.classList.add('hidden');
+                viewPlatform.classList.remove('hidden');
+                btnPlatform.classList.add('bg-[#1E1E1E]', 'text-[#FAF338]');
+                btnPlatform.classList.remove('text-black');
+                btnSlides.classList.remove('bg-[#1E1E1E]', 'text-[#FAF338]');
+                btnSlides.classList.add('text-black');
+            }
+        }
+
+        // Tab Switching in Platform View
+        function switchTab(tabId) {
+            const tabs = ['patricio', 'jorge', 'angel', 'carlos', 'latam'];
+            tabs.forEach(t => {
+                const panel = document.getElementById('panel-' + t);
+                const btn = document.getElementById('tab-btn-' + t);
+                if (panel) {
+                    if (t === tabId) {
+                        panel.classList.remove('hidden');
+                        if (btn) btn.classList.add('active');
+                    } else {
+                        panel.classList.add('hidden');
+                        if (btn) btn.classList.remove('active');
+                    }
+                }
+            });
+        }
+
+        // Media Toggle (Video vs Interactive Simulator vs Gemini)
+        function toggleMediaMode(eir, mode) {
+            const videoEl = document.getElementById(`media-video-${eir}`);
+            const simEl = document.getElementById(`media-sim-${eir}`);
+            const geminiEl = document.getElementById(`media-gemini-${eir}`);
+            
+            const btnVideo = document.getElementById(`btn-media-video-${eir}`);
+            const btnSim = document.getElementById(`btn-media-sim-${eir}`);
+            const btnGemini = document.getElementById(`btn-media-gemini-${eir}`);
+
+            if (videoEl) videoEl.classList.add('hidden');
+            if (simEl) simEl.classList.add('hidden');
+            if (geminiEl) geminiEl.classList.add('hidden');
+
+            if (btnVideo) { btnVideo.classList.remove('bg-black', 'text-yellow-300'); btnVideo.classList.add('bg-white', 'text-black'); }
+            if (btnSim) { btnSim.classList.remove('bg-black', 'text-yellow-300'); btnSim.classList.add('bg-white', 'text-black'); }
+            if (btnGemini) { btnGemini.classList.remove('bg-indigo-900', 'text-yellow-300'); btnGemini.classList.add('bg-indigo-50', 'text-indigo-900'); }
+
+            if (mode === 'video' && videoEl) {
+                videoEl.classList.remove('hidden');
+                if (btnVideo) { btnVideo.classList.add('bg-black', 'text-yellow-300'); btnVideo.classList.remove('bg-white', 'text-black'); }
+            } else if (mode === 'sim' && simEl) {
+                simEl.classList.remove('hidden');
+                if (btnSim) { btnSim.classList.add('bg-black', 'text-yellow-300'); btnSim.classList.remove('bg-white', 'text-black'); }
+            } else if (mode === 'gemini' && geminiEl) {
+                geminiEl.classList.remove('hidden');
+                if (btnGemini) { btnGemini.classList.add('bg-indigo-900', 'text-yellow-300'); btnGemini.classList.remove('bg-indigo-50', 'text-indigo-900'); }
+            }
+        }
+
+        // Simulated Play Demo
+        function playInteractiveDemo(eir) {
+            toggleMediaMode(eir, 'sim');
+        }
+
+        // Slide Presentation Navigation
+        function updateSlideView() {
+            const slides = document.querySelectorAll('.slide');
+            slides.forEach((s, i) => {
+                if (i === currentSlide) {
+                    s.classList.add('active');
+                } else {
+                    s.classList.remove('active');
+                }
+            });
+
+            // Update bottom indicator
+            const counter = document.getElementById('slide-counter-bottom');
+            if (counter) {
+                counter.innerText = `EIR'S MÉXICO · EXPANSIÓN LATAM [0${currentSlide + 1} / 0${totalSlides}]`;
+                if (slides[currentSlide] && slides[currentSlide].classList.contains('bg-[#1E1E1E]')) {
+                    counter.classList.replace('text-black', 'text-white');
+                } else {
+                    counter.classList.replace('text-white', 'text-black');
+                }
+            }
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                updateSlideView();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlideView();
+            }
+        }
+
+        // Keyboard Controls
+        document.addEventListener('keydown', (e) => {
+            if (appMode === 'slides') {
+                if (e.key === 'ArrowRight' || e.key === ' ') {
+                    e.preventDefault();
+                    nextSlide();
+                } else if (e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    prevSlide();
+                } else if (e.key === 'Escape') {
+                    setAppMode('platform');
+                }
+            }
+        });
+
+        // Share Modal Logic
+        function openShareModal() {
+            const modal = document.getElementById('modal-share');
+            const textarea = document.getElementById('text-share-vanessa');
+            textarea.value = vanessaMessage;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeShareModal() {
+            const modal = document.getElementById('modal-share');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.getElementById('copy-status').classList.add('hidden');
+        }
+
+        function copyToClipboard() {
+            const textarea = document.getElementById('text-share-vanessa');
+            textarea.select();
+            navigator.clipboard.writeText(textarea.value).then(() => {
+                const status = document.getElementById('copy-status');
+                status.classList.remove('hidden');
+                setTimeout(() => status.classList.add('hidden'), 2500);
+            });
+        }
+
+        // Copy individual project summary
+        function copyFicha(eir) {
+            const summaries = {
+                patricio: `PATRICIO MARTIN · FinOps & Commits GCP
+• Objetivo: Detección proactiva de sobredimensionamiento y control de consumo vs commit.
+• En qué ayuda: Evita penalizaciones y genera alertas 90 días antes del fin de contrato para renovaciones con alto margen.
+• Resultados: $120K+ USD en oportunidades ya levantadas en 14 cuentas auditadas.
+• Escalabilidad LATAM: Ingesta BigQuery replicable en Colombia, Perú y Chile en 48 hrs.`,
+                jorge: `JORGE CARABALLO · CRM de Envío de Campañas
+• Objetivo: Automatizar el outreach masivo y seguimiento comercial de leads de eventos (Summit, SMB, Enterprise).
+• En qué ayuda: Envío segmentado con doble llamado a la acción (agendar 1:1 o workshop de IA) sin fricción de TI.
+• Resultados: 140+ clientes contactados, 64% Open Rate y 28 reuniones agendadas.
+• Escalabilidad LATAM: Replicable en 24 hrs para cualquier base comercial local en LATAM.`,
+                angel: `ANGEL SOLIS · Torre Preventa + Gemini Enterprise
+• Objetivo: Monitoreo en tiempo real del pipeline técnico de preventa y radar de desviaciones.
+• En qué ayuda: Visibilidad 360° en Cloud Run + Pestaña Adicional de Adopción Gemini Enterprise para medir uso de IA y horas ahorradas.
+• Resultados: $104K+ USD en pipeline priorizado en vivo y 82% de adopción activa en IA.
+• Escalabilidad LATAM: Multi-tenant listo en Cloud Run para directores de preventa de toda la región.`,
+                carlos: `CARLOS ESPINOSA · Cruce Salesforce vs Partner Hub
+• Objetivo: Conciliación automatizada entre el pipeline comercial en Salesforce y los incentivos de Google Cloud Partner Hub.
+• En qué ayuda: Elimina fuga de incentivos económicos (rebates, fundings) por discrepancias de montos o fechas entre el CRM y Google.
+• Resultados: $450K+ USD en incentivos auditados y recuperables; 100% trazabilidad.
+• Escalabilidad LATAM: Crítico para asegurar el cobro de rebates y margen en todos los países de Xertica.`
+            };
+
+            if (summaries[eir]) {
+                navigator.clipboard.writeText(summaries[eir]).then(() => {
+                    alert("Ficha ejecutiva copiada al portapapeles para compartir con Vanessa!");
+                });
+            }
+        }
+
+        // Video Settings
+        function openVideoSettings(eir) {
+            document.getElementById('video-target-eir').value = eir;
+            document.getElementById('modal-video').classList.remove('hidden');
+            document.getElementById('modal-video').classList.add('flex');
+        }
+
+        function closeVideoSettings() {
+            document.getElementById('modal-video').classList.add('hidden');
+            document.getElementById('modal-video').classList.remove('flex');
+        }
+
+        function saveVideoUrl() {
+            const eir = document.getElementById('video-target-eir').value;
+            const url = document.getElementById('video-input-url').value.trim();
+            if (url) {
+                const container = document.getElementById(`media-video-${eir}`);
+                if (container) {
+                    container.innerHTML = `
+                        <video controls autoplay muted class="w-full h-full object-cover">
+                            <source src="${url}" type="video/mp4">
+                            Tu navegador no soporta el tag de video.
+                        </video>
+                    `;
+                }
+            }
+            closeVideoSettings();
+        }
+    </script>
+</body>
+</html>
