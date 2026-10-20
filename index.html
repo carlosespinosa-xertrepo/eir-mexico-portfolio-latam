@@ -1691,8 +1691,9 @@
     <!-- ========================================== -->
     <!-- MODAL: VIDEO SETTINGS (SUBIR / ENLAZAR 45s) -->
     <!-- ========================================== -->
-    <div id="modal-video" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden items-center justify-center p-4">
-        <div class="bg-[#FFFEF8] border-2 border-black p-6 max-w-lg w-full swiss-border shadow-[8px_8px_0px_#000]">
+    <div id="modal-video" class="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-[#FFFEF8] border-2 border-black p-6 max-w-lg w-full swiss-border shadow-[8px_8px_0px_#000] max-h-[92vh] overflow-y-auto">
+            <!-- Header -->
             <div class="flex justify-between items-center pb-3 border-b-2 border-black mb-4">
                 <div class="flex items-center gap-2">
                     <span class="text-xl">🎬</span>
@@ -1701,33 +1702,78 @@
                 <button onclick="closeVideoSettings()" class="text-2xl font-bold hover:text-red-500 leading-none">✕</button>
             </div>
 
-            <p class="font-body text-xs text-neutral-600 mb-4">
-                Sube tu grabación de pantalla de 45s directamente desde tu equipo (MP4, MOV o WebM) o ingresa un enlace web público.
+            <p class="font-body text-xs text-neutral-600 mb-3">
+                Sube tu grabación de 45s o ingresa un enlace para que quede guardado en la nube y todo el equipo en LATAM pueda reproducirlo.
             </p>
 
             <input type="hidden" id="video-target-eir" value="patricio">
 
-            <!-- Option 1: File Upload (Immediate preview via Blob) -->
+            <!-- Target Project Info Card -->
+            <div class="bg-[#F5F0E8] border-2 border-black p-3 mb-4 flex items-center justify-between">
+                <div>
+                    <div class="text-[10px] font-mono text-neutral-500 uppercase font-bold tracking-wider">Iniciativa Seleccionada</div>
+                    <div id="modal-project-name" class="font-display font-black text-sm text-neutral-900 mt-0.5">FinOps & GCP Commits</div>
+                    <div id="modal-project-owner" class="text-xs font-mono text-neutral-700 mt-0.5">Responsable: Patricio Martin</div>
+                </div>
+                <div class="text-right">
+                    <span id="modal-auth-badge" class="px-2 py-0.5 bg-neutral-200 text-neutral-700 border border-black font-mono text-[10px] font-bold uppercase inline-block">
+                        🔒 Requiere Correo
+                    </span>
+                </div>
+            </div>
+
+            <!-- 1. Corporate Email Authentication -->
             <div class="mb-4">
-                <label class="block font-mono text-xs font-bold text-neutral-800 uppercase mb-1.5">Opción 1: Seleccionar archivo de video (.mp4, .mov, .webm)</label>
-                <div class="border-2 border-dashed border-black p-4 text-center bg-neutral-50 hover:bg-yellow-50/50 cursor-pointer transition-colors" onclick="document.getElementById('video-file-input').click()">
-                    <span class="text-2xl block mb-1">📁</span>
-                    <span class="font-display font-bold text-xs uppercase text-neutral-800 block">Haz clic para buscar tu video en tu computadora</span>
-                    <span class="font-mono text-[10px] text-neutral-500">Formato recomendado: MP4 1080p · Duración: 45 segundos</span>
+                <div class="flex justify-between items-center mb-1">
+                    <label class="block font-mono text-xs font-bold text-neutral-800 uppercase">
+                        1. Correo Corporativo (@xertica.com) <span class="text-red-600">*</span>
+                    </label>
+                    <span class="text-[10px] font-mono text-neutral-500">Autorización EIR</span>
+                </div>
+                <div class="relative">
+                    <input type="email" id="auth-email-input" placeholder="ejemplo: patricio.martin@xertica.com" class="w-full p-2.5 border-2 border-black font-mono text-xs pr-9 bg-white focus:outline-none focus:ring-2 focus:ring-[#FAF338]" oninput="validateAuthEmail()">
+                    <span id="auth-email-icon" class="absolute right-3 top-2.5 text-sm">🔒</span>
+                </div>
+                <div id="auth-email-feedback" class="mt-1 text-[11px] font-mono">
+                    <span class="text-neutral-500">Ingresa tu correo Xertica asignado para validar permisos de publicación.</span>
+                </div>
+            </div>
+
+            <!-- 2. Video URL Input (Recommended for Global Cloud Visibility) -->
+            <div class="mb-4">
+                <div class="flex justify-between items-center mb-1">
+                    <label class="block font-mono text-xs font-bold text-neutral-800 uppercase">
+                        2. Enlace Público del Video (Loom, Drive, YouTube o MP4)
+                    </label>
+                    <span class="text-[10px] font-mono bg-[#FAF338] text-black px-1.5 py-0.5 border border-black font-bold">RECOMENDADO LATAM</span>
+                </div>
+                <input type="text" id="video-input-url" placeholder="https://www.loom.com/share/... o enlace de Drive / YouTube / MP4" class="w-full p-2.5 border-2 border-black font-mono text-xs bg-white focus:outline-none focus:ring-2 focus:ring-[#FAF338]" oninput="checkFormReady()">
+                <div class="font-body text-[11px] text-neutral-500 mt-1">
+                    💡 <strong>Para que todos en LATAM lo vean:</strong> Al ingresar tu enlace de Loom, Google Drive o MP4, se guarda automáticamente en la nube y estará disponible para cualquier usuario que abra la plataforma.
+                </div>
+            </div>
+
+            <!-- 3. Local File Selection (Optional) -->
+            <div class="mb-4">
+                <label class="block font-mono text-xs font-bold text-neutral-800 uppercase mb-1">
+                    O Cargar Archivo Directo (.mp4, .mov, .webm)
+                </label>
+                <div class="border-2 border-dashed border-black p-3 text-center bg-neutral-50 hover:bg-yellow-50/50 cursor-pointer transition-colors" onclick="document.getElementById('video-file-input').click()">
+                    <span class="text-xl block mb-0.5">📁</span>
+                    <span class="font-display font-bold text-xs uppercase text-neutral-800 block">Buscar video en mi computadora</span>
+                    <span class="font-mono text-[10px] text-neutral-500">Duración máxima recomendada: 45 segundos</span>
                     <input type="file" id="video-file-input" accept="video/mp4,video/webm,video/quicktime" class="hidden" onchange="handleVideoFileUpload(event)">
                 </div>
                 <div id="file-upload-status" class="hidden mt-1.5 font-mono text-xs text-emerald-700 font-bold"></div>
             </div>
 
-            <!-- Option 2: Public URL -->
-            <div class="mb-5">
-                <label class="block font-mono text-xs font-bold text-neutral-800 uppercase mb-1.5">Opción 2: O ingresar URL web de video (MP4 directo o Loom)</label>
-                <input type="text" id="video-input-url" placeholder="https://ejemplo.com/video-demo-45s.mp4" class="w-full p-2.5 border-2 border-black font-mono text-xs">
-            </div>
+            <!-- Cloud Sync Status Indicator -->
+            <div id="modal-sync-feedback" class="hidden mb-3 p-2 bg-emerald-100 border border-emerald-500 text-emerald-900 font-mono text-xs font-bold"></div>
 
+            <!-- Modal Action Buttons -->
             <div class="flex justify-end gap-2 pt-3 border-t-2 border-black">
-                <button onclick="saveVideoUrl()" class="px-5 py-2 bg-[#FAF338] text-black border-2 border-black font-display font-bold text-xs uppercase shadow-[2px_2px_0px_#000] hover:bg-black hover:text-[#FAF338] transition-colors">
-                    Guardar y Reproducir
+                <button id="btn-save-video" onclick="saveVideoUrl()" disabled class="px-5 py-2 bg-neutral-300 text-neutral-500 border-2 border-black font-display font-bold text-xs uppercase cursor-not-allowed transition-colors flex items-center gap-1.5">
+                    <span>💾</span> Guardar y Sincronizar
                 </button>
                 <button onclick="closeVideoSettings()" class="px-4 py-2 bg-neutral-200 border-2 border-black font-display font-bold text-xs uppercase hover:bg-neutral-300">
                     Cancelar
@@ -1825,14 +1871,149 @@ La plataforma cuenta con 2 modos:
             });
         }
 
-        // Video State & Storage
+        // ==========================================
+        // EIR TEAM AUTH & CLOUD VIDEO SYNC ENGINE
+        // ==========================================
+        const CLOUD_SYNC_ENDPOINT = "https://api.restful-api.dev/objects/ff808181a09d98f701a15b416db1345e";
+
+        const EIR_PROJECT_CONFIG = {
+            patricio: {
+                id: "patricio",
+                name: "Patricio Martin",
+                email: "patricio.martin@xertica.com",
+                projectTitle: "FinOps & GCP Commits"
+            },
+            jorge: {
+                id: "jorge",
+                name: "Jorge Caraballo Pérez-Galdós",
+                email: "jorge.caraballo@xertica.com",
+                projectTitle: "CRM Envío de Campañas"
+            },
+            angel: {
+                id: "angel",
+                name: "Angel Solis",
+                email: "angel.solis@xertica.com",
+                projectTitle: "Torre Preventa + Gemini"
+            },
+            carlos: {
+                id: "carlos",
+                name: "Carlos Espinosa",
+                email: "carlos.espinosa@xertica.com",
+                projectTitle: "Salesforce vs Partner Hub"
+            }
+        };
+
+        const ALL_EIR_EMAILS = {
+            "patricio.martin@xertica.com": "Patricio Martin",
+            "angel.solis@xertica.com": "Angel Solis",
+            "carlos.espinosa@xertica.com": "Carlos Espinosa",
+            "jorge.caraballo@xertica.com": "Jorge Caraballo Pérez-Galdós"
+        };
+
+        let isAuthValid = false;
         let uploadedVideoBlobs = {};
 
+        function formatVideoEmbed(url) {
+            if (!url) return null;
+            url = url.trim();
+
+            // Loom Embed
+            if (url.includes('loom.com/share/')) {
+                const id = url.split('loom.com/share/')[1].split('?')[0];
+                return { type: 'iframe', src: `https://www.loom.com/embed/${id}?hide_owner=true&hide_share=true&hide_title=true` };
+            }
+            if (url.includes('loom.com/embed/')) {
+                return { type: 'iframe', src: url };
+            }
+
+            // Google Drive Preview
+            if (url.includes('drive.google.com/file/d/')) {
+                const parts = url.split('/file/d/');
+                if (parts[1]) {
+                    const id = parts[1].split('/')[0];
+                    return { type: 'iframe', src: `https://drive.google.com/file/d/${id}/preview` };
+                }
+            }
+
+            // YouTube Embed
+            if (url.includes('youtube.com/watch') || url.includes('youtu.be/')) {
+                let id = '';
+                if (url.includes('youtu.be/')) {
+                    id = url.split('youtu.be/')[1].split('?')[0];
+                } else if (url.includes('v=')) {
+                    id = url.split('v=')[1].split('&')[0];
+                }
+                if (id) {
+                    return { type: 'iframe', src: `https://www.youtube.com/embed/${id}?autoplay=1&rel=0` };
+                }
+            }
+
+            // HTML5 direct video (MP4, WebM, blob)
+            return { type: 'video', src: url };
+        }
+
+        function renderVideoPlayer(eir, url) {
+            const container = document.getElementById(`media-video-${eir}`);
+            if (!container || !url) return;
+
+            const embed = formatVideoEmbed(url);
+            if (!embed) return;
+
+            if (embed.type === 'iframe') {
+                container.innerHTML = `
+                    <div class="relative w-full h-full bg-black">
+                        <iframe src="${embed.src}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen class="w-full h-full"></iframe>
+                        <div class="absolute top-3 right-3 z-20">
+                            <button onclick="openVideoSettings('${eir}')" class="px-2.5 py-1 bg-black/85 text-[#FAF338] border border-white/40 text-xs font-mono font-bold hover:bg-black shadow-[2px_2px_0px_#000] transition-colors">
+                                ⚙️ Cambiar Video
+                            </button>
+                        </div>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = `
+                    <div class="relative w-full h-full bg-black group">
+                        <video controls autoplay playsinline class="w-full h-full object-contain">
+                            <source src="${embed.src}">
+                            Tu navegador no soporta el video.
+                        </video>
+                        <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity z-20">
+                            <button onclick="openVideoSettings('${eir}')" class="px-2.5 py-1 bg-black/85 text-[#FAF338] border border-white/40 text-xs font-mono font-bold hover:bg-black shadow-[2px_2px_0px_#000] transition-colors">
+                                ⚙️ Cambiar Video
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
         function openVideoSettings(eir) {
+            const project = EIR_PROJECT_CONFIG[eir];
+            if (!project) return;
+
             document.getElementById('video-target-eir').value = eir;
-            document.getElementById('video-input-url').value = localStorage.getItem(`video_url_${eir}`) || '';
-            const status = document.getElementById('file-upload-status');
-            if (status) status.classList.add('hidden');
+            document.getElementById('modal-project-name').innerText = project.projectTitle;
+            document.getElementById('modal-project-owner').innerText = `Responsable: ${project.name} (${project.email})`;
+
+            const savedEmail = localStorage.getItem('eir_auth_email') || '';
+            const emailInput = document.getElementById('auth-email-input');
+            if (savedEmail) {
+                emailInput.value = savedEmail;
+            } else {
+                emailInput.value = '';
+            }
+
+            const existingUrl = localStorage.getItem(`video_url_${eir}`) || '';
+            document.getElementById('video-input-url').value = existingUrl;
+
+            const fileStatus = document.getElementById('file-upload-status');
+            if (fileStatus) fileStatus.classList.add('hidden');
+
+            const syncFeedback = document.getElementById('modal-sync-feedback');
+            if (syncFeedback) syncFeedback.classList.add('hidden');
+
+            validateAuthEmail();
+
             const modal = document.getElementById('modal-video');
             modal.classList.remove('hidden');
             modal.classList.add('flex');
@@ -1844,6 +2025,70 @@ La plataforma cuenta con 2 modos:
             modal.classList.remove('flex');
         }
 
+        function validateAuthEmail() {
+            const eir = document.getElementById('video-target-eir').value;
+            const project = EIR_PROJECT_CONFIG[eir];
+            const emailInput = document.getElementById('auth-email-input');
+            const feedback = document.getElementById('auth-email-feedback');
+            const icon = document.getElementById('auth-email-icon');
+            const badge = document.getElementById('modal-auth-badge');
+            const val = emailInput ? emailInput.value.trim().toLowerCase() : '';
+
+            if (!val) {
+                isAuthValid = false;
+                feedback.innerHTML = '<span class="text-neutral-500">Ingresa tu correo institucional @xertica.com para autorizar la publicación.</span>';
+                icon.innerText = '🔒';
+                badge.className = 'px-2 py-0.5 bg-neutral-200 text-neutral-700 border border-black font-mono text-[10px] font-bold uppercase inline-block';
+                badge.innerText = '🔒 Requiere Correo';
+                checkFormReady();
+                return false;
+            }
+
+            if (project && val === project.email.toLowerCase()) {
+                isAuthValid = true;
+                feedback.innerHTML = `<span class="text-emerald-700 font-bold">✅ Autorizado: Responsable directo del proyecto (${project.name})</span>`;
+                icon.innerText = '✅';
+                badge.className = 'px-2 py-0.5 bg-emerald-100 text-emerald-800 border border-emerald-600 font-mono text-[10px] font-bold uppercase inline-block';
+                badge.innerText = '✔ Responsable Autorizado';
+                try { localStorage.setItem('eir_auth_email', val); } catch(e){}
+                checkFormReady();
+                return true;
+            } else if (ALL_EIR_EMAILS[val]) {
+                isAuthValid = true;
+                feedback.innerHTML = `<span class="text-emerald-700 font-bold">✅ Autorizado: Miembro del EIR'S Team (${ALL_EIR_EMAILS[val]})</span>`;
+                icon.innerText = '✅';
+                badge.className = 'px-2 py-0.5 bg-emerald-100 text-emerald-800 border border-emerald-600 font-mono text-[10px] font-bold uppercase inline-block';
+                badge.innerText = '✔ EIR Team Autorizado';
+                try { localStorage.setItem('eir_auth_email', val); } catch(e){}
+                checkFormReady();
+                return true;
+            } else {
+                isAuthValid = false;
+                feedback.innerHTML = `<span class="text-red-600 font-bold">❌ Correo no autorizado (${val}). Solo miembros del equipo EIR pueden publicar videos.</span>`;
+                icon.innerText = '❌';
+                badge.className = 'px-2 py-0.5 bg-red-100 text-red-800 border border-red-600 font-mono text-[10px] font-bold uppercase inline-block';
+                badge.innerText = '✕ No Autorizado';
+                checkFormReady();
+                return false;
+            }
+        }
+
+        function checkFormReady() {
+            const eir = document.getElementById('video-target-eir').value;
+            const urlInput = document.getElementById('video-input-url');
+            const hasUrl = urlInput && urlInput.value.trim().length > 0;
+            const hasBlob = Boolean(uploadedVideoBlobs[eir]);
+            const btn = document.getElementById('btn-save-video');
+
+            if (isAuthValid && (hasUrl || hasBlob)) {
+                btn.disabled = false;
+                btn.className = 'px-5 py-2 bg-[#FAF338] text-black border-2 border-black font-display font-bold text-xs uppercase shadow-[2px_2px_0px_#000] hover:bg-black hover:text-[#FAF338] transition-colors cursor-pointer flex items-center gap-1.5';
+            } else {
+                btn.disabled = true;
+                btn.className = 'px-5 py-2 bg-neutral-300 text-neutral-500 border-2 border-black font-display font-bold text-xs uppercase cursor-not-allowed transition-colors flex items-center gap-1.5';
+            }
+        }
+
         function handleVideoFileUpload(event) {
             const file = event.target.files[0];
             if (file) {
@@ -1851,38 +2096,77 @@ La plataforma cuenta con 2 modos:
                 const blobUrl = URL.createObjectURL(file);
                 uploadedVideoBlobs[eir] = blobUrl;
                 const status = document.getElementById('file-upload-status');
-                status.innerText = `✔ Archivo seleccionado: ${file.name} (${(file.size / (1024*1024)).toFixed(1)} MB)`;
+                status.innerText = `✔ Archivo cargado: ${file.name} (${(file.size / (1024*1024)).toFixed(1)} MB)`;
                 status.classList.remove('hidden');
+                checkFormReady();
             }
         }
 
-        function saveVideoUrl() {
+        async function saveVideoUrl() {
+            if (!isAuthValid) {
+                alert("Debes ingresar un correo corporativo de Xertica autorizado.");
+                return;
+            }
+
             const eir = document.getElementById('video-target-eir').value;
             const urlInput = document.getElementById('video-input-url').value.trim();
-            const sourceUrl = uploadedVideoBlobs[eir] || urlInput;
+            const sourceUrl = urlInput || uploadedVideoBlobs[eir];
+            const authorEmail = document.getElementById('auth-email-input').value.trim().toLowerCase();
 
-            if (sourceUrl) {
-                if (urlInput) {
-                    try { localStorage.setItem(`video_url_${eir}`, urlInput); } catch(e){}
-                }
-                const container = document.getElementById(`media-video-${eir}`);
-                if (container) {
-                    container.innerHTML = `
-                        <div class="relative w-full h-full bg-black group">
-                            <video controls autoplay playsinline class="w-full h-full object-contain">
-                                <source src="${sourceUrl}">
-                                Tu navegador no soporta el formato de video.
-                            </video>
-                            <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                                <button onclick="openVideoSettings('${eir}')" class="px-2.5 py-1 bg-black/80 text-[#FAF338] border border-white/40 text-xs font-mono font-bold hover:bg-black">
-                                    ⚙️ Cambiar Video
-                                </button>
-                            </div>
-                        </div>
-                    `;
+            if (!sourceUrl) {
+                alert("Por favor ingresa un enlace de video o selecciona un archivo.");
+                return;
+            }
+
+            const btn = document.getElementById('btn-save-video');
+            const syncFeedback = document.getElementById('modal-sync-feedback');
+            btn.disabled = true;
+            btn.innerHTML = '<span>⏳</span> Sincronizando en la nube...';
+
+            // 1. Guardar localmente
+            try { localStorage.setItem(`video_url_${eir}`, sourceUrl); } catch(e){}
+
+            // 2. Si es URL web (Loom, Drive, YouTube, MP4), sincronizar en la nube para todos
+            if (urlInput) {
+                try {
+                    let currentData = { patricio: "", jorge: "", angel: "", carlos: "" };
+                    try {
+                        const getRes = await fetch(CLOUD_SYNC_ENDPOINT);
+                        if (getRes.ok) {
+                            const json = await getRes.json();
+                            if (json && json.data) currentData = json.data;
+                        }
+                    } catch(e){}
+
+                    currentData[eir] = urlInput;
+
+                    await fetch(CLOUD_SYNC_ENDPOINT, {
+                        method: 'PUT',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            name: "eir-portfolio-videos",
+                            data: currentData,
+                            lastUpdatedBy: authorEmail,
+                            lastUpdatedAt: new Date().toISOString()
+                        })
+                    });
+
+                    if (syncFeedback) {
+                        syncFeedback.innerText = "✔ Video sincronizado en la nube exitosamente para todo LATAM.";
+                        syncFeedback.classList.remove('hidden');
+                    }
+                } catch(err) {
+                    console.error("Error al sincronizar en la nube:", err);
                 }
             }
-            closeVideoSettings();
+
+            // 3. Renderizar reproductor de inmediato
+            renderVideoPlayer(eir, sourceUrl);
+
+            setTimeout(() => {
+                btn.innerHTML = '<span>💾</span> Guardar y Sincronizar';
+                closeVideoSettings();
+            }, 600);
         }
 
         // Play Video Demo or open upload modal
@@ -1898,6 +2182,41 @@ La plataforma cuenta con 2 modos:
             } else {
                 openVideoSettings(eir);
             }
+        }
+
+        // Global Sync on Page Load
+        async function fetchGlobalVideos() {
+            try {
+                const response = await fetch(CLOUD_SYNC_ENDPOINT);
+                if (response.ok) {
+                    const result = await response.json();
+                    if (result && result.data) {
+                        ['patricio', 'jorge', 'angel', 'carlos'].forEach(key => {
+                            const videoUrl = result.data[key];
+                            if (videoUrl) {
+                                try { localStorage.setItem(`video_url_${key}`, videoUrl); } catch(e){}
+                                renderVideoPlayer(key, videoUrl);
+                            }
+                        });
+                        return;
+                    }
+                }
+            } catch (err) {
+                console.warn("No se pudo cargar desde la nube, usando cache local:", err);
+            }
+
+            // Fallback a localStorage
+            ['patricio', 'jorge', 'angel', 'carlos'].forEach(key => {
+                const cached = localStorage.getItem(`video_url_${key}`);
+                if (cached) renderVideoPlayer(key, cached);
+            });
+        }
+
+        // Ejecutar carga inicial de videos
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', fetchGlobalVideos);
+        } else {
+            fetchGlobalVideos();
         }
 
         // Slide Presentation Navigation
