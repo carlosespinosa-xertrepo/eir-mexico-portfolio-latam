@@ -1731,11 +1731,11 @@
                     <span class="text-[10px] font-mono text-neutral-500">Autorización EIR</span>
                 </div>
                 <div class="relative">
-                    <input type="email" id="auth-email-input" placeholder="ejemplo: patricio.martin@xertica.com" class="w-full p-2.5 border-2 border-black font-mono text-xs pr-9 bg-white focus:outline-none focus:ring-2 focus:ring-[#FAF338]" oninput="validateAuthEmail()">
+                    <input type="email" id="auth-email-input" placeholder="tu-correo@xertica.com" class="w-full p-2.5 border-2 border-black font-mono text-xs pr-9 bg-white focus:outline-none focus:ring-2 focus:ring-[#FAF338]" oninput="validateAuthEmail()">
                     <span id="auth-email-icon" class="absolute right-3 top-2.5 text-sm">🔒</span>
                 </div>
                 <div id="auth-email-feedback" class="mt-1 text-[11px] font-mono">
-                    <span class="text-neutral-500">Ingresa tu correo Xertica asignado para validar permisos de publicación.</span>
+                    <span class="text-neutral-500">Ingresa tu correo Xertica autorizado para validar permisos de publicación.</span>
                 </div>
             </div>
 
@@ -1876,42 +1876,50 @@ La plataforma cuenta con 2 modos:
         // ==========================================
         const CLOUD_SYNC_ENDPOINT = "https://api.restful-api.dev/objects/ff808181a09d98f701a15b416db1345e";
 
-        const EIR_PROJECT_CONFIG = {
+        // Hashes criptográficos SHA-256 de los correos autorizados
+        // Garantiza que ningún correo corporativo aparezca en texto plano en la interfaz o código
+        const EIR_AUTH_HASHES = {
             patricio: {
-                id: "patricio",
+                hash: "d36c8e9b6597736f6502d6e4c80c98e2d22752865adbabe644d27da5408b7da4",
                 name: "Patricio Martin",
-                email: "patricio.martin@xertica.com",
                 projectTitle: "FinOps & GCP Commits"
             },
             jorge: {
-                id: "jorge",
+                hash: "13a0b1e336898c7f0aaf12b453eeceadb8d23fc73fef3e18148a93be394103e5",
                 name: "Jorge Caraballo Pérez-Galdós",
-                email: "jorge.caraballo@xertica.com",
                 projectTitle: "CRM Envío de Campañas"
             },
             angel: {
-                id: "angel",
+                hash: "2e19f3c3da4bb59f133ee975fbb8b88cd1e77d30234cf27f318d221f8a6c2b0e",
                 name: "Angel Solis",
-                email: "angel.solis@xertica.com",
                 projectTitle: "Torre Preventa + Gemini"
             },
             carlos: {
-                id: "carlos",
+                hash: "d8b8428916dcfb94fe2aff1192ffe95e1224e4c6d18c5ed5ffc6928709f24e6c",
                 name: "Carlos Espinosa",
-                email: "carlos.espinosa@xertica.com",
                 projectTitle: "Salesforce vs Partner Hub"
             }
         };
 
-        const ALL_EIR_EMAILS = {
-            "patricio.martin@xertica.com": "Patricio Martin",
-            "angel.solis@xertica.com": "Angel Solis",
-            "carlos.espinosa@xertica.com": "Carlos Espinosa",
-            "jorge.caraballo@xertica.com": "Jorge Caraballo Pérez-Galdós"
+        const TEAM_MEMBER_HASHES = {
+            "d36c8e9b6597736f6502d6e4c80c98e2d22752865adbabe644d27da5408b7da4": "Patricio Martin",
+            "2e19f3c3da4bb59f133ee975fbb8b88cd1e77d30234cf27f318d221f8a6c2b0e": "Angel Solis",
+            "d8b8428916dcfb94fe2aff1192ffe95e1224e4c6d18c5ed5ffc6928709f24e6c": "Carlos Espinosa",
+            "13a0b1e336898c7f0aaf12b453eeceadb8d23fc73fef3e18148a93be394103e5": "Jorge Caraballo Pérez-Galdós"
         };
 
         let isAuthValid = false;
         let uploadedVideoBlobs = {};
+
+        async function computeSHA256(str) {
+            try {
+                const buf = new TextEncoder().encode(str.trim().toLowerCase());
+                const hashBuf = await crypto.subtle.digest('SHA-256', buf);
+                return Array.from(new Uint8Array(hashBuf)).map(b => b.toString(16).padStart(2, '0')).join('');
+            } catch(e) {
+                return '';
+            }
+        }
 
         function formatVideoEmbed(url) {
             if (!url) return null;
@@ -1988,12 +1996,12 @@ La plataforma cuenta con 2 modos:
         }
 
         function openVideoSettings(eir) {
-            const project = EIR_PROJECT_CONFIG[eir];
+            const project = EIR_AUTH_HASHES[eir];
             if (!project) return;
 
             document.getElementById('video-target-eir').value = eir;
             document.getElementById('modal-project-name').innerText = project.projectTitle;
-            document.getElementById('modal-project-owner').innerText = `Responsable: ${project.name} (${project.email})`;
+            document.getElementById('modal-project-owner').innerText = `Responsable: ${project.name}`;
 
             const savedEmail = localStorage.getItem('eir_auth_email') || '';
             const emailInput = document.getElementById('auth-email-input');
@@ -2025,18 +2033,18 @@ La plataforma cuenta con 2 modos:
             modal.classList.remove('flex');
         }
 
-        function validateAuthEmail() {
+        async function validateAuthEmail() {
             const eir = document.getElementById('video-target-eir').value;
-            const project = EIR_PROJECT_CONFIG[eir];
+            const project = EIR_AUTH_HASHES[eir];
             const emailInput = document.getElementById('auth-email-input');
             const feedback = document.getElementById('auth-email-feedback');
             const icon = document.getElementById('auth-email-icon');
             const badge = document.getElementById('modal-auth-badge');
-            const val = emailInput ? emailInput.value.trim().toLowerCase() : '';
+            const rawVal = emailInput ? emailInput.value.trim().toLowerCase() : '';
 
-            if (!val) {
+            if (!rawVal) {
                 isAuthValid = false;
-                feedback.innerHTML = '<span class="text-neutral-500">Ingresa tu correo institucional @xertica.com para autorizar la publicación.</span>';
+                feedback.innerHTML = '<span class="text-neutral-500">Ingresa tu correo Xertica autorizado para validar permisos de publicación.</span>';
                 icon.innerText = '🔒';
                 badge.className = 'px-2 py-0.5 bg-neutral-200 text-neutral-700 border border-black font-mono text-[10px] font-bold uppercase inline-block';
                 badge.innerText = '🔒 Requiere Correo';
@@ -2044,27 +2052,29 @@ La plataforma cuenta con 2 modos:
                 return false;
             }
 
-            if (project && val === project.email.toLowerCase()) {
+            const inputHash = await computeSHA256(rawVal);
+
+            if (project && inputHash === project.hash) {
                 isAuthValid = true;
-                feedback.innerHTML = `<span class="text-emerald-700 font-bold">✅ Autorizado: Responsable directo del proyecto (${project.name})</span>`;
+                feedback.innerHTML = `<span class="text-emerald-700 font-bold">✅ Identidad verificada: Responsable del proyecto (${project.name})</span>`;
                 icon.innerText = '✅';
                 badge.className = 'px-2 py-0.5 bg-emerald-100 text-emerald-800 border border-emerald-600 font-mono text-[10px] font-bold uppercase inline-block';
                 badge.innerText = '✔ Responsable Autorizado';
-                try { localStorage.setItem('eir_auth_email', val); } catch(e){}
+                try { localStorage.setItem('eir_auth_email', rawVal); } catch(e){}
                 checkFormReady();
                 return true;
-            } else if (ALL_EIR_EMAILS[val]) {
+            } else if (TEAM_MEMBER_HASHES[inputHash]) {
                 isAuthValid = true;
-                feedback.innerHTML = `<span class="text-emerald-700 font-bold">✅ Autorizado: Miembro del EIR'S Team (${ALL_EIR_EMAILS[val]})</span>`;
+                feedback.innerHTML = `<span class="text-emerald-700 font-bold">✅ Identidad verificada: Miembro del EIR'S Team (${TEAM_MEMBER_HASHES[inputHash]})</span>`;
                 icon.innerText = '✅';
                 badge.className = 'px-2 py-0.5 bg-emerald-100 text-emerald-800 border border-emerald-600 font-mono text-[10px] font-bold uppercase inline-block';
                 badge.innerText = '✔ EIR Team Autorizado';
-                try { localStorage.setItem('eir_auth_email', val); } catch(e){}
+                try { localStorage.setItem('eir_auth_email', rawVal); } catch(e){}
                 checkFormReady();
                 return true;
             } else {
                 isAuthValid = false;
-                feedback.innerHTML = `<span class="text-red-600 font-bold">❌ Correo no autorizado (${val}). Solo miembros del equipo EIR pueden publicar videos.</span>`;
+                feedback.innerHTML = `<span class="text-red-600 font-bold">❌ Correo no autorizado. Solo miembros del equipo EIR pueden publicar videos.</span>`;
                 icon.innerText = '❌';
                 badge.className = 'px-2 py-0.5 bg-red-100 text-red-800 border border-red-600 font-mono text-[10px] font-bold uppercase inline-block';
                 badge.innerText = '✕ No Autorizado';
@@ -2112,6 +2122,8 @@ La plataforma cuenta con 2 modos:
             const urlInput = document.getElementById('video-input-url').value.trim();
             const sourceUrl = urlInput || uploadedVideoBlobs[eir];
             const authorEmail = document.getElementById('auth-email-input').value.trim().toLowerCase();
+            const authorHash = await computeSHA256(authorEmail);
+            const authorDisplayName = TEAM_MEMBER_HASHES[authorHash] ? `${TEAM_MEMBER_HASHES[authorHash]} (EIR Team)` : 'EIR Team';
 
             if (!sourceUrl) {
                 alert("Por favor ingresa un enlace de video o selecciona un archivo.");
@@ -2146,7 +2158,7 @@ La plataforma cuenta con 2 modos:
                         body: JSON.stringify({
                             name: "eir-portfolio-videos",
                             data: currentData,
-                            lastUpdatedBy: authorEmail,
+                            lastUpdatedBy: authorDisplayName,
                             lastUpdatedAt: new Date().toISOString()
                         })
                     });
