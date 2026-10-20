@@ -409,21 +409,89 @@
                             </div>
                         </div>
 
-                        <!-- 4. ALCANCE LATAM & ACCESO -->
-                        <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border">
-                            <div class="font-display font-black text-xs uppercase tracking-wider text-[#1899AF] mb-2">
-                                🌎 Escalabilidad LATAM
+                        <!-- 4. ESCALABILIDAD & REPLICABILIDAD REGIONAL -->
+                        <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border space-y-4">
+                            <!-- Section Title & Target Teams -->
+                            <div class="flex items-start justify-between gap-2 border-b-2 border-black pb-2.5">
+                                <div>
+                                    <div class="font-display font-black text-xs uppercase tracking-wider text-[#1899AF] flex items-center gap-1.5">
+                                        <span>🌎</span> 4. Escalabilidad & Replicabilidad LATAM
+                                    </div>
+                                    <div class="text-[11px] font-mono text-neutral-600 mt-0.5">
+                                        <strong>Equipos destino:</strong> FinOps Regional & Commercial GCP (CO, PE, CL)
+                                    </div>
+                                </div>
+                                <span class="badge-swiss bg-emerald-100 text-emerald-800 border border-emerald-500 text-[10px] whitespace-nowrap font-bold">
+                                    Listo para Replicar
+                                </span>
                             </div>
-                            <p class="text-xs font-body text-neutral-700 leading-relaxed mb-4">
-                                El modelo de ingesta de datos de facturación de BigQuery y Partner Billing Console se replica en <strong>menos de 48 horas</strong> para las operaciones de Colombia, Perú y Chile sin desarrollo adicional.
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <a href="https://account-plan-1080228791137.us-central1.run.app/" target="_blank" class="px-4 py-2 bg-[#1899AF] text-white border-2 border-black font-display font-bold text-xs uppercase tracking-wider hover:bg-black transition-colors flex items-center gap-2">
-                                    <span>🔗</span> Abrir Consola FinOps (Cloud Run)
-                                </a>
-                                <button onclick="copyFicha('patricio')" class="px-3 py-2 bg-neutral-100 text-black border-2 border-black font-display font-bold text-xs uppercase tracking-wider hover:bg-neutral-200 transition-colors">
-                                    📋 Copiar Resumen
-                                </button>
+
+                            <!-- Replicability Indicators Matrix -->
+                            <div class="grid grid-cols-3 gap-2 text-center font-mono">
+                                <div class="bg-neutral-100 border border-neutral-300 p-2">
+                                    <div class="text-[9px] uppercase tracking-wider text-neutral-500 font-bold">Tiempo Despliegue</div>
+                                    <div class="text-xs font-black text-neutral-900 mt-0.5">&lt; 48 Horas</div>
+                                </div>
+                                <div class="bg-neutral-100 border border-neutral-300 p-2">
+                                    <div class="text-[9px] uppercase tracking-wider text-neutral-500 font-bold">Complejidad</div>
+                                    <div class="text-xs font-black text-emerald-700 mt-0.5">Baja (Plug & Play)</div>
+                                </div>
+                                <div class="bg-neutral-100 border border-neutral-300 p-2">
+                                    <div class="text-[9px] uppercase tracking-wider text-neutral-500 font-bold">Compatibilidad</div>
+                                    <div class="text-xs font-black text-blue-700 mt-0.5">100% LATAM</div>
+                                </div>
+                            </div>
+
+                            <!-- Checkpoints de Replicabilidad e Iterabilidad -->
+                            <div>
+                                <div class="text-[11px] font-display font-black uppercase tracking-wider text-neutral-800 mb-2 flex items-center gap-1.5">
+                                    <span class="w-2 h-2 bg-[#1899AF] inline-block"></span> Checkpoints de Replicabilidad e Iterabilidad
+                                </div>
+                                <ul class="space-y-1.5 font-body text-xs text-neutral-700">
+                                    <li class="flex items-start gap-2 bg-white border border-neutral-200 p-2">
+                                        <span class="text-emerald-600 font-bold mt-0.5">✔</span>
+                                        <div>
+                                            <strong>Core Reusable:</strong> Ingesta directa de BigQuery Partner Billing unificada para todos los Cloud Billing Accounts de LATAM sin desarrollo nuevo.
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-2 bg-white border border-neutral-200 p-2">
+                                        <span class="text-emerald-600 font-bold mt-0.5">✔</span>
+                                        <div>
+                                            <strong>Iterabilidad Dinámica:</strong> Calibración en caliente de reglas de alerta (umbrales a 90, 60 y 30 días de expiración) desde variables de entorno.
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-2 bg-white border border-neutral-200 p-2">
+                                        <span class="text-emerald-600 font-bold mt-0.5">✔</span>
+                                        <div>
+                                            <strong>Gobernanza Operativa:</strong> Asignación modular de Account Managers locales y generación automática de reportes ejecutivos.
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Tropicalización por País -->
+                            <div class="border-t border-neutral-200 pt-3">
+                                <div class="text-[11px] font-display font-black uppercase tracking-wider text-neutral-800 mb-2 flex items-center gap-1.5">
+                                    <span class="w-2 h-2 bg-black inline-block"></span> Matriz de Tropicalización
+                                </div>
+                                <div class="grid grid-cols-2 gap-2 text-[11px] font-mono">
+                                    <div class="p-2 bg-neutral-50 border border-neutral-200">
+                                        <span class="font-bold text-neutral-900">🇲🇽 México:</span>
+                                        <div class="text-neutral-600 text-[10px] mt-0.5">Facturación SAT y contratos USD con tipo de cambio FIX.</div>
+                                    </div>
+                                    <div class="p-2 bg-neutral-50 border border-neutral-200">
+                                        <span class="font-bold text-neutral-900">🇨🇴 Colombia:</span>
+                                        <div class="text-neutral-600 text-[10px] mt-0.5">TRM diaria y reglas de retención tributaria DIAN.</div>
+                                    </div>
+                                    <div class="p-2 bg-neutral-50 border border-neutral-200">
+                                        <span class="font-bold text-neutral-900">🇵🇪 Perú:</span>
+                                        <div class="text-neutral-600 text-[10px] mt-0.5">Operación bimoneda (Soles/USD) y cálculo de detracciones SUNAT.</div>
+                                    </div>
+                                    <div class="p-2 bg-neutral-50 border border-neutral-200">
+                                        <span class="font-bold text-neutral-900">🇨🇱 Chile:</span>
+                                        <div class="text-neutral-600 text-[10px] mt-0.5">Facturación en CLP/UF y normativa de IVA digital SII.</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -437,11 +505,16 @@
                                     <span class="inline-block w-3 h-3 rounded-full bg-red-500 border border-black"></span>
                                     <span class="inline-block w-3 h-3 rounded-full bg-yellow-400 border border-black"></span>
                                     <span class="inline-block w-3 h-3 rounded-full bg-green-500 border border-black"></span>
-                                    <span class="font-mono text-xs font-bold text-neutral-700 ml-2">DEMOSTRACIÓN INTERACTIVA (35s SCREEN RECORDING / CONSOLA EN VIVO)</span>
+                                    <span class="font-mono text-xs font-bold text-neutral-700 ml-2">DEMOSTRACIÓN INTERACTIVA (SCREEN RECORDING / CONSOLA EN VIVO)</span>
                                 </div>
-                                <div class="inline-flex border border-black text-xs font-mono">
-                                    <button onclick="toggleMediaMode('patricio', 'video')" id="btn-media-video-patricio" class="px-2.5 py-1 bg-black text-yellow-300 font-bold">🎬 Video Demo</button>
-                                    <button onclick="toggleMediaMode('patricio', 'sim')" id="btn-media-sim-patricio" class="px-2.5 py-1 bg-white text-black font-bold">💻 Consola Interactiva</button>
+                                <div class="flex items-center gap-2">
+                                    <div class="inline-flex border border-black text-xs font-mono">
+                                        <button onclick="toggleMediaMode('patricio', 'video')" id="btn-media-video-patricio" class="px-2.5 py-1 bg-black text-yellow-300 font-bold">🎬 Video Demo</button>
+                                        <button onclick="toggleMediaMode('patricio', 'sim')" id="btn-media-sim-patricio" class="px-2.5 py-1 bg-white text-black font-bold">💻 Consola</button>
+                                    </div>
+                                    <a href="https://account-plan-1080228791137.us-central1.run.app/" target="_blank" class="px-2.5 py-1 bg-[#1899AF] text-white border border-black text-xs font-display font-bold uppercase tracking-wider hover:bg-black transition-colors flex items-center gap-1">
+                                        <span>🔗</span> Abrir Consola ↗
+                                    </a>
                                 </div>
                             </div>
 
@@ -627,21 +700,89 @@
                             </div>
                         </div>
 
-                        <!-- 4. ALCANCE LATAM & ACCESO -->
-                        <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border">
-                            <div class="font-display font-black text-xs uppercase tracking-wider text-[#DE5B48] mb-2">
-                                🌎 Escalabilidad LATAM
+                        <!-- 4. ESCALABILIDAD & REPLICABILIDAD REGIONAL -->
+                        <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border space-y-4">
+                            <!-- Section Title & Target Teams -->
+                            <div class="flex items-start justify-between gap-2 border-b-2 border-black pb-2.5">
+                                <div>
+                                    <div class="font-display font-black text-xs uppercase tracking-wider text-[#DE5B48] flex items-center gap-1.5">
+                                        <span>🌎</span> 4. Escalabilidad & Replicabilidad LATAM
+                                    </div>
+                                    <div class="text-[11px] font-mono text-neutral-600 mt-0.5">
+                                        <strong>Equipos destino:</strong> Marketing Regional, SDRs & BDRs Comerciales (CO, PE, CL)
+                                    </div>
+                                </div>
+                                <span class="badge-swiss bg-emerald-100 text-emerald-800 border border-emerald-500 text-[10px] whitespace-nowrap font-bold">
+                                    Listo para Replicar
+                                </span>
                             </div>
-                            <p class="text-xs font-body text-neutral-700 leading-relaxed mb-4">
-                                Clonación de la infraestructura técnica de envíos para que los equipos comerciales de <strong>Bogotá, Lima y Santiago</strong> carguen sus bases de datos locales y ejecuten campañas en el mismo día.
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <a href="https://script.google.com/a/macros/xertica.com/s/AKfycbwlwksFORqQZ5oMv6PvT5G-fPwupqWjCQPZPgcJraRPan50anciUZ7VZQ1FNjPC3H8v/exec" target="_blank" class="px-4 py-2 bg-[#DE5B48] text-white border-2 border-black font-display font-bold text-xs uppercase tracking-wider hover:bg-black transition-colors flex items-center gap-2">
-                                    <span>🔗</span> Acceder a Control Leads EIR's
-                                </a>
-                                <button onclick="copyFicha('jorge')" class="px-3 py-2 bg-neutral-100 text-black border-2 border-black font-display font-bold text-xs uppercase tracking-wider hover:bg-neutral-200 transition-colors">
-                                    📋 Copiar Resumen
-                                </button>
+
+                            <!-- Replicability Indicators Matrix -->
+                            <div class="grid grid-cols-3 gap-2 text-center font-mono">
+                                <div class="bg-neutral-100 border border-neutral-300 p-2">
+                                    <div class="text-[9px] uppercase tracking-wider text-neutral-500 font-bold">Tiempo Despliegue</div>
+                                    <div class="text-xs font-black text-neutral-900 mt-0.5">&lt; 24 Horas</div>
+                                </div>
+                                <div class="bg-neutral-100 border border-neutral-300 p-2">
+                                    <div class="text-[9px] uppercase tracking-wider text-neutral-500 font-bold">Complejidad</div>
+                                    <div class="text-xs font-black text-emerald-700 mt-0.5">Mínima (No-Code)</div>
+                                </div>
+                                <div class="bg-neutral-100 border border-neutral-300 p-2">
+                                    <div class="text-[9px] uppercase tracking-wider text-neutral-500 font-bold">Compatibilidad</div>
+                                    <div class="text-xs font-black text-blue-700 mt-0.5">100% LATAM</div>
+                                </div>
+                            </div>
+
+                            <!-- Checkpoints de Replicabilidad e Iterabilidad -->
+                            <div>
+                                <div class="text-[11px] font-display font-black uppercase tracking-wider text-neutral-800 mb-2 flex items-center gap-1.5">
+                                    <span class="w-2 h-2 bg-[#DE5B48] inline-block"></span> Checkpoints de Replicabilidad e Iterabilidad
+                                </div>
+                                <ul class="space-y-1.5 font-body text-xs text-neutral-700">
+                                    <li class="flex items-start gap-2 bg-white border border-neutral-200 p-2">
+                                        <span class="text-emerald-600 font-bold mt-0.5">✔</span>
+                                        <div>
+                                            <strong>Core Reusable:</strong> Motor Google Workspace + Apps Script con sistema de warmup progresivo anti-spam y vinculación directa a Sheets de prospección.
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-2 bg-white border border-neutral-200 p-2">
+                                        <span class="text-emerald-600 font-bold mt-0.5">✔</span>
+                                        <div>
+                                            <strong>Iterabilidad de Mensajería:</strong> Configuración dinámica de secuencias para 3 segmentos clave (C-Level, Técnico, Operativo) sin alterar el código fuente.
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-2 bg-white border border-neutral-200 p-2">
+                                        <span class="text-emerald-600 font-bold mt-0.5">✔</span>
+                                        <div>
+                                            <strong>Ruteo Inteligente:</strong> Respuestas canalizadas de forma automática al SDR del país emisor para garantizar SLA de contacto menor a 2 horas.
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Tropicalización por País -->
+                            <div class="border-t border-neutral-200 pt-3">
+                                <div class="text-[11px] font-display font-black uppercase tracking-wider text-neutral-800 mb-2 flex items-center gap-1.5">
+                                    <span class="w-2 h-2 bg-black inline-block"></span> Matriz de Tropicalización
+                                </div>
+                                <div class="grid grid-cols-2 gap-2 text-[11px] font-mono">
+                                    <div class="p-2 bg-neutral-50 border border-neutral-200">
+                                        <span class="font-bold text-neutral-900">🇲🇽 México:</span>
+                                        <div class="text-neutral-600 text-[10px] mt-0.5">Horario CST, modismos locales y prospección en cuentas Enterprise CDMX/Mty.</div>
+                                    </div>
+                                    <div class="p-2 bg-neutral-50 border border-neutral-200">
+                                        <span class="font-bold text-neutral-900">🇨🇴 Colombia:</span>
+                                        <div class="text-neutral-600 text-[10px] mt-0.5">Horario COT, tono consultivo Andino y base de leads de eventos Bogotá/Medellín.</div>
+                                    </div>
+                                    <div class="p-2 bg-neutral-50 border border-neutral-200">
+                                        <span class="font-bold text-neutral-900">🇵🇪 Perú:</span>
+                                        <div class="text-neutral-600 text-[10px] mt-0.5">Horario PET, tono corporativo formal y seguimiento directo a cuentas de Lima.</div>
+                                    </div>
+                                    <div class="p-2 bg-neutral-50 border border-neutral-200">
+                                        <span class="font-bold text-neutral-900">🇨🇱 Chile:</span>
+                                        <div class="text-neutral-600 text-[10px] mt-0.5">Horario CLT (+2h vs MX), enfoque ágil y prospección a sectores retail y minería.</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -657,9 +798,14 @@
                                     <span class="inline-block w-3 h-3 rounded-full bg-green-500 border border-black"></span>
                                     <span class="font-mono text-xs font-bold text-neutral-700 ml-2">DEMOSTRACIÓN INTERACTIVA (CAMPANA SUMMIT & OUTREACH)</span>
                                 </div>
-                                <div class="inline-flex border border-black text-xs font-mono">
-                                    <button onclick="toggleMediaMode('jorge', 'video')" id="btn-media-video-jorge" class="px-2.5 py-1 bg-black text-yellow-300 font-bold">🎬 Video Demo</button>
-                                    <button onclick="toggleMediaMode('jorge', 'sim')" id="btn-media-sim-jorge" class="px-2.5 py-1 bg-white text-black font-bold">💻 Simulador Campaña</button>
+                                <div class="flex items-center gap-2">
+                                    <div class="inline-flex border border-black text-xs font-mono">
+                                        <button onclick="toggleMediaMode('jorge', 'video')" id="btn-media-video-jorge" class="px-2.5 py-1 bg-black text-yellow-300 font-bold">🎬 Video Demo</button>
+                                        <button onclick="toggleMediaMode('jorge', 'sim')" id="btn-media-sim-jorge" class="px-2.5 py-1 bg-white text-black font-bold">💻 Campaña</button>
+                                    </div>
+                                    <a href="https://script.google.com/a/macros/xertica.com/s/AKfycbwlwksFORqQZ5oMv6PvT5G-fPwupqWjCQPZPgcJraRPan50anciUZ7VZQ1FNjPC3H8v/exec" target="_blank" class="px-2.5 py-1 bg-[#DE5B48] text-white border border-black text-xs font-display font-bold uppercase tracking-wider hover:bg-black transition-colors flex items-center gap-1">
+                                        <span>🔗</span> Acceder al CRM ↗
+                                    </a>
                                 </div>
                             </div>
 
@@ -843,21 +989,89 @@
                             </div>
                         </div>
 
-                        <!-- 4. ALCANCE LATAM & ACCESO -->
-                        <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border">
-                            <div class="font-display font-black text-xs uppercase tracking-wider text-[#5A4A96] mb-2">
-                                🌎 Escalabilidad LATAM
+                        <!-- 4. ESCALABILIDAD & REPLICABILIDAD REGIONAL -->
+                        <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border space-y-4">
+                            <!-- Section Title & Target Teams -->
+                            <div class="flex items-start justify-between gap-2 border-b-2 border-black pb-2.5">
+                                <div>
+                                    <div class="font-display font-black text-xs uppercase tracking-wider text-[#5A4A96] flex items-center gap-1.5">
+                                        <span>🌎</span> 4. Escalabilidad & Replicabilidad LATAM
+                                    </div>
+                                    <div class="text-[11px] font-mono text-neutral-600 mt-0.5">
+                                        <strong>Equipos destino:</strong> Dirección de Preventa Regional & Solutions Architects (CO, PE, CL)
+                                    </div>
+                                </div>
+                                <span class="badge-swiss bg-emerald-100 text-emerald-800 border border-emerald-500 text-[10px] whitespace-nowrap font-bold">
+                                    Listo para Replicar
+                                </span>
                             </div>
-                            <p class="text-xs font-body text-neutral-700 leading-relaxed mb-4">
-                                Desplegado en Cloud Run con arquitectura multi-tenant lista para habilitar vistas segmentadas para directores de preventa en México, Colombia, Perú y Chile.
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <a href="https://control-tower-preventas-1060959604572.us-central1.run.app" target="_blank" class="px-4 py-2 bg-[#5A4A96] text-white border-2 border-black font-display font-bold text-xs uppercase tracking-wider hover:bg-black transition-colors flex items-center gap-2">
-                                    <span>🔗</span> Abrir Torre de Control (Cloud Run)
-                                </a>
-                                <button onclick="copyFicha('angel')" class="px-3 py-2 bg-neutral-100 text-black border-2 border-black font-display font-bold text-xs uppercase tracking-wider hover:bg-neutral-200 transition-colors">
-                                    📋 Copiar Resumen
-                                </button>
+
+                            <!-- Replicability Indicators Matrix -->
+                            <div class="grid grid-cols-3 gap-2 text-center font-mono">
+                                <div class="bg-neutral-100 border border-neutral-300 p-2">
+                                    <div class="text-[9px] uppercase tracking-wider text-neutral-500 font-bold">Tiempo Despliegue</div>
+                                    <div class="text-xs font-black text-neutral-900 mt-0.5">&lt; 72 Horas</div>
+                                </div>
+                                <div class="bg-neutral-100 border border-neutral-300 p-2">
+                                    <div class="text-[9px] uppercase tracking-wider text-neutral-500 font-bold">Complejidad</div>
+                                    <div class="text-xs font-black text-emerald-700 mt-0.5">Baja (Cloud Run)</div>
+                                </div>
+                                <div class="bg-neutral-100 border border-neutral-300 p-2">
+                                    <div class="text-[9px] uppercase tracking-wider text-neutral-500 font-bold">Compatibilidad</div>
+                                    <div class="text-xs font-black text-blue-700 mt-0.5">100% LATAM</div>
+                                </div>
+                            </div>
+
+                            <!-- Checkpoints de Replicabilidad e Iterabilidad -->
+                            <div>
+                                <div class="text-[11px] font-display font-black uppercase tracking-wider text-neutral-800 mb-2 flex items-center gap-1.5">
+                                    <span class="w-2 h-2 bg-[#5A4A96] inline-block"></span> Checkpoints de Replicabilidad e Iterabilidad
+                                </div>
+                                <ul class="space-y-1.5 font-body text-xs text-neutral-700">
+                                    <li class="flex items-start gap-2 bg-white border border-neutral-200 p-2">
+                                        <span class="text-emerald-600 font-bold mt-0.5">✔</span>
+                                        <div>
+                                            <strong>Core Reusable:</strong> Backend Docker en Google Cloud Run conectado a Firestore con latencia &lt; 300ms y soporte multi-tenant por país.
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-2 bg-white border border-neutral-200 p-2">
+                                        <span class="text-emerald-600 font-bold mt-0.5">✔</span>
+                                        <div>
+                                            <strong>Iterabilidad Operativa:</strong> SLAs de preventa, tipos de oportunidad y etapas configurables dinámicamente sin necesidad de recompilar código.
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-2 bg-white border border-neutral-200 p-2">
+                                        <span class="text-emerald-600 font-bold mt-0.5">✔</span>
+                                        <div>
+                                            <strong>Gemini Enterprise Extensible:</strong> Prompts y agentes parametrizables para incorporar bases de conocimiento técnicas locales de cada país.
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Tropicalización por País -->
+                            <div class="border-t border-neutral-200 pt-3">
+                                <div class="text-[11px] font-display font-black uppercase tracking-wider text-neutral-800 mb-2 flex items-center gap-1.5">
+                                    <span class="w-2 h-2 bg-black inline-block"></span> Matriz de Tropicalización
+                                </div>
+                                <div class="grid grid-cols-2 gap-2 text-[11px] font-mono">
+                                    <div class="p-2 bg-neutral-50 border border-neutral-200">
+                                        <span class="font-bold text-neutral-900">🇲🇽 México:</span>
+                                        <div class="text-neutral-600 text-[10px] mt-0.5">Catálogo preventa en MXN/USD y cuotas de Preventa Norte/Centro.</div>
+                                    </div>
+                                    <div class="p-2 bg-neutral-50 border border-neutral-200">
+                                        <span class="font-bold text-neutral-900">🇨🇴 Colombia:</span>
+                                        <div class="text-neutral-600 text-[10px] mt-0.5">Flujos técnicos alineados a contratación pública y privada de Colombia.</div>
+                                    </div>
+                                    <div class="p-2 bg-neutral-50 border border-neutral-200">
+                                        <span class="font-bold text-neutral-900">🇵🇪 Perú:</span>
+                                        <div class="text-neutral-600 text-[10px] mt-0.5">Catálogo de servicios en Soles y tiers de asignación para consultores de Perú.</div>
+                                    </div>
+                                    <div class="p-2 bg-neutral-50 border border-neutral-200">
+                                        <span class="font-bold text-neutral-900">🇨🇱 Chile:</span>
+                                        <div class="text-neutral-600 text-[10px] mt-0.5">Presupuestación en UF y flujos de revisión de bases técnicas del mercado chileno.</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -873,10 +1087,15 @@
                                     <span class="inline-block w-3 h-3 rounded-full bg-green-500 border border-black"></span>
                                     <span class="font-mono text-xs font-bold text-neutral-700 ml-2">DEMOSTRACIÓN INTERACTIVA (TORRE PREVENTA + GEMINI)</span>
                                 </div>
-                                <div class="inline-flex border border-black text-xs font-mono">
-                                    <button onclick="toggleMediaMode('angel', 'video')" id="btn-media-video-angel" class="px-2.5 py-1 bg-black text-yellow-300 font-bold">🎬 Video Demo</button>
-                                    <button onclick="toggleMediaMode('angel', 'sim')" id="btn-media-sim-angel" class="px-2.5 py-1 bg-white text-black font-bold">⚡ Consola en Vivo</button>
-                                    <button onclick="toggleMediaMode('angel', 'gemini')" id="btn-media-gemini-angel" class="px-2.5 py-1 bg-indigo-50 text-indigo-900 font-bold border-l border-black">✨ Pestaña Gemini</button>
+                                <div class="flex items-center gap-2">
+                                    <div class="inline-flex border border-black text-xs font-mono">
+                                        <button onclick="toggleMediaMode('angel', 'video')" id="btn-media-video-angel" class="px-2.5 py-1 bg-black text-yellow-300 font-bold">🎬 Video Demo</button>
+                                        <button onclick="toggleMediaMode('angel', 'sim')" id="btn-media-sim-angel" class="px-2.5 py-1 bg-white text-black font-bold">⚡ Consola</button>
+                                        <button onclick="toggleMediaMode('angel', 'gemini')" id="btn-media-gemini-angel" class="px-2.5 py-1 bg-indigo-50 text-indigo-900 font-bold border-l border-black">✨ Gemini</button>
+                                    </div>
+                                    <a href="https://control-tower-preventas-1060959604572.us-central1.run.app" target="_blank" class="px-2.5 py-1 bg-[#5A4A96] text-white border border-black text-xs font-display font-bold uppercase tracking-wider hover:bg-black transition-colors flex items-center gap-1">
+                                        <span>🔗</span> Abrir Torre ↗
+                                    </a>
                                 </div>
                             </div>
 
@@ -1034,7 +1253,6 @@
 
                 </div>
             </div>
-            </div>
 
             <!-- ============================================== -->
             <!-- TAB PANEL 4: CARLOS ESPINOSA - SF VS PARTNER HUB -->
@@ -1114,21 +1332,89 @@
                             </div>
                         </div>
 
-                        <!-- 4. ALCANCE LATAM & ACCESO -->
-                        <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border">
-                            <div class="font-display font-black text-xs uppercase tracking-wider text-[#C45BAA] mb-2">
-                                🌎 Escalabilidad LATAM
+                        <!-- 4. ESCALABILIDAD & REPLICABILIDAD REGIONAL -->
+                        <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border space-y-4">
+                            <!-- Section Title & Target Teams -->
+                            <div class="flex items-start justify-between gap-2 border-b-2 border-black pb-2.5">
+                                <div>
+                                    <div class="font-display font-black text-xs uppercase tracking-wider text-[#C45BAA] flex items-center gap-1.5">
+                                        <span>🌎</span> 4. Escalabilidad & Replicabilidad LATAM
+                                    </div>
+                                    <div class="text-[11px] font-mono text-neutral-600 mt-0.5">
+                                        <strong>Equipos destino:</strong> RevOps, Finanzas Regional & Partner Alliance (CO, PE, CL)
+                                    </div>
+                                </div>
+                                <span class="badge-swiss bg-emerald-100 text-emerald-800 border border-emerald-500 text-[10px] whitespace-nowrap font-bold">
+                                    Listo para Replicar
+                                </span>
                             </div>
-                            <p class="text-xs font-body text-neutral-700 leading-relaxed mb-4">
-                                Esta conciliación es el motor financiero más crítico para replicar en <strong>todas las operaciones de Xertica en LATAM</strong>, asegurando el cobro oportuno de rebates globales y locales de Google.
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <a href="https://script.google.com/macros/s/AKfycbzdqBmml2SmWMDGuPkxVseJDAiqkADgPz15shyJk1Lg7RE1mjZ9F8q_1AgjXbMGrq2E/exec" target="_blank" class="px-4 py-2 bg-[#C45BAA] text-white border-2 border-black font-display font-bold text-xs uppercase tracking-wider hover:bg-black transition-colors flex items-center gap-2">
-                                    <span>🔗</span> Abrir Torre de Control de Incentivos
-                                </a>
-                                <button onclick="copyFicha('carlos')" class="px-3 py-2 bg-neutral-100 text-black border-2 border-black font-display font-bold text-xs uppercase tracking-wider hover:bg-neutral-200 transition-colors">
-                                    📋 Copiar Resumen
-                                </button>
+
+                            <!-- Replicability Indicators Matrix -->
+                            <div class="grid grid-cols-3 gap-2 text-center font-mono">
+                                <div class="bg-neutral-100 border border-neutral-300 p-2">
+                                    <div class="text-[9px] uppercase tracking-wider text-neutral-500 font-bold">Tiempo Despliegue</div>
+                                    <div class="text-xs font-black text-neutral-900 mt-0.5">&lt; 48 Horas</div>
+                                </div>
+                                <div class="bg-neutral-100 border border-neutral-300 p-2">
+                                    <div class="text-[9px] uppercase tracking-wider text-neutral-500 font-bold">Complejidad</div>
+                                    <div class="text-xs font-black text-emerald-700 mt-0.5">Baja (BigQuery)</div>
+                                </div>
+                                <div class="bg-neutral-100 border border-neutral-300 p-2">
+                                    <div class="text-[9px] uppercase tracking-wider text-neutral-500 font-bold">Compatibilidad</div>
+                                    <div class="text-xs font-black text-blue-700 mt-0.5">100% LATAM</div>
+                                </div>
+                            </div>
+
+                            <!-- Checkpoints de Replicabilidad e Iterabilidad -->
+                            <div>
+                                <div class="text-[11px] font-display font-black uppercase tracking-wider text-neutral-800 mb-2 flex items-center gap-1.5">
+                                    <span class="w-2 h-2 bg-[#C45BAA] inline-block"></span> Checkpoints de Replicabilidad e Iterabilidad
+                                </div>
+                                <ul class="space-y-1.5 font-body text-xs text-neutral-700">
+                                    <li class="flex items-start gap-2 bg-white border border-neutral-200 p-2">
+                                        <span class="text-emerald-600 font-bold mt-0.5">✔</span>
+                                        <div>
+                                            <strong>Core Reusable:</strong> Pipeline BigQuery automatizado que concilia Stage, Montos y Deal Registration (DR) entre Salesforce y Google Partner Hub sin fricción.
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-2 bg-white border border-neutral-200 p-2">
+                                        <span class="text-emerald-600 font-bold mt-0.5">✔</span>
+                                        <div>
+                                            <strong>Iterabilidad de Reglas 2026:</strong> Motor de cálculo de rebates (workloads elegibles, exclusión de renovación pura, umbrales mínimos) parametrizable vía archivo de configuración.
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-2 bg-white border border-neutral-200 p-2">
+                                        <span class="text-emerald-600 font-bold mt-0.5">✔</span>
+                                        <div>
+                                            <strong>Detección Temprana:</strong> Alertas preventivas a 30 y 15 días del cierre fiscal para forzar registro y aprobación de DR antes de vencimiento irrevocable.
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Tropicalización por País -->
+                            <div class="border-t border-neutral-200 pt-3">
+                                <div class="text-[11px] font-display font-black uppercase tracking-wider text-neutral-800 mb-2 flex items-center gap-1.5">
+                                    <span class="w-2 h-2 bg-black inline-block"></span> Matriz de Tropicalización
+                                </div>
+                                <div class="grid grid-cols-2 gap-2 text-[11px] font-mono">
+                                    <div class="p-2 bg-neutral-50 border border-neutral-200">
+                                        <span class="font-bold text-neutral-900">🇲🇽 México:</span>
+                                        <div class="text-neutral-600 text-[10px] mt-0.5">Entidad Xertica México S.A. y conciliación con Partner Sales Managers (PSM) de Google México.</div>
+                                    </div>
+                                    <div class="p-2 bg-neutral-50 border border-neutral-200">
+                                        <span class="font-bold text-neutral-900">🇨🇴 Colombia:</span>
+                                        <div class="text-neutral-600 text-[10px] mt-0.5">Entidad Xertica Colombia SAS y reclamo de fondos PIF/MDF para mercado Andino.</div>
+                                    </div>
+                                    <div class="p-2 bg-neutral-50 border border-neutral-200">
+                                        <span class="font-bold text-neutral-900">🇵🇪 Perú:</span>
+                                        <div class="text-neutral-600 text-[10px] mt-0.5">Entidad Xertica Perú S.A.C. y validación de cuotas de Workspace para cuentas de Lima.</div>
+                                    </div>
+                                    <div class="p-2 bg-neutral-50 border border-neutral-200">
+                                        <span class="font-bold text-neutral-900">🇨🇱 Chile:</span>
+                                        <div class="text-neutral-600 text-[10px] mt-0.5">Entidad Xertica Chile SpA y auditoría de rebates aplicables a facturación GCP en Chile.</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1144,9 +1430,14 @@
                                     <span class="inline-block w-3 h-3 rounded-full bg-green-500 border border-black"></span>
                                     <span class="font-mono text-xs font-bold text-neutral-700 ml-2">DEMOSTRACIÓN INTERACTIVA (CRUCE SALESFORCE ↔ PARTNER HUB)</span>
                                 </div>
-                                <div class="inline-flex border border-black text-xs font-mono">
-                                    <button onclick="toggleMediaMode('carlos', 'video')" id="btn-media-video-carlos" class="px-2.5 py-1 bg-black text-yellow-300 font-bold">🎬 Video Demo</button>
-                                    <button onclick="toggleMediaMode('carlos', 'sim')" id="btn-media-sim-carlos" class="px-2.5 py-1 bg-white text-black font-bold">💻 Matcher en Vivo</button>
+                                <div class="flex items-center gap-2">
+                                    <div class="inline-flex border border-black text-xs font-mono">
+                                        <button onclick="toggleMediaMode('carlos', 'video')" id="btn-media-video-carlos" class="px-2.5 py-1 bg-black text-yellow-300 font-bold">🎬 Video Demo</button>
+                                        <button onclick="toggleMediaMode('carlos', 'sim')" id="btn-media-sim-carlos" class="px-2.5 py-1 bg-white text-black font-bold">💻 Matcher</button>
+                                    </div>
+                                    <a href="https://script.google.com/macros/s/AKfycbzdqBmml2SmWMDGuPkxVseJDAiqkADgPz15shyJk1Lg7RE1mjZ9F8q_1AgjXbMGrq2E/exec" target="_blank" class="px-2.5 py-1 bg-[#C45BAA] text-white border border-black text-xs font-display font-bold uppercase tracking-wider hover:bg-black transition-colors flex items-center gap-1">
+                                        <span>🔗</span> Abrir Torre Incentivos ↗
+                                    </a>
                                 </div>
                             </div>
 
