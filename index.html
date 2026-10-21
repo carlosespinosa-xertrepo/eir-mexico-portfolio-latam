@@ -97,10 +97,17 @@
         }
 
         .tab-btn.active {
-            background-color: var(--negro-xertica);
-            color: #FAF338;
+            background-color: var(--negro-xertica) !important;
+            color: #FAF338 !important;
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .tab-btn.active * {
+            color: inherit !important;
+        }
+        .tab-btn.active .badge-swiss {
+            background-color: #FAF338 !important;
+            color: #1E1E1E !important;
         }
 
         /* Slide Mode Styles */
@@ -205,17 +212,16 @@
             </div>
         </div>
 
-        <!-- Mode Switcher -->
-        <div class="flex items-center gap-2 sm:gap-3 mt-2 sm:mt-0">
-            <!-- View Mode Toggle -->
-            <div class="inline-flex border-2 border-[#1E1E1E] bg-[#F5F0E8] p-0.5 rounded-none font-display font-bold text-xs">
-                <button id="btn-mode-platform" onclick="setAppMode('platform')" class="px-3 py-1.5 transition-colors bg-[#1E1E1E] text-[#FAF338]">
-                    🏢 Plataforma & Demos
-                </button>
-                <button id="btn-mode-slides" onclick="setAppMode('slides')" class="px-3 py-1.5 transition-colors text-black hover:bg-neutral-200">
-                    📽️ Modo Slides (Pitch)
-                </button>
-            </div>
+        <!-- Slides Mode Icon Trigger -->
+        <div class="flex items-center gap-2 mt-2 sm:mt-0">
+            <button id="btn-mode-slides" onclick="setAppMode('slides')" title="Ver en Modo Presentación / Slides (Pitch Deck)" aria-label="Modo Slides" class="p-2 bg-[#FFFEF8] hover:bg-[#FAF338] text-black border-2 border-black shadow-[2px_2px_0px_#1E1E1E] transition-all hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="1"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                    <polygon points="10 8 16 10 10 12 10 8" fill="currentColor"></polygon>
+                </svg>
+            </button>
         </div>
     </header>
 
@@ -227,8 +233,8 @@
         <!-- EXECUTIVE HERO BANNER -->
         <section class="border-b-2 border-[#1E1E1E] bg-[#FFFEF8] px-4 md:px-8 py-8 md:py-10">
             <div class="max-w-7xl mx-auto">
-                <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
-                    <div class="max-w-3xl">
+                <div class="flex flex-col xl:flex-row xl:items-end justify-between gap-6">
+                    <div class="max-w-2xl">
                         <div class="flex flex-wrap items-center gap-2 mb-3">
                             <span class="badge-swiss bg-[#DE5B48] text-white">Xertica Transformation Hub</span>
                             <span class="badge-swiss bg-neutral-200 text-neutral-800">Expansión Regional</span>
@@ -237,28 +243,42 @@
                         <h1 class="font-display font-black text-3xl sm:text-4xl md:text-5xl uppercase tracking-tight leading-[0.95] text-[#1E1E1E]">
                             Iniciativas EIR México con Alcance Regional LATAM
                         </h1>
-                        <p class="font-body text-base md:text-lg text-neutral-700 mt-4 leading-relaxed max-w-2xl">
-                            Soluciones modulares desarrolladas por el equipo de <strong class="text-black">Entrepreneurs in Residence</strong>, listas para ser replicadas en <strong class="text-[#1899AF]">Colombia, Perú, Chile y México</strong>. Enfoque 100% en impacto, resultados comerciales y eficiencia operativa.
+                        <p class="font-body text-base md:text-lg text-neutral-700 mt-4 leading-relaxed">
+                            Soluciones modulares desarrolladas por el equipo de <strong class="text-black">Entrepreneurs in Residence</strong>, listas para ser replicadas en <strong class="text-[#1899AF]">Colombia, Perú, Chile, Ecuador y México</strong>. Enfoque 100% en impacto, resultados comerciales y eficiencia operativa.
                         </p>
                     </div>
 
-                    <!-- Macro KPI Grid -->
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-[#F2EDD8] p-4 border-2 border-[#1E1E1E] shadow-[4px_4px_0px_#1E1E1E]">
-                        <div class="border-r border-neutral-300 pr-3">
-                            <div class="font-display font-black text-2xl md:text-3xl text-[#1899AF] leading-none">$570K+</div>
-                            <div class="font-mono text-[10px] font-bold uppercase text-neutral-600 mt-1">USD Oportunidades & Ahorro</div>
-                        </div>
-                        <div class="border-r border-neutral-300 pr-3">
-                            <div class="font-display font-black text-2xl md:text-3xl text-[#C45BAA] leading-none">140+</div>
-                            <div class="font-mono text-[10px] font-bold uppercase text-neutral-600 mt-1">Cuentas Contactadas</div>
-                        </div>
-                        <div class="border-r border-neutral-300 pr-3">
-                            <div class="font-display font-black text-2xl md:text-3xl text-[#2E8B5A] leading-none">82%</div>
-                            <div class="font-mono text-[10px] font-bold uppercase text-neutral-600 mt-1">Adopción IA (Gemini)</div>
-                        </div>
-                        <div>
-                            <div class="font-display font-black text-2xl md:text-3xl text-[#DE5B48] leading-none">4 PAÍSES</div>
-                            <div class="font-mono text-[10px] font-bold uppercase text-neutral-600 mt-1">Escalabilidad LATAM</div>
+                    <!-- Macro KPI Grid - Reacomodado con 4 columnas perfectamente distribuidas y proporciones balanceadas -->
+                    <div class="w-full xl:w-auto xl:min-w-[620px] bg-[#F2EDD8] p-4 sm:p-5 border-2 border-[#1E1E1E] shadow-[4px_4px_0px_#1E1E1E]">
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-0 md:divide-x-2 md:divide-black/20">
+                            <!-- KPI 1 -->
+                            <div class="md:pr-4 flex flex-col justify-between">
+                                <div class="font-display font-black text-2xl sm:text-3xl text-[#1899AF] leading-none">$570K+</div>
+                                <div class="font-mono text-[10px] font-bold uppercase text-neutral-700 mt-2 leading-tight">
+                                    USD Oportunidades & Ahorro
+                                </div>
+                            </div>
+                            <!-- KPI 2 -->
+                            <div class="md:px-4 flex flex-col justify-between">
+                                <div class="font-display font-black text-2xl sm:text-3xl text-[#DE5B48] leading-none">336</div>
+                                <div class="font-mono text-[10px] font-bold uppercase text-neutral-700 mt-2 leading-tight">
+                                    Cuentas Contactadas
+                                </div>
+                            </div>
+                            <!-- KPI 3 -->
+                            <div class="md:px-4 flex flex-col justify-between">
+                                <div class="font-display font-black text-2xl sm:text-3xl text-[#2E8B5A] leading-none">82%</div>
+                                <div class="font-mono text-[10px] font-bold uppercase text-neutral-700 mt-2 leading-tight">
+                                    Adopción IA (Gemini)
+                                </div>
+                            </div>
+                            <!-- KPI 4 -->
+                            <div class="md:pl-4 flex flex-col justify-between">
+                                <div class="font-display font-black text-2xl sm:text-3xl text-[#1E1E1E] leading-none">5 PAÍSES</div>
+                                <div class="font-mono text-[10px] font-bold uppercase text-neutral-700 mt-2 leading-tight">
+                                    Escalabilidad LATAM
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -309,9 +329,9 @@
                         <button onclick="switchTab('latam')" id="tab-btn-latam" class="tab-btn col-span-2 md:col-span-4 lg:col-span-1 p-3 border-2 border-black text-left flex flex-col justify-between bg-[#FAF338] text-black">
                             <div>
                                 <span class="badge-swiss bg-black text-white text-[9px] py-0.5 px-1.5 mb-1.5">VISIÓN REGIONAL</span>
-                                <div class="font-display font-bold text-sm leading-tight text-black">Roadmap LATAM</div>
+                                <div class="font-display font-bold text-sm leading-tight text-inherit">Roadmap LATAM</div>
                             </div>
-                            <div class="text-[11px] font-mono mt-2 text-neutral-800">🌎 MX · CO · PE · CL</div>
+                            <div class="text-[11px] font-mono mt-2 text-inherit opacity-80">🌎 MX · CO · PE · CL · EC</div>
                         </button>
                     </div>
                 </div>
@@ -642,30 +662,62 @@
                             </ul>
                         </div>
 
-                        <!-- 3. RESULTADOS CONCRETOS (MÉTRICAS CLAVE) -->
+                        <!-- 3. RESULTADOS CONCRETOS (CAMPAÑA 1 · AI SUPERPOWERS · 1 OCT 2026) -->
                         <div class="bg-[#FAF338] border-2 border-black p-5 swiss-border">
-                            <div class="font-display font-black text-xs uppercase tracking-wider text-black mb-1.5 flex items-center gap-2">
-                                <span class="w-2.5 h-2.5 bg-black inline-block"></span> 3. Resultados Concretos (Métricas Clave)
+                            <div class="font-display font-black text-xs uppercase tracking-wider text-black mb-1.5 flex flex-wrap items-center justify-between gap-2">
+                                <span class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 bg-black inline-block"></span> 3. Resultados Concretos (Campaña 1 · AI Superpowers · 1 oct 2026)
+                                </span>
+                                <span class="badge-swiss bg-black text-[#FAF338] text-[9px] font-bold">5 PAÍSES LATAM</span>
                             </div>
-                            <div class="grid grid-cols-2 gap-3 mt-3">
+
+                            <!-- 3 KPI Cards Grid -->
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-3">
                                 <div class="bg-white border-2 border-black p-3.5 shadow-[2px_2px_0px_#000]">
                                     <div class="font-display font-black text-3xl text-[#DE5B48] leading-none">336</div>
                                     <div class="text-[11px] font-mono font-bold text-neutral-800 mt-1 uppercase tracking-tight">Cuentas Contactadas</div>
-                                    <div class="text-[10px] font-mono text-neutral-600 mt-0.5 leading-snug">Cartera SMB contactada con trazabilidad completa de interacción en tiempo real.</div>
+                                    <div class="text-[10px] font-mono text-neutral-600 mt-1 leading-snug">5 países: México, Colombia, Perú, Ecuador y Argentina.</div>
                                 </div>
                                 <div class="bg-white border-2 border-black p-3.5 shadow-[2px_2px_0px_#000]">
-                                    <div class="font-display font-black text-3xl text-neutral-900 leading-none">64%</div>
-                                    <div class="text-[11px] font-mono font-bold text-neutral-800 mt-1 uppercase tracking-tight">Open Rate Real Auditado</div>
-                                    <div class="text-[10px] font-mono text-neutral-600 mt-0.5 leading-snug">Cifras limpias descartando falsos positivos de bots perimetrales de seguridad.</div>
+                                    <div class="font-display font-black text-3xl text-neutral-900 leading-none">96%</div>
+                                    <div class="text-[11px] font-mono font-bold text-neutral-800 mt-1 uppercase tracking-tight">Cuentas Recibieron</div>
+                                    <div class="text-[10px] font-mono text-neutral-600 mt-1 leading-snug">324 de 336 cuentas recibieron el correo (96% entrega).</div>
+                                </div>
+                                <div class="bg-white border-2 border-black p-3.5 shadow-[2px_2px_0px_#000]">
+                                    <div class="font-display font-black text-3xl text-[#2E8B5A] leading-none">68%</div>
+                                    <div class="text-[11px] font-mono font-bold text-neutral-800 mt-1 uppercase tracking-tight">Aperturas Reales</div>
+                                    <div class="text-[10px] font-mono text-neutral-600 mt-1 leading-snug">222 de 324 cuentas entregadas lo abrieron (68% real).</div>
                                 </div>
                             </div>
-                            <div class="mt-3.5 bg-white border-2 border-black p-3">
-                                <div class="font-display font-black text-[11px] uppercase tracking-wider text-neutral-900 mb-1 flex items-center gap-1.5">
-                                    <span>🎯</span> Doble CTA + Historial 1-Clic:
+
+                            <!-- Qualitative Results / Audit insights -->
+                            <div class="mt-3.5 space-y-2">
+                                <div class="bg-white border-2 border-black p-3 shadow-[2px_2px_0px_#000]">
+                                    <div class="font-display font-black text-xs uppercase tracking-wider text-neutral-900 mb-1 flex items-center gap-1.5">
+                                        <span>🎯</span> Lista de Prioridad Comercial:
+                                    </div>
+                                    <p class="text-xs font-mono font-semibold text-neutral-800 leading-relaxed">
+                                        Entre 8 y 22 cuentas pulsaron un botón de interés o de agendar: es la lista de prioridad para el equipo comercial.
+                                    </p>
                                 </div>
-                                <p class="text-xs font-mono font-semibold text-neutral-800">
-                                    Segmentación instantánea ("Saber más" vs "Agendar sesión"), línea de tiempo por empresa y botones directos a WhatsApp y llamada para el equipo de renovaciones.
-                                </p>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                    <div class="bg-white border-2 border-black p-2.5">
+                                        <div class="font-display font-black text-[11px] uppercase tracking-wider text-neutral-900 mb-0.5 flex items-center gap-1.5">
+                                            <span>🧹</span> Base de Datos Saneada:
+                                        </div>
+                                        <p class="text-[11px] font-mono text-neutral-700 leading-snug">
+                                            Se detectaron 215 direcciones que rebotaron (100 cuentas con correos que ya no existen), así que la siguiente campaña sale más limpia.
+                                        </p>
+                                    </div>
+                                    <div class="bg-white border-2 border-black p-2.5">
+                                        <div class="font-display font-black text-[11px] uppercase tracking-wider text-neutral-900 mb-0.5 flex items-center gap-1.5">
+                                            <span>📊</span> Cifras Auditadas:
+                                        </div>
+                                        <p class="text-[11px] font-mono text-neutral-700 leading-snug">
+                                            Cada número se contrastó con una segunda fuente y se hace una auditoria sobre el envío.
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -675,10 +727,10 @@
                             <div class="flex items-start justify-between gap-2 border-b-2 border-black pb-2.5">
                                 <div>
                                     <div class="font-display font-black text-xs uppercase tracking-wider text-[#DE5B48] flex items-center gap-1.5">
-                                        <span>🌎</span> 4. Escalabilidad & Replicabilidad LATAM
+                                        <span>🌎</span> 4. Escalabilidad y replicabilidad LATAM
                                     </div>
                                     <div class="text-[11px] font-mono text-neutral-600 mt-0.5">
-                                        <strong>Equipos destino:</strong> Equipo de Renovaciones Regional, CSMs & SMB Commercial (MX, CO, PE, CL)
+                                        <strong>Equipos destino:</strong> Renovaciones SMB, Marketing Regional y Comerciales (CO, PE, CL, EC)
                                     </div>
                                 </div>
                                 <span class="badge-swiss bg-emerald-100 text-emerald-800 border border-emerald-500 text-[10px] whitespace-nowrap font-bold">
@@ -690,40 +742,40 @@
                             <div class="grid grid-cols-3 gap-2 text-center font-mono">
                                 <div class="bg-neutral-100 border border-neutral-300 p-2">
                                     <div class="text-[9px] uppercase tracking-wider text-neutral-500 font-bold">Tiempo Despliegue</div>
-                                    <div class="text-xs font-black text-neutral-900 mt-0.5">&lt; 24 Horas</div>
+                                    <div class="text-xs font-black text-neutral-900 mt-0.5">1–2 Días por país</div>
                                 </div>
                                 <div class="bg-neutral-100 border border-neutral-300 p-2">
                                     <div class="text-[9px] uppercase tracking-wider text-neutral-500 font-bold">Complejidad</div>
-                                    <div class="text-xs font-black text-emerald-700 mt-0.5">Baja (Plug & Play CSV)</div>
+                                    <div class="text-xs font-black text-emerald-700 mt-0.5">Baja</div>
                                 </div>
                                 <div class="bg-neutral-100 border border-neutral-300 p-2">
                                     <div class="text-[9px] uppercase tracking-wider text-neutral-500 font-bold">Compatibilidad</div>
-                                    <div class="text-xs font-black text-blue-700 mt-0.5">100% LATAM</div>
+                                    <div class="text-xs font-black text-blue-700 mt-0.5">100% Google Workspace</div>
                                 </div>
                             </div>
 
-                            <!-- Checkpoints de Replicabilidad e Iterabilidad -->
+                            <!-- Checkpoints de Replicabilidad -->
                             <div>
                                 <div class="text-[11px] font-display font-black uppercase tracking-wider text-neutral-800 mb-2 flex items-center gap-1.5">
-                                    <span class="w-2 h-2 bg-[#DE5B48] inline-block"></span> Checkpoints de Replicabilidad e Iterabilidad:
+                                    <span class="w-2 h-2 bg-[#DE5B48] inline-block"></span> Checkpoints de replicabilidad:
                                 </div>
                                 <ul class="space-y-1.5 font-body text-xs text-neutral-700">
-                                    <li class="flex items-start gap-2 bg-white border border-neutral-200 p-2">
+                                    <li class="flex items-start gap-2 bg-white border border-neutral-200 p-2.5">
                                         <span class="text-emerald-600 font-bold mt-0.5">✔</span>
                                         <div>
-                                            <strong>Core Reusable de Envíos:</strong> Motor Workspace y Apps Script con despacho institucional desde alias corporativo (renovaciones.xertica@xertica.com) y confirmación visual previa.
+                                            <strong>Núcleo reutilizable:</strong> Apps Script, Gmail y Google Sheets. Cada país solo necesita su base de clientes en CSV y su alias de envío.
                                         </div>
                                     </li>
-                                    <li class="flex items-start gap-2 bg-white border border-neutral-200 p-2">
+                                    <li class="flex items-start gap-2 bg-white border border-neutral-200 p-2.5">
                                         <span class="text-emerald-600 font-bold mt-0.5">✔</span>
                                         <div>
-                                            <strong>Filtro Anti-Bots de Seguridad:</strong> Algoritmo de depuración que elimina aperturas y clics falsos de filtros antivirus corporativos para reportar interés genuino.
+                                            <strong>Plantillas editables:</strong> el mensaje y los botones se cambian por campaña sin tocar el sistema.
                                         </div>
                                     </li>
-                                    <li class="flex items-start gap-2 bg-white border border-neutral-200 p-2">
+                                    <li class="flex items-start gap-2 bg-white border border-neutral-200 p-2.5">
                                         <span class="text-emerald-600 font-bold mt-0.5">✔</span>
                                         <div>
-                                            <strong>Gestión y Estados de Seguimiento:</strong> Línea de tiempo por cuenta con botón 1-clic a llamada/WhatsApp y estatus colaborativo (No contactado, En proceso, Contactado).
+                                            <strong>Informe de impacto incluido:</strong> cada campaña genera su informe por cuenta y país, con descarga a Excel, de acceso solo para cuentas @xertica.com.
                                         </div>
                                     </li>
                                 </ul>
@@ -732,24 +784,32 @@
                             <!-- Tropicalización por País -->
                             <div class="border-t border-neutral-200 pt-3">
                                 <div class="text-[11px] font-display font-black uppercase tracking-wider text-neutral-800 mb-2 flex items-center gap-1.5">
-                                    <span class="w-2 h-2 bg-black inline-block"></span> Matriz de Tropicalización:
+                                    <span class="w-2 h-2 bg-black inline-block"></span> Matriz de Despliegue Regional:
                                 </div>
-                                <div class="grid grid-cols-2 gap-2 text-[11px] font-mono">
+                                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-[11px] font-mono">
                                     <div class="p-2 bg-neutral-50 border border-neutral-200">
                                         <span class="font-bold text-neutral-900">🇲🇽 México:</span>
-                                        <div class="text-neutral-600 text-[10px] mt-0.5">Campañas masivas SMB sobre cartera mexicana en horario CST y ruteo a ejecutivos locales.</div>
+                                        <div class="text-neutral-600 text-[10px] mt-0.5">Campaña AI Superpowers ejecutada con descarga de métricas.</div>
                                     </div>
                                     <div class="p-2 bg-neutral-50 border border-neutral-200">
                                         <span class="font-bold text-neutral-900">🇨🇴 Colombia:</span>
-                                        <div class="text-neutral-600 text-[10px] mt-0.5">Adaptación de alias y plantillas comerciales para cartera SMB en Bogotá, Medellín y Cali.</div>
+                                        <div class="text-neutral-600 text-[10px] mt-0.5">Carga de base local SMB y alias regional en 1–2 días.</div>
                                     </div>
                                     <div class="p-2 bg-neutral-50 border border-neutral-200">
                                         <span class="font-bold text-neutral-900">🇵🇪 Perú:</span>
-                                        <div class="text-neutral-600 text-[10px] mt-0.5">Segmentación de cartera SMB Lima con plantillas consultivas y seguimiento directo vía WhatsApp.</div>
+                                        <div class="text-neutral-600 text-[10px] mt-0.5">Segmentación de cartera SMB Lima con seguimiento directo.</div>
                                     </div>
                                     <div class="p-2 bg-neutral-50 border border-neutral-200">
                                         <span class="font-bold text-neutral-900">🇨🇱 Chile:</span>
-                                        <div class="text-neutral-600 text-[10px] mt-0.5">Automatización de renovaciones para base instalada chilena con ajuste horario CLT.</div>
+                                        <div class="text-neutral-600 text-[10px] mt-0.5">Renovaciones para base instalada chilena y ajuste horario.</div>
+                                    </div>
+                                    <div class="p-2 bg-neutral-50 border border-neutral-200">
+                                        <span class="font-bold text-neutral-900">🇪🇨 Ecuador:</span>
+                                        <div class="text-neutral-600 text-[10px] mt-0.5">Cuentas integradas y reporte consolidado en Excel.</div>
+                                    </div>
+                                    <div class="p-2 bg-neutral-50 border border-neutral-200">
+                                        <span class="font-bold text-neutral-900">🇦🇷 Argentina:</span>
+                                        <div class="text-neutral-600 text-[10px] mt-0.5">Depuración de base y control de entregabilidad perimetral.</div>
                                     </div>
                                 </div>
                             </div>
@@ -796,7 +856,7 @@
                                         </div>
 
                                         <div class="flex items-center justify-between text-xs font-mono text-neutral-300">
-                                            <span>336 Cuentas Contactadas · 64% Open Rate</span>
+                                            <span>336 Cuentas (5 Países) · 96% Entrega · 68% Open Rate Real</span>
                                             <button onclick="openVideoSettings('jorge')" class="underline hover:text-white font-bold">⚙️ Subir / Enlazar Video (45s)</button>
                                         </div>
                                     </div>
@@ -810,16 +870,16 @@
                             <h5 class="font-display font-bold text-sm uppercase tracking-wider mb-2">Ficha Técnica Rápida para LATAM:</h5>
                             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-xs">
                                 <div class="p-2.5 bg-neutral-100 border border-neutral-300">
-                                    <div class="text-neutral-500 uppercase text-[10px]">Stack Técnico</div>
-                                    <div class="font-bold mt-0.5">Apps Script V8 · Sheets</div>
+                                    <div class="text-neutral-500 uppercase text-[10px]">Stack Tecnológico</div>
+                                    <div class="font-bold mt-0.5">Apps Script · Gmail · Sheets</div>
                                 </div>
                                 <div class="p-2.5 bg-neutral-100 border border-neutral-300">
-                                    <div class="text-neutral-500 uppercase text-[10px]">Despacho Institucional</div>
-                                    <div class="font-bold mt-0.5 text-neutral-900 text-[11px]">renovaciones.xertica</div>
+                                    <div class="text-neutral-500 uppercase text-[10px]">Tiempo Despliegue</div>
+                                    <div class="font-bold mt-0.5 text-neutral-900 text-[11px]">1–2 Días / País (Baja)</div>
                                 </div>
                                 <div class="p-2.5 bg-neutral-100 border border-neutral-300">
-                                    <div class="text-neutral-500 uppercase text-[10px]">Seguimiento Comercial</div>
-                                    <div class="font-bold mt-0.5 text-emerald-700">WhatsApp & Llamada 1 Clic</div>
+                                    <div class="text-neutral-500 uppercase text-[10px]">Informe de Impacto</div>
+                                    <div class="font-bold mt-0.5 text-emerald-700">Excel @xertica.com</div>
                                 </div>
                             </div>
                         </div>
@@ -1426,20 +1486,20 @@
                                             <div class="text-[11px] text-neutral-600 font-sans">
                                                 Líder: <strong class="text-[#DE5B48]">Jorge Caraballo</strong> · EIR
                                             </div>
-                                            <div class="mt-2 inline-flex items-center gap-1 px-2 py-0.5 bg-neutral-100 border border-neutral-300 text-[10px] font-mono">
-                                                <span>🇨🇴</span> Colombia · <span>🇨🇱</span> Chile · <span>🇲🇽</span> México · <span>🇵🇪</span> Perú
+                                            <div class="mt-2 inline-flex flex-wrap items-center gap-1 px-2 py-0.5 bg-neutral-100 border border-neutral-300 text-[10px] font-mono">
+                                                <span>🇲🇽</span> MX · <span>🇨🇴</span> CO · <span>🇵🇪</span> PE · <span>🇪🇨</span> EC · <span>🇦🇷</span> AR · <span>🇨🇱</span> CL
                                             </div>
                                         </td>
                                         <td class="p-4 border-r border-black align-top font-sans">
-                                            <div class="font-display font-bold text-sm text-emerald-700">336 Cuentas Contactadas</div>
-                                            <div class="text-xs text-neutral-700 mt-1">64% Open Rate Real (filtro anti-bot de seguridad), pantalla de validación previa en CSV, doble llamada a la acción y seguimiento 1-clic por WhatsApp/llamada.</div>
+                                            <div class="font-display font-bold text-sm text-emerald-700">336 Cuentas (5 Países) · 96% Entrega · 68% Open Rate</div>
+                                            <div class="text-xs text-neutral-700 mt-1">Campaña 1 AI Superpowers: 324/336 entregadas, 222 abiertas, 8 a 22 cuentas con clic en interés/agendar (prioridad comercial), base saneada (215 rebotes detectados) y cifras auditadas con doble fuente.</div>
                                         </td>
                                         <td class="p-4 border-r border-black align-top">
-                                            <span class="inline-block px-2 py-1 bg-amber-100 text-amber-900 border border-amber-400 font-bold text-xs">&lt; 24 Horas</span>
-                                            <div class="text-[10px] text-neutral-500 mt-1">Plug & Play CSV</div>
+                                            <span class="inline-block px-2 py-1 bg-amber-100 text-amber-900 border border-amber-400 font-bold text-xs">1–2 Días / País</span>
+                                            <div class="text-[10px] text-neutral-500 mt-1">Baja · 100% Workspace</div>
                                         </td>
                                         <td class="p-4 border-r border-black align-top font-sans text-xs text-neutral-700">
-                                            <strong>Core Apps Script V8 + Sheets:</strong> Despacho masivo desde alias corporativo institucional (renovaciones.xertica@xertica.com), línea de tiempo por empresa y matriz de estatus colaborativo sin tocar código.
+                                            <strong>Apps Script, Gmail y Google Sheets:</strong> Cada país solo requiere su base en CSV y su alias institucional. Plantillas editables por campaña e informe de impacto por cuenta y país con descarga a Excel restringido para cuentas @xertica.com.
                                         </td>
                                         <td class="p-4 text-center align-middle">
                                             <button onclick="switchTab('jorge'); window.scrollTo({top: 380, behavior: 'smooth'});" class="px-3 py-1.5 bg-[#DE5B48] text-white border-2 border-black font-display font-bold text-[11px] uppercase tracking-wider hover:bg-black transition-colors shadow-[2px_2px_0px_#000] whitespace-nowrap">
@@ -1842,12 +1902,15 @@
             <div class="font-display font-black text-2xl tracking-tighter" style="color: var(--negro-xertica)">
                 Xertica<span class="text-[#1899AF]">.ai</span>
             </div>
-            <div class="flex gap-3 pointer-events-auto">
-                <button onclick="prevSlide()" class="px-4 py-2 border-2 border-black hover:bg-black hover:text-white transition-colors font-display font-bold text-xs uppercase bg-[#FFFEF8] shadow-[2px_2px_0px_#000]">
+            <div class="flex gap-2 sm:gap-3 pointer-events-auto items-center">
+                <button onclick="prevSlide()" class="px-3 sm:px-4 py-2 border-2 border-black hover:bg-black hover:text-white transition-colors font-display font-bold text-xs uppercase bg-[#FFFEF8] shadow-[2px_2px_0px_#000]">
                     ← ANTERIOR
                 </button>
-                <button onclick="nextSlide()" class="px-4 py-2 bg-[#FAF338] border-2 border-black hover:bg-black hover:text-white transition-colors font-display font-bold text-xs uppercase shadow-[2px_2px_0px_#000]">
+                <button onclick="nextSlide()" class="px-3 sm:px-4 py-2 bg-[#FAF338] border-2 border-black hover:bg-black hover:text-white transition-colors font-display font-bold text-xs uppercase shadow-[2px_2px_0px_#000]">
                     SIGUIENTE →
+                </button>
+                <button onclick="setAppMode('platform')" title="Volver a la plataforma" class="px-3 py-2 bg-[#1E1E1E] text-white border-2 border-black hover:bg-neutral-800 transition-colors font-display font-bold text-xs uppercase shadow-[2px_2px_0px_#000] flex items-center gap-1.5">
+                    <span>✕</span> <span class="hidden sm:inline">Cerrar Slides</span>
                 </button>
             </div>
         </div>
@@ -1947,29 +2010,37 @@
                     </p>
                 </div>
                 <div class="col-span-12 lg:col-span-7 flex flex-col justify-center px-8 lg:px-16">
-                    <h3 class="font-display font-bold text-2xl lg:text-3xl title-line stagger-up mb-6">¿En qué ayuda y métricas reales?</h3>
-                    <div class="grid grid-cols-2 gap-4 font-mono text-sm stagger-up delay-1">
-                        <div class="bg-white border-2 border-black p-4">
-                            <span class="text-neutral-500 block text-xs">OPEN RATE REAL</span>
-                            <span class="font-display font-black text-3xl text-[#DE5B48]">64%</span>
-                            <span class="text-xs text-neutral-600 block mt-1">Filtro de seguridad anti-bot</span>
+                    <h3 class="font-display font-bold text-2xl lg:text-3xl title-line stagger-up mb-4">Campaña 1 · AI Superpowers (1 oct 2026)</h3>
+                    <div class="grid grid-cols-3 gap-3 font-mono text-sm stagger-up delay-1">
+                        <div class="bg-white border-2 border-black p-3">
+                            <span class="text-neutral-500 block text-[10px] uppercase font-bold">ENTREGA (324/336)</span>
+                            <span class="font-display font-black text-2xl sm:text-3xl text-neutral-900">96%</span>
+                            <span class="text-[10px] text-neutral-600 block mt-0.5">5 países LATAM</span>
                         </div>
-                        <div class="bg-white border-2 border-black p-4">
-                            <span class="text-neutral-500 block text-xs">SEGUIMIENTO 1-CLIC</span>
-                            <span class="font-display font-black text-3xl text-black">100%</span>
-                            <span class="text-xs text-neutral-600 block mt-1">Línea de tiempo & WhatsApp</span>
+                        <div class="bg-white border-2 border-black p-3">
+                            <span class="text-neutral-500 block text-[10px] uppercase font-bold">OPEN RATE (222/324)</span>
+                            <span class="font-display font-black text-2xl sm:text-3xl text-[#DE5B48]">68%</span>
+                            <span class="text-[10px] text-neutral-600 block mt-0.5">Filtro anti-bot real</span>
                         </div>
-                    </div>
-                    <div class="space-y-3 font-body text-sm mt-6 stagger-up delay-2">
-                        <div class="border-l-4 border-black pl-4 py-1">
-                            <strong>Envío Masivo con Revisión Previa:</strong> Carga CSV, validación visual y despacho desde alias institucional <code class="text-xs font-mono bg-neutral-200 px-1">renovaciones.xertica@xertica.com</code>.
-                        </div>
-                        <div class="border-l-4 border-[#DE5B48] pl-4 py-1">
-                            <strong>Doble Llamada a la Acción:</strong> Distinción automática entre cuenta curiosa ("Saber más") vs lista para comprar ("Agendar sesión").
+                        <div class="bg-white border-2 border-black p-3">
+                            <span class="text-neutral-500 block text-[10px] uppercase font-bold">PRIORIDAD VENTAS</span>
+                            <span class="font-display font-black text-2xl sm:text-3xl text-[#2E8B5A]">8–22</span>
+                            <span class="text-[10px] text-neutral-600 block mt-0.5">Clic interés / agendar</span>
                         </div>
                     </div>
-                    <div class="mt-8 stagger-up delay-3">
-                        <a href="https://script.google.com/a/macros/xertica.com/s/AKfycbwlwksFORqQZ5oMv6PvT5G-fPwupqWjCQPZPgcJraRPan50anciUZ7VZQ1FNjPC3H8v/exec" target="_blank" class="inline-flex items-center gap-2 px-5 py-3 bg-[#DE5B48] text-white border-2 border-black font-display font-black text-sm uppercase tracking-wider hover:bg-black transition-colors shadow-[4px_4px_0px_#000]">
+                    <div class="space-y-2 font-body text-xs sm:text-sm mt-4 stagger-up delay-2">
+                        <div class="border-l-4 border-black pl-3 py-1">
+                            <strong>Base de Datos Saneada:</strong> 215 rebotes detectados (100 cuentas inexistentes depuradas para siguientes envíos).
+                        </div>
+                        <div class="border-l-4 border-[#DE5B48] pl-3 py-1">
+                            <strong>Doble Llamada a la Acción & Cifras Auditadas:</strong> Distinción "Saber más" vs "Agendar sesión" contrastada con 2da fuente.
+                        </div>
+                        <div class="border-l-4 border-emerald-600 pl-3 py-1">
+                            <strong>Replicabilidad LATAM:</strong> Despliegue en 1–2 días con Apps Script, Gmail y Sheets + informe Excel con acceso @xertica.com.
+                        </div>
+                    </div>
+                    <div class="mt-6 stagger-up delay-3">
+                        <a href="https://script.google.com/a/macros/xertica.com/s/AKfycbwlwksFORqQZ5oMv6PvT5G-fPwupqWjCQPZPgcJraRPan50anciUZ7VZQ1FNjPC3H8v/exec" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 bg-[#DE5B48] text-white border-2 border-black font-display font-black text-xs uppercase tracking-wider hover:bg-black transition-colors shadow-[4px_4px_0px_#000]">
                             <span>🔗</span> Abrir Herramienta en Producción ↗
                         </a>
                     </div>
@@ -2070,8 +2141,8 @@
                         <div class="bg-[#FFFEF8] border-2 border-black p-4 shadow-[2px_2px_0px_#DE5B48]">
                             <span class="badge-swiss bg-[#DE5B48] text-white text-[9px] mb-2 font-bold">RENOVACIONES SMB</span>
                             <div class="font-display font-bold text-base font-sans text-neutral-900 mt-1">Jorge Caraballo</div>
-                            <div class="text-[10px] text-emerald-700 font-bold mt-1">336 Cuentas · 64% Open Rate</div>
-                            <p class="font-sans text-xs text-neutral-600 mt-2">&lt; 24 hrs para cargar base CSV de clientes y monitorear aperturas sin bots.</p>
+                            <div class="text-[10px] text-emerald-700 font-bold mt-1">336 Cuentas (5 Países) · 68% Open Rate</div>
+                            <p class="font-sans text-xs text-neutral-600 mt-2">1–2 días con Apps Script, Gmail y Sheets. Informe Excel con acceso @xertica.com.</p>
                         </div>
                         <div class="bg-[#FFFEF8] border-2 border-black p-4 shadow-[2px_2px_0px_#5A4A96]">
                             <span class="badge-swiss bg-[#5A4A96] text-white text-[9px] mb-2 font-bold">WORKSPACE & GEMINI</span>
@@ -2286,8 +2357,8 @@ Resumen ejecutivo digerible de cada proyecto:
 2. Plataforma de Renovaciones y Campañas Masivas SMB (@Jorge Caraballo)
 • Objetivo: Automatizar las campañas de renovación y comunicación a la cartera SMB de Xertica: monitoreo en tiempo real, desde carga CSV hasta saber quién abrió, pulsó y a quién llamar.
 • En qué ayuda: Envío masivo con revisión previa desde alias institucional (renovaciones.xertica@xertica.com), filtro anti-bot de scanners de correo, doble CTA ("Saber más" vs "Agendar") e historial comercial por empresa con WhatsApp y llamada 1-clic.
-• Resultado / Impacto: 336 cuentas contactadas, 64% Open Rate real auditado y seguimiento de estatus con trazabilidad colaborativa.
-• Alcance LATAM: Core reusable en Apps Script V8 conectado a Sheets, replicable en MX, CO, PE y CL en < 24 hrs.
+• Resultado / Impacto: Campaña 1 AI Superpowers: 336 cuentas (5 países: MX, CO, PE, EC, AR), 96% entrega (324/336), 68% apertura real (222/324), 8 a 22 cuentas con interés/agendar (prioridad comercial) y base saneada (215 rebotes depurados).
+• Alcance LATAM: Núcleo reusable en Apps Script, Gmail y Sheets, replicable en 1–2 días por país con plantillas editables e informe de impacto en Excel con descarga para cuentas @xertica.com.
 
 3. Conciliación Workspace & Adopción Gemini (@Angel Solis)
 • Objetivo: Automatizar la conciliación de licencias de Google Workspace y monitorear el impacto real de adopción (Capa 2 y Gemini).
@@ -2310,24 +2381,21 @@ La plataforma cuenta con 2 modos:
             appMode = mode;
             const viewPlatform = document.getElementById('view-platform');
             const viewSlides = document.getElementById('view-slides');
-            const btnPlatform = document.getElementById('btn-mode-platform');
             const btnSlides = document.getElementById('btn-mode-slides');
 
             if (mode === 'slides') {
                 viewPlatform.classList.add('hidden');
                 viewSlides.classList.remove('hidden');
-                btnSlides.classList.add('bg-[#1E1E1E]', 'text-[#FAF338]');
-                btnSlides.classList.remove('text-black');
-                btnPlatform.classList.remove('bg-[#1E1E1E]', 'text-[#FAF338]');
-                btnPlatform.classList.add('text-black');
+                if (btnSlides) {
+                    btnSlides.classList.add('bg-[#FAF338]');
+                }
                 updateSlideView();
             } else {
                 viewSlides.classList.add('hidden');
                 viewPlatform.classList.remove('hidden');
-                btnPlatform.classList.add('bg-[#1E1E1E]', 'text-[#FAF338]');
-                btnPlatform.classList.remove('text-black');
-                btnSlides.classList.remove('bg-[#1E1E1E]', 'text-[#FAF338]');
-                btnSlides.classList.add('text-black');
+                if (btnSlides) {
+                    btnSlides.classList.remove('bg-[#FAF338]');
+                }
             }
         }
 
@@ -2806,8 +2874,8 @@ La plataforma cuenta con 2 modos:
                 jorge: `JORGE CARABALLO · Plataforma de Renovaciones y Campañas Masivas SMB
 • Objetivo: Automatizar las campañas de renovación y comunicación a la cartera SMB de Xertica: desde carga CSV hasta monitoreo en tiempo real de quién abrió, pulsó y a quién llamar.
 • En qué ayuda: Envío masivo con revisión previa y alias institucional (renovaciones.xertica@xertica.com), filtro anti-bot de seguridad, doble CTA ("Saber más" vs "Agendar") e historial comercial por cuenta con llamada y WhatsApp 1-clic.
-• Resultados: 336 cuentas contactadas con trazabilidad total, 64% Open Rate real auditado y estados de seguimiento (No contactado / En proceso / Contactado).
-• Escalabilidad LATAM: Core reusable en Apps Script V8 conectado a Sheets, replicable en MX, CO, PE y CL en < 24 hrs.`,
+• Resultados: Campaña 1 AI Superpowers auditada: 336 cuentas (5 países: MX, CO, PE, EC, AR), 96% entrega (324 de 336), 68% apertura real (222 de 324), 8 a 22 cuentas con clic en interés/agendar (prioridad comercial) y base saneada (215 rebotes depurados).
+• Escalabilidad LATAM: Núcleo reusable en Apps Script, Gmail y Sheets, despliegue en 1–2 días por país con plantillas editables e informe de impacto en Excel protegido para cuentas @xertica.com.`,
                 angel: `ANGEL SOLIS · Conciliación de Licencias Workspace & Adopción Gemini
 • Objetivo: Automatizar la conciliación de licencias Google Workspace y monitorear el impacto real de adopción (Capa 2 y Gemini).
 • En qué ayuda: Sincronización automatizada Partner Hub vs Consola y bases comerciales; radar de discrepancias financieras; y módulo de adopción inteligente.
