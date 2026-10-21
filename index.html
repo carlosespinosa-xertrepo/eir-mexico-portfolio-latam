@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>EIR's México · Portfolio de Soluciones Escalables LATAM | Xertica.ai</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -14,6 +17,13 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
     <style>
+        .hero-title-line1 {
+            display: block;
+        }
+        .hero-title-line2 {
+            display: block;
+            white-space: nowrap !important;
+        }
         .material-symbols-outlined {
             font-family: 'Material Symbols Outlined';
             font-weight: normal;
@@ -284,15 +294,15 @@
         <section class="border-b-2 border-[#1E1E1E] bg-[#FFFEF8] px-4 md:px-8 py-8 md:py-10">
             <div class="max-w-7xl mx-auto">
                 <div class="flex flex-col xl:flex-row xl:items-end justify-between gap-6">
-                    <div class="max-w-3xl">
+                    <div class="flex-1 min-w-0 max-w-3xl">
                         <div class="flex flex-wrap items-center gap-2 mb-3">
                             <span class="badge-swiss bg-[#DE5B48] text-white">Xertica Transformation Hub</span>
                             <span class="badge-swiss bg-neutral-200 text-neutral-800">Expansión Regional</span>
                             <span class="font-mono text-xs font-semibold text-neutral-500">Q4 2026 · Despliegue Rápido</span>
                         </div>
-                        <h1 class="font-display font-black text-2xl sm:text-3xl md:text-4xl lg:text-[42px] xl:text-[44px] uppercase tracking-tight leading-[1] text-[#1E1E1E]">
-                            <span class="block">Iniciativas EIR México</span>
-                            <span class="block whitespace-nowrap">con Alcance Regional LATAM</span>
+                        <h1 class="font-display font-black uppercase tracking-tight text-[#1E1E1E]" style="font-size: clamp(1.6rem, 2.7vw, 2.75rem); line-height: 1.05;">
+                            <span class="hero-title-line1">Iniciativas EIR México</span>
+                            <span class="hero-title-line2">con Alcance Regional LATAM</span>
                         </h1>
                         <p class="font-body text-base md:text-lg text-neutral-700 mt-4 leading-relaxed">
                             Soluciones modulares desarrolladas por el equipo de <strong class="text-black">Entrepreneurs in Residence</strong>, listas para ser replicadas en <strong class="text-[#1899AF]">Colombia, Perú, Chile, Ecuador y México</strong>. Enfoque 100% en impacto, resultados comerciales y eficiencia operativa.
@@ -300,7 +310,7 @@
                     </div>
 
                     <!-- Macro KPI Grid - Reacomodado con 4 columnas perfectamente distribuidas y proporciones balanceadas -->
-                    <div class="w-full xl:w-auto xl:min-w-[620px] bg-[#F2EDD8] p-4 sm:p-5 border-2 border-[#1E1E1E] shadow-[4px_4px_0px_#1E1E1E]">
+                    <div class="w-full xl:w-auto xl:min-w-[500px] xl:max-w-[540px] flex-shrink-0 bg-[#F2EDD8] p-4 sm:p-5 border-2 border-[#1E1E1E] shadow-[4px_4px_0px_#1E1E1E]">
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-0 md:divide-x-2 md:divide-black/20">
                             <!-- KPI 1 -->
                             <div class="md:pr-4 flex flex-col justify-between">
