@@ -1227,43 +1227,32 @@
 
                         <!-- 2. EN QUÉ AYUDA DIRECTAMENTE -->
                         <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border">
-                            <div class="font-display font-black text-xs uppercase tracking-wider text-[#1E1E1E] mb-3 flex items-center gap-2">
+                            <div class="font-display font-black text-xs uppercase tracking-wider text-[#1E1E1E] mb-2.5 flex items-center gap-2">
                                 <span class="w-2.5 h-2.5 bg-[#1E1E1E] inline-block"></span> 2. ¿En qué ayuda directamente?
                             </div>
-                            <ul class="space-y-3 font-body text-sm text-neutral-800">
-                                <li class="flex items-start gap-2.5 bg-neutral-50/80 p-2.5 border border-neutral-200">
-                                    <span class="material-symbols-outlined text-emerald-600 text-base mt-0.5">check_circle</span>
+                            <ul class="space-y-3 font-body text-xs text-neutral-700">
+                                <li class="flex items-start gap-2.5">
+                                    <span class="material-symbols-outlined text-emerald-600 text-sm mt-0.5">check_circle</span>
                                     <div>
-                                        <strong class="text-neutral-900 block font-display font-bold text-xs uppercase text-[#C45BAA]">Semáforo Operativo de Bloqueo de OC (Detención Preventiva)</strong>
-                                        <span class="text-xs text-neutral-700 leading-relaxed">Clasificación instantánea de cada oportunidad en 3 estados de acción: <strong>DETENER OC</strong> (falta DR o umbral superado sin registro), <strong>LIBERADA PARA OC</strong> (DR aprobado en Google verificado) y <strong>EN REVISIÓN</strong> (renegociaciones o falsos transfers).</span>
+                                        <strong class="text-neutral-900">Semáforo Operativo de Bloqueo de OC:</strong> Clasificación inmediata (DETENER OC, LIBERADA, EN REVISIÓN) cruzando Salesforce vs. Deal Registration para frenar órdenes sin registro aprobado por Google antes de emitir la compra.
                                     </div>
                                 </li>
-                                <li class="flex items-start gap-2.5 bg-neutral-50/80 p-2.5 border border-neutral-200">
-                                    <span class="material-symbols-outlined text-emerald-600 text-base mt-0.5">check_circle</span>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="material-symbols-outlined text-emerald-600 text-sm mt-0.5">check_circle</span>
                                     <div>
-                                        <strong class="text-neutral-900 block font-display font-bold text-xs uppercase text-[#1899AF]">Cálculo Automático de Margen Mayorista y Net to Google</strong>
-                                        <span class="text-xs text-neutral-700 leading-relaxed">Conversión matemática en vivo de <code>Net to Google = Monto Bruto * 0.80</code>. Aplica los umbrales oficiales sobre el valor neto mayorista real y no sobre el precio de lista de Salesforce, evitando falsas alarmas en cotizaciones pequeñas.</span>
+                                        <strong class="text-neutral-900">Cálculo Automático de Net to Google:</strong> Conversión matemática en vivo (<code>Monto Bruto * 0.80</code>) que aplica los umbrales oficiales de Co-sell ($10k WS, $60k GCP) sobre el valor neto mayorista real, evitando falsas alarmas comerciales.
                                     </div>
                                 </li>
-                                <li class="flex items-start gap-2.5 bg-neutral-50/80 p-2.5 border border-neutral-200">
-                                    <span class="material-symbols-outlined text-amber-500 text-base mt-0.5 fill">auto_awesome</span>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="material-symbols-outlined text-amber-500 text-sm mt-0.5 fill">auto_awesome</span>
                                     <div>
-                                        <strong class="text-neutral-900 block font-display font-bold text-xs uppercase text-amber-700">Radar de Prioridad Estratégica Gemini AI (Umbral $0 & PayOut 2X)</strong>
-                                        <span class="text-xs text-neutral-700 leading-relaxed">Detección proactiva de cualquier oportunidad que incluya Gemini (desde 1 sola licencia) para forzar el registro de DR inmediato, asegurando el multiplicador del 20% y el pago doble de incentivo en todo el acuerdo.</span>
+                                        <strong class="text-neutral-900">Radar Estratégico Gemini AI (Umbral $0 & PayOut 2X):</strong> Detección proactiva de oportunidades desde 1 sola licencia para forzar el registro de Deal Registration, asegurando el multiplicador del 20% y el cobro doble de incentivo.
                                     </div>
                                 </li>
-                                <li class="flex items-start gap-2.5 bg-neutral-50/80 p-2.5 border border-neutral-200">
-                                    <span class="material-symbols-outlined text-emerald-600 text-base mt-0.5">check_circle</span>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="material-symbols-outlined text-emerald-600 text-sm mt-0.5">check_circle</span>
                                     <div>
-                                        <strong class="text-neutral-900 block font-display font-bold text-xs uppercase text-[#5A4A96]">Gestión Colaborativa y Notificaciones en 1 Clic (Alert Desk)</strong>
-                                        <span class="text-xs text-neutral-700 leading-relaxed">Módulo de notas y timeline por cuenta con perfiles de usuario (Operaciones, Ventas, Finanzas), generación automática de justificaciones normativas y envío de alertas oficiales por correo institucional vía Gmail.</span>
-                                    </div>
-                                </li>
-                                <li class="flex items-start gap-2.5 bg-neutral-50/80 p-2.5 border border-neutral-200">
-                                    <span class="material-symbols-outlined text-purple-600 text-base mt-0.5 fill">auto_awesome</span>
-                                    <div>
-                                        <strong class="text-neutral-900 block font-display font-bold text-xs uppercase text-[#DE5B48]">Academia Comercial & Simulador de Incentivos en Tiempo Real</strong>
-                                        <span class="text-xs text-neutral-700 leading-relaxed">Catálogo interactivo con las reglas de los 6 programas clave de Google (Sell Rebates, Gemini Boost, Margen Partner, Fondos PSF, MDF, Retención), simulador financiero en vivo y Desafío Comercial (Quiz interactivo en formato cápsula) para capacitar a la fuerza de ventas.</span>
+                                        <strong class="text-neutral-900">Alert Desk & Capacitación Comercial:</strong> Módulo colaborativo entre Operaciones, Ventas y Finanzas con alertas vía Gmail y catálogo de los 6 programas de incentivos para capacitar a la fuerza de ventas.
                                     </div>
                                 </li>
                             </ul>
@@ -1479,107 +1468,7 @@
                             </div>
                         </div>
 
-                        <!-- Radar Interactivo del Semáforo Operativo & Simulador de Reglas (G26) -->
-                        <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border space-y-4">
-                            <div class="flex flex-wrap items-center justify-between gap-2 border-b-2 border-black pb-3">
-                                <div>
-                                    <span class="badge-swiss bg-black text-[#FAF338] text-[9px] font-bold">SIMULADOR EN TIEMPO REAL</span>
-                                    <h5 class="font-display font-black text-base text-neutral-900 uppercase mt-1">
-                                        Semáforo Operativo de Bloqueo de OC & Cálculo Net to Google
-                                    </h5>
-                                </div>
-                                <span class="text-xs font-mono text-neutral-500 bg-neutral-100 px-2 py-0.5 border border-neutral-300">
-                                    Reglas Google Partner Advantage 2026
-                                </span>
-                            </div>
-
-                            <!-- 3 Estados Operativos (Interactive Cards) -->
-                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 font-mono text-xs">
-                                <!-- Estado 1: DETENER OC -->
-                                <div class="p-3 bg-red-50 border-2 border-red-500 text-red-950">
-                                    <div class="flex items-center justify-between font-bold">
-                                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-base">block</span> DETENER OC</span>
-                                        <span class="text-[10px] bg-red-200 px-1.5 py-0.5 border border-red-400">22 Órdenes</span>
-                                    </div>
-                                    <p class="font-sans text-[11px] text-red-900 mt-2 leading-tight">
-                                        Falta Deal Registration o superó umbral ($60k GCP / $10k WS). Bloqueo preventivo de emisión de OC para evitar fuga de hasta 16.1% de margen.
-                                    </p>
-                                </div>
-
-                                <!-- Estado 2: LIBERADA PARA OC -->
-                                <div class="p-3 bg-emerald-50 border-2 border-emerald-500 text-emerald-950">
-                                    <div class="flex items-center justify-between font-bold">
-                                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-base">verified</span> LIBERADA PARA OC</span>
-                                        <span class="text-[10px] bg-emerald-200 px-1.5 py-0.5 border border-emerald-400">$20.0M+ USD</span>
-                                    </div>
-                                    <p class="font-sans text-[11px] text-emerald-900 mt-2 leading-tight">
-                                        Deal Registration aprobado en Google Partner Advantage verificado. Pipeline auditado y seguro para tramitar compra.
-                                    </p>
-                                </div>
-
-                                <!-- Estado 3: EN REVISIÓN -->
-                                <div class="p-3 bg-amber-50 border-2 border-amber-500 text-amber-950">
-                                    <div class="flex items-center justify-between font-bold">
-                                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-base">pending_actions</span> EN REVISIÓN</span>
-                                        <span class="text-[10px] bg-amber-200 px-1.5 py-0.5 border border-amber-400">Renegociación</span>
-                                    </div>
-                                    <p class="font-sans text-[11px] text-amber-900 mt-2 leading-tight">
-                                        Renegociaciones de contrato, prórrogas o excepciones comerciales. Alert Desk envía aviso formal a Deal Desk.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Simulador de Cálculo Rápido de Reglas -->
-                            <div class="bg-[#FAF338]/20 border-2 border-black p-4 space-y-3 font-mono text-xs">
-                                <div class="font-bold text-neutral-900 uppercase flex items-center justify-between">
-                                    <span>Calculadora de Umbral de Co-sell & Net to Google:</span>
-                                    <span class="text-[10px] text-neutral-600 font-normal">Fórmula: Monto Bruto * 0.80</span>
-                                </div>
-
-                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                                    <div>
-                                        <label class="block text-[10px] uppercase font-bold text-neutral-600 mb-1">Monto Bruto Salesforce (USD)</label>
-                                        <input type="number" id="sim-bruto-carlos" value="100000" step="5000" oninput="calcularReglaG26()" class="w-full p-2 bg-white border border-black font-mono font-bold text-neutral-900">
-                                    </div>
-                                    <div>
-                                        <label class="block text-[10px] uppercase font-bold text-neutral-600 mb-1">Workload / Producto</label>
-                                        <select id="sim-workload-carlos" onchange="calcularReglaG26()" class="w-full p-2 bg-white border border-black font-mono text-neutral-900">
-                                            <option value="gcp">Google Cloud Platform (GCP)</option>
-                                            <option value="workspace">Google Workspace</option>
-                                            <option value="gemini">Gemini AI (Licencia / Add-on)</option>
-                                        </select>
-                                    </div>
-                                    <div>
-                                        <label class="block text-[10px] uppercase font-bold text-neutral-600 mb-1">Estatus DR en Google</label>
-                                        <select id="sim-dr-carlos" onchange="calcularReglaG26()" class="w-full p-2 bg-white border border-black font-mono text-neutral-900">
-                                            <option value="no">Sin Deal Registration (Pendiente)</option>
-                                            <option value="si">Aprobado en Partner Advantage</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <!-- Output del cálculo -->
-                                <div class="pt-3 border-t border-black/30 grid grid-cols-1 sm:grid-cols-3 gap-2">
-                                    <div class="bg-white border border-black p-2.5">
-                                        <div class="text-[10px] text-neutral-500 uppercase">Net to Google (Mayorista)</div>
-                                        <div id="sim-out-net" class="font-display font-black text-lg text-neutral-900 mt-0.5">$80,000 USD</div>
-                                    </div>
-                                    <div class="bg-white border border-black p-2.5">
-                                        <div class="text-[10px] text-neutral-500 uppercase">Semáforo de OC</div>
-                                        <div id="sim-out-semaforo" class="font-display font-black text-sm text-red-600 mt-1 uppercase flex items-center gap-1"><span class="material-symbols-outlined text-base">block</span> DETENER OC</div>
-                                    </div>
-                                    <div class="bg-white border border-black p-2.5">
-                                        <div class="text-[10px] text-neutral-500 uppercase">Rebate en Riesgo / Blindado</div>
-                                        <div id="sim-out-rebate" class="font-display font-black text-lg text-[#C45BAA] mt-0.5">~$12,880 USD (16.1%)</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
-
-                </div>
-            </div>
 
                 </div>
             </div>
