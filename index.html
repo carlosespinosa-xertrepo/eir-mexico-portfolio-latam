@@ -2747,6 +2747,9 @@ La plataforma cuenta con 2 modos:
                     } else {
                         panel.classList.add('hidden');
                         if (btn) btn.classList.remove('active');
+                        // Pausar video HTML5 en panel inactivo
+                        const vid = panel.querySelector('video');
+                        if (vid) vid.pause();
                     }
                 }
             });
@@ -2806,13 +2809,20 @@ La plataforma cuenta con 2 modos:
             if (!url) return null;
             url = url.trim();
 
-            // Loom Embed
+            // Loom Embed - Silenciado / Muted por default y autoplay
             if (url.includes('loom.com/share/')) {
                 const id = url.split('loom.com/share/')[1].split('?')[0];
-                return { type: 'iframe', src: `https://www.loom.com/embed/${id}?hide_owner=true&hide_share=true&hide_title=true` };
+                return { 
+                    type: 'iframe', 
+                    src: `https://www.loom.com/embed/${id}?autoplay=1&muted=1&hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true` 
+                };
             }
             if (url.includes('loom.com/embed/')) {
-                return { type: 'iframe', src: url };
+                const id = url.split('loom.com/embed/')[1].split('?')[0];
+                return { 
+                    type: 'iframe', 
+                    src: `https://www.loom.com/embed/${id}?autoplay=1&muted=1&hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true` 
+                };
             }
 
             // Google Drive Preview
@@ -2824,7 +2834,7 @@ La plataforma cuenta con 2 modos:
                 }
             }
 
-            // YouTube Embed
+            // YouTube Embed - Silenciado por default (mute=1) y autoplay
             if (url.includes('youtube.com/watch') || url.includes('youtu.be/')) {
                 let id = '';
                 if (url.includes('youtu.be/')) {
@@ -2833,7 +2843,16 @@ La plataforma cuenta con 2 modos:
                     id = url.split('v=')[1].split('&')[0];
                 }
                 if (id) {
-                    return { type: 'iframe', src: `https://www.youtube.com/embed/${id}?autoplay=1&rel=0` };
+                    return { type: 'iframe', src: `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&rel=0` };
+                }
+            }
+
+            // Vimeo Embed - Silenciado por default (muted=1)
+            if (url.includes('vimeo.com/')) {
+                const parts = url.split('vimeo.com/');
+                const vimeoId = parts[1] ? parts[1].split('?')[0].split('/')[0] : '';
+                if (vimeoId && !isNaN(vimeoId)) {
+                    return { type: 'iframe', src: `https://player.vimeo.com/video/${vimeoId}?autoplay=1&muted=1` };
                 }
             }
 
@@ -2851,7 +2870,7 @@ La plataforma cuenta con 2 modos:
             if (embed.type === 'iframe') {
                 container.innerHTML = `
                     <div class="relative w-full h-full bg-black">
-                        <iframe src="${embed.src}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen class="w-full h-full"></iframe>
+                        <iframe src="${embed.src}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" webkitallowfullscreen mozallowfullscreen allowfullscreen class="w-full h-full"></iframe>
                         <div class="absolute top-3 right-3 z-20">
                             <button onclick="openVideoSettings('${eir}')" class="px-2.5 py-1 bg-black/85 text-[#FAF338] border border-white/40 text-xs font-mono font-bold hover:bg-black shadow-[2px_2px_0px_#000] transition-colors">
                                 ⚙️ Cambiar Video
@@ -2862,7 +2881,7 @@ La plataforma cuenta con 2 modos:
             } else {
                 container.innerHTML = `
                     <div class="relative w-full h-full bg-black group">
-                        <video controls autoplay playsinline class="w-full h-full object-contain">
+                        <video controls autoplay playsinline muted class="w-full h-full object-contain">
                             <source src="${embed.src}">
                             Tu navegador no soporta el video.
                         </video>
@@ -2873,6 +2892,12 @@ La plataforma cuenta con 2 modos:
                         </div>
                     </div>
                 `;
+                const vidEl = container.querySelector('video');
+                if (vidEl) {
+                    vidEl.muted = true;
+                    vidEl.defaultMuted = true;
+                    vidEl.volume = 0;
+                }
             }
         }
 
@@ -3075,14 +3100,22 @@ La plataforma cuenta con 2 modos:
             const container = document.getElementById(`media-video-${eir}`);
             const video = container ? container.querySelector('video') : null;
             if (video) {
+                video.muted = true;
+                video.defaultMuted = true;
+                video.volume = 0;
                 if (video.paused) {
                     video.play();
                 } else {
                     video.pause();
                 }
-            } else {
-                openVideoSettings(eir);
+                return;
             }
+            const savedUrl = localStorage.getItem(`video_url_${eir}`);
+            if (savedUrl) {
+                renderVideoPlayer(eir, savedUrl);
+                return;
+            }
+            openVideoSettings(eir);
         }
 
         // Global Sync on Page Load
