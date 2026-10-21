@@ -160,29 +160,36 @@
             border-color: #FAF338 !important;
         }
 
-        /* Slide Mode Styles */
+        /* Swiss Grid & Slides Presentation System (Inspired by BanCoppel Deck) */
+        .swiss-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+            height: 100vh;
+        }
+
         .slide {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100vh;
+            height: 100%;
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
             overflow: hidden;
         }
 
         .slide.active {
             opacity: 1;
             visibility: visible;
-            z-index: 20;
+            z-index: 10;
         }
 
         .stagger-up {
-            transform: translateY(28px);
+            transform: translateY(40px);
             opacity: 0;
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .active .stagger-up {
@@ -190,10 +197,10 @@
             opacity: 1;
         }
 
-        .delay-1 { transition-delay: 0.08s; }
-        .delay-2 { transition-delay: 0.16s; }
-        .delay-3 { transition-delay: 0.24s; }
-        .delay-4 { transition-delay: 0.32s; }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
 
         .shape-corner { position: absolute; mix-blend-mode: multiply; }
         .blend-multiply { mix-blend-mode: multiply; }
@@ -208,6 +215,33 @@
         .ms-violeta { position: absolute; top:0; left: 0; width: 25%; height: 25%; background-color: var(--violeta); }
         .ms-marron { position: absolute; bottom:0; right: 0; width: 25%; height: 25%; background-color: #2A1A12; }
         .ms-papel { position: absolute; top:25%; left: 25%; width: 50%; height: 50%; background-color: var(--crema); }
+
+        body.slides-active {
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        @media (max-width: 1024px) {
+            .swiss-grid {
+                height: auto;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+            }
+            .slide {
+                position: relative;
+                height: auto;
+                min-height: 100vh;
+                overflow-y: auto !important;
+                padding-top: 84px;
+                padding-bottom: 74px;
+            }
+            body.slides-active {
+                overflow-y: auto;
+                height: auto;
+            }
+        }
 
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
@@ -238,10 +272,12 @@
         }
     </style>
 </head>
-<body class="bg-[#F5F0E8] text-[#1E1E1E] antialiased selection:bg-[#FAF338] selection:text-black">
+<body class="bg-[#F5F0E8] text-[#1E1E1E] antialiased selection:bg-[#FAF338] selection:text-black slides-active">
 
-    <!-- TOP HEADER / CONTROLS (NAV OVERLAY) -->
-    <header class="sticky top-0 z-50 bg-[#FFFEF8] border-b-2 border-[#1E1E1E] px-4 md:px-8 py-3.5 flex flex-wrap justify-between items-center shadow-sm no-print">
+    <!-- VIEW A: PLATFORM & INTERACTIVE HUB MODE -->
+    <div id="view-platform" class="hidden">
+        <!-- TOP HEADER / CONTROLS (NAV OVERLAY) -->
+        <header class="sticky top-0 z-50 bg-[#FFFEF8] border-b-2 border-[#1E1E1E] px-4 md:px-8 py-3.5 flex flex-wrap justify-between items-center shadow-sm no-print">
         <div class="flex items-center gap-4">
             <div class="flex items-center gap-2.5">
                 <div class="w-8 h-8 bg-[#1E1E1E] flex items-center justify-center font-display font-black text-white text-lg tracking-tighter">
@@ -278,7 +314,7 @@
     <!-- ========================================== -->
     <!-- VIEW A: PLATFORM & INTERACTIVE HUB MODE     -->
     <!-- ========================================== -->
-    <main id="view-platform" class="min-h-screen pb-20">
+    <main class="min-h-screen pb-20">
         
         <!-- EXECUTIVE HERO BANNER -->
         <section class="border-b-2 border-[#1E1E1E] bg-[#FFFEF8] px-4 md:px-8 py-8 md:py-10">
@@ -2159,56 +2195,83 @@
 
         </section>
     </main>
+    </div> <!-- /view-platform -->
 
     <!-- ========================================== -->
     <!-- VIEW B: SLIDE PRESENTATION PITCH MODE      -->
     <!-- (Inspired by Angel's Coppel Deck format)   -->
     <!-- ========================================== -->
-    <div id="view-slides" class="hidden relative w-full h-screen overflow-hidden bg-[#F5F0E8]">
+        <!-- ========================================== -->
+    <!-- VIEW B: SLIDE PRESENTATION PITCH MODE      -->
+    <!-- (Inspired by BanCoppel Deck - Xertica.ai)  -->
+    <!-- ========================================== -->
+    <div id="view-slides" class="relative w-full h-screen overflow-hidden bg-[#F5F0E8]">
         
-        <!-- Fixed Slide Controls Overlay -->
-        <div class="fixed top-6 left-8 right-8 flex justify-between items-center z-40 pointer-events-none">
-            <div class="font-display font-black text-2xl tracking-tighter" style="color: var(--negro-xertica)">
-                Xertica<span class="text-[#1899AF]">.ai</span>
+        <!-- Fixed Slide Controls Overlay (BanCoppel Style) -->
+        <div class="fixed top-6 left-6 right-6 lg:left-12 lg:right-12 flex justify-between items-center z-40 pointer-events-none">
+            <div class="flex items-center gap-3 pointer-events-auto">
+                <div class="font-display font-black text-2xl tracking-tighter brand-logo" style="color: var(--negro-xertica)">
+                    Xertica<span class="text-[#1899AF]">.ai</span>
+                </div>
+                <span class="badge-swiss bg-black text-[#FAF338] text-[9px] hidden sm:inline-flex">EIR México</span>
             </div>
+
+            <!-- Slide Jump Pills -->
+            <div class="hidden xl:flex items-center gap-1 pointer-events-auto bg-[#FFFEF8]/90 backdrop-blur-sm border-2 border-black p-1 shadow-[2px_2px_0px_#000]">
+                <button onclick="goToSlide(0)" class="slide-nav-pill px-2.5 py-1 font-mono text-[11px] font-bold border border-transparent hover:border-black transition-colors" data-slide="0">01 Portada</button>
+                <button onclick="goToSlide(1)" class="slide-nav-pill px-2.5 py-1 font-mono text-[11px] font-bold border border-transparent hover:border-black transition-colors" data-slide="1">02 Squad</button>
+                <button onclick="goToSlide(2)" class="slide-nav-pill px-2.5 py-1 font-mono text-[11px] font-bold border border-transparent hover:border-black transition-colors" data-slide="2">03 Patricio</button>
+                <button onclick="goToSlide(3)" class="slide-nav-pill px-2.5 py-1 font-mono text-[11px] font-bold border border-transparent hover:border-black transition-colors" data-slide="3">04 Jorge</button>
+                <button onclick="goToSlide(4)" class="slide-nav-pill px-2.5 py-1 font-mono text-[11px] font-bold border border-transparent hover:border-black transition-colors" data-slide="4">05 Ángel</button>
+                <button onclick="goToSlide(5)" class="slide-nav-pill px-2.5 py-1 font-mono text-[11px] font-bold border border-transparent hover:border-black transition-colors" data-slide="5">06 Carlos</button>
+                <button onclick="goToSlide(6)" class="slide-nav-pill px-2.5 py-1 font-mono text-[11px] font-bold border border-transparent hover:border-black transition-colors" data-slide="6">07 LATAM</button>
+                <button onclick="goToSlide(7)" class="slide-nav-pill px-2.5 py-1 font-mono text-[11px] font-bold border border-transparent hover:border-black transition-colors" data-slide="7">08 Cierre</button>
+            </div>
+
+            <!-- Nav Buttons -->
             <div class="flex gap-2 sm:gap-3 pointer-events-auto items-center">
-                <button onclick="prevSlide()" class="px-3 sm:px-4 py-2 border-2 border-black hover:bg-black hover:text-white transition-colors font-display font-bold text-xs uppercase bg-[#FFFEF8] shadow-[2px_2px_0px_#000]">
+                <button onclick="prevSlide()" class="nav-btn-prev px-3 sm:px-5 py-2 border-2 border-black hover:bg-black hover:text-white transition-colors font-display font-bold text-xs uppercase bg-[#FFFEF8] shadow-[2px_2px_0px_#000]">
                     ← ANTERIOR
                 </button>
-                <button onclick="nextSlide()" class="px-3 sm:px-4 py-2 bg-[#FAF338] border-2 border-black hover:bg-black hover:text-white transition-colors font-display font-bold text-xs uppercase shadow-[2px_2px_0px_#000]">
+                <button onclick="nextSlide()" class="nav-btn-next px-3 sm:px-5 py-2 bg-[#FAF338] border-2 border-black hover:bg-black hover:text-white transition-colors font-display font-bold text-xs uppercase shadow-[2px_2px_0px_#000]">
                     SIGUIENTE →
                 </button>
-                <button onclick="setAppMode('platform')" title="Volver a la plataforma" class="px-3 py-2 bg-[#1E1E1E] text-white border-2 border-black hover:bg-neutral-800 transition-colors font-display font-bold text-xs uppercase shadow-[2px_2px_0px_#000] flex items-center gap-1.5">
-                    <span class="material-symbols-outlined text-base">close</span> <span class="hidden sm:inline">Cerrar Slides</span>
+                <button onclick="openShareModal()" title="Compartir Resumen a Vanessa" class="px-3 py-2 bg-[#FAF338] border-2 border-black hover:bg-black hover:text-white transition-colors font-display font-bold text-xs uppercase shadow-[2px_2px_0px_#000] flex items-center gap-1">
+                    <span class="material-symbols-outlined text-sm">share</span> <span class="hidden sm:inline">Compartir</span>
+                </button>
+                <button onclick="setAppMode('platform')" title="Ver Fichas Detalladas" class="px-3 py-2 bg-[#1E1E1E] text-white border-2 border-black hover:bg-neutral-800 transition-colors font-display font-bold text-xs uppercase shadow-[2px_2px_0px_#000] flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-sm">dashboard</span> <span class="hidden md:inline">Hub Detallado</span>
                 </button>
             </div>
         </div>
         
-        <!-- Slide Counter Bottom -->
-        <div id="slide-counter-bottom" class="fixed bottom-6 left-8 z-40 font-mono text-xs font-bold opacity-60 text-black">
-            EIR'S MÉXICO · EXPANSIÓN LATAM [01 / 07]
+        <!-- Bottom Indicators -->
+        <div id="slide-counter-bottom" class="fixed bottom-6 left-6 lg:left-12 z-40 font-mono text-xs font-bold opacity-60 counter-brand text-black">
+            EIR'S MÉXICO · EXPANSIÓN LATAM [01 / 08]
         </div>
 
-        <div class="fixed bottom-6 right-8 z-40 font-mono text-xs font-semibold opacity-50 text-black hidden sm:block">
+        <div class="fixed bottom-6 right-6 lg:right-12 z-40 font-mono text-xs font-semibold opacity-50 counter-nav text-black hidden sm:block">
             Navega con flechas [←] [→] o Barra Espaciadora
         </div>
 
-        <!-- SLIDE 0: PORTADA SWISS MOSAIC -->
+        <!-- ============================================== -->
+        <!-- SLIDE 0: PORTADA SWISS MOSAIC                  -->
+        <!-- ============================================== -->
         <div class="slide active bg-[#F2EDD8]" id="slide-0">
-            <div class="grid grid-cols-12 h-full">
-                <div class="col-span-12 lg:col-span-6 flex flex-col justify-center px-8 lg:px-16 z-20">
-                    <span class="badge-swiss bg-[#1899AF] text-white self-start mb-4 stagger-up">PORTFOLIO EIR MÉXICO 2026</span>
-                    <h1 class="font-display font-black text-5xl lg:text-7xl leading-[0.9] uppercase stagger-up delay-1">
+            <div class="swiss-grid">
+                <div class="col-span-12 lg:col-span-5 flex flex-col justify-center pl-8 lg:pl-16 pr-8 z-20">
+                    <span class="badge-swiss bg-[#1899AF] text-white self-start mb-6 stagger-up">PORTFOLIO EIR MÉXICO 2026</span>
+                    <h1 class="font-display font-black text-5xl lg:text-[5.2rem] leading-[0.9] uppercase stagger-up">
                         Soluciones Escalables para LATAM
                     </h1>
-                    <p class="font-body text-lg lg:text-xl mt-6 opacity-90 stagger-up delay-2 max-w-lg leading-relaxed">
-                        4 herramientas de alto impacto construidas por el equipo de Entrepreneurs in Residence para acelerar la operación comercial y técnica regional.
+                    <p class="font-body text-base lg:text-xl mt-6 lg:mt-8 opacity-80 stagger-up delay-1 max-w-md leading-relaxed">
+                        Blindaje de margen comercial, prospección masiva de renovaciones y auditoría técnica: 4 iniciativas de alto impacto del Squad EIR listas para escalar en la región.
                     </p>
-                    <div class="mt-8 font-mono text-xs font-bold tracking-widest text-[#1E1E1E] border-l-4 border-black pl-4 py-1 stagger-up delay-3 uppercase">
-                        FinOps · Campañas SMB · Conciliación Workspace · Torre de Control Incentivos (G26)
-                    </div>
+                    <p class="mt-8 lg:mt-12 font-display font-bold text-sm lg:text-base tracking-widest text-[#1E1E1E] border-l-4 border-black pl-4 py-1 stagger-up delay-2 uppercase">
+                        Estrategia Regional · Q4 2026 - Q1 2027
+                    </p>
                 </div>
-                <div class="hidden lg:block col-span-6 relative">
+                <div class="hidden lg:block col-span-7 relative">
                     <div class="mosaico-container opacity-90 stagger-up delay-2">
                         <div class="ms-celeste"></div>
                         <div class="ms-magenta"></div>
@@ -2223,255 +2286,520 @@
             </div>
         </div>
 
-        <!-- SLIDE 1: PATRICIO MARTIN - FINOPS -->
-        <div class="slide bg-[#FFFEF8]" id="slide-1">
-            <div class="grid grid-cols-12 h-full">
-                <div class="col-span-12 lg:col-span-5 bg-[#1899AF] text-white flex flex-col justify-center px-8 lg:px-16 relative">
+        <!-- ============================================== -->
+        <!-- SLIDE 1: CONTEXTO Y SINERGIA DEL SQUAD EIR     -->
+        <!-- ============================================== -->
+        <div class="slide bg-[#1E1E1E] text-white" id="slide-1">
+            <div class="swiss-grid relative">
+                <div class="shape-corner bg-[#DE5B48] w-64 h-full right-0 top-0 opacity-30 blend-multiply"></div>
+                <div class="col-span-12 flex flex-col justify-center px-8 lg:px-16 z-20">
+                    <h2 class="font-display font-bold text-4xl lg:text-6xl mb-6 stagger-up border-b-4 border-[#FAF338] inline-block self-start pb-2">
+                        Sinergia del Squad EIR México
+                    </h2>
+                    <p class="font-body text-base lg:text-xl opacity-80 max-w-3xl mb-8 stagger-up delay-1 leading-relaxed">
+                        4 líderes complementarios articulados en un solo flujo continuo de revenue para blindar el margen, erradicar fugas operativas y acelerar la prospección comercial en LATAM.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-2">
+                        <div class="stagger-up delay-1 bg-[#FFFEF8] text-[#1E1E1E] p-6 border-t-8 border-[#1899AF] border-2 border-black shadow-[4px_4px_0px_#1899AF]">
+                            <span class="text-[10px] font-mono uppercase font-bold text-neutral-500 block">Patricio Martín · FinOps</span>
+                            <strong class="font-display text-3xl block my-2 text-[#1899AF]">+$120K USD</strong>
+                            <p class="font-body text-xs text-neutral-700 leading-relaxed">
+                                Control de commits y prevención de penalizaciones en +110 cuentas GCP con riesgo de desvío.
+                            </p>
+                        </div>
+                        <div class="stagger-up delay-2 bg-[#FFFEF8] text-[#1E1E1E] p-6 border-t-8 border-[#DE5B48] border-2 border-black shadow-[4px_4px_0px_#DE5B48]">
+                            <span class="text-[10px] font-mono uppercase font-bold text-neutral-500 block">Jorge Caraballo · SMB</span>
+                            <strong class="font-display text-3xl block my-2 text-[#DE5B48]">336 Cuentas</strong>
+                            <p class="font-body text-xs text-neutral-700 leading-relaxed">
+                                Campaña masiva de renovaciones en 5 países con 96% entrega y 68% Open Rate real auditado.
+                            </p>
+                        </div>
+                        <div class="stagger-up delay-3 bg-[#FFFEF8] text-[#1E1E1E] p-6 border-t-8 border-[#5A4A96] border-2 border-black shadow-[4px_4px_0px_#5A4A96]">
+                            <span class="text-[10px] font-mono uppercase font-bold text-neutral-500 block">Ángel Solís · Workspace</span>
+                            <strong class="font-display text-3xl block my-2 text-[#5A4A96]">100% Protegido</strong>
+                            <p class="font-body text-xs text-neutral-700 leading-relaxed">
+                                Conciliación automatizada Partner Hub vs Consola, erradicando licencias huérfanas y habilitando upsell Gemini.
+                            </p>
+                        </div>
+                        <div class="stagger-up delay-4 bg-[#FFFEF8] text-[#1E1E1E] p-6 border-t-8 border-[#C45BAA] border-2 border-black shadow-[4px_4px_0px_#C45BAA]">
+                            <span class="text-[10px] font-mono uppercase font-bold text-neutral-500 block">Carlos Espinosa · Incentivos</span>
+                            <strong class="font-display text-3xl block my-2 text-[#C45BAA]">$136K+ USD</strong>
+                            <p class="font-body text-xs text-neutral-700 leading-relaxed">
+                                Rebates blindados, semáforo de bloqueo preventivo de OC y $20M+ de pipeline asegurado en Salesforce.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 bg-[#FFFEF8] text-[#1E1E1E] p-4 border-2 border-black stagger-up delay-4 flex flex-wrap items-center justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <span class="badge-swiss bg-[#FAF338] text-black text-[10px] font-bold">100% SERVERLESS</span>
+                            <span class="font-body text-xs text-neutral-800">Apps Script V8, BigQuery, Google Sheets y UI Material Design 3. Replicable en LATAM en <strong>&lt; 48 hrs</strong> sin costo de infraestructura.</span>
+                        </div>
+                        <span class="font-mono text-[11px] font-bold text-neutral-600 uppercase">México · Colombia · Perú · Chile</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- SLIDE 2: PATRICIO MARTIN - FINOPS GCP          -->
+        <!-- ============================================== -->
+        <div class="slide bg-[#F5F0E8]" id="slide-2">
+            <div class="swiss-grid">
+                <!-- Columna Izquierda: Identidad y KPI -->
+                <div class="col-span-12 lg:col-span-5 bg-[#1899AF] text-white flex flex-col justify-center px-8 lg:px-14 relative overflow-hidden">
                     <div class="shape-corner bg-[#FAF338] w-48 h-48 top-0 right-0 blend-multiply opacity-50"></div>
-                    <span class="badge-swiss bg-black text-[#FAF338] self-start mb-4 stagger-up">PATRICIO MARTIN · FINOPS</span>
-                    <h2 class="font-display font-black text-4xl lg:text-6xl uppercase leading-none stagger-up delay-1">
+                    <div class="z-10">
+                        <span class="badge-swiss bg-black text-[#FAF338] self-start mb-4 stagger-up">LÍDER DE INICIATIVA</span>
+                        <h1 class="font-display font-bold text-4xl lg:text-6xl leading-[0.95] uppercase stagger-up delay-1">
+                            Patricio<br>Martín
+                        </h1>
+                        <p class="font-mono text-xs uppercase tracking-wider text-white/90 font-bold mt-2 stagger-up delay-1">
+                            FinOps & Commits GCP · En Producción
+                        </p>
+                        <div class="mt-6 pt-4 border-t border-white/20 stagger-up delay-2">
+                            <span class="font-display font-black text-5xl lg:text-7xl text-[#FAF338] leading-none">+$120K</span>
+                            <span class="font-mono text-xs block text-white/90 font-bold uppercase mt-1">USD Pipeline & Oportunidades Detectadas</span>
+                        </div>
+                        <p class="font-body text-xs lg:text-sm mt-4 text-white/90 leading-relaxed stagger-up delay-3">
+                            Detección proactiva de desvíos en +110 cuentas GCP, protegiendo cuentas estratégicas como Despegar, Zucarmex y DIMEX.
+                        </p>
+                        <div class="mt-6 stagger-up delay-4 flex items-center gap-3">
+                            <a href="https://script.google.com/a/macros/xertica.com/s/AKfycbzNFrFsFDN4T18OrzQSpXsOMM_OLqJIYhK8O0S77QUtDWLZq64TxkhNnM78moDX4BDKdQ/exec" target="_blank" class="px-4 py-2.5 bg-black text-white border-2 border-black font-display font-bold text-xs uppercase tracking-wider hover:bg-neutral-800 transition-colors shadow-[2px_2px_0px_#FAF338] flex items-center gap-1.5">
+                                <span class="material-symbols-outlined text-sm">open_in_new</span> Abrir Herramienta ↗
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Video Demo 45s y Bullets Clave -->
+                <div class="col-span-12 lg:col-span-7 flex flex-col justify-center px-8 lg:px-14 py-6 z-10">
+                    <h2 class="font-display font-bold text-3xl lg:text-4xl title-line stagger-up mb-4">
                         Control de Commits GCP
                     </h2>
-                    <div class="mt-8 stagger-up delay-2">
-                        <div class="font-display font-black text-6xl lg:text-7xl text-[#FAF338] leading-none">+110</div>
-                        <div class="font-mono text-xs uppercase mt-2 text-white/90 font-bold">Cuentas Mapeadas · FinOps 360</div>
+                    
+                    <!-- Video Frame (45s) -->
+                    <div class="w-full aspect-video max-h-[300px] bg-black border-2 border-black swiss-border-sm relative overflow-hidden stagger-up delay-1 mb-4">
+                        <div id="slide-media-video-patricio" class="w-full h-full relative group bg-neutral-900 flex flex-col justify-between p-4">
+                            <div class="flex justify-between items-start">
+                                <span class="badge-swiss bg-[#FAF338] text-black font-bold text-[9px]">DEMO 45s</span>
+                                <button onclick="openVideoSettings('patricio')" class="px-2 py-0.5 bg-black/85 text-[#FAF338] border border-white/40 text-[10px] font-mono font-bold hover:bg-black shadow-[1px_1px_0px_#000] transition-colors flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-xs">settings</span> Cambiar Video
+                                </button>
+                            </div>
+                            <div class="text-center my-auto">
+                                <button onclick="playInteractiveDemo('patricio')" class="w-12 h-12 rounded-full bg-[#FAF338] text-black border-2 border-black flex items-center justify-center text-lg font-bold shadow-[3px_3px_0px_#000] hover:scale-110 transition-transform mx-auto">
+                                    ▶
+                                </button>
+                                <div class="font-display font-bold text-white text-sm mt-2">Ver Demostración FinOps & Commits</div>
+                                <div class="font-mono text-[10px] text-neutral-400">Patricio Martín · Screen Recording 45s</div>
+                            </div>
+                            <div class="flex justify-between items-center text-[10px] font-mono text-neutral-400">
+                                <span>1080p HD · Muted AutoPlay</span>
+                                <button onclick="openVideoSettings('patricio')" class="underline hover:text-white font-bold flex items-center gap-0.5">
+                                    <span class="material-symbols-outlined text-[10px]">upload</span> Enlazar Video
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                    <p class="font-body text-sm mt-6 opacity-80 stagger-up delay-3">
-                        Detección proactiva de desvíos, blindaje anti-penalizaciones y generación de nuevo pipeline y renovaciones en Salesforce.
-                    </p>
-                </div>
-                <div class="col-span-12 lg:col-span-7 flex flex-col justify-center px-8 lg:px-16">
-                    <h3 class="font-display font-bold text-2xl lg:text-3xl title-line stagger-up mb-6">¿En qué ayuda y alcance LATAM?</h3>
-                    <div class="space-y-4 font-body text-base stagger-up delay-1">
-                        <div class="border-l-4 border-black pl-4 py-1">
-                            <strong>Detección de Desvíos:</strong> Alertas tempranas de under-commit y sobreconsumo con planes de acción ejecutivos.
+
+                    <!-- Bullets ejecutivos con border-l-4 -->
+                    <div class="space-y-2.5 font-body text-xs lg:text-sm stagger-up delay-2">
+                        <div class="border-l-4 border-black pl-3 py-1.5 bg-[#FFFEF8] border border-black/20">
+                            <strong class="text-neutral-900">Semáforo de Desvíos:</strong> Alertas tempranas de under-commit y sobreconsumo con planes de mitigación financiera en vivo.
                         </div>
-                        <div class="border-l-4 border-[#1899AF] pl-4 py-1">
-                            <strong>Casos Reales Mapeados:</strong> Despegar, Zucarmex (+$1M USD en commits), DIMEX ($1.1M USD) y VivaAerobus.
+                        <div class="border-l-4 border-[#1899AF] pl-3 py-1.5 bg-[#FFFEF8] border border-black/20">
+                            <strong class="text-neutral-900">Auditoría de Cuentas Clave:</strong> Mapeo de Zucarmex (+$1M USD), Despegar, DIMEX ($1.1M USD) y BanRegio.
                         </div>
-                        <div class="border-l-4 border-black pl-4 py-1">
-                            <strong>Replicabilidad LATAM:</strong> BigQuery Partner Billing unificado para toda la región en &lt; 48 horas sin costo de licencias.
+                        <div class="border-l-4 border-emerald-600 pl-3 py-1.5 bg-[#FFFEF8] border border-black/20">
+                            <strong class="text-neutral-900">Replicabilidad LATAM:</strong> Integración directa con BigQuery Partner Billing Export para cualquier país en <strong>&lt; 48 hrs</strong>.
                         </div>
-                    </div>
-                    <div class="mt-8 stagger-up delay-2">
-                        <a href="https://script.google.com/a/macros/xertica.com/s/AKfycbzNFrFsFDN4T18OrzQSpXsOMM_OLqJIYhK8O0S77QUtDWLZq64TxkhNnM78moDX4BDKdQ/exec" target="_blank" class="inline-flex items-center gap-2 px-5 py-3 bg-[#1899AF] text-white border-2 border-black font-display font-black text-sm uppercase tracking-wider hover:bg-black transition-colors shadow-[4px_4px_0px_#000]">
-                            <span class="material-symbols-outlined text-base">open_in_new</span> Abrir Herramienta en Producción ↗
-                        </a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE 2: JORGE CARABALLO - RENOVACIONES & CAMPAÑAS SMB -->
-        <div class="slide bg-[#F5F0E8]" id="slide-2">
-            <div class="grid grid-cols-12 h-full">
-                <div class="col-span-12 lg:col-span-5 bg-[#DE5B48] text-white flex flex-col justify-center px-8 lg:px-16 relative">
-                    <span class="badge-swiss bg-black text-white self-start mb-4 stagger-up">JORGE CARABALLO · RENOVACIONES SMB</span>
-                    <h2 class="font-display font-black text-3xl lg:text-5xl uppercase leading-none stagger-up delay-1">
-                        Campañas Masivas SMB
+        <!-- ============================================== -->
+        <!-- SLIDE 3: JORGE CARABALLO - RENOVACIONES SMB    -->
+        <!-- ============================================== -->
+        <div class="slide bg-[#FFFEF8]" id="slide-3">
+            <div class="swiss-grid">
+                <!-- Columna Izquierda: Identidad y KPI -->
+                <div class="col-span-12 lg:col-span-5 bg-[#DE5B48] text-white flex flex-col justify-center px-8 lg:px-14 relative overflow-hidden">
+                    <div class="shape-corner bg-[#FAF338] w-48 h-48 top-0 right-0 blend-multiply opacity-50"></div>
+                    <div class="z-10">
+                        <span class="badge-swiss bg-black text-[#FAF338] self-start mb-4 stagger-up">LÍDER DE INICIATIVA</span>
+                        <h1 class="font-display font-bold text-4xl lg:text-6xl leading-[0.95] uppercase stagger-up delay-1">
+                            Jorge<br>Caraballo
+                        </h1>
+                        <p class="font-mono text-xs uppercase tracking-wider text-white/90 font-bold mt-2 stagger-up delay-1">
+                            Renovaciones Masivas SMB · En Producción
+                        </p>
+                        <div class="mt-6 pt-4 border-t border-white/20 stagger-up delay-2">
+                            <span class="font-display font-black text-6xl lg:text-8xl text-[#FAF338] leading-none">336</span>
+                            <span class="font-mono text-xs block text-white/90 font-bold uppercase mt-1">Cuentas Contactadas Cartera SMB (5 Países)</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3 mt-3 font-mono text-xs stagger-up delay-3">
+                            <div class="bg-black/40 p-2 border border-white/20">
+                                <span class="text-white/70 block text-[10px]">ENTREGA</span>
+                                <span class="font-display font-black text-xl text-[#FAF338]">96%</span>
+                            </div>
+                            <div class="bg-black/40 p-2 border border-white/20">
+                                <span class="text-white/70 block text-[10px]">OPEN RATE REAL</span>
+                                <span class="font-display font-black text-xl text-[#FAF338]">68%</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 stagger-up delay-4 flex items-center gap-3">
+                            <a href="https://script.google.com/a/macros/xertica.com/s/AKfycbwlwksFORqQZ5oMv6PvT5G-fPwupqWjCQPZPgcJraRPan50anciUZ7VZQ1FNjPC3H8v/exec" target="_blank" class="px-4 py-2.5 bg-black text-white border-2 border-black font-display font-bold text-xs uppercase tracking-wider hover:bg-neutral-800 transition-colors shadow-[2px_2px_0px_#FAF338] flex items-center gap-1.5">
+                                <span class="material-symbols-outlined text-sm">open_in_new</span> Abrir Herramienta ↗
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Video Demo 45s y Bullets Clave -->
+                <div class="col-span-12 lg:col-span-7 flex flex-col justify-center px-8 lg:px-14 py-6 z-10">
+                    <h2 class="font-display font-bold text-3xl lg:text-4xl title-line stagger-up mb-4">
+                        Campañas Masivas & Renovaciones SMB
                     </h2>
-                    <div class="mt-8 stagger-up delay-2">
-                        <div class="font-display font-black text-6xl lg:text-7xl text-[#FAF338] leading-none">336</div>
-                        <div class="font-mono text-xs uppercase mt-2 text-white/90 font-bold">Cuentas Contactadas Cartera SMB</div>
-                    </div>
-                    <p class="font-body text-sm mt-6 opacity-80 stagger-up delay-3">
-                        Automatización integral de campañas y seguimiento comercial con filtro anti-bots de seguridad y llamada/WhatsApp en un clic.
-                    </p>
-                </div>
-                <div class="col-span-12 lg:col-span-7 flex flex-col justify-center px-8 lg:px-16">
-                    <h3 class="font-display font-bold text-2xl lg:text-3xl title-line stagger-up mb-4">Campaña 1 · AI Superpowers (1 oct 2026)</h3>
-                    <div class="grid grid-cols-3 gap-3 font-mono text-sm stagger-up delay-1">
-                        <div class="bg-white border-2 border-black p-3">
-                            <span class="text-neutral-500 block text-[10px] uppercase font-bold">ENTREGA (324/336)</span>
-                            <span class="font-display font-black text-2xl sm:text-3xl text-neutral-900">96%</span>
-                            <span class="text-[10px] text-neutral-600 block mt-0.5">5 países LATAM</span>
-                        </div>
-                        <div class="bg-white border-2 border-black p-3">
-                            <span class="text-neutral-500 block text-[10px] uppercase font-bold">OPEN RATE (222/324)</span>
-                            <span class="font-display font-black text-2xl sm:text-3xl text-[#DE5B48]">68%</span>
-                            <span class="text-[10px] text-neutral-600 block mt-0.5">Filtro anti-bot real</span>
-                        </div>
-                        <div class="bg-white border-2 border-black p-3">
-                            <span class="text-neutral-500 block text-[10px] uppercase font-bold">PRIORIDAD VENTAS</span>
-                            <span class="font-display font-black text-2xl sm:text-3xl text-[#2E8B5A]">8–22</span>
-                            <span class="text-[10px] text-neutral-600 block mt-0.5">Clic interés / agendar</span>
+                    
+                    <!-- Video Frame (45s) -->
+                    <div class="w-full aspect-video max-h-[300px] bg-black border-2 border-black swiss-border-sm relative overflow-hidden stagger-up delay-1 mb-4">
+                        <div id="slide-media-video-jorge" class="w-full h-full relative group bg-neutral-900 flex flex-col justify-between p-4">
+                            <div class="flex justify-between items-start">
+                                <span class="badge-swiss bg-[#FAF338] text-black font-bold text-[9px]">DEMO 45s</span>
+                                <button onclick="openVideoSettings('jorge')" class="px-2 py-0.5 bg-black/85 text-[#FAF338] border border-white/40 text-[10px] font-mono font-bold hover:bg-black shadow-[1px_1px_0px_#000] transition-colors flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-xs">settings</span> Cambiar Video
+                                </button>
+                            </div>
+                            <div class="text-center my-auto">
+                                <button onclick="playInteractiveDemo('jorge')" class="w-12 h-12 rounded-full bg-[#FAF338] text-black border-2 border-black flex items-center justify-center text-lg font-bold shadow-[3px_3px_0px_#000] hover:scale-110 transition-transform mx-auto">
+                                    ▶
+                                </button>
+                                <div class="font-display font-bold text-white text-sm mt-2">Ver Demostración Renovaciones SMB</div>
+                                <div class="font-mono text-[10px] text-neutral-400">Jorge Caraballo · Screen Recording 45s</div>
+                            </div>
+                            <div class="flex justify-between items-center text-[10px] font-mono text-neutral-400">
+                                <span>1080p HD · Muted AutoPlay</span>
+                                <button onclick="openVideoSettings('jorge')" class="underline hover:text-white font-bold flex items-center gap-0.5">
+                                    <span class="material-symbols-outlined text-[10px]">upload</span> Enlazar Video
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    <div class="space-y-2 font-body text-xs sm:text-sm mt-4 stagger-up delay-2">
-                        <div class="border-l-4 border-black pl-3 py-1">
-                            <strong>Base de Datos Saneada:</strong> 215 rebotes detectados (100 cuentas inexistentes depuradas para siguientes envíos).
+
+                    <!-- Bullets ejecutivos con border-l-4 -->
+                    <div class="space-y-2.5 font-body text-xs lg:text-sm stagger-up delay-2">
+                        <div class="border-l-4 border-black pl-3 py-1.5 bg-[#F5F0E8] border border-black/20">
+                            <strong class="text-neutral-900">Base Saneada:</strong> Detección y depuración de 215 rebotes para garantizar entregabilidad óptima en campañas recurrentes.
                         </div>
-                        <div class="border-l-4 border-[#DE5B48] pl-3 py-1">
-                            <strong>Doble Llamada a la Acción & Cifras Auditadas:</strong> Distinción "Saber más" vs "Agendar sesión" contrastada con 2da fuente.
+                        <div class="border-l-4 border-[#DE5B48] pl-3 py-1.5 bg-[#F5F0E8] border border-black/20">
+                            <strong class="text-neutral-900">Filtro Anti-Bots:</strong> Métricas auditadas con distinción entre "Saber más" y "Agendar sesión" contrastadas con 2da fuente.
                         </div>
-                        <div class="border-l-4 border-emerald-600 pl-3 py-1">
-                            <strong>Replicabilidad LATAM:</strong> Despliegue en 1–2 días con Apps Script, Gmail y Sheets + informe Excel con acceso @xertica.com.
+                        <div class="border-l-4 border-emerald-600 pl-3 py-1.5 bg-[#F5F0E8] border border-black/20">
+                            <strong class="text-neutral-900">Replicabilidad LATAM:</strong> Despliegue en <strong>1–2 días</strong> con Apps Script, Gmail y Sheets + reporte Excel seguro.
                         </div>
-                    </div>
-                    <div class="mt-6 stagger-up delay-3">
-                        <a href="https://script.google.com/a/macros/xertica.com/s/AKfycbwlwksFORqQZ5oMv6PvT5G-fPwupqWjCQPZPgcJraRPan50anciUZ7VZQ1FNjPC3H8v/exec" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 bg-[#DE5B48] text-white border-2 border-black font-display font-black text-xs uppercase tracking-wider hover:bg-black transition-colors shadow-[4px_4px_0px_#000]">
-                            <span class="material-symbols-outlined text-base">open_in_new</span> Abrir Herramienta en Producción ↗
-                        </a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE 3: ANGEL SOLIS - CONCILIACIÓN WORKSPACE & ADOPCIÓN GEMINI -->
-        <div class="slide bg-[#1E1E1E] text-white" id="slide-3">
-            <div class="grid grid-cols-12 h-full">
-                <div class="col-span-12 lg:col-span-6 flex flex-col justify-center px-8 lg:px-16 z-20">
-                    <span class="badge-swiss bg-[#FAF338] text-black self-start mb-4 stagger-up">ANGEL SOLIS · WORKSPACE & GEMINI</span>
-                    <h2 class="font-display font-black text-4xl lg:text-5xl uppercase leading-none stagger-up delay-1 text-white">
+        <!-- ============================================== -->
+        <!-- SLIDE 4: ANGEL SOLIS - WORKSPACE & GEMINI      -->
+        <!-- ============================================== -->
+        <div class="slide bg-[#1E1E1E] text-white" id="slide-4">
+            <div class="swiss-grid">
+                <!-- Columna Izquierda: Identidad y KPI -->
+                <div class="col-span-12 lg:col-span-5 bg-[#131722] text-white flex flex-col justify-center px-8 lg:px-14 relative overflow-hidden border-r border-neutral-800">
+                    <div class="shape-corner bg-[#5A4A96] w-48 h-48 top-0 right-0 blend-multiply opacity-50"></div>
+                    <div class="z-10">
+                        <span class="badge-swiss bg-[#FAF338] text-black self-start mb-4 stagger-up font-bold">LÍDER DE INICIATIVA</span>
+                        <h1 class="font-display font-bold text-4xl lg:text-6xl leading-[0.95] uppercase stagger-up delay-1 text-white">
+                            Angel<br>Solís
+                        </h1>
+                        <p class="font-mono text-xs uppercase tracking-wider text-neutral-400 font-bold mt-2 stagger-up delay-1">
+                            Conciliación Workspace & Gemini · En Producción
+                        </p>
+                        <div class="mt-6 pt-4 border-t border-neutral-800 grid grid-cols-2 gap-3 stagger-up delay-2">
+                            <div>
+                                <span class="font-display font-black text-4xl lg:text-6xl text-[#FAF338] leading-none">100%</span>
+                                <span class="font-mono text-[10px] block text-neutral-400 font-bold uppercase mt-1">Revenue Protegido</span>
+                            </div>
+                            <div>
+                                <span class="font-display font-black text-4xl lg:text-6xl text-emerald-400 leading-none">0 Días</span>
+                                <span class="font-mono text-[10px] block text-neutral-400 font-bold uppercase mt-1">Horas Manuales</span>
+                            </div>
+                        </div>
+                        <p class="font-body text-xs lg:text-sm mt-4 text-neutral-300 leading-relaxed stagger-up delay-3">
+                            Conciliación automatizada entre Partner Hub y Admin Console para eliminar licencias huérfanas y detectar oportunidades de upsell Gemini.
+                        </p>
+                        <div class="mt-6 stagger-up delay-4 flex items-center gap-3">
+                            <a href="https://script.google.com/a/macros/xertica.com/s/AKfycbyf2b8K9v4m-rF7J7d9y7K3e4r4G5H6j7k8/exec" target="_blank" class="px-4 py-2.5 bg-[#FAF338] text-black border-2 border-black font-display font-bold text-xs uppercase tracking-wider hover:bg-white transition-colors shadow-[2px_2px_0px_#5A4A96] flex items-center gap-1.5">
+                                <span class="material-symbols-outlined text-sm">open_in_new</span> Abrir Herramienta ↗
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Video Demo 45s y Bullets Clave -->
+                <div class="col-span-12 lg:col-span-7 flex flex-col justify-center px-8 lg:px-14 py-6 z-10">
+                    <h2 class="font-display font-bold text-3xl lg:text-4xl title-line border-white stagger-up mb-4 text-white">
                         Conciliación Licencias & Adopción IA
                     </h2>
-                    <p class="font-body text-base mt-6 opacity-80 stagger-up delay-2">
-                        Automatizar la conciliación de licencias Google Workspace y monitorear el impacto real de adopción (Capa 2 y Gemini).
-                    </p>
-                    <div class="mt-8 grid grid-cols-2 gap-4 stagger-up delay-3 font-mono">
-                        <div class="border border-neutral-700 bg-neutral-900/60 p-4">
-                            <div class="text-[#FAF338] font-black text-3xl">100%</div>
-                            <div class="text-xs text-neutral-400 mt-1">Revenue Protegido (Cero Huérfanas)</div>
-                        </div>
-                        <div class="border border-neutral-700 bg-neutral-900/60 p-4">
-                            <div class="text-emerald-400 font-black text-3xl">0 Días</div>
-                            <div class="text-xs text-neutral-400 mt-1">Cero Horas Manuales en Cierre</div>
+                    
+                    <!-- Video Frame (45s) -->
+                    <div class="w-full aspect-video max-h-[300px] bg-black border-2 border-neutral-700 swiss-border-sm relative overflow-hidden stagger-up delay-1 mb-4">
+                        <div id="slide-media-video-angel" class="w-full h-full relative group bg-neutral-900 flex flex-col justify-between p-4">
+                            <div class="flex justify-between items-start">
+                                <span class="badge-swiss bg-[#FAF338] text-black font-bold text-[9px]">DEMO 45s</span>
+                                <button onclick="openVideoSettings('angel')" class="px-2 py-0.5 bg-black/85 text-[#FAF338] border border-white/40 text-[10px] font-mono font-bold hover:bg-black shadow-[1px_1px_0px_#000] transition-colors flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-xs">settings</span> Cambiar Video
+                                </button>
+                            </div>
+                            <div class="text-center my-auto">
+                                <button onclick="playInteractiveDemo('angel')" class="w-12 h-12 rounded-full bg-[#FAF338] text-black border-2 border-black flex items-center justify-center text-lg font-bold shadow-[3px_3px_0px_#000] hover:scale-110 transition-transform mx-auto">
+                                    ▶
+                                </button>
+                                <div class="font-display font-bold text-white text-sm mt-2">Ver Demostración Conciliación & Gemini</div>
+                                <div class="font-mono text-[10px] text-neutral-400">Angel Solís · Screen Recording 45s</div>
+                            </div>
+                            <div class="flex justify-between items-center text-[10px] font-mono text-neutral-400">
+                                <span>1080p HD · Muted AutoPlay</span>
+                                <button onclick="openVideoSettings('angel')" class="underline hover:text-white font-bold flex items-center gap-0.5">
+                                    <span class="material-symbols-outlined text-[10px]">upload</span> Enlazar Video
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-span-12 lg:col-span-6 flex flex-col justify-center px-8 lg:px-16 bg-[#131722]">
-                    <h3 class="font-display font-bold text-2xl text-[#FAF338] mb-4 stagger-up">Módulo Adopción Inteligente (Capa 2 & Gemini)</h3>
-                    <div class="space-y-4 font-body text-sm stagger-up delay-1 text-neutral-300">
-                        <div class="border-l-4 border-indigo-400 pl-4 py-1">
-                            <strong>Sincronización Automatizada:</strong> Cruce directo Partner Hub, Admin Console y bases comerciales sin recargas manuales.
+
+                    <!-- Bullets ejecutivos con border-l-4 -->
+                    <div class="space-y-2.5 font-body text-xs lg:text-sm stagger-up delay-2">
+                        <div class="border-l-4 border-indigo-400 pl-3 py-1.5 bg-neutral-900 border border-neutral-800">
+                            <strong class="text-white">Sincronización Automatizada:</strong> Cruce directo Partner Hub vs Admin Console sin reprocesos en hojas de cálculo.
                         </div>
-                        <div class="border-l-4 border-indigo-400 pl-4 py-1">
-                            <strong>Radar de Discrepancias Financieras:</strong> Detección inmediata entre licencias aprovisionadas vs. facturadas.
+                        <div class="border-l-4 border-[#FAF338] pl-3 py-1.5 bg-neutral-900 border border-neutral-800">
+                            <strong class="text-white">Radar de Discrepancias Financieras:</strong> Alertas instantáneas entre licencias aprovisionadas en Google vs. facturadas al cliente.
                         </div>
-                        <div class="border-l-4 border-indigo-400 pl-4 py-1">
-                            <strong>Visibilidad Real y Limpia (Capa 2):</strong> 100% de precisión en adopción al aislar SKUs Frontline, revelando el potencial de Upsell a Gemini.
+                        <div class="border-l-4 border-emerald-400 pl-3 py-1.5 bg-neutral-900 border border-neutral-800">
+                            <strong class="text-white">Adopción Capa 2 & Gemini:</strong> Aislamiento de licencias Frontline para revelar cuentas ideales para upsell a Gemini.
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE 4: CARLOS ESPINOSA - TORRE DE CONTROL DE INCENTIVOS G26 -->
-        <div class="slide bg-[#FFFEF8]" id="slide-4">
-            <div class="grid grid-cols-12 h-full">
-                <div class="col-span-12 lg:col-span-5 bg-[#C45BAA] text-white flex flex-col justify-center px-8 lg:px-16 relative">
-                    <span class="badge-swiss bg-black text-[#FAF338] self-start mb-4 stagger-up">CARLOS ESPINOSA · LÍDER DE INICIATIVA</span>
-                    <h2 class="font-display font-black text-3xl lg:text-5xl uppercase leading-none stagger-up delay-1">
+        <!-- ============================================== -->
+        <!-- SLIDE 5: CARLOS ESPINOSA - INCENTIVOS & DR     -->
+        <!-- ============================================== -->
+        <div class="slide bg-[#FFFEF8]" id="slide-5">
+            <div class="swiss-grid">
+                <!-- Columna Izquierda: Identidad y KPI -->
+                <div class="col-span-12 lg:col-span-5 bg-[#C45BAA] text-white flex flex-col justify-center px-8 lg:px-14 relative overflow-hidden">
+                    <div class="shape-corner bg-[#FAF338] w-48 h-48 top-0 right-0 blend-multiply opacity-50"></div>
+                    <div class="z-10">
+                        <span class="badge-swiss bg-black text-[#FAF338] self-start mb-4 stagger-up">LÍDER DE INICIATIVA</span>
+                        <h1 class="font-display font-bold text-4xl lg:text-6xl leading-[0.95] uppercase stagger-up delay-1">
+                            Carlos<br>Espinosa
+                        </h1>
+                        <p class="font-mono text-xs uppercase tracking-wider text-white/90 font-bold mt-2 stagger-up delay-1">
+                            Incentivos Google & DR (G26) · En Producción
+                        </p>
+                        <div class="mt-6 pt-4 border-t border-white/20 stagger-up delay-2">
+                            <span class="font-display font-black text-5xl lg:text-7xl text-[#FAF338] leading-none">$136K+</span>
+                            <span class="font-mono text-xs block text-white/90 font-bold uppercase mt-1">USD Rebate en Riesgo Blindado</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3 mt-3 font-mono text-xs stagger-up delay-3">
+                            <div class="bg-black/40 p-2 border border-white/20">
+                                <span class="text-white/70 block text-[10px]">PIPELINE ASEGURADO</span>
+                                <span class="font-display font-black text-base text-[#FAF338]">$20.0M+ USD</span>
+                            </div>
+                            <div class="bg-black/40 p-2 border border-white/20">
+                                <span class="text-white/70 block text-[10px]">ÓRDENES DETENIDAS</span>
+                                <span class="font-display font-black text-base text-[#FAF338]">22 Órdenes</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 stagger-up delay-4 flex items-center gap-3">
+                            <a href="https://script.google.com/macros/s/AKfycbzdqBmml2SmWMDGuPkxVseJDAiqkADgPz15shyJk1Lg7RE1mjZ9F8q_1AgjXbMGrq2E/exec" target="_blank" class="px-4 py-2.5 bg-black text-white border-2 border-black font-display font-bold text-xs uppercase tracking-wider hover:bg-neutral-800 transition-colors shadow-[2px_2px_0px_#FAF338] flex items-center gap-1.5">
+                                <span class="material-symbols-outlined text-sm">open_in_new</span> Abrir Herramienta ↗
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Video Demo 45s y Bullets Clave -->
+                <div class="col-span-12 lg:col-span-7 flex flex-col justify-center px-8 lg:px-14 py-6 z-10">
+                    <h2 class="font-display font-bold text-3xl lg:text-4xl title-line stagger-up mb-4">
                         Torre de Control Incentivos & DR (G26)
                     </h2>
-                    <div class="mt-6 stagger-up delay-2">
-                        <div class="font-display font-black text-5xl lg:text-6xl text-[#FAF338] leading-none">$136K+</div>
-                        <div class="font-mono text-xs uppercase mt-2 text-white/90 font-bold">USD Rebate en Riesgo Blindado</div>
+                    
+                    <!-- Video Frame (45s) -->
+                    <div class="w-full aspect-video max-h-[300px] bg-black border-2 border-black swiss-border-sm relative overflow-hidden stagger-up delay-1 mb-4">
+                        <div id="slide-media-video-carlos" class="w-full h-full relative group bg-neutral-900 flex flex-col justify-between p-4">
+                            <div class="flex justify-between items-start">
+                                <span class="badge-swiss bg-[#FAF338] text-black font-bold text-[9px]">DEMO 45s</span>
+                                <button onclick="openVideoSettings('carlos')" class="px-2 py-0.5 bg-black/85 text-[#FAF338] border border-white/40 text-[10px] font-mono font-bold hover:bg-black shadow-[1px_1px_0px_#000] transition-colors flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-xs">settings</span> Cambiar Video
+                                </button>
+                            </div>
+                            <div class="text-center my-auto">
+                                <button onclick="playInteractiveDemo('carlos')" class="w-12 h-12 rounded-full bg-[#FAF338] text-black border-2 border-black flex items-center justify-center text-lg font-bold shadow-[3px_3px_0px_#000] hover:scale-110 transition-transform mx-auto">
+                                    ▶
+                                </button>
+                                <div class="font-display font-bold text-white text-sm mt-2">Ver Demostración Torre de Control</div>
+                                <div class="font-mono text-[10px] text-neutral-400">Carlos Espinosa · Screen Recording 45s</div>
+                            </div>
+                            <div class="flex justify-between items-center text-[10px] font-mono text-neutral-400">
+                                <span>1080p HD · Muted AutoPlay</span>
+                                <button onclick="openVideoSettings('carlos')" class="underline hover:text-white font-bold flex items-center gap-0.5">
+                                    <span class="material-symbols-outlined text-[10px]">upload</span> Enlazar Video
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="mt-4 pt-3 border-t border-white/20 font-mono text-xs space-y-1 stagger-up delay-3">
-                        <div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sm text-amber-300">shield</span> <strong>22 Órdenes Detenidas:</strong> +$1.74M USD Net protegido</div>
-                        <div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sm text-indigo-200">query_stats</span> <strong>$20,079,979 USD:</strong> Pipeline liberado con DR aprobado</div>
-                        <div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sm text-yellow-300 fill">bolt</span> <strong>10 Cuentas Gemini:</strong> Rampa 25/75 activa para 2X PayOut</div>
-                    </div>
-                </div>
-                <div class="col-span-12 lg:col-span-7 flex flex-col justify-center px-8 lg:px-16">
-                    <h3 class="font-display font-bold text-2xl lg:text-3xl title-line stagger-up mb-6">Blindaje de Margen Google Cloud 2026</h3>
-                    <div class="space-y-4 font-body text-base stagger-up delay-1">
-                        <div class="border-l-4 border-[#C45BAA] pl-4 py-1">
-                            <strong>Semáforo de Bloqueo Preventivo de OC:</strong> Clasificación inmediata (DETENER OC / LIBERADA / EN REVISIÓN) antes de la emisión de compra.
+
+                    <!-- 4 Bullets unificados con border-l-4 -->
+                    <div class="space-y-2 font-body text-xs lg:text-sm stagger-up delay-2">
+                        <div class="border-l-4 border-emerald-600 pl-3 py-1 bg-[#F5F0E8] border border-black/20">
+                            <strong class="text-neutral-900">Semáforo de Bloqueo de OC:</strong> Clasificación instantánea (DETENER OC, LIBERADA, EN REVISIÓN) antes de emitir la compra.
                         </div>
-                        <div class="border-l-4 border-black pl-4 py-1">
-                            <strong>Cálculo Automático Net to Google:</strong> Fórmula matemática <code>Monto Bruto * 0.80</code> para verificar umbrales de Co-sell ($10k WS, $60k GCP, $0 Gemini).
+                        <div class="border-l-4 border-black pl-3 py-1 bg-[#F5F0E8] border border-black/20">
+                            <strong class="text-neutral-900">Cálculo Automático Net to Google:</strong> Fórmula <code>Monto Bruto * 0.80</code> para umbrales Co-sell ($10k WS, $60k GCP) sin falsas alarmas.
                         </div>
-                        <div class="border-l-4 border-[#1899AF] pl-4 py-1">
-                            <strong>Radar Estratégico Gemini AI:</strong> Registro forzoso desde 1 sola licencia para asegurar multiplicador de 20% y cobro doble.
+                        <div class="border-l-4 border-[#FAF338] pl-3 py-1 bg-[#F5F0E8] border border-black/20">
+                            <strong class="text-neutral-900">Radar Estratégico Gemini AI:</strong> Registro forzoso desde 1 sola licencia para asegurar multiplicador 20% y cobro doble.
                         </div>
-                        <div class="border-l-4 border-black pl-4 py-1">
-                            <strong>Despliegue LATAM &lt; 24 Hrs:</strong> Apps Script V8, BigQuery, Google Sheets y UI Google Material Design 3.
+                        <div class="border-l-4 border-[#C45BAA] pl-3 py-1 bg-[#F5F0E8] border border-black/20">
+                            <strong class="text-neutral-900">Alert Desk & Formación Comercial:</strong> Alertas vía Gmail en 1 clic y catálogo interactivo de los 6 programas de incentivos.
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE 5: ROADMAP LATAM & REPLICABILIDAD -->
-        <div class="slide bg-[#F2EDD8]" id="slide-5">
-            <div class="grid grid-cols-12 h-full">
-                <div class="col-span-12 flex flex-col justify-center px-8 lg:px-24">
-                    <span class="badge-swiss bg-black text-[#FAF338] self-start mb-3 stagger-up font-bold">EXPANSIÓN REGIONAL · EIR CORE SQUAD MÉXICO</span>
-                    <h2 class="font-display font-black text-3xl lg:text-5xl uppercase title-line stagger-up mb-2">
-                        La Maquinaria EIR: Replicabilidad LATAM
+        <!-- ============================================== -->
+        <!-- SLIDE 6: REPLICABILIDAD REGIONAL LATAM         -->
+        <!-- ============================================== -->
+        <div class="slide bg-[#F2EDD8]" id="slide-6">
+            <div class="swiss-grid">
+                <div class="col-span-12 flex flex-col justify-center px-8 lg:px-16 z-20">
+                    <span class="badge-swiss bg-black text-[#FAF338] self-start mb-3 stagger-up font-bold">EXPANSIÓN REGIONAL · SQUAD EIR</span>
+                    <h2 class="font-display font-bold text-4xl lg:text-6xl uppercase title-line stagger-up mb-2">
+                        Replicabilidad Inmediata LATAM
                     </h2>
-                    <p class="font-body text-xs lg:text-sm text-neutral-700 max-w-3xl mb-6 stagger-up delay-1">
-                        4 líderes complementarios articulados en un solo flujo continuo de revenue: demanda masiva SMB, auditoría Workspace & IA, FinOps GCP y blindaje de rebates CRM.
+                    <p class="font-body text-sm lg:text-base text-neutral-700 max-w-3xl mb-6 stagger-up delay-1">
+                        Arquitectura 100% Serverless lista para tropicalizarse y operar en menos de 48 horas en los 4 mercados clave de Xertica.
                     </p>
-                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 font-mono text-xs stagger-up delay-1">
-                        <div class="bg-[#FFFEF8] border-2 border-black p-4 shadow-[2px_2px_0px_#1899AF]">
-                            <span class="badge-swiss bg-[#1899AF] text-white text-[9px] mb-2 font-bold">FINOPS & COMMITS</span>
-                            <div class="font-display font-bold text-base font-sans text-neutral-900 mt-1">Patricio Martin</div>
-                            <div class="text-[10px] text-emerald-700 font-bold mt-1">+110 Cuentas · Opps Salesforce</div>
-                            <p class="font-sans text-xs text-neutral-600 mt-2">&lt; 48 hrs para integrar BigQuery billing export de cualquier país.</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 font-mono text-xs stagger-up delay-2">
+                        <div class="bg-[#FFFEF8] border-2 border-black p-5 shadow-[4px_4px_0px_#1899AF]">
+                            <div class="flex items-center justify-between pb-2 border-b border-neutral-300 mb-3">
+                                <span class="font-display font-black text-lg text-neutral-900">🇲🇽 MÉXICO</span>
+                                <span class="badge-swiss bg-emerald-600 text-white text-[9px]">EN PRODUCCIÓN</span>
+                            </div>
+                            <p class="font-sans text-xs text-neutral-700 leading-relaxed">
+                                Sector público, grandes cuentas corporativas, contratos multianuales y validación de clientes de ultra-alto volumen (Coppel +30K licencias).
+                            </p>
                         </div>
-                        <div class="bg-[#FFFEF8] border-2 border-black p-4 shadow-[2px_2px_0px_#DE5B48]">
-                            <span class="badge-swiss bg-[#DE5B48] text-white text-[9px] mb-2 font-bold">RENOVACIONES SMB</span>
-                            <div class="font-display font-bold text-base font-sans text-neutral-900 mt-1">Jorge Caraballo</div>
-                            <div class="text-[10px] text-emerald-700 font-bold mt-1">336 Cuentas (5 Países) · 68% Open Rate</div>
-                            <p class="font-sans text-xs text-neutral-600 mt-2">1–2 días con Apps Script, Gmail y Sheets. Informe Excel con acceso @xertica.com.</p>
+                        <div class="bg-[#FFFEF8] border-2 border-black p-5 shadow-[4px_4px_0px_#DE5B48]">
+                            <div class="flex items-center justify-between pb-2 border-b border-neutral-300 mb-3">
+                                <span class="font-display font-black text-lg text-neutral-900">🇨🇴 COLOMBIA</span>
+                                <span class="badge-swiss bg-[#FAF338] text-black text-[9px]">PLUG & PLAY</span>
+                            </div>
+                            <p class="font-sans text-xs text-neutral-700 leading-relaxed">
+                                Cruce con ciclos de facturación local, licitaciones y contratos de gobierno con validación de Co-sell de Google Colombia.
+                            </p>
                         </div>
-                        <div class="bg-[#FFFEF8] border-2 border-black p-4 shadow-[2px_2px_0px_#5A4A96]">
-                            <span class="badge-swiss bg-[#5A4A96] text-white text-[9px] mb-2 font-bold">WORKSPACE & GEMINI</span>
-                            <div class="font-display font-bold text-base font-sans text-neutral-900 mt-1">Angel Solis</div>
-                            <div class="text-[10px] text-emerald-700 font-bold mt-1">100% Revenue Protegido · 0 Días Manual</div>
-                            <p class="font-sans text-xs text-neutral-600 mt-2">&lt; 24 hrs para integrar bases de suscripciones y facturación regional.</p>
+                        <div class="bg-[#FFFEF8] border-2 border-black p-5 shadow-[4px_4px_0px_#5A4A96]">
+                            <div class="flex items-center justify-between pb-2 border-b border-neutral-300 mb-3">
+                                <span class="font-display font-black text-lg text-neutral-900">🇵🇪 PERÚ</span>
+                                <span class="badge-swiss bg-[#FAF338] text-black text-[9px]">PLUG & PLAY</span>
+                            </div>
+                            <p class="font-sans text-xs text-neutral-700 leading-relaxed">
+                                Estructuras de facturación multimoneda (USD y Soles) alineadas a los tiers de licenciamiento y cartera corporativa de Xertica Perú.
+                            </p>
                         </div>
-                        <div class="bg-[#FFFEF8] border-2 border-black p-4 shadow-[2px_2px_0px_#C45BAA]">
-                            <span class="badge-swiss bg-[#C45BAA] text-white text-[9px] mb-2 font-bold">INCENTIVOS & DR (G26)</span>
-                            <div class="font-display font-bold text-base font-sans text-neutral-900 mt-1">Carlos Espinosa</div>
-                            <div class="text-[10px] text-emerald-700 font-bold mt-1">$136K+ Rebate Blindado · $20M+ Pipeline</div>
-                            <p class="font-sans text-xs text-neutral-600 mt-2">&lt; 24 hrs. Apps Script V8, BigQuery, Sheets y Material Design 3. 100% Plug & Play.</p>
+                        <div class="bg-[#FFFEF8] border-2 border-black p-5 shadow-[4px_4px_0px_#C45BAA]">
+                            <div class="flex items-center justify-between pb-2 border-b border-neutral-300 mb-3">
+                                <span class="font-display font-black text-lg text-neutral-900">🇨🇱 CHILE</span>
+                                <span class="badge-swiss bg-[#FAF338] text-black text-[9px]">PLUG & PLAY</span>
+                            </div>
+                            <p class="font-sans text-xs text-neutral-700 leading-relaxed">
+                                Conversión automática de UF (Unidad de Fomento) a Net to Google USD para cumplir umbrales oficiales sin distorsión cambiaria.
+                            </p>
                         </div>
                     </div>
-                    <!-- EIR Capability Footer in Slide 5 -->
-                    <div class="mt-6 p-4 bg-[#FFFEF8] border-2 border-black shadow-[3px_3px_0px_#000] flex flex-wrap items-center justify-between gap-3 font-mono text-xs stagger-up delay-2">
+
+                    <div class="mt-6 bg-[#FFFEF8] border-2 border-black p-4 flex flex-wrap items-center justify-between gap-4 font-mono text-xs stagger-up delay-3 shadow-[4px_4px_0px_#000]">
                         <div>
-                            <span class="badge-swiss bg-[#FAF338] text-black text-[9px] font-bold mr-2">EIR PRODUCT ENGINE</span>
-                            <span class="text-neutral-800 font-sans">Dominio integral de <strong>Cloud Run, BigQuery masivo, IA Gemini y Salesforce API</strong>. Capacidad probada de crear nuevos productos y desplegarlos en producción en &lt; 5 días.</span>
+                            <span class="font-bold text-neutral-900 uppercase">TIEMPO DE DESPLIEGUE:</span>
+                            <span class="text-emerald-700 font-bold ml-1">&lt; 48 Horas por País</span>
+                        </div>
+                        <div>
+                            <span class="font-bold text-neutral-900 uppercase">COMPLEJIDAD TÉCNICA:</span>
+                            <span class="text-neutral-700 ml-1">Baja (Zero DevOps / Serverless V8)</span>
+                        </div>
+                        <div>
+                            <span class="font-bold text-neutral-900 uppercase">COBERTURA REGIONAL:</span>
+                            <span class="text-neutral-700 ml-1">100% LATAM Multi-país</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE 6: CIERRE & PRÓXIMOS PASOS -->
-        <div class="slide bg-[#1E1E1E] text-white" id="slide-6">
-            <div class="grid grid-cols-12 h-full">
-                <div class="col-span-12 lg:col-span-7 flex flex-col justify-center px-8 lg:px-20 z-20">
-                    <span class="badge-swiss bg-[#FAF338] text-black self-start mb-4 stagger-up font-bold tracking-wider">LISTO PARA LATAM</span>
-                    <h2 class="font-display font-black text-5xl lg:text-7xl uppercase leading-none stagger-up mb-6">
-                        Próximos Pasos para Despliegue
+        <!-- ============================================== -->
+        <!-- SLIDE 7: HOJA DE RUTA SUGERIDA & CIERRE        -->
+        <!-- ============================================== -->
+        <div class="slide bg-[#1E1E1E] text-[#FFFEF8]" id="slide-7">
+            <div class="swiss-grid relative overflow-hidden">
+                <div class="absolute right-[-10%] top-[-20%] w-[80vh] h-[80vh] bg-[#C45BAA] mix-blend-screen opacity-20 transform rotate-45"></div>
+
+                <div class="col-span-12 lg:col-span-7 flex flex-col justify-center px-8 lg:px-16 z-20">
+                    <h2 class="font-display font-bold text-4xl lg:text-5xl title-line border-[#F5F0E8] stagger-up mb-8">
+                        Hoja de Ruta Sugerida
                     </h2>
-                    <div class="space-y-4 font-body text-base stagger-up delay-1">
-                        <div class="flex gap-4 items-start border-b border-white/20 pb-3">
-                            <span class="font-mono font-bold text-[#FAF338]">01</span>
-                            <span>Validación ejecutiva con Vanessa Tinoco de las 4 soluciones presentadas.</span>
+                    
+                    <div class="space-y-6 stagger-up delay-1">
+                        <div class="flex gap-6 items-start border-b border-white/20 pb-4">
+                            <div class="font-display font-bold text-2xl text-[#FAF338] w-36 shrink-0">
+                                Fase 1<br><span class="text-xs font-mono font-normal text-white/70">Semanas 1-2</span>
+                            </div>
+                            <div class="font-body text-base lg:text-lg">
+                                Validación ejecutiva con <b>Vanessa Tinoco</b> e integración de videos de 45s grabados por cada responsable EIR.
+                            </div>
                         </div>
-                        <div class="flex gap-4 items-start border-b border-white/20 pb-3">
-                            <span class="font-mono font-bold text-[#FAF338]">02</span>
-                            <span>Integración de videos finales de 45s grabados por cada responsable EIR.</span>
+                        <div class="flex gap-6 items-start border-b border-white/20 pb-4">
+                            <div class="font-display font-bold text-2xl text-[#FAF338] w-36 shrink-0">
+                                Fase 2<br><span class="text-xs font-mono font-normal text-white/70">Semanas 3-4</span>
+                            </div>
+                            <div class="font-body text-base lg:text-lg">
+                                Habilitación técnica y comercial con <b>Sales Operations, Deal Desk y Finanzas</b> regionales.
+                            </div>
                         </div>
-                        <div class="flex gap-4 items-start">
-                            <span class="font-mono font-bold text-[#FAF338]">03</span>
-                            <span>Sesión de habilitación técnica con directores de país (Colombia, Perú, Chile).</span>
+                        <div class="flex gap-6 items-start">
+                            <div class="font-display font-bold text-2xl text-[#FAF338] w-36 shrink-0">
+                                Fase 3<br><span class="text-xs font-mono font-normal text-white/70">Mes 2</span>
+                            </div>
+                            <div class="font-body text-base lg:text-lg">
+                                Despliegue operativo multi-país en <b>Colombia, Perú y Chile</b> con BigQuery y Google Sheets unificados.
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-span-12 lg:col-span-5 bg-[#FAF338] text-black flex flex-col justify-center items-center text-center p-8 lg:p-12">
-                    <h3 class="font-display font-black text-4xl lg:text-5xl uppercase leading-tight stagger-up mb-6">
-                        Plataforma Lista para Presentación
-                    </h3>
-                    <button onclick="setAppMode('platform')" class="bg-black text-white px-6 py-4 font-display font-bold text-sm uppercase tracking-wider border-2 border-black hover:bg-neutral-800 transition-colors shadow-[4px_4px_0px_rgba(0,0,0,0.3)]">
-                        Explorar Hub Interactivo
-                    </button>
+                
+                <div class="col-span-12 lg:col-span-5 bg-[#FAF338] text-black flex flex-col justify-center items-center text-center p-8 lg:p-12 z-20">
+                    <h2 class="font-display font-bold text-4xl lg:text-5xl leading-tight stagger-up mb-8 text-[#1E1E1E]">
+                        Rompiendo los límites de lo posible.
+                    </h2>
+                    <div class="space-y-3 stagger-up delay-2 w-full max-w-sm">
+                        <button onclick="openShareModal()" class="w-full bg-black text-white font-display font-bold px-6 py-4 text-sm uppercase tracking-wider border-2 border-black hover:bg-neutral-800 transition-colors shadow-[4px_4px_0px_rgba(0,0,0,0.3)] flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined text-base">send</span> Compartir a Vanessa
+                        </button>
+                        <button onclick="setAppMode('platform')" class="w-full bg-[#FFFEF8] text-black font-display font-bold px-6 py-3 text-xs uppercase tracking-wider border-2 border-black hover:bg-neutral-100 transition-colors flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined text-base">dashboard</span> Ver Hub Detallado / Fichas
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2608,9 +2936,9 @@
     <!-- JAVASCRIPT LOGIC -->
     <script>
         // Application State
-        let appMode = 'platform'; // 'platform' or 'slides'
+        let appMode = 'slides'; // 'platform' or 'slides'
         let currentSlide = 0;
-        const totalSlides = 7;
+        const totalSlides = 8;
 
         // Message template for Vanessa Tinoco
         const vanessaMessage = `Hola Vane! Buen día.
@@ -2658,18 +2986,17 @@ La plataforma cuenta con 2 modos:
             const btnSlides = document.getElementById('btn-mode-slides');
 
             if (mode === 'slides') {
-                viewPlatform.classList.add('hidden');
-                viewSlides.classList.remove('hidden');
-                if (btnSlides) {
-                    btnSlides.classList.add('bg-[#FAF338]');
-                }
+                document.body.classList.add('slides-active');
+                if (viewPlatform) viewPlatform.classList.add('hidden');
+                if (viewSlides) viewSlides.classList.remove('hidden');
+                if (btnSlides) btnSlides.classList.add('bg-[#FAF338]');
                 updateSlideView();
             } else {
-                viewSlides.classList.add('hidden');
-                viewPlatform.classList.remove('hidden');
-                if (btnSlides) {
-                    btnSlides.classList.remove('bg-[#FAF338]');
-                }
+                document.body.classList.remove('slides-active');
+                if (viewSlides) viewSlides.classList.add('hidden');
+                if (viewPlatform) viewPlatform.classList.remove('hidden');
+                if (btnSlides) btnSlides.classList.remove('bg-[#FAF338]');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }
         }
 
@@ -2800,44 +3127,50 @@ La plataforma cuenta con 2 modos:
         }
 
         function renderVideoPlayer(eir, url) {
-            const container = document.getElementById(`media-video-${eir}`);
-            if (!container || !url) return;
+            const containers = [
+                document.getElementById(`media-video-${eir}`),
+                document.getElementById(`slide-media-video-${eir}`)
+            ].filter(Boolean);
+
+            if (containers.length === 0 || !url) return;
 
             const embed = formatVideoEmbed(url);
             if (!embed) return;
 
-            if (embed.type === 'iframe') {
-                container.innerHTML = `
-                    <div class="relative w-full h-full bg-black">
-                        <iframe src="${embed.src}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" webkitallowfullscreen mozallowfullscreen allowfullscreen class="w-full h-full"></iframe>
-                        <div class="absolute top-3 right-3 z-20">
-                            <button onclick="openVideoSettings('${eir}')" class="px-2.5 py-1 bg-black/85 text-[#FAF338] border border-white/40 text-xs font-mono font-bold hover:bg-black shadow-[2px_2px_0px_#000] transition-colors flex items-center gap-1">
-                                <span class="material-symbols-outlined text-xs">settings</span> Cambiar Video
-                            </button>
+            containers.forEach(container => {
+                if (embed.type === 'iframe') {
+                    container.innerHTML = `
+                        <div class="relative w-full h-full bg-black">
+                            <iframe src="${embed.src}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" webkitallowfullscreen mozallowfullscreen allowfullscreen class="w-full h-full"></iframe>
+                            <div class="absolute top-3 right-3 z-20">
+                                <button onclick="openVideoSettings('${eir}')" class="px-2.5 py-1 bg-black/85 text-[#FAF338] border border-white/40 text-xs font-mono font-bold hover:bg-black shadow-[2px_2px_0px_#000] transition-colors flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-xs">settings</span> Cambiar Video
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                `;
-            } else {
-                container.innerHTML = `
-                    <div class="relative w-full h-full bg-black group">
-                        <video controls autoplay playsinline muted class="w-full h-full object-contain">
-                            <source src="${embed.src}">
-                            Tu navegador no soporta el video.
-                        </video>
-                        <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity z-20">
-                            <button onclick="openVideoSettings('${eir}')" class="px-2.5 py-1 bg-black/85 text-[#FAF338] border border-white/40 text-xs font-mono font-bold hover:bg-black shadow-[2px_2px_0px_#000] transition-colors flex items-center gap-1">
-                                <span class="material-symbols-outlined text-xs">settings</span> Cambiar Video
-                            </button>
+                    `;
+                } else {
+                    container.innerHTML = `
+                        <div class="relative w-full h-full bg-black group">
+                            <video controls autoplay playsinline muted class="w-full h-full object-contain">
+                                <source src="${embed.src}">
+                                Tu navegador no soporta el video.
+                            </video>
+                            <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity z-20">
+                                <button onclick="openVideoSettings('${eir}')" class="px-2.5 py-1 bg-black/85 text-[#FAF338] border border-white/40 text-xs font-mono font-bold hover:bg-black shadow-[2px_2px_0px_#000] transition-colors flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-xs">settings</span> Cambiar Video
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                `;
-                const vidEl = container.querySelector('video');
-                if (vidEl) {
-                    vidEl.muted = true;
-                    vidEl.defaultMuted = true;
-                    vidEl.volume = 0;
+                    `;
+                    const vidEl = container.querySelector('video');
+                    if (vidEl) {
+                        vidEl.muted = true;
+                        vidEl.defaultMuted = true;
+                        vidEl.volume = 0;
+                    }
                 }
-            }
+            });
         }
 
         function openVideoSettings(eir) {
@@ -3085,14 +3418,25 @@ La plataforma cuenta con 2 modos:
             });
         }
 
-        // Ejecutar carga inicial de videos
+        // Ejecutar carga inicial de videos y sincronizar modo slides
         if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', fetchGlobalVideos);
+            document.addEventListener('DOMContentLoaded', () => {
+                fetchGlobalVideos();
+                if (appMode === 'slides') updateSlideView();
+            });
         } else {
             fetchGlobalVideos();
+            if (appMode === 'slides') updateSlideView();
         }
 
         // Slide Presentation Navigation
+        function goToSlide(index) {
+            if (index >= 0 && index < totalSlides) {
+                currentSlide = index;
+                updateSlideView();
+            }
+        }
+
         function updateSlideView() {
             const slides = document.querySelectorAll('.slide');
             slides.forEach((s, i) => {
@@ -3103,14 +3447,61 @@ La plataforma cuenta con 2 modos:
                 }
             });
 
-            // Update bottom indicator
+            // Update slide navigation pills
+            document.querySelectorAll('.slide-nav-pill').forEach(pill => {
+                const sIdx = parseInt(pill.getAttribute('data-slide'));
+                if (sIdx === currentSlide) {
+                    pill.classList.add('bg-[#FAF338]', 'text-black', 'border-black');
+                    pill.classList.remove('border-transparent');
+                } else {
+                    pill.classList.remove('bg-[#FAF338]', 'text-black', 'border-black');
+                    pill.classList.add('border-transparent');
+                }
+            });
+
+            // Update bottom indicator & dynamic contrast
             const counter = document.getElementById('slide-counter-bottom');
+            const counterNav = document.querySelector('.counter-nav');
+            const brandLogo = document.querySelector('.brand-logo');
+            const navBtnPrev = document.querySelector('.nav-btn-prev');
+            const isDark = slides[currentSlide] && slides[currentSlide].classList.contains('bg-[#1E1E1E]');
+
             if (counter) {
                 counter.innerText = `EIR'S MÉXICO · EXPANSIÓN LATAM [0${currentSlide + 1} / 0${totalSlides}]`;
-                if (slides[currentSlide] && slides[currentSlide].classList.contains('bg-[#1E1E1E]')) {
-                    counter.classList.replace('text-black', 'text-white');
+                if (isDark) {
+                    counter.classList.remove('text-black');
+                    counter.classList.add('text-white');
                 } else {
-                    counter.classList.replace('text-white', 'text-black');
+                    counter.classList.remove('text-white');
+                    counter.classList.add('text-black');
+                }
+            }
+
+            if (counterNav) {
+                if (isDark) {
+                    counterNav.classList.remove('text-black');
+                    counterNav.classList.add('text-white');
+                } else {
+                    counterNav.classList.remove('text-white');
+                    counterNav.classList.add('text-black');
+                }
+            }
+
+            if (brandLogo) {
+                brandLogo.style.color = isDark ? '#FFFFFF' : 'var(--negro-xertica)';
+            }
+
+            if (navBtnPrev) {
+                if (isDark) {
+                    navBtnPrev.style.borderColor = '#FFFFFF';
+                    navBtnPrev.style.color = '#FFFFFF';
+                    navBtnPrev.classList.remove('bg-[#FFFEF8]', 'text-black', 'border-black');
+                    navBtnPrev.classList.add('bg-transparent');
+                } else {
+                    navBtnPrev.style.borderColor = '#1E1E1E';
+                    navBtnPrev.style.color = '#1E1E1E';
+                    navBtnPrev.classList.add('bg-[#FFFEF8]', 'text-black', 'border-black');
+                    navBtnPrev.classList.remove('bg-transparent');
                 }
             }
         }
