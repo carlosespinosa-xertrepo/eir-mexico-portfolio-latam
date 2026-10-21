@@ -959,38 +959,65 @@
             <!-- TAB PANEL 3: ANGEL SOLIS - TORRE PREVENTA     -->
             <!-- ============================================== -->
             <div id="panel-angel" class="tab-panel hidden">
+                <!-- BANNER SUPERIOR EJECUTIVO A LO LARGO (Inspirado en la estructura del Header) -->
+                <div class="bg-[#FFFEF8] border-2 border-black p-6 swiss-border mb-8">
+                    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                        <!-- Left: Título y Objetivo Principal a lo largo -->
+                        <div class="max-w-3xl space-y-3">
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span class="badge-swiss bg-[#5A4A96] text-white">Líder de Iniciativa</span>
+                                <span class="font-display font-black text-sm text-neutral-900">Angel Solis · EIR</span>
+                                <span class="text-neutral-400">|</span>
+                                <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 font-bold border border-emerald-500 text-[10px] font-mono">En Producción</span>
+                                <span class="text-neutral-400">|</span>
+                                <span class="font-mono text-[11px] text-neutral-500">Conexión Directa a BigQuery</span>
+                            </div>
+                            
+                            <h3 class="font-display font-black text-2xl lg:text-3xl text-[#1E1E1E] leading-tight">
+                                Conciliación de Licencias en BigQuery desde Consolas & Partner Hub
+                            </h3>
+                            
+                            <div class="border-l-4 border-[#5A4A96] pl-3 py-1">
+                                <div class="font-display font-black text-xs uppercase tracking-wider text-[#5A4A96] mb-1 flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 bg-[#5A4A96] inline-block"></span> 1. Objetivo Principal
+                                </div>
+                                <p class="font-display font-bold text-base text-neutral-900 leading-snug">
+                                    Automatizar la conciliación de licencias de Google Workspace y monitorear el impacto real de adopción (Capa 2 y Gemini).
+                                </p>
+                                <p class="font-body text-xs sm:text-sm text-neutral-700 mt-2 leading-relaxed">
+                                    Proporcionar a los equipos comerciales, de ingeniería y finanzas visibilidad exacta de la base instalada cruzando múltiples fuentes de datos en tiempo real mediante BigQuery, identificando discrepancias de facturación y corrigiendo distorsiones en las métricas de adopción antes de la renovación.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Right Box: Metrics Container (Idéntico a la imagen adjunta) -->
+                        <div class="bg-white border-2 border-black p-4 shadow-[4px_4px_0px_#000] flex-shrink-0 self-start lg:self-center">
+                            <div class="flex items-center divide-x-2 divide-neutral-200 text-center font-mono">
+                                <div class="px-3 sm:px-4 first:pl-2">
+                                    <div class="font-display font-black text-2xl lg:text-3xl text-[#5A4A96] leading-none">100%</div>
+                                    <div class="text-[9px] uppercase font-bold text-neutral-600 mt-1.5 whitespace-nowrap">REVENUE<br>PROTEGIDO</div>
+                                </div>
+                                <div class="px-3 sm:px-4">
+                                    <div class="font-display font-black text-2xl lg:text-3xl text-emerald-700 leading-none">+35K</div>
+                                    <div class="text-[9px] uppercase font-bold text-neutral-600 mt-1.5 whitespace-nowrap">LICENCIAS<br>AUDITADAS</div>
+                                </div>
+                                <div class="px-3 sm:px-4">
+                                    <div class="font-display font-black text-2xl lg:text-3xl text-neutral-900 leading-none">0 Días</div>
+                                    <div class="text-[9px] uppercase font-bold text-neutral-600 mt-1.5 whitespace-nowrap">REVISIONES<br>MANUALES</div>
+                                </div>
+                                <div class="px-3 sm:px-4 last:pr-2">
+                                    <div class="font-display font-black text-2xl lg:text-3xl text-indigo-700 leading-none">4</div>
+                                    <div class="text-[9px] uppercase font-bold text-neutral-600 mt-1.5 whitespace-nowrap">PAÍSES<br>LATAM</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                     
                     <!-- Left Column: Ficha Ejecutiva Digerible -->
                     <div class="lg:col-span-5 space-y-6">
-                        <!-- Profile Card -->
-                        <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border">
-                            <div class="flex items-center gap-4">
-                                <img src="assets/team/angel-solis.jpg" alt="Angel Solis" class="w-16 h-16 rounded-full border-2 border-black object-cover shadow-[2px_2px_0px_#5A4A96]" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80'">
-                                <div>
-                                    <span class="badge-swiss bg-[#5A4A96] text-white">Líder de Iniciativa</span>
-                                    <h3 class="font-display font-black text-2xl text-[#1E1E1E] leading-tight mt-1">Angel Solis</h3>
-                                    <div class="font-mono text-xs text-neutral-600 font-semibold">EIR</div>
-                                </div>
-                            </div>
-                            <div class="mt-4 pt-3 border-t border-neutral-200 flex items-center justify-between text-xs font-mono">
-                                <span>Solución: <strong>Conciliación de Licencias en BigQuery desde Consolas & Partner Hub</strong></span>
-                                <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 font-bold border border-emerald-500">En Producción</span>
-                            </div>
-                        </div>
-
-                        <!-- 1. OBJETIVO PRINCIPAL -->
-                        <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border">
-                            <div class="font-display font-black text-xs uppercase tracking-wider text-[#5A4A96] mb-1.5 flex items-center gap-2">
-                                <span class="w-2.5 h-2.5 bg-[#5A4A96] inline-block"></span> 1. Objetivo Principal
-                            </div>
-                            <h4 class="font-display font-bold text-lg leading-snug text-neutral-900">
-                                Automatizar la conciliación de licencias Google Workspace y medir la adopción real (Capa 2 y Gemini) mediante conexión directa a BigQuery con datos en vivo desde consolas y Partner Hub.
-                            </h4>
-                            <p class="font-body text-xs text-neutral-600 mt-2 leading-relaxed">
-                                Proporcionar a los equipos comerciales, de ingeniería y finanzas visibilidad en tiempo real de la base instalada. La solución consulta y cruza en directo tablas de BigQuery conectadas con la Consola de Administración de Google (aprovisionamiento) y Partner Hub (facturación), eliminando reportes manuales, neutralizando discrepancias de cobro y detectando oportunidades de upsell a Gemini con datos en directo.
-                            </p>
-                        </div>
 
                         <!-- 2. EN QUÉ AYUDA DIRECTAMENTE -->
                         <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border">
@@ -1225,38 +1252,65 @@
             <!-- TAB PANEL 4: CARLOS ESPINOSA - SF VS PARTNER HUB -->
             <!-- ============================================== -->
             <div id="panel-carlos" class="tab-panel hidden">
+                <!-- BANNER SUPERIOR EJECUTIVO A LO LARGO (Inspirado en la estructura del Header) -->
+                <div class="bg-[#FFFEF8] border-2 border-black p-6 swiss-border mb-8">
+                    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                        <!-- Left: Título y Objetivo Principal a lo largo -->
+                        <div class="max-w-3xl space-y-3">
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span class="badge-swiss bg-[#C45BAA] text-white">Líder de Iniciativa</span>
+                                <span class="font-display font-black text-sm text-neutral-900">Carlos Espinosa · EIR</span>
+                                <span class="text-neutral-400">|</span>
+                                <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 font-bold border border-emerald-500 text-[10px] font-mono">En Producción</span>
+                                <span class="text-neutral-400">|</span>
+                                <span class="font-mono text-[11px] text-neutral-500">Conexión Directa a BigQuery</span>
+                            </div>
+                            
+                            <h3 class="font-display font-black text-2xl lg:text-3xl text-[#1E1E1E] leading-tight">
+                                Torre de Control de Incentivos Google Cloud & Deal Registration (G26)
+                            </h3>
+                            
+                            <div class="border-l-4 border-[#C45BAA] pl-3 py-1">
+                                <div class="font-display font-black text-xs uppercase tracking-wider text-[#C45BAA] mb-1 flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 bg-[#C45BAA] inline-block"></span> 1. Objetivo Principal · Conciliación de Pipeline
+                                </div>
+                                <p class="font-display font-bold text-base text-neutral-900 leading-snug">
+                                    Semáforo operativo de conciliación: cruce del pipeline levantado en Partner Hub (Google) vs. pipeline generado o registrado en Salesforce.
+                                </p>
+                                <p class="font-body text-xs sm:text-sm text-neutral-700 mt-2 leading-relaxed">
+                                    Identificar oportunamente oportunidades sin registro en Partner Hub y Deal Registration (DR) con cobro potencial de incentivos si se cierran formalmente. Módulo de cálculo de incentivos automatizado en construcción (con inteligencia artificial y reglas oficiales de incentivos Google Cloud 2026), blindando el margen comercial y eliminando revisiones manuales mediante auditoría en tiempo real.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Right Box: Metrics Container (Idéntico a la imagen adjunta) -->
+                        <div class="bg-white border-2 border-black p-4 shadow-[4px_4px_0px_#000] flex-shrink-0 self-start lg:self-center">
+                            <div class="flex items-center divide-x-2 divide-neutral-200 text-center font-mono">
+                                <div class="px-3 sm:px-4 first:pl-2">
+                                    <div class="font-display font-black text-2xl lg:text-3xl text-[#C45BAA] leading-none">$136K+</div>
+                                    <div class="text-[9px] uppercase font-bold text-neutral-600 mt-1.5 whitespace-nowrap">REBATES<br>ASEGURADOS</div>
+                                </div>
+                                <div class="px-3 sm:px-4">
+                                    <div class="font-display font-black text-2xl lg:text-3xl text-indigo-700 leading-none">+$20M</div>
+                                    <div class="text-[9px] uppercase font-bold text-neutral-600 mt-1.5 whitespace-nowrap">PIPELINE CON DR<br>(PARTNER HUB)</div>
+                                </div>
+                                <div class="px-3 sm:px-4">
+                                    <div class="font-display font-black text-2xl lg:text-3xl text-amber-600 leading-none">22</div>
+                                    <div class="text-[9px] uppercase font-bold text-neutral-600 mt-1.5 whitespace-nowrap">OPORTUNIDADES<br>CRÍTICAS</div>
+                                </div>
+                                <div class="px-3 sm:px-4 last:pr-2">
+                                    <div class="font-display font-black text-2xl lg:text-3xl text-neutral-900 leading-none">0 Días</div>
+                                    <div class="text-[9px] uppercase font-bold text-neutral-600 mt-1.5 whitespace-nowrap">REVISIONES<br>MANUALES</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                     
                     <!-- Left Column: Ficha Ejecutiva Digerible -->
                     <div class="lg:col-span-5 space-y-6">
-                        <!-- Profile Card -->
-                        <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border">
-                            <div class="flex items-center gap-4">
-                                <img src="assets/team/carlos-espinosa.jpg" alt="Carlos Espinosa" class="w-16 h-16 rounded-full border-2 border-black object-cover shadow-[2px_2px_0px_#C45BAA]" onerror="this.src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80'">
-                                <div>
-                                    <span class="badge-swiss bg-[#C45BAA] text-white">Líder de Iniciativa</span>
-                                    <h3 class="font-display font-black text-2xl text-[#1E1E1E] leading-tight mt-1">Carlos Espinosa</h3>
-                                    <div class="font-mono text-xs text-neutral-600 font-semibold">EIR</div>
-                                </div>
-                            </div>
-                            <div class="mt-4 pt-3 border-t border-neutral-200 flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
-                                <span>Solución: <strong>Torre de Control de Incentivos & DR · Conexión BigQuery & Partner Hub en Vivo</strong></span>
-                                <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 font-bold border border-emerald-500">En Producción</span>
-                            </div>
-                        </div>
-
-                        <!-- 1. OBJETIVO PRINCIPAL -->
-                        <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border">
-                            <div class="font-display font-black text-xs uppercase tracking-wider text-[#C45BAA] mb-1.5 flex items-center gap-2">
-                                <span class="w-2.5 h-2.5 bg-[#C45BAA] inline-block"></span> 1. Objetivo Principal
-                            </div>
-                            <h4 class="font-display font-bold text-xl leading-tight text-neutral-900">
-                                Blindar el margen comercial y maximizar los rebates de Google Cloud (hasta 16.1% y multiplicadores 2X de Gemini) auditando en tiempo real cada oportunidad de Salesforce contra las reglas oficiales de Google Partner Advantage 2026, mediante conexión directa a BigQuery con datos en vivo del Partner Hub.
-                            </h4>
-                            <p class="font-body text-sm text-neutral-700 mt-3 leading-relaxed">
-                                Proporcionar a los equipos comerciales, operaciones y finanzas una Torre de Control conectada directamente a BigQuery, que consume la telemetría en vivo de Google Partner Hub y Salesforce. Elimina por completo hojas de cálculo manuales y el riesgo de emitir Órdenes de Compra (OC) sin Deal Registration (DR) aprobado, validando de forma instantánea los umbrales de Co-sell ($10k USD Net en Workspace, $60k USD Net en GCP y $0 USD en Gemini) antes de su cierre administrativo.
-                            </p>
-                        </div>
 
                         <!-- 2. EN QUÉ AYUDA DIRECTAMENTE -->
                         <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border">
@@ -1267,31 +1321,25 @@
                                 <li class="flex items-start gap-2.5">
                                     <span class="material-symbols-outlined text-emerald-600 text-sm mt-0.5">check_circle</span>
                                     <div>
-                                        <strong class="text-neutral-900">Conexión Nativa BigQuery con Datos en Vivo de Partner Hub:</strong> Consultas directas sobre el repositorio centralizado en BigQuery que integra la data viva de Google Partner Hub y Salesforce, sustituyendo revisiones manuales por auditorías automáticas en tiempo real.
+                                        <strong class="text-neutral-900">Semáforo Operativo de Conciliación de Pipeline (Partner Hub vs. Salesforce):</strong> Cruce automatizado del pipeline levantado en Partner Hub (Google) contra el registrado en Salesforce, alertando sobre oportunidades activas sin registro de Deal Registration (DR) para garantizar que califiquen a cobro potencial de incentivos al cierre comercial.
                                     </div>
                                 </li>
                                 <li class="flex items-start gap-2.5">
                                     <span class="material-symbols-outlined text-emerald-600 text-sm mt-0.5">check_circle</span>
                                     <div>
-                                        <strong class="text-neutral-900">Semáforo Operativo de Bloqueo Preventivo de OC:</strong> Clasificación inmediata (DETENER OC, LIBERADA, EN REVISIÓN) cruzando en tiempo real las oportunidades contra los registros aprobados de Partner Hub para frenar órdenes sin registro antes de emitir la compra.
-                                    </div>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <span class="material-symbols-outlined text-emerald-600 text-sm mt-0.5">check_circle</span>
-                                    <div>
-                                        <strong class="text-neutral-900">Cálculo Automático de Net to Google:</strong> Conversión matemática en vivo (<code>Monto Bruto * 0.80</code>) que aplica los umbrales oficiales de Co-sell ($10k WS, $60k GCP) sobre el valor neto mayorista real, evitando falsas alarmas comerciales.
+                                        <strong class="text-neutral-900">Cálculo de Incentivos Automatizado (En Construcción con IA):</strong> Módulo algorítmico asistido por inteligencia artificial y las reglas oficiales de incentivos Google Cloud 2026, calculando el Net to Google (fórmula <code>Monto Bruto * 0.80</code>) y proyectando el monto exacto de rebates aplicables.
                                     </div>
                                 </li>
                                 <li class="flex items-start gap-2.5">
                                     <span class="material-symbols-outlined text-amber-500 text-sm mt-0.5 fill">auto_awesome</span>
                                     <div>
-                                        <strong class="text-neutral-900">Radar Estratégico Gemini AI (Umbral $0 & PayOut 2X):</strong> Detección proactiva de oportunidades desde 1 sola licencia para forzar el registro de Deal Registration, asegurando el multiplicador del 20% y el cobro doble de incentivo.
+                                        <strong class="text-neutral-900">Radar Estratégico Gemini AI (Umbral $0 & PayOut 2X):</strong> Identificación proactiva de oportunidades desde 1 sola licencia para exigir Deal Registration inmediato, asegurando que califiquen para el multiplicador del 20% y cobro doble de incentivo.
                                     </div>
                                 </li>
                                 <li class="flex items-start gap-2.5">
                                     <span class="material-symbols-outlined text-emerald-600 text-sm mt-0.5">check_circle</span>
                                     <div>
-                                        <strong class="text-neutral-900">Alert Desk & Capacitación Comercial:</strong> Módulo colaborativo entre Operaciones, Ventas y Finanzas con alertas vía Gmail y catálogo de los 6 programas de incentivos para capacitar a la fuerza de ventas.
+                                        <strong class="text-neutral-900">Alert Desk & Colaboración Comercial-Finanzas:</strong> Coordinación directa entre ventas, operaciones y finanzas para no perder ventanas de registro antes del cierre de oportunidades en Salesforce.
                                     </div>
                                 </li>
                             </ul>
@@ -1303,13 +1351,21 @@
                                 <span class="w-2.5 h-2.5 bg-black inline-block"></span> 3. Resultados Concretos (Métricas Clave)
                             </div>
                             
+                            <!-- Banner de Impacto Sugerido por Vanessa -->
+                            <div class="bg-black text-white p-3 border-2 border-black">
+                                <div class="text-[10px] font-mono text-[#FAF338] font-bold uppercase tracking-wider">Impacto Comprobado:</div>
+                                <div class="font-display font-black text-sm text-white mt-0.5">
+                                    Más de USD 136,000 en rebates asegurados y cero revisiones manuales mediante auditoría en tiempo real.
+                                </div>
+                            </div>
+
                             <!-- 2 Cajas Principales -->
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                 <div class="bg-white border-2 border-black p-3.5 shadow-[2px_2px_0px_#000]">
                                     <div class="font-display font-black text-2xl sm:text-3xl text-[#C45BAA] leading-none">$136,051+ USD</div>
                                     <div class="text-[10px] font-mono font-bold uppercase text-neutral-600 mt-1">REBATE EN RIESGO BLINDADO</div>
                                     <p class="font-body text-xs text-neutral-700 mt-2 leading-tight">
-                                        Detección y bloqueo oportuno de <strong>22 órdenes sin Deal Registration</strong>, protegiendo más de <strong>$1.74M USD de Net</strong>.
+                                        Detección y gestión oportuna de <strong>22 oportunidades críticas sin Deal Registration</strong>, protegiendo más de <strong>$1.74M USD de Net</strong>.
                                     </p>
                                 </div>
                                 <div class="bg-white border-2 border-black p-3.5 shadow-[2px_2px_0px_#000]">
@@ -1328,12 +1384,12 @@
                                 </div>
                                 <div class="grid grid-cols-2 gap-2 mt-2 pt-2 border-t border-neutral-200 text-xs font-mono">
                                     <div>
-                                        <div class="font-display font-bold text-base text-[#C45BAA]">22 Assessments Críticos</div>
-                                        <div class="text-[10px] text-neutral-600">Órdenes detenidas preventivamente por falta de DR (+1.74M USD Net protegido).</div>
+                                        <div class="font-display font-bold text-base text-[#C45BAA]">22 Oportunidades Críticas</div>
+                                        <div class="text-[10px] text-neutral-600">Cuentas detectadas a tiempo sin registro en Partner Hub (+1.74M USD Net) para tramitar DR antes del cierre.</div>
                                     </div>
                                     <div>
-                                        <div class="font-display font-bold text-base text-emerald-700">+$20M USD Oportunidades</div>
-                                        <div class="text-[10px] text-neutral-600">Pipeline auditado y validado en tiempo real con DR aprobado en Google Partner Hub.</div>
+                                        <div class="font-display font-bold text-base text-emerald-700">+$20M USD con DR</div>
+                                        <div class="text-[10px] text-neutral-600">Pipeline auditado y conciliado en tiempo real con Deal Registration en Partner Hub, listo para cobro al ganar.</div>
                                     </div>
                                 </div>
                             </div>
@@ -1343,10 +1399,10 @@
                                 <span class="material-symbols-outlined text-indigo-600 text-2xl">query_stats</span>
                                 <div class="text-xs">
                                     <span class="font-display font-black text-sm text-neutral-900 block leading-tight">
-                                        $20,079,979 USD de Pipeline Liberado y Asegurado
+                                        $20,079,979 USD de Pipeline Calificado para Incentivos
                                     </span>
                                     <span class="text-neutral-700 font-sans mt-0.5 block">
-                                        Identificación y validación de órdenes recientes con Deal Registration aprobado por Google, liberadas formalmente para emisión de OC sin riesgo financiero.
+                                        Identificación y validación de oportunidades con Deal Registration aprobado por Google en Partner Hub, candidatas directas para cobro de incentivos al cierre comercial.
                                     </span>
                                 </div>
                             </div>
@@ -1492,7 +1548,7 @@
                                                 ▶
                                             </button>
                                             <div class="font-display font-bold text-white text-lg mt-3 drop-shadow">Ver Torre de Control de Incentivos & Deal Registration</div>
-                                            <div class="font-mono text-xs text-neutral-300">Semáforo de OC, cálculo Net to Google y blindaje de rebates en vivo</div>
+                                            <div class="font-mono text-xs text-neutral-300">Conciliación Partner Hub vs. Salesforce, cálculo Net 80% y rebates en vivo</div>
                                         </div>
 
                                         <div class="flex items-center justify-between text-xs font-mono text-neutral-300">
@@ -1709,15 +1765,15 @@
                                             </div>
                                         </td>
                                         <td class="p-4 border-r border-black align-top font-sans">
-                                            <div class="font-display font-bold text-sm text-emerald-700">$136,051+ USD Rebate Blindado · +$20M Pipeline Auditado</div>
-                                            <div class="text-xs text-neutral-700 mt-1">Conexión en vivo con Partner Hub: detección y bloqueo oportuno de 22 órdenes sin Deal Registration (+1.74M USD Net) y 10 cuentas estratégicas Gemini blindadas.</div>
+                                            <div class="font-display font-bold text-sm text-emerald-700">+$136K USD Rebates Asegurados · +$20M Pipeline con DR</div>
+                                            <div class="text-xs text-neutral-700 mt-1">Cruce Partner Hub vs. Salesforce: 22 oportunidades críticas gestionadas a tiempo (+1.74M USD Net), pipeline con DR calificado para incentivos al cierre y 10 cuentas Gemini blindadas.</div>
                                         </td>
                                         <td class="p-4 border-r border-black align-top">
                                             <span class="inline-block px-2 py-1 bg-pink-100 text-pink-900 border border-pink-400 font-bold text-xs">&lt; 24 Horas</span>
                                             <div class="text-[10px] text-neutral-500 mt-1">Baja (Plug & Play)</div>
                                         </td>
                                         <td class="p-4 border-r border-black align-top font-sans text-xs text-neutral-700">
-                                            <strong>Core Serverless Conectado a BigQuery:</strong> Pipeline con datos en directo de Google Partner Hub y Salesforce. Reglas de umbrales ($10k WS, $60k GCP, $0 Gemini) configurables sin tocar código. UI Google Material Design 3.
+                                            <strong>Core Serverless Conectado a BigQuery & IA:</strong> Cruce continuo de datos vivos de Google Partner Hub y Salesforce. Reglas de umbrales ($10k WS, $60k GCP, $0 Gemini) y cálculo de incentivos en desarrollo con IA. UI Material Design 3.
                                         </td>
                                         <td class="p-4 text-center align-middle">
                                             <button onclick="switchTab('carlos'); window.scrollTo({top: 380, behavior: 'smooth'});" class="px-3 py-1.5 bg-[#C45BAA] text-white border-2 border-black font-display font-bold text-[11px] uppercase tracking-wider hover:bg-black transition-colors shadow-[2px_2px_0px_#000] whitespace-nowrap">
@@ -1960,7 +2016,7 @@
                                         </div>
                                         <h5 class="font-display font-bold text-sm text-neutral-900 uppercase">Torre de Control: Salesforce & Partner Advantage (G26)</h5>
                                         <p class="font-sans text-xs text-neutral-600 mt-2 leading-relaxed">
-                                            Conexión con <strong>Salesforce CRM</strong> y auditoría algorítmica con <strong>Google Partner Advantage 2026</strong>. Semáforo preventivo de OC, cálculo automático Net to Google (80%), blindaje de rebates (hasta 16.1%) y 2X Gemini.
+                                            Conexión con <strong>Salesforce CRM</strong> y <strong>Google Partner Hub en BigQuery</strong>. Semáforo de conciliación de pipeline, cálculo Net to Google (80%), blindaje de rebates asegurados (+USD 136K) y 2X Gemini.
                                         </p>
                                     </div>
                                     <div class="mt-3 pt-2 border-t border-neutral-200 text-[10px] text-neutral-500 font-bold">
@@ -2165,10 +2221,10 @@
                                             Solución: <span class="text-neutral-900">Torre de Control Incentivos (BigQuery en Vivo)</span>
                                         </div>
                                         <p class="font-sans text-xs text-neutral-600 mt-2 leading-relaxed">
-                                            Auditoría en tiempo real conectada a BigQuery ingiriendo datos en directo desde Google Partner Hub y Salesforce para validar Deal Registration, evitar bloqueos de órdenes y asegurar los rebates de la compañía.
+                                            Semáforo operativo de conciliación conectando en vivo el pipeline de Google Partner Hub y Salesforce en BigQuery, identificando oportunidades sin Deal Registration para asegurar el cobro potencial de incentivos al cierre.
                                         </p>
                                         <div class="mt-3 pt-2 border-t border-neutral-200 text-[10px] font-mono text-neutral-700 bg-pink-50/70 p-1.5 border border-pink-200">
-                                            <strong>Engranaje Colectivo:</strong> Cierra el circuito financiero: garantiza que los acuerdos generados por todo el squad cumplan con DR y cobren el 100% de los incentivos oficiales con datos en vivo.
+                                            <strong>Engranaje Colectivo:</strong> Cierra el circuito financiero: garantiza que las oportunidades calificadas del squad cuenten con Deal Registration aprobado en Partner Hub para cobrar el 100% de los incentivos oficiales.
                                         </div>
                                     </div>
                                     <div class="mt-4 pt-3 border-t border-neutral-200">
@@ -2434,25 +2490,25 @@
                         <div class="font-mono text-xs uppercase mt-2 text-white/90 font-bold">USD Rebate en Riesgo Blindado</div>
                     </div>
                     <div class="mt-4 pt-3 border-t border-white/20 font-mono text-xs space-y-1 stagger-up delay-3">
-                        <div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sm text-amber-300">shield</span> <strong>22 Órdenes Detenidas:</strong> +$1.74M USD Net protegido</div>
-                        <div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sm text-indigo-200">query_stats</span> <strong>$20,079,979 USD:</strong> Pipeline liberado con DR en vivo</div>
+                        <div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sm text-amber-300">shield</span> <strong>22 Opps Críticas:</strong> +$1.74M USD Net gestionado sin perder DR</div>
+                        <div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sm text-indigo-200">query_stats</span> <strong>$20,079,979 USD:</strong> Pipeline con DR calificado para incentivos</div>
                         <div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sm text-yellow-300 fill">bolt</span> <strong>10 Cuentas Gemini:</strong> Rampa 25/75 activa para 2X PayOut</div>
                     </div>
                 </div>
                 <div class="col-span-12 lg:col-span-7 flex flex-col justify-center px-8 lg:px-16">
-                    <h3 class="font-display font-bold text-2xl lg:text-3xl title-line stagger-up mb-6">Blindaje en Vivo Google Cloud 2026</h3>
+                    <h3 class="font-display font-bold text-2xl lg:text-3xl title-line stagger-up mb-6">Conciliación Pipeline & Margen 2026</h3>
                     <div class="space-y-4 font-body text-base stagger-up delay-1">
                         <div class="border-l-4 border-[#C45BAA] pl-4 py-1">
-                            <strong>Conexión Nativa BigQuery & Partner Hub en Vivo:</strong> Pipeline automatizado que ingiere datos vivos de Partner Hub y Salesforce en tiempo real, eliminando planillas manuales.
+                            <strong>Semáforo de Conciliación Partner Hub vs. Salesforce:</strong> Cruce en tiempo real del pipeline levantado en Google vs. registrado en Salesforce, identificando oportunidades sin DR para asegurar cobro de incentivos al cierre.
                         </div>
                         <div class="border-l-4 border-black pl-4 py-1">
-                            <strong>Semáforo de Bloqueo Preventivo de OC:</strong> Clasificación inmediata (DETENER OC / LIBERADA / EN REVISIÓN) antes de emitir la compra.
+                            <strong>Cálculo de Incentivos con IA (En Construcción):</strong> Automatización inteligente con reglas oficiales de Google Cloud 2026 y fórmula Net to Google 80%.
                         </div>
                         <div class="border-l-4 border-[#1899AF] pl-4 py-1">
-                            <strong>Cálculo Automático Net to Google:</strong> Fórmula matemática <code>Monto Bruto * 0.80</code> para verificar umbrales de Co-sell ($10k WS, $60k GCP, $0 Gemini).
+                            <strong>Radar Estratégico Gemini AI (PayOut 2X):</strong> Registro forzoso de Deal Registration desde 1 licencia para multiplicador del 20% y cobro doble.
                         </div>
                         <div class="border-l-4 border-emerald-600 pl-4 py-1">
-                            <strong>Radar Estratégico Gemini AI (PayOut 2X):</strong> Registro forzoso desde 1 sola licencia para asegurar multiplicador de 20% y cobro doble.
+                            <strong>Impacto Comprobado:</strong> Más de USD 136,000 en rebates asegurados y cero revisiones manuales mediante BigQuery en vivo.
                         </div>
                     </div>
                 </div>
@@ -2706,9 +2762,9 @@ Resumen ejecutivo digerible de cada proyecto:
 • Alcance LATAM: Backend serverless en Apps Script V8 conectado a Sheets, configurable sin código, replicable en MX (Coppel +30K), CO, PE y CL en < 24 hrs.
 
 4. Torre de Control de Incentivos Google Cloud & Deal Registration (G26) (@Carlos Espinosa)
-• Objetivo: Blindar el margen comercial y maximizar los rebates de Google Cloud (hasta 16.1% y multiplicadores 2X de Gemini) auditando en tiempo real oportunidades de Salesforce contra Google Partner Advantage 2026, eliminando el riesgo de emitir OCs sin Deal Registration aprobado.
-• En qué ayuda: Semáforo preventivo de bloqueo de OC (DETENER OC / LIBERADA / EN REVISIÓN), cálculo automático Net to Google (80%), radar estratégico Gemini AI (umbral $0 y PayOut 2X), Alert Desk en 1-clic y academia comercial con simulador financiero en vivo.
-• Resultado / Impacto: $136,051+ USD de rebate en riesgo blindado (22 órdenes sin DR detenidas con +$1.74M USD Net), 0 días de revisiones manuales, $20,079,979 USD de pipeline liberado y asegurado, y 10 cuentas estratégicas Gemini blindadas para cobro de incentivo 2X.
+• Objetivo: Semáforo operativo de conciliación: cruce del pipeline levantado en Partner Hub (Google) vs. pipeline generado o registrado en Salesforce, identificando oportunidades sin registro y Deal Registration (DR) con cobro potencial de incentivos si se cierran formalmente.
+• En qué ayuda: Semáforo de conciliación (Sin DR / Candidato a Incentivos / Bajo Umbral), cálculo de incentivos en construcción con IA y reglas oficiales 2026, cálculo Net to Google (80%), radar estratégico Gemini AI (umbral $0 y PayOut 2X).
+• Resultado / Impacto: Más de USD 136,000 en rebates asegurados y cero revisiones manuales en tiempo real, 22 oportunidades críticas gestionadas a tiempo (+1.74M USD Net) y +$20M USD de pipeline con DR.
 • Alcance LATAM: Despliegue en < 24 hrs en México, Colombia, Perú y Chile. Core serverless en Apps Script V8, BigQuery y Sheets, con reglas configurables sin tocar código e interfaz Google Material Design 3.
 
 La plataforma cuenta con 2 modos:
@@ -3254,9 +3310,9 @@ La plataforma cuenta con 2 modos:
 • Resultados: 100% Revenue protegido frente a licencias huérfanas, 0 horas manuales en renovaciones y visibilidad limpia aislando Frontline para upsell a Gemini.
 • Escalabilidad LATAM: Core reusable en Apps Script V8 conectado nativamente a Sheets, configurable por usuario sin tocar código, replicable en MX, CO, PE, CL en < 24 hrs.`,
                 carlos: `CARLOS ESPINOSA · Torre de Control de Incentivos Google Cloud & Deal Registration (G26)
-• Objetivo: Blindar el margen comercial y maximizar los rebates de Google Cloud (hasta 16.1% y 2X Gemini) auditando en tiempo real oportunidades de Salesforce contra Google Partner Advantage 2026. Elimina el riesgo de emitir OCs sin Deal Registration aprobado.
-• En qué ayuda: Semáforo de bloqueo de OC (Detener / Liberada / Revisión), cálculo Net to Google (Monto * 0.80), radar Gemini AI (umbral $0 y PayOut 2X), Alert Desk en 1-clic vía Gmail y academia comercial con simulador financiero en vivo.
-• Resultados: $136,051+ USD de rebate en riesgo blindado (22 órdenes sin DR), 0 días de revisiones manuales, $20,079,979 USD de pipeline liberado y asegurado, y 10 cuentas estratégicas Gemini blindadas.
+• Objetivo: Semáforo operativo de conciliación: cruce del pipeline levantado en Partner Hub (Google) vs. pipeline generado o registrado en Salesforce, identificando oportunidades sin registro y Deal Registration (DR) con cobro potencial de incentivos si se cierran formalmente.
+• En qué ayuda: Semáforo de conciliación (Sin DR / Candidato a Incentivos / Bajo Umbral), cálculo de incentivos en construcción con IA y reglas oficiales 2026, cálculo Net to Google (Monto * 0.80), radar estratégico Gemini AI (umbral $0 y PayOut 2X).
+• Resultados: Más de USD 136,000 en rebates asegurados, cero revisiones manuales en tiempo real, 22 oportunidades críticas gestionadas a tiempo (+1.74M USD Net) y +$20M USD de pipeline con DR en Partner Hub.
 • Escalabilidad LATAM: Despliegue en < 24 hrs en México, Colombia, Perú y Chile. Core serverless en Apps Script V8, BigQuery, Sheets y Material Design 3, parametrizable sin tocar código.`
             };
 
@@ -3307,19 +3363,19 @@ La plataforma cuenta con 2 modos:
             const estRebate = net * rebatePct;
 
             if (!hasDR && requiresDR) {
-                outSemaforo.innerHTML = '<span class="material-symbols-outlined text-base align-middle mr-1">block</span> DETENER OC';
+                outSemaforo.innerHTML = '<span class="material-symbols-outlined text-base align-middle mr-1">warning</span> SIN DR · NO CALIFICA A INCENTIVOS';
                 outSemaforo.className = 'font-display font-black text-sm text-red-600 mt-1 uppercase flex items-center';
-                outRebate.innerHTML = '<span class="material-symbols-outlined text-sm align-middle mr-1">warning</span> ~$' + Math.round(estRebate).toLocaleString('en-US') + ' USD (' + (rebatePct * 100).toFixed(1) + '%) EN RIESGO';
+                outRebate.innerHTML = '<span class="material-symbols-outlined text-sm align-middle mr-1">warning</span> ~$' + Math.round(estRebate).toLocaleString('en-US') + ' USD (' + (rebatePct * 100).toFixed(1) + '%) POTENCIAL EN RIESGO';
                 outRebate.className = 'font-display font-black text-sm text-red-600 mt-0.5 flex items-center';
             } else if (hasDR) {
-                outSemaforo.innerHTML = '<span class="material-symbols-outlined text-base align-middle mr-1">verified</span> LIBERADA PARA OC';
+                outSemaforo.innerHTML = '<span class="material-symbols-outlined text-base align-middle mr-1">verified</span> DR EN PARTNER HUB · CANDIDATO A INCENTIVOS';
                 outSemaforo.className = 'font-display font-black text-sm text-emerald-600 mt-1 uppercase flex items-center';
-                outRebate.innerHTML = '<span class="material-symbols-outlined text-sm align-middle mr-1">shield</span> ~$' + Math.round(estRebate).toLocaleString('en-US') + ' USD BLINDADO' + (isGemini ? ' (2X Boost)' : '');
+                outRebate.innerHTML = '<span class="material-symbols-outlined text-sm align-middle mr-1">shield</span> ~$' + Math.round(estRebate).toLocaleString('en-US') + ' USD COBRO POTENCIAL' + (isGemini ? ' (2X Boost)' : '');
                 outRebate.className = 'font-display font-black text-sm text-emerald-600 mt-0.5 flex items-center';
             } else {
-                outSemaforo.innerHTML = '<span class="material-symbols-outlined text-base align-middle mr-1">pending_actions</span> EN REVISIÓN';
+                outSemaforo.innerHTML = '<span class="material-symbols-outlined text-base align-middle mr-1">pending_actions</span> BAJO UMBRAL CO-SELL';
                 outSemaforo.className = 'font-display font-black text-sm text-amber-600 mt-1 uppercase flex items-center';
-                outRebate.innerText = 'Bajo umbral Co-sell ($' + Math.round(threshold).toLocaleString('en-US') + ')';
+                outRebate.innerText = 'Bajo umbral de registro Co-sell ($' + Math.round(threshold).toLocaleString('en-US') + ' USD Net)';
                 outRebate.className = 'font-display font-black text-sm text-amber-600 mt-0.5';
             }
         }
