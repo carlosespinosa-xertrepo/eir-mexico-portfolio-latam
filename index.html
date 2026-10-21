@@ -96,18 +96,50 @@
             transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
+        /* Estado Activo / Seleccionado de las pestañas */
         .tab-btn.active {
             background-color: var(--negro-xertica) !important;
-            color: #FAF338 !important;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            border-color: #000000 !important;
         }
-        .tab-btn.active * {
-            color: inherit !important;
+
+        /* Títulos en estado activo: Amarillo Suizo de alto impacto */
+        .tab-btn.active .tab-title,
+        .tab-btn.active div.font-display {
+            color: #FAF338 !important;
         }
+
+        /* Subtítulos en estado activo: Blanco/Marfil legible */
+        .tab-btn.active .tab-subtitle,
+        .tab-btn.active div.font-mono {
+            color: #F5F5F5 !important;
+            opacity: 0.95 !important;
+        }
+
+        /* Badges en estado activo: Fondo Amarillo Suizo con texto Negro */
         .tab-btn.active .badge-swiss {
             background-color: #FAF338 !important;
             color: #1E1E1E !important;
+            border-color: #FAF338 !important;
+        }
+
+        /* Específico para el botón LATAM activo */
+        #tab-btn-latam.active {
+            background-color: #1E1E1E !important;
+            box-shadow: 4px 4px 0px #FAF338 !important;
+        }
+        #tab-btn-latam.active .tab-title {
+            color: #FAF338 !important;
+        }
+        #tab-btn-latam.active .tab-subtitle {
+            color: #FFFFFF !important;
+            opacity: 0.95 !important;
+        }
+        #tab-btn-latam.active .badge-swiss {
+            background-color: #FAF338 !important;
+            color: #000000 !important;
+            border-color: #FAF338 !important;
         }
 
         /* Slide Mode Styles */
@@ -293,45 +325,45 @@
                         <button onclick="switchTab('patricio')" id="tab-btn-patricio" class="tab-btn active p-3 border-2 border-black text-left flex flex-col justify-between bg-[#FFFEF8]">
                             <div>
                                 <span class="badge-swiss bg-[#1899AF] text-white text-[9px] py-0.5 px-1.5 mb-1.5">PATRICIO MARTIN</span>
-                                <div class="font-display font-bold text-sm leading-tight text-inherit">FinOps & GCP Commits</div>
+                                <div class="tab-title font-display font-bold text-sm leading-tight text-neutral-900">FinOps & GCP Commits</div>
                             </div>
-                            <div class="text-[11px] font-mono mt-2 opacity-80">📈 +110 Cuentas Mapeadas</div>
+                            <div class="tab-subtitle text-[11px] font-mono mt-2 text-neutral-600">📈 +110 Cuentas Mapeadas</div>
                         </button>
 
                         <!-- Tab 2: Jorge -->
                         <button onclick="switchTab('jorge')" id="tab-btn-jorge" class="tab-btn p-3 border-2 border-black text-left flex flex-col justify-between bg-[#FFFEF8]">
                             <div>
                                 <span class="badge-swiss bg-[#DE5B48] text-white text-[9px] py-0.5 px-1.5 mb-1.5">JORGE CARABALLO</span>
-                                <div class="font-display font-bold text-sm leading-tight text-inherit">Renovaciones & Campañas SMB</div>
+                                <div class="tab-title font-display font-bold text-sm leading-tight text-neutral-900">Renovaciones & Campañas SMB</div>
                             </div>
-                            <div class="text-[11px] font-mono mt-2 opacity-80">✉️ 336 cuentas contactadas</div>
+                            <div class="tab-subtitle text-[11px] font-mono mt-2 text-neutral-600">✉️ 336 cuentas contactadas</div>
                         </button>
 
                         <!-- Tab 3: Angel -->
                         <button onclick="switchTab('angel')" id="tab-btn-angel" class="tab-btn p-3 border-2 border-black text-left flex flex-col justify-between bg-[#FFFEF8]">
                             <div>
                                 <span class="badge-swiss bg-[#5A4A96] text-white text-[9px] py-0.5 px-1.5 mb-1.5">ANGEL SOLIS</span>
-                                <div class="font-display font-bold text-sm leading-tight text-inherit">Conciliación Workspace & Gemini</div>
+                                <div class="tab-title font-display font-bold text-sm leading-tight text-neutral-900">Conciliación Workspace & Gemini</div>
                             </div>
-                            <div class="text-[11px] font-mono mt-2 opacity-80">🛡️ 100% Revenue Protegido</div>
+                            <div class="tab-subtitle text-[11px] font-mono mt-2 text-neutral-600">🛡️ 100% Revenue Protegido</div>
                         </button>
 
                         <!-- Tab 4: Carlos -->
                         <button onclick="switchTab('carlos')" id="tab-btn-carlos" class="tab-btn p-3 border-2 border-black text-left flex flex-col justify-between bg-[#FFFEF8]">
                             <div>
                                 <span class="badge-swiss bg-[#C45BAA] text-white text-[9px] py-0.5 px-1.5 mb-1.5">CARLOS ESPINOSA</span>
-                                <div class="font-display font-bold text-sm leading-tight text-inherit">Torre de Control Incentivos (G26)</div>
+                                <div class="tab-title font-display font-bold text-sm leading-tight text-neutral-900">Torre de Control Incentivos (G26)</div>
                             </div>
-                            <div class="text-[11px] font-mono mt-2 opacity-80">🛡️ $136K+ Rebate · $20M+ Pipeline</div>
+                            <div class="tab-subtitle text-[11px] font-mono mt-2 text-neutral-600">🛡️ $136K+ Rebate · $20M+ Pipeline</div>
                         </button>
 
                         <!-- Tab 5: Regional Matrix -->
-                        <button onclick="switchTab('latam')" id="tab-btn-latam" class="tab-btn col-span-2 md:col-span-4 lg:col-span-1 p-3 border-2 border-black text-left flex flex-col justify-between bg-[#FAF338] text-black">
+                        <button onclick="switchTab('latam')" id="tab-btn-latam" class="tab-btn col-span-2 md:col-span-4 lg:col-span-1 p-3 border-2 border-black text-left flex flex-col justify-between bg-[#FAF338]">
                             <div>
-                                <span class="badge-swiss bg-black text-white text-[9px] py-0.5 px-1.5 mb-1.5">VISIÓN REGIONAL</span>
-                                <div class="font-display font-bold text-sm leading-tight text-inherit">Roadmap LATAM</div>
+                                <span class="badge-swiss bg-black text-[#FAF338] text-[9px] py-0.5 px-1.5 mb-1.5">VISIÓN REGIONAL</span>
+                                <div class="tab-title font-display font-bold text-sm leading-tight text-neutral-900">Roadmap LATAM</div>
                             </div>
-                            <div class="text-[11px] font-mono mt-2 text-inherit opacity-80">🌎 MX · CO · PE · CL · EC</div>
+                            <div class="tab-subtitle text-[11px] font-mono mt-2 text-neutral-800 font-bold">🌎 MX · CO · PE · CL · EC</div>
                         </button>
                     </div>
                 </div>
