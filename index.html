@@ -19,6 +19,8 @@
     <style>
         .hero-title-line1 {
             display: block;
+            white-space: nowrap !important;
+            margin-bottom: 0.25rem;
         }
         .hero-title-line2 {
             display: block;
@@ -291,57 +293,57 @@
     <main id="view-platform" class="min-h-screen pb-20">
         
         <!-- EXECUTIVE HERO BANNER -->
-        <section class="border-b-2 border-[#1E1E1E] bg-[#FFFEF8] px-6 sm:px-10 lg:px-12 py-10 sm:py-14 lg:py-16">
+        <section class="border-b-2 border-[#1E1E1E] bg-[#FFFEF8] px-4 sm:px-8 md:px-10 py-10 sm:py-12 lg:py-14">
             <div class="max-w-7xl mx-auto">
-                <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-8 lg:gap-12 xl:gap-16">
-                    <div class="flex-1 min-w-0 max-w-3xl">
-                        <!-- Etiquetas / Badges con mayor espaciado -->
-                        <div class="flex flex-wrap items-center gap-3 sm:gap-4 mb-5 sm:mb-6">
-                            <span class="badge-swiss bg-[#DE5B48] text-white py-1.5 px-3 text-xs tracking-wider">Xertica Transformation Hub</span>
-                            <span class="badge-swiss bg-neutral-200 text-neutral-800 py-1.5 px-3 text-xs tracking-wider">Expansión Regional</span>
-                            <span class="font-mono text-xs sm:text-sm font-semibold text-neutral-500">Q4 2026 · Despliegue Rápido</span>
+                <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-6 lg:gap-8 xl:gap-10">
+                    <div class="flex-1 min-w-0 max-w-2xl">
+                        <!-- Etiquetas / Badges con separación holgada -->
+                        <div class="flex flex-wrap items-center gap-2.5 sm:gap-3 mb-4 sm:mb-5">
+                            <span class="badge-swiss bg-[#DE5B48] text-white py-1 px-2.5 text-xs tracking-wider">Xertica Transformation Hub</span>
+                            <span class="badge-swiss bg-neutral-200 text-neutral-800 py-1 px-2.5 text-xs tracking-wider">Expansión Regional</span>
+                            <span class="font-mono text-xs font-semibold text-neutral-500">Q4 2026 · Despliegue Rápido</span>
                         </div>
                         
-                        <!-- Título con interlineado holgado y separación entre líneas -->
-                        <h1 class="font-display font-black uppercase tracking-tight text-[#1E1E1E]" style="font-size: clamp(1.85rem, 3.1vw, 3.15rem); line-height: 1.15;">
-                            <span class="hero-title-line1 block mb-1.5">Iniciativas EIR México</span>
-                            <span class="hero-title-line2 block">con Alcance Regional LATAM</span>
+                        <!-- Título en exactamente 2 líneas con tamaño ajustado y sin solapamiento -->
+                        <h1 class="font-display font-black uppercase tracking-tight text-[#1E1E1E]" style="font-size: clamp(1.45rem, 2.25vw, 2.35rem); line-height: 1.15;">
+                            <span class="hero-title-line1">Iniciativas EIR México</span>
+                            <span class="hero-title-line2">con Alcance Regional LATAM</span>
                         </h1>
                         
-                        <!-- Texto descriptivo con mayor margen superior y separación de lectura -->
-                        <p class="font-body text-base sm:text-lg md:text-[19px] text-neutral-700 mt-6 sm:mt-7 leading-relaxed max-w-2xl">
+                        <!-- Texto descriptivo con espaciado natural -->
+                        <p class="font-body text-base md:text-[17px] text-neutral-700 mt-5 leading-relaxed max-w-xl">
                             Soluciones modulares desarrolladas por el equipo de <strong class="text-black">Entrepreneurs in Residence</strong>, listas para ser replicadas en <strong class="text-[#1899AF]">Colombia, Perú, Chile, Ecuador y México</strong>. Enfoque 100% en impacto, resultados comerciales y eficiencia operativa.
                         </p>
                     </div>
 
-                    <!-- Macro KPI Grid - Cuadro de la derecha con dimensiones más amplias, mayor padding y espaciado interno -->
-                    <div class="w-full xl:w-auto xl:min-w-[620px] xl:max-w-[680px] flex-shrink-0 bg-[#F2EDD8] p-6 sm:p-7 md:p-8 border-2 border-[#1E1E1E] shadow-[6px_6px_0px_#1E1E1E]">
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x-2 md:divide-black/20">
+                    <!-- Macro KPI Grid - Cuadro de la derecha con proporción balanceada, espaciado interno y sin solapar el título -->
+                    <div class="w-full xl:w-auto xl:min-w-[490px] xl:max-w-[530px] flex-shrink-0 bg-[#F2EDD8] p-5 sm:p-6 border-2 border-[#1E1E1E] shadow-[4px_4px_0px_#1E1E1E]">
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-0 md:divide-x-2 md:divide-black/20">
                             <!-- KPI 1 -->
-                            <div class="md:pr-6 md:pl-0 flex flex-col justify-between min-h-[105px]">
-                                <div class="font-display font-black text-3xl sm:text-4xl text-[#1899AF] leading-none">$570K+</div>
-                                <div class="font-mono text-xs font-bold uppercase text-neutral-700 mt-4 leading-snug tracking-wider">
+                            <div class="md:pr-4 flex flex-col justify-between min-h-[90px]">
+                                <div class="font-display font-black text-2xl sm:text-3xl text-[#1899AF] leading-none">$570K+</div>
+                                <div class="font-mono text-[10px] sm:text-[11px] font-bold uppercase text-neutral-700 mt-3 leading-tight tracking-wide">
                                     USD Oportunidades & Ahorro
                                 </div>
                             </div>
                             <!-- KPI 2 -->
-                            <div class="md:px-6 flex flex-col justify-between min-h-[105px]">
-                                <div class="font-display font-black text-3xl sm:text-4xl text-[#DE5B48] leading-none">336</div>
-                                <div class="font-mono text-xs font-bold uppercase text-neutral-700 mt-4 leading-snug tracking-wider">
+                            <div class="md:px-4 flex flex-col justify-between min-h-[90px]">
+                                <div class="font-display font-black text-2xl sm:text-3xl text-[#DE5B48] leading-none">336</div>
+                                <div class="font-mono text-[10px] sm:text-[11px] font-bold uppercase text-neutral-700 mt-3 leading-tight tracking-wide">
                                     Cuentas Contactadas
                                 </div>
                             </div>
                             <!-- KPI 3 -->
-                            <div class="md:px-6 flex flex-col justify-between min-h-[105px]">
-                                <div class="font-display font-black text-3xl sm:text-4xl text-[#2E8B5A] leading-none">82%</div>
-                                <div class="font-mono text-xs font-bold uppercase text-neutral-700 mt-4 leading-snug tracking-wider">
+                            <div class="md:px-4 flex flex-col justify-between min-h-[90px]">
+                                <div class="font-display font-black text-2xl sm:text-3xl text-[#2E8B5A] leading-none">82%</div>
+                                <div class="font-mono text-[10px] sm:text-[11px] font-bold uppercase text-neutral-700 mt-3 leading-tight tracking-wide">
                                     Adopción IA (Gemini)
                                 </div>
                             </div>
                             <!-- KPI 4 -->
-                            <div class="md:pl-6 md:pr-0 flex flex-col justify-between min-h-[105px]">
-                                <div class="font-display font-black text-3xl sm:text-4xl text-[#1E1E1E] leading-none">5 PAÍSES</div>
-                                <div class="font-mono text-xs font-bold uppercase text-neutral-700 mt-4 leading-snug tracking-wider">
+                            <div class="md:pl-4 flex flex-col justify-between min-h-[90px]">
+                                <div class="font-display font-black text-2xl sm:text-3xl text-[#1E1E1E] leading-none">5 PAÍSES</div>
+                                <div class="font-mono text-[10px] sm:text-[11px] font-bold uppercase text-neutral-700 mt-3 leading-tight tracking-wide">
                                     Escalabilidad LATAM
                                 </div>
                             </div>
