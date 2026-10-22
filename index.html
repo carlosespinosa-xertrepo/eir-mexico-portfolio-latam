@@ -291,52 +291,57 @@
     <main id="view-platform" class="min-h-screen pb-20">
         
         <!-- EXECUTIVE HERO BANNER -->
-        <section class="border-b-2 border-[#1E1E1E] bg-[#FFFEF8] px-4 md:px-8 py-8 md:py-10">
+        <section class="border-b-2 border-[#1E1E1E] bg-[#FFFEF8] px-6 sm:px-10 lg:px-12 py-10 sm:py-14 lg:py-16">
             <div class="max-w-7xl mx-auto">
-                <div class="flex flex-col xl:flex-row xl:items-end justify-between gap-6">
+                <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-8 lg:gap-12 xl:gap-16">
                     <div class="flex-1 min-w-0 max-w-3xl">
-                        <div class="flex flex-wrap items-center gap-2 mb-3">
-                            <span class="badge-swiss bg-[#DE5B48] text-white">Xertica Transformation Hub</span>
-                            <span class="badge-swiss bg-neutral-200 text-neutral-800">Expansión Regional</span>
-                            <span class="font-mono text-xs font-semibold text-neutral-500">Q4 2026 · Despliegue Rápido</span>
+                        <!-- Etiquetas / Badges con mayor espaciado -->
+                        <div class="flex flex-wrap items-center gap-3 sm:gap-4 mb-5 sm:mb-6">
+                            <span class="badge-swiss bg-[#DE5B48] text-white py-1.5 px-3 text-xs tracking-wider">Xertica Transformation Hub</span>
+                            <span class="badge-swiss bg-neutral-200 text-neutral-800 py-1.5 px-3 text-xs tracking-wider">Expansión Regional</span>
+                            <span class="font-mono text-xs sm:text-sm font-semibold text-neutral-500">Q4 2026 · Despliegue Rápido</span>
                         </div>
-                        <h1 class="font-display font-black uppercase tracking-tight text-[#1E1E1E]" style="font-size: clamp(1.6rem, 2.7vw, 2.75rem); line-height: 1.05;">
-                            <span class="hero-title-line1">Iniciativas EIR México</span>
-                            <span class="hero-title-line2">con Alcance Regional LATAM</span>
+                        
+                        <!-- Título con interlineado holgado y separación entre líneas -->
+                        <h1 class="font-display font-black uppercase tracking-tight text-[#1E1E1E]" style="font-size: clamp(1.85rem, 3.1vw, 3.15rem); line-height: 1.15;">
+                            <span class="hero-title-line1 block mb-1.5">Iniciativas EIR México</span>
+                            <span class="hero-title-line2 block">con Alcance Regional LATAM</span>
                         </h1>
-                        <p class="font-body text-base md:text-lg text-neutral-700 mt-4 leading-relaxed">
+                        
+                        <!-- Texto descriptivo con mayor margen superior y separación de lectura -->
+                        <p class="font-body text-base sm:text-lg md:text-[19px] text-neutral-700 mt-6 sm:mt-7 leading-relaxed max-w-2xl">
                             Soluciones modulares desarrolladas por el equipo de <strong class="text-black">Entrepreneurs in Residence</strong>, listas para ser replicadas en <strong class="text-[#1899AF]">Colombia, Perú, Chile, Ecuador y México</strong>. Enfoque 100% en impacto, resultados comerciales y eficiencia operativa.
                         </p>
                     </div>
 
-                    <!-- Macro KPI Grid - Reacomodado con 4 columnas perfectamente distribuidas y proporciones balanceadas -->
-                    <div class="w-full xl:w-auto xl:min-w-[500px] xl:max-w-[540px] flex-shrink-0 bg-[#F2EDD8] p-4 sm:p-5 border-2 border-[#1E1E1E] shadow-[4px_4px_0px_#1E1E1E]">
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-0 md:divide-x-2 md:divide-black/20">
+                    <!-- Macro KPI Grid - Cuadro de la derecha con dimensiones más amplias, mayor padding y espaciado interno -->
+                    <div class="w-full xl:w-auto xl:min-w-[620px] xl:max-w-[680px] flex-shrink-0 bg-[#F2EDD8] p-6 sm:p-7 md:p-8 border-2 border-[#1E1E1E] shadow-[6px_6px_0px_#1E1E1E]">
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x-2 md:divide-black/20">
                             <!-- KPI 1 -->
-                            <div class="md:pr-4 flex flex-col justify-between">
-                                <div class="font-display font-black text-2xl sm:text-3xl text-[#1899AF] leading-none">$570K+</div>
-                                <div class="font-mono text-[10px] font-bold uppercase text-neutral-700 mt-2 leading-tight">
+                            <div class="md:pr-6 md:pl-0 flex flex-col justify-between min-h-[105px]">
+                                <div class="font-display font-black text-3xl sm:text-4xl text-[#1899AF] leading-none">$570K+</div>
+                                <div class="font-mono text-xs font-bold uppercase text-neutral-700 mt-4 leading-snug tracking-wider">
                                     USD Oportunidades & Ahorro
                                 </div>
                             </div>
                             <!-- KPI 2 -->
-                            <div class="md:px-4 flex flex-col justify-between">
-                                <div class="font-display font-black text-2xl sm:text-3xl text-[#DE5B48] leading-none">336</div>
-                                <div class="font-mono text-[10px] font-bold uppercase text-neutral-700 mt-2 leading-tight">
+                            <div class="md:px-6 flex flex-col justify-between min-h-[105px]">
+                                <div class="font-display font-black text-3xl sm:text-4xl text-[#DE5B48] leading-none">336</div>
+                                <div class="font-mono text-xs font-bold uppercase text-neutral-700 mt-4 leading-snug tracking-wider">
                                     Cuentas Contactadas
                                 </div>
                             </div>
                             <!-- KPI 3 -->
-                            <div class="md:px-4 flex flex-col justify-between">
-                                <div class="font-display font-black text-2xl sm:text-3xl text-[#2E8B5A] leading-none">82%</div>
-                                <div class="font-mono text-[10px] font-bold uppercase text-neutral-700 mt-2 leading-tight">
+                            <div class="md:px-6 flex flex-col justify-between min-h-[105px]">
+                                <div class="font-display font-black text-3xl sm:text-4xl text-[#2E8B5A] leading-none">82%</div>
+                                <div class="font-mono text-xs font-bold uppercase text-neutral-700 mt-4 leading-snug tracking-wider">
                                     Adopción IA (Gemini)
                                 </div>
                             </div>
                             <!-- KPI 4 -->
-                            <div class="md:pl-4 flex flex-col justify-between">
-                                <div class="font-display font-black text-2xl sm:text-3xl text-[#1E1E1E] leading-none">5 PAÍSES</div>
-                                <div class="font-mono text-[10px] font-bold uppercase text-neutral-700 mt-2 leading-tight">
+                            <div class="md:pl-6 md:pr-0 flex flex-col justify-between min-h-[105px]">
+                                <div class="font-display font-black text-3xl sm:text-4xl text-[#1E1E1E] leading-none">5 PAÍSES</div>
+                                <div class="font-mono text-xs font-bold uppercase text-neutral-700 mt-4 leading-snug tracking-wider">
                                     Escalabilidad LATAM
                                 </div>
                             </div>
@@ -344,63 +349,64 @@
                     </div>
                 </div>
 
-                <!-- 4 MAIN EIR PROJECTS TAB BAR -->
-                <div class="mt-8 pt-4 border-t-2 border-[#1E1E1E]">
-                    <div class="text-xs font-mono font-bold uppercase tracking-wider text-neutral-500 mb-2">
-                        Selecciona una iniciativa para ver objetivo, resultados, demo de 35s y acceso:
+                <!-- 4 MAIN EIR PROJECTS TAB BAR con mayor separación superior -->
+                <div class="mt-12 lg:mt-16 pt-8 border-t-2 border-[#1E1E1E]">
+                    <div class="text-xs sm:text-sm font-mono font-bold uppercase tracking-wider text-neutral-600 mb-4 flex items-center gap-2">
+                        <span class="inline-block w-2 h-2 bg-[#1E1E1E]"></span>
+                        <span>Selecciona una iniciativa para ver objetivo, resultados, demo de 35s y acceso:</span>
                     </div>
-                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2">
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 lg:gap-4">
                         <!-- Tab 1: Patricio -->
-                        <button onclick="switchTab('patricio')" id="tab-btn-patricio" class="tab-btn active p-3 border-2 border-black text-left flex flex-col justify-between bg-[#FFFEF8]">
+                        <button onclick="switchTab('patricio')" id="tab-btn-patricio" class="tab-btn active p-3.5 sm:p-4 border-2 border-black text-left flex flex-col justify-between bg-[#FFFEF8]">
                             <div>
                                 <span class="badge-swiss bg-[#1899AF] text-white text-[9px] py-0.5 px-1.5 mb-1.5">PATRICIO MARTIN</span>
                                 <div class="tab-title font-display font-bold text-sm leading-tight text-neutral-900">FinOps & GCP Commits</div>
                             </div>
-                            <div class="tab-subtitle text-[11px] font-mono mt-2 text-neutral-600 flex items-center"><span class="material-symbols-outlined text-[14px] mr-1">trending_up</span> +110 Cuentas Mapeadas</div>
+                            <div class="tab-subtitle text-[11px] font-mono mt-2.5 text-neutral-600 flex items-center"><span class="material-symbols-outlined text-[14px] mr-1">trending_up</span> +110 Cuentas Mapeadas</div>
                         </button>
 
                         <!-- Tab 2: Jorge -->
-                        <button onclick="switchTab('jorge')" id="tab-btn-jorge" class="tab-btn p-3 border-2 border-black text-left flex flex-col justify-between bg-[#FFFEF8]">
+                        <button onclick="switchTab('jorge')" id="tab-btn-jorge" class="tab-btn p-3.5 sm:p-4 border-2 border-black text-left flex flex-col justify-between bg-[#FFFEF8]">
                             <div>
                                 <span class="badge-swiss bg-[#DE5B48] text-white text-[9px] py-0.5 px-1.5 mb-1.5">JORGE CARABALLO</span>
                                 <div class="tab-title font-display font-bold text-sm leading-tight text-neutral-900">Renovaciones & Campañas SMB</div>
                             </div>
-                            <div class="tab-subtitle text-[11px] font-mono mt-2 text-neutral-600 flex items-center"><span class="material-symbols-outlined text-[14px] mr-1">mail</span> 336 cuentas contactadas</div>
+                            <div class="tab-subtitle text-[11px] font-mono mt-2.5 text-neutral-600 flex items-center"><span class="material-symbols-outlined text-[14px] mr-1">mail</span> 336 cuentas contactadas</div>
                         </button>
 
                         <!-- Tab 3: Angel -->
-                        <button onclick="switchTab('angel')" id="tab-btn-angel" class="tab-btn p-3 border-2 border-black text-left flex flex-col justify-between bg-[#FFFEF8]">
+                        <button onclick="switchTab('angel')" id="tab-btn-angel" class="tab-btn p-3.5 sm:p-4 border-2 border-black text-left flex flex-col justify-between bg-[#FFFEF8]">
                             <div>
                                 <span class="badge-swiss bg-[#5A4A96] text-white text-[9px] py-0.5 px-1.5 mb-1.5">ANGEL SOLIS</span>
                                 <div class="tab-title font-display font-bold text-sm leading-tight text-neutral-900">Conciliación Workspace & Gemini</div>
                             </div>
-                            <div class="tab-subtitle text-[11px] font-mono mt-2 text-neutral-600 flex items-center"><span class="material-symbols-outlined text-[14px] mr-1">verified_user</span> 100% Revenue Protegido</div>
+                            <div class="tab-subtitle text-[11px] font-mono mt-2.5 text-neutral-600 flex items-center"><span class="material-symbols-outlined text-[14px] mr-1">verified_user</span> 100% Revenue Protegido</div>
                         </button>
 
                         <!-- Tab 4: Carlos -->
-                        <button onclick="switchTab('carlos')" id="tab-btn-carlos" class="tab-btn p-3 border-2 border-black text-left flex flex-col justify-between bg-[#FFFEF8]">
+                        <button onclick="switchTab('carlos')" id="tab-btn-carlos" class="tab-btn p-3.5 sm:p-4 border-2 border-black text-left flex flex-col justify-between bg-[#FFFEF8]">
                             <div>
                                 <span class="badge-swiss bg-[#C45BAA] text-white text-[9px] py-0.5 px-1.5 mb-1.5">CARLOS ESPINOSA</span>
                                 <div class="tab-title font-display font-bold text-sm leading-tight text-neutral-900">Torre de Control Incentivos (G26)</div>
                             </div>
-                            <div class="tab-subtitle text-[11px] font-mono mt-2 text-neutral-600 flex items-center"><span class="material-symbols-outlined text-[14px] mr-1">shield</span> $136K+ Rebate · $20M+ Pipeline</div>
+                            <div class="tab-subtitle text-[11px] font-mono mt-2.5 text-neutral-600 flex items-center"><span class="material-symbols-outlined text-[14px] mr-1">shield</span> $136K+ Rebate · $20M+ Pipeline</div>
                         </button>
 
                         <!-- Tab 5: Regional Matrix -->
-                        <button onclick="switchTab('latam')" id="tab-btn-latam" class="tab-btn col-span-2 md:col-span-4 lg:col-span-1 p-3 border-2 border-black text-left flex flex-col justify-between bg-[#FAF338]">
+                        <button onclick="switchTab('latam')" id="tab-btn-latam" class="tab-btn col-span-2 md:col-span-4 lg:col-span-1 p-3.5 sm:p-4 border-2 border-black text-left flex flex-col justify-between bg-[#FAF338]">
                             <div>
                                 <span class="badge-swiss bg-black text-[#FAF338] text-[9px] py-0.5 px-1.5 mb-1.5">VISIÓN REGIONAL</span>
                                 <div class="tab-title font-display font-bold text-sm leading-tight text-neutral-900">Roadmap LATAM</div>
                             </div>
-                            <div class="tab-subtitle text-[11px] font-mono mt-2 text-neutral-800 font-bold flex items-center"><span class="material-symbols-outlined text-[14px] mr-1">public</span> MX · CO · PE · CL · EC</div>
+                            <div class="tab-subtitle text-[11px] font-mono mt-2.5 text-neutral-800 font-bold flex items-center"><span class="material-symbols-outlined text-[14px] mr-1">public</span> MX · CO · PE · CL · EC</div>
                         </button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- TAB CONTENT CONTAINER -->
-        <section class="max-w-7xl mx-auto px-4 md:px-8 mt-8">
+        <!-- TAB CONTENT CONTAINER con mayor margen superior -->
+        <section class="max-w-7xl mx-auto px-4 md:px-8 mt-10 sm:mt-12">
 
             <!-- ============================================== -->
             <!-- TAB PANEL 1: PATRICIO MARTIN - FINOPS GCP     -->
