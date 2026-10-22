@@ -251,16 +251,6 @@
             animation: subtle-pulse 3s infinite ease-in-out;
         }
 
-        /* Tour Non-intrusive Spotlight Ring without darkening or masking */
-        .tour-focus-ring {
-            position: relative;
-            outline: 4px solid #1899AF !important;
-            outline-offset: 4px;
-            box-shadow: 0 0 0 6px #FAF338, 0 10px 25px -5px rgba(0, 0, 0, 0.3) !important;
-            transition: outline 0.25s ease, box-shadow 0.25s ease !important;
-            border-radius: 2px;
-        }
-
         /* Print styles */
         @media print {
             body::before, .no-print { display: none !important; }
@@ -292,12 +282,8 @@
             </div>
         </div>
 
-        <!-- Actions: Tour, Share & Slides Mode -->
+        <!-- Actions: Share & Slides Mode -->
         <div class="flex items-center gap-2 mt-2 sm:mt-0">
-            <button id="btn-start-tour" onclick="startSiteTour()" title="Aprende cómo navegar y explorar las secciones de la plataforma" class="px-2.5 sm:px-3 py-1.5 bg-[#FAF338] hover:bg-black hover:text-[#FAF338] text-black border-2 border-black font-display font-black text-xs uppercase tracking-wider shadow-[2px_2px_0px_#1E1E1E] transition-all hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-1.5">
-                <span class="material-symbols-outlined text-sm">explore</span>
-                <span class="text-[11px] sm:text-xs">Guía del Sitio</span>
-            </button>
             <button id="btn-open-share-top" onclick="openShareModal()" title="Compartir propuesta ejecutiva formateada para Vanessa y líderes" class="px-2.5 py-1.5 bg-[#FFFEF8] hover:bg-[#FAF338] text-black border-2 border-black font-display font-bold text-xs uppercase shadow-[2px_2px_0px_#1E1E1E] transition-all hover:-translate-y-0.5 active:translate-y-0 hidden sm:flex items-center gap-1">
                 <span class="material-symbols-outlined text-sm">share</span>
                 <span class="text-[11px]">Compartir</span>
@@ -352,10 +338,6 @@
                                 <span class="w-1.5 h-1.5 bg-[#2E8B5A]"></span>
                                 Escalabilidad Regional
                             </span>
-                            <button onclick="startSiteTour()" class="inline-flex items-center gap-1.5 font-mono text-xs font-bold text-black bg-[#FAF338] hover:bg-black hover:text-[#FAF338] px-2.5 py-1 border-2 border-black shadow-[2px_2px_0px_#000] transition-colors cursor-pointer">
-                                <span class="material-symbols-outlined text-xs">explore</span>
-                                <span>¿Cómo explorar este sitio?</span>
-                            </button>
                         </div>
                     </div>
 
@@ -2838,80 +2820,6 @@
         </div>
     </div>
 
-    <!-- ======================================================= -->
-    <!-- COMPONENTE FLOTANTE: GUÍA / TUTORIAL INTERACTIVO DEL SITIO -->
-    <!-- NO OSCURECE NI BLOQUEA LA PANTALLA (TOTALMENTE VISIBLE)    -->
-    <!-- ======================================================= -->
-    <div id="tour-floating-card" class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 max-w-[420px] w-[calc(100vw-2rem)] bg-[#FFFEF8] border-2 border-black shadow-[6px_6px_0px_#1E1E1E] p-4 sm:p-5 transition-all duration-300 hidden">
-        <!-- Barra de Progreso Superior -->
-        <div class="w-full bg-neutral-200 h-1.5 border border-black mb-3 overflow-hidden">
-            <div id="tour-progress-bar" class="bg-[#FAF338] h-full w-1/6 transition-all duration-300"></div>
-        </div>
-
-        <!-- Header de la tarjeta -->
-        <div class="flex items-center justify-between pb-2.5 border-b-2 border-black mb-3">
-            <div class="flex items-center gap-2">
-                <span class="badge-swiss bg-[#FAF338] text-black font-black text-[10px] tracking-wider">🧭 GUÍA RÁPIDA</span>
-                <span class="font-mono text-xs text-neutral-600 font-bold">Paso <span id="tour-step-num" class="text-neutral-900 font-black">1</span> de 6</span>
-            </div>
-            <div class="flex items-center gap-1">
-                <button onclick="toggleMinimizeTour(true)" title="Minimizar guía" class="p-1 hover:bg-neutral-200 border border-black text-xs font-mono font-bold leading-none w-6 h-6 flex items-center justify-center">
-                    _
-                </button>
-                <button onclick="closeSiteTour()" title="Cerrar guía" class="p-1 hover:bg-red-500 hover:text-white border border-black text-xs font-mono font-bold leading-none w-6 h-6 flex items-center justify-center">
-                    ✕
-                </button>
-            </div>
-        </div>
-
-        <!-- Contenido dinámico del paso -->
-        <div class="space-y-2.5">
-            <div class="flex items-center gap-2 text-neutral-900">
-                <span id="tour-step-icon" class="material-symbols-outlined text-[#1899AF] text-xl">rocket_launch</span>
-                <h4 id="tour-step-title" class="font-display font-black text-sm sm:text-base leading-tight">
-                    1. Visión Ejecutiva del Portafolio
-                </h4>
-            </div>
-
-            <p id="tour-step-desc" class="font-body text-xs text-neutral-700 leading-relaxed">
-                Este portafolio reúne las 4 iniciativas estratégicas creadas por los <strong>Entrepreneurs in Residence (EIR)</strong> de México.
-            </p>
-
-            <div id="tour-step-tip-box" class="bg-neutral-50 border border-neutral-300 p-2.5 text-[11px] font-mono text-neutral-800 flex items-start gap-1.5">
-                <span class="material-symbols-outlined text-amber-500 text-sm mt-0.5 shrink-0">lightbulb</span>
-                <span id="tour-step-tip">Lee la narrativa estratégica arriba o salta directamente a cualquier proyecto desde la barra de pestañas.</span>
-            </div>
-        </div>
-
-        <!-- Controles de Navegación -->
-        <div class="mt-4 pt-3 border-t-2 border-black flex items-center justify-between gap-2">
-            <button id="tour-btn-prev" onclick="prevTourStep()" class="px-3 py-1.5 bg-neutral-100 hover:bg-neutral-200 disabled:opacity-40 disabled:hover:bg-neutral-100 border border-black font-display font-bold text-xs uppercase tracking-wider flex items-center gap-1 transition-colors">
-                <span class="material-symbols-outlined text-xs">arrow_back</span> Anterior
-            </button>
-            
-            <div class="flex items-center gap-2">
-                <button onclick="focusCurrentTourTarget()" title="Centrar la vista en esta sección" class="px-2.5 py-1.5 bg-neutral-50 hover:bg-neutral-200 border border-black text-[10px] font-mono font-bold text-neutral-700 flex items-center gap-1 transition-colors">
-                    <span class="material-symbols-outlined text-xs text-[#1899AF]">center_focus_strong</span> Ver
-                </button>
-                <button id="tour-btn-next" onclick="nextTourStep()" class="px-3.5 py-1.5 bg-[#FAF338] hover:bg-black hover:text-white border-2 border-black font-display font-black text-xs uppercase tracking-wider shadow-[2px_2px_0px_#000] flex items-center gap-1 transition-all">
-                    <span>Siguiente</span> <span class="material-symbols-outlined text-xs">arrow_forward</span>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Píldora Minimizada Flotante (cuando se colapsa la guía) -->
-    <div id="tour-minimized-pill" class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 hidden items-center gap-1.5">
-        <button onclick="toggleMinimizeTour(false)" class="px-3.5 py-2 bg-[#FFFEF8] hover:bg-[#FAF338] text-black border-2 border-black font-display font-black text-xs uppercase tracking-wider shadow-[3px_3px_0px_#000] flex items-center gap-2 transition-all hover:-translate-y-0.5">
-            <span class="material-symbols-outlined text-sm text-[#1899AF]">explore</span>
-            <span>Guía (<span id="tour-minimized-step">Paso 1/6</span>)</span>
-            <span class="material-symbols-outlined text-xs ml-0.5">open_in_full</span>
-        </button>
-        <button onclick="closeSiteTour()" title="Cerrar guía" class="p-2 bg-[#FFFEF8] hover:bg-red-500 hover:text-white text-black border-2 border-black font-display font-bold text-xs shadow-[3px_3px_0px_#000] transition-colors leading-none">
-            ✕
-        </button>
-    </div>
-
     <!-- ========================================== -->
     <!-- MODAL: RESUMEN LISTO PARA ENVIAR A VANESSA -->
     <!-- ========================================== -->
@@ -3692,209 +3600,6 @@ La plataforma cuenta con 2 modos:
                 outRebate.className = 'font-display font-black text-sm text-amber-600 mt-0.5';
             }
         }
-
-        // ==========================================
-        // INTERACTIVE SITE TOUR (NON-INTRUSIVE, NO DARKENING)
-        // ==========================================
-        let tourCurrentStep = 0;
-        let tourActive = false;
-
-        const tourSteps = [
-            {
-                targetId: 'hero-section',
-                title: '1. Visión Ejecutiva del Portafolio',
-                icon: 'rocket_launch',
-                tab: 'patricio',
-                text: 'Este portafolio reúne las 4 iniciativas estratégicas creadas por el equipo de <strong>Entrepreneurs in Residence (EIR)</strong> de México. Diseñadas para resolver cuellos de botella reales en ventas, preventa y contratos, listas para implementarse en <strong>Colombia, Perú, Chile, Ecuador y México</strong>.',
-                tip: 'Lee el objetivo ejecutivo arriba o salta directamente a la iniciativa de cada líder en la barra inferior.'
-            },
-            {
-                targetId: 'tabs-nav-container',
-                title: '2. Pestañas de Líderes e Iniciativas',
-                icon: 'group',
-                tab: 'patricio',
-                text: 'Cada pestaña corresponde a un pilar del squad y a su responsable:<br>• <strong>Patricio Martin:</strong> FinOps & Commits GCP (+8 assessments, +$500K Opps)<br>• <strong>Jorge Caraballo:</strong> Renovaciones SMB (336 cuentas, 68% apertura)<br>• <strong>Angel Solis:</strong> Workspace & Adopción Gemini (100% revenue protegido)<br>• <strong>Carlos Espinosa:</strong> Torre de Control G26 ($136K+ rebates blindados)<br>• <strong>Roadmap LATAM:</strong> Matriz regional y visión unificada.',
-                tip: 'Haz clic en la foto o nombre de cualquier líder para cargar su ficha técnica completa al instante.'
-            },
-            {
-                targetId: 'panel-patricio',
-                title: '3. Estructura Modular de Cada Ficha',
-                icon: 'dashboard_customize',
-                tab: 'patricio',
-                text: 'Todas las iniciativas siguen un orden ejecutivo uniforme para facilitar su lectura:<br><strong>1️⃣ Objetivo Principal:</strong> El dolor comercial que resuelve.<br><strong>2️⃣ En qué ayuda & Arquitectura:</strong> Flujo técnico sin rodeos.<br><strong>3️⃣ Resultados Concretos:</strong> Métricas comprobadas y cuentas reales.<br><strong>4️⃣ Escalabilidad LATAM:</strong> Días de despliegue por país (&lt; 48 hrs).',
-                tip: 'Desplázate hacia abajo en la ficha para explorar los insights y casos de negocio mapeados.'
-            },
-            {
-                targetId: 'media-column-patricio',
-                title: '4. Demos en Video y Simuladores en Vivo',
-                icon: 'smart_display',
-                tab: 'patricio',
-                text: 'En la columna derecha puedes interactuar directamente con la tecnología:<br>▶️ <strong>Video Demo:</strong> Cápsula ejecutiva de 35 a 45 segundos.<br>⚙️ <strong>Simuladores Interactivos:</strong> Cálculos en vivo (como el semáforo G26 en la ficha de Carlos o el simulador FinOps).<br>🚀 <strong>Abrir en Producción:</strong> Enlace a la app real en la nube.',
-                tip: 'Puedes reproducir los videos o probar los simuladores numéricos directamente en la pantalla.'
-            },
-            {
-                targetId: 'btn-mode-slides',
-                title: '5. Modo Plataforma vs Modo Pitch Deck (Slides)',
-                icon: 'slideshow',
-                tab: 'patricio',
-                text: 'La plataforma ofrece 2 formas de ver la información según tu audiencia:<br>🖥️ <strong>Modo Plataforma (actual):</strong> Para análisis detallado, lectura y simuladores.<br>📊 <strong>Modo Slides (Pitch Deck):</strong> Presentación en pantalla completa tipo diapositivas lista para comités directivos y juntas con directores.',
-                tip: 'Haz clic en el ícono de pantalla en la esquina superior derecha o presiona la tecla Esc para volver.'
-            },
-            {
-                targetId: 'btn-open-share-top',
-                title: '6. Exportar y Compartir con Liderazgo',
-                icon: 'share',
-                tab: 'patricio',
-                text: 'Comparte avances y reportes sin redactar correos manuales:<br>📋 En cada ficha puedes presionar <strong>"Copiar Ficha"</strong> para obtener el resumen individual.<br>📲 Con el botón <strong>"Compartir"</strong> obtienes el reporte ejecutivo completo formateado y listo para pegar en WhatsApp o Slack para Vanessa Tinoco y directores.',
-                tip: '¡Listo! Ya conoces todo el flujo. Puedes cerrar esta guía o navegar libremente por el portafolio.'
-            }
-        ];
-
-        function startSiteTour() {
-            if (currentMode === 'slides') {
-                setAppMode('platform');
-            }
-            tourActive = true;
-            tourCurrentStep = 0;
-            const card = document.getElementById('tour-floating-card');
-            const pill = document.getElementById('tour-minimized-pill');
-            if (card) card.classList.remove('hidden');
-            if (pill) pill.classList.add('hidden');
-            renderTourStep();
-        }
-
-        function renderTourStep() {
-            if (!tourActive) return;
-            const step = tourSteps[tourCurrentStep];
-            if (!step) return;
-
-            // Remove highlight from previous elements
-            document.querySelectorAll('.tour-focus-ring').forEach(el => el.classList.remove('tour-focus-ring'));
-
-            // Switch tab if step requests it
-            if (step.tab) {
-                switchTab(step.tab);
-            }
-
-            // Update text and progress in card
-            const stepNum = document.getElementById('tour-step-num');
-            const minStep = document.getElementById('tour-minimized-step');
-            const stepTitle = document.getElementById('tour-step-title');
-            const stepIcon = document.getElementById('tour-step-icon');
-            const stepDesc = document.getElementById('tour-step-desc');
-            const stepTip = document.getElementById('tour-step-tip');
-            const progressBar = document.getElementById('tour-progress-bar');
-            const btnPrev = document.getElementById('tour-btn-prev');
-            const btnNext = document.getElementById('tour-btn-next');
-
-            if (stepNum) stepNum.innerText = (tourCurrentStep + 1);
-            if (minStep) minStep.innerText = `Paso ${tourCurrentStep + 1}/${tourSteps.length}`;
-            if (stepTitle) stepTitle.innerText = step.title;
-            if (stepIcon) stepIcon.innerText = step.icon;
-            if (stepDesc) stepDesc.innerHTML = step.text;
-            if (stepTip) stepTip.innerHTML = step.tip;
-
-            if (progressBar) {
-                const pct = ((tourCurrentStep + 1) / tourSteps.length) * 100;
-                progressBar.style.width = pct + '%';
-            }
-
-            if (btnPrev) {
-                btnPrev.disabled = (tourCurrentStep === 0);
-            }
-
-            if (btnNext) {
-                if (tourCurrentStep === tourSteps.length - 1) {
-                    btnNext.innerHTML = '<span>¡A explorar!</span> <span class="material-symbols-outlined text-xs">check</span>';
-                    btnNext.classList.remove('bg-[#FAF338]');
-                    btnNext.classList.add('bg-emerald-400');
-                } else {
-                    btnNext.innerHTML = '<span>Siguiente</span> <span class="material-symbols-outlined text-xs">arrow_forward</span>';
-                    btnNext.classList.remove('bg-emerald-400');
-                    btnNext.classList.add('bg-[#FAF338]');
-                }
-            }
-
-            // Focus & Highlight Target Element without any darkening
-            focusCurrentTourTarget();
-        }
-
-        function focusCurrentTourTarget() {
-            const step = tourSteps[tourCurrentStep];
-            if (!step) return;
-
-            const targetEl = document.getElementById(step.targetId);
-            if (targetEl) {
-                document.querySelectorAll('.tour-focus-ring').forEach(el => el.classList.remove('tour-focus-ring'));
-                targetEl.classList.add('tour-focus-ring');
-                
-                // Smooth scroll with offset so headers don't overlap
-                const yOffset = -90; 
-                const y = targetEl.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
-            }
-        }
-
-        function nextTourStep() {
-            if (tourCurrentStep < tourSteps.length - 1) {
-                tourCurrentStep++;
-                renderTourStep();
-            } else {
-                closeSiteTour();
-            }
-        }
-
-        function prevTourStep() {
-            if (tourCurrentStep > 0) {
-                tourCurrentStep--;
-                renderTourStep();
-            }
-        }
-
-        function closeSiteTour() {
-            tourActive = false;
-            document.querySelectorAll('.tour-focus-ring').forEach(el => el.classList.remove('tour-focus-ring'));
-            const card = document.getElementById('tour-floating-card');
-            const pill = document.getElementById('tour-minimized-pill');
-            if (card) card.classList.add('hidden');
-            if (pill) {
-                pill.classList.add('hidden');
-                pill.classList.remove('flex');
-            }
-        }
-
-        function toggleMinimizeTour(minimize) {
-            const card = document.getElementById('tour-floating-card');
-            const pill = document.getElementById('tour-minimized-pill');
-            if (minimize) {
-                if (card) card.classList.add('hidden');
-                if (pill) {
-                    pill.classList.remove('hidden');
-                    pill.classList.add('flex');
-                }
-            } else {
-                if (pill) {
-                    pill.classList.add('hidden');
-                    pill.classList.remove('flex');
-                }
-                if (card) card.classList.remove('hidden');
-                focusCurrentTourTarget();
-            }
-        }
-
-        // Auto-show discreet tour invitation pill once per session
-        window.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
-                if (!sessionStorage.getItem('eir_tour_shown')) {
-                    sessionStorage.setItem('eir_tour_shown', 'true');
-                    const pill = document.getElementById('tour-minimized-pill');
-                    if (pill && !tourActive) {
-                        pill.classList.remove('hidden');
-                        pill.classList.add('flex');
-                    }
-                }
-            }, 1200);
-        });
 
     </script>
 </body>
