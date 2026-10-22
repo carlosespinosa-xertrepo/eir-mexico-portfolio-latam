@@ -402,48 +402,52 @@
                     </div>
                     <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 lg:gap-4">
                         <!-- Tab 1: Patricio -->
-                        <button onclick="switchTab('patricio')" id="tab-btn-patricio" class="tab-btn active p-3.5 sm:p-4 border-2 border-black text-left flex flex-col justify-between bg-[#FFFEF8]">
-                            <div>
-                                <span class="badge-swiss bg-[#1899AF] text-white text-[9px] py-0.5 px-1.5 mb-1.5">PATRICIO MARTIN</span>
-                                <div class="tab-title font-display font-bold text-sm leading-tight text-neutral-900">FinOps & GCP Commits</div>
+                        <button onclick="switchTab('patricio')" id="tab-btn-patricio" class="tab-btn active p-3 sm:p-3.5 border-2 border-black text-left flex items-center gap-3 bg-[#FFFEF8]">
+                            <img src="assets/team/patricio-martin.jpg" alt="Patricio Martin" class="w-11 h-11 rounded-full border-2 border-black object-cover shadow-[2px_2px_0px_#1899AF] flex-shrink-0" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80'">
+                            <div class="min-w-0 flex-1">
+                                <span class="badge-swiss bg-[#1899AF] text-white text-[9px] py-0.5 px-1.5 mb-1 inline-block">PATRICIO MARTIN</span>
+                                <div class="tab-title font-display font-bold text-xs sm:text-sm leading-tight text-neutral-900 truncate">FinOps & GCP Commits</div>
+                                <div class="tab-subtitle text-[10px] sm:text-[11px] font-mono mt-1 text-neutral-600 flex items-center truncate"><span class="material-symbols-outlined text-[13px] mr-1">trending_up</span> +110 Cuentas Mapeadas</div>
                             </div>
-                            <div class="tab-subtitle text-[11px] font-mono mt-2.5 text-neutral-600 flex items-center"><span class="material-symbols-outlined text-[14px] mr-1">trending_up</span> +110 Cuentas Mapeadas</div>
                         </button>
 
                         <!-- Tab 2: Jorge -->
-                        <button onclick="switchTab('jorge')" id="tab-btn-jorge" class="tab-btn p-3.5 sm:p-4 border-2 border-black text-left flex flex-col justify-between bg-[#FFFEF8]">
-                            <div>
-                                <span class="badge-swiss bg-[#DE5B48] text-white text-[9px] py-0.5 px-1.5 mb-1.5">JORGE CARABALLO</span>
-                                <div class="tab-title font-display font-bold text-sm leading-tight text-neutral-900">Renovaciones & Campañas SMB</div>
+                        <button onclick="switchTab('jorge')" id="tab-btn-jorge" class="tab-btn p-3 sm:p-3.5 border-2 border-black text-left flex items-center gap-3 bg-[#FFFEF8]">
+                            <img src="assets/team/jorge-caraballo.jpg" alt="Jorge Caraballo" class="w-11 h-11 rounded-full border-2 border-black object-cover shadow-[2px_2px_0px_#DE5B48] flex-shrink-0" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80'">
+                            <div class="min-w-0 flex-1">
+                                <span class="badge-swiss bg-[#DE5B48] text-white text-[9px] py-0.5 px-1.5 mb-1 inline-block">JORGE CARABALLO</span>
+                                <div class="tab-title font-display font-bold text-xs sm:text-sm leading-tight text-neutral-900 truncate">Renovaciones & SMB</div>
+                                <div class="tab-subtitle text-[10px] sm:text-[11px] font-mono mt-1 text-neutral-600 flex items-center truncate"><span class="material-symbols-outlined text-[13px] mr-1">mail</span> 336 cuentas contactadas</div>
                             </div>
-                            <div class="tab-subtitle text-[11px] font-mono mt-2.5 text-neutral-600 flex items-center"><span class="material-symbols-outlined text-[14px] mr-1">mail</span> 336 cuentas contactadas</div>
                         </button>
 
                         <!-- Tab 3: Angel -->
-                        <button onclick="switchTab('angel')" id="tab-btn-angel" class="tab-btn p-3.5 sm:p-4 border-2 border-black text-left flex flex-col justify-between bg-[#FFFEF8]">
-                            <div>
-                                <span class="badge-swiss bg-[#5A4A96] text-white text-[9px] py-0.5 px-1.5 mb-1.5">ANGEL SOLIS</span>
-                                <div class="tab-title font-display font-bold text-sm leading-tight text-neutral-900">Conciliación Workspace & Gemini</div>
+                        <button onclick="switchTab('angel')" id="tab-btn-angel" class="tab-btn p-3 sm:p-3.5 border-2 border-black text-left flex items-center gap-3 bg-[#FFFEF8]">
+                            <img src="assets/team/angel-solis.jpg" alt="Angel Solis" class="w-11 h-11 rounded-full border-2 border-black object-cover shadow-[2px_2px_0px_#5A4A96] flex-shrink-0" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80'">
+                            <div class="min-w-0 flex-1">
+                                <span class="badge-swiss bg-[#5A4A96] text-white text-[9px] py-0.5 px-1.5 mb-1 inline-block">ANGEL SOLIS</span>
+                                <div class="tab-title font-display font-bold text-xs sm:text-sm leading-tight text-neutral-900 truncate">Workspace & Gemini</div>
+                                <div class="tab-subtitle text-[10px] sm:text-[11px] font-mono mt-1 text-neutral-600 flex items-center truncate"><span class="material-symbols-outlined text-[13px] mr-1">verified_user</span> 100% Revenue Protegido</div>
                             </div>
-                            <div class="tab-subtitle text-[11px] font-mono mt-2.5 text-neutral-600 flex items-center"><span class="material-symbols-outlined text-[14px] mr-1">verified_user</span> 100% Revenue Protegido</div>
                         </button>
 
                         <!-- Tab 4: Carlos -->
-                        <button onclick="switchTab('carlos')" id="tab-btn-carlos" class="tab-btn p-3.5 sm:p-4 border-2 border-black text-left flex flex-col justify-between bg-[#FFFEF8]">
-                            <div>
-                                <span class="badge-swiss bg-[#C45BAA] text-white text-[9px] py-0.5 px-1.5 mb-1.5">CARLOS ESPINOSA</span>
-                                <div class="tab-title font-display font-bold text-sm leading-tight text-neutral-900">Torre de Control Incentivos (G26)</div>
+                        <button onclick="switchTab('carlos')" id="tab-btn-carlos" class="tab-btn p-3 sm:p-3.5 border-2 border-black text-left flex items-center gap-3 bg-[#FFFEF8]">
+                            <img src="assets/team/carlos-espinosa.jpg" alt="Carlos Espinosa" class="w-11 h-11 rounded-full border-2 border-black object-cover shadow-[2px_2px_0px_#C45BAA] flex-shrink-0" onerror="this.src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80'">
+                            <div class="min-w-0 flex-1">
+                                <span class="badge-swiss bg-[#C45BAA] text-white text-[9px] py-0.5 px-1.5 mb-1 inline-block">CARLOS ESPINOSA</span>
+                                <div class="tab-title font-display font-bold text-xs sm:text-sm leading-tight text-neutral-900 truncate">Torre Control (G26)</div>
+                                <div class="tab-subtitle text-[10px] sm:text-[11px] font-mono mt-1 text-neutral-600 flex items-center truncate"><span class="material-symbols-outlined text-[13px] mr-1">shield</span> $136K+ Rebate Blindado</div>
                             </div>
-                            <div class="tab-subtitle text-[11px] font-mono mt-2.5 text-neutral-600 flex items-center"><span class="material-symbols-outlined text-[14px] mr-1">shield</span> $136K+ Rebate · $20M+ Pipeline</div>
                         </button>
 
                         <!-- Tab 5: Regional Matrix -->
-                        <button onclick="switchTab('latam')" id="tab-btn-latam" class="tab-btn col-span-2 md:col-span-4 lg:col-span-1 p-3.5 sm:p-4 border-2 border-black text-left flex flex-col justify-between bg-[#FAF338]">
+                        <button onclick="switchTab('latam')" id="tab-btn-latam" class="tab-btn col-span-2 md:col-span-4 lg:col-span-1 p-3 sm:p-3.5 border-2 border-black text-left flex flex-col justify-between bg-[#FAF338]">
                             <div>
-                                <span class="badge-swiss bg-black text-[#FAF338] text-[9px] py-0.5 px-1.5 mb-1.5">VISIÓN REGIONAL</span>
-                                <div class="tab-title font-display font-bold text-sm leading-tight text-neutral-900">Roadmap LATAM</div>
+                                <span class="badge-swiss bg-black text-[#FAF338] text-[9px] py-0.5 px-1.5 mb-1 inline-block">VISIÓN REGIONAL</span>
+                                <div class="tab-title font-display font-bold text-xs sm:text-sm leading-tight text-neutral-900">Roadmap LATAM</div>
                             </div>
-                            <div class="tab-subtitle text-[11px] font-mono mt-2.5 text-neutral-800 font-bold flex items-center"><span class="material-symbols-outlined text-[14px] mr-1">public</span> MX · CO · PE · CL · EC</div>
+                            <div class="tab-subtitle text-[10px] sm:text-[11px] font-mono mt-1 text-neutral-800 font-bold flex items-center"><span class="material-symbols-outlined text-[13px] mr-1">public</span> MX · CO · PE · CL · EC</div>
                         </button>
                     </div>
                 </div>
@@ -460,20 +464,27 @@
                 <!-- BANNER SUPERIOR EJECUTIVO A LO LARGO -->
                 <div class="bg-[#FFFEF8] border-2 border-black p-6 swiss-border mb-8">
                     <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-                        <!-- Left: Título y Objetivo Principal a lo largo -->
-                        <div class="max-w-3xl space-y-3">
-                            <div class="flex flex-wrap items-center gap-2">
-                                <span class="badge-swiss bg-[#1899AF] text-white">Líder de Iniciativa</span>
-                                <span class="font-display font-black text-sm text-neutral-900">Patricio Martin · EIR</span>
-                                <span class="text-neutral-400">|</span>
-                                <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 font-bold border border-emerald-500 text-[10px] font-mono">En Producción</span>
-                                <span class="text-neutral-400">|</span>
-                                <span class="font-mono text-[11px] text-neutral-500">Conexión Directa a BigQuery</span>
+                        <!-- Left: Título y Objetivo Principal a lo largo con Foto del Líder -->
+                        <div class="max-w-3xl space-y-4">
+                            <div class="flex items-center gap-4 sm:gap-5">
+                                <div class="relative flex-shrink-0">
+                                    <img src="assets/team/patricio-martin.jpg" alt="Patricio Martin" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-black object-cover shadow-[3px_3px_0px_#1899AF]" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80'">
+                                    <span class="absolute -bottom-1 -right-1 bg-[#1899AF] text-white text-[9px] font-mono font-bold px-1.5 py-0.5 border border-black shadow-[1px_1px_0px_#000]">EIR</span>
+                                </div>
+                                <div class="space-y-1.5 flex-1 min-w-0">
+                                    <div class="flex flex-wrap items-center gap-2">
+                                        <span class="badge-swiss bg-[#1899AF] text-white">Líder: Patricio Martin</span>
+                                        <span class="font-display font-black text-xs text-neutral-700">Entrepreneur in Residence</span>
+                                        <span class="text-neutral-400">|</span>
+                                        <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 font-bold border border-emerald-500 text-[10px] font-mono">En Producción</span>
+                                        <span class="text-neutral-400">|</span>
+                                        <span class="font-mono text-[11px] text-neutral-500">Conexión Directa a BigQuery</span>
+                                    </div>
+                                    <h3 class="font-display font-black text-2xl lg:text-3xl text-[#1E1E1E] leading-tight">
+                                        FinOps & Control de Commits GCP
+                                    </h3>
+                                </div>
                             </div>
-                            
-                            <h3 class="font-display font-black text-2xl lg:text-3xl text-[#1E1E1E] leading-tight">
-                                FinOps & Control de Commits GCP
-                            </h3>
                             
                             <div class="border-l-4 border-[#1899AF] pl-3 py-1">
                                 <div class="font-display font-black text-xs uppercase tracking-wider text-[#1899AF] mb-1 flex items-center gap-2">
@@ -753,20 +764,27 @@
                 <!-- BANNER SUPERIOR EJECUTIVO A LO LARGO -->
                 <div class="bg-[#FFFEF8] border-2 border-black p-6 swiss-border mb-8">
                     <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-                        <!-- Left: Título y Objetivo Principal a lo largo -->
-                        <div class="max-w-3xl space-y-3">
-                            <div class="flex flex-wrap items-center gap-2">
-                                <span class="badge-swiss bg-[#DE5B48] text-white">Líder de Iniciativa</span>
-                                <span class="font-display font-black text-sm text-neutral-900">Jorge Caraballo · EIR</span>
-                                <span class="text-neutral-400">|</span>
-                                <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 font-bold border border-emerald-500 text-[10px] font-mono">En Producción</span>
-                                <span class="text-neutral-400">|</span>
-                                <span class="font-mono text-[11px] text-neutral-500">Cero Licencias de Software Externo</span>
+                        <!-- Left: Título y Objetivo Principal a lo largo con Foto del Líder -->
+                        <div class="max-w-3xl space-y-4">
+                            <div class="flex items-center gap-4 sm:gap-5">
+                                <div class="relative flex-shrink-0">
+                                    <img src="assets/team/jorge-caraballo.jpg" alt="Jorge Caraballo" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-black object-cover shadow-[3px_3px_0px_#DE5B48]" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80'">
+                                    <span class="absolute -bottom-1 -right-1 bg-[#DE5B48] text-white text-[9px] font-mono font-bold px-1.5 py-0.5 border border-black shadow-[1px_1px_0px_#000]">EIR</span>
+                                </div>
+                                <div class="space-y-1.5 flex-1 min-w-0">
+                                    <div class="flex flex-wrap items-center gap-2">
+                                        <span class="badge-swiss bg-[#DE5B48] text-white">Líder: Jorge Caraballo</span>
+                                        <span class="font-display font-black text-xs text-neutral-700">Entrepreneur in Residence</span>
+                                        <span class="text-neutral-400">|</span>
+                                        <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 font-bold border border-emerald-500 text-[10px] font-mono">En Producción</span>
+                                        <span class="text-neutral-400">|</span>
+                                        <span class="font-mono text-[11px] text-neutral-500">Cero Licencias Externas</span>
+                                    </div>
+                                    <h3 class="font-display font-black text-2xl lg:text-3xl text-[#1E1E1E] leading-tight">
+                                        Plataforma de Renovaciones y Campañas Masivas SMB
+                                    </h3>
+                                </div>
                             </div>
-                            
-                            <h3 class="font-display font-black text-2xl lg:text-3xl text-[#1E1E1E] leading-tight">
-                                Plataforma de Renovaciones y Campañas Masivas SMB
-                            </h3>
                             
                             <div class="border-l-4 border-[#DE5B48] pl-3 py-1">
                                 <div class="font-display font-black text-xs uppercase tracking-wider text-[#DE5B48] mb-1 flex items-center gap-2">
@@ -1084,20 +1102,27 @@
                 <!-- BANNER SUPERIOR EJECUTIVO A LO LARGO (Inspirado en la estructura del Header) -->
                 <div class="bg-[#FFFEF8] border-2 border-black p-6 swiss-border mb-8">
                     <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-                        <!-- Left: Título y Objetivo Principal a lo largo -->
-                        <div class="max-w-3xl space-y-3">
-                            <div class="flex flex-wrap items-center gap-2">
-                                <span class="badge-swiss bg-[#5A4A96] text-white">Líder de Iniciativa</span>
-                                <span class="font-display font-black text-sm text-neutral-900">Angel Solis · EIR</span>
-                                <span class="text-neutral-400">|</span>
-                                <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 font-bold border border-emerald-500 text-[10px] font-mono">En Producción</span>
-                                <span class="text-neutral-400">|</span>
-                                <span class="font-mono text-[11px] text-neutral-500">Conexión Directa a BigQuery</span>
+                        <!-- Left: Título y Objetivo Principal a lo largo con Foto del Líder -->
+                        <div class="max-w-3xl space-y-4">
+                            <div class="flex items-center gap-4 sm:gap-5">
+                                <div class="relative flex-shrink-0">
+                                    <img src="assets/team/angel-solis.jpg" alt="Angel Solis" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-black object-cover shadow-[3px_3px_0px_#5A4A96]" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80'">
+                                    <span class="absolute -bottom-1 -right-1 bg-[#5A4A96] text-white text-[9px] font-mono font-bold px-1.5 py-0.5 border border-black shadow-[1px_1px_0px_#000]">EIR</span>
+                                </div>
+                                <div class="space-y-1.5 flex-1 min-w-0">
+                                    <div class="flex flex-wrap items-center gap-2">
+                                        <span class="badge-swiss bg-[#5A4A96] text-white">Líder: Angel Solis</span>
+                                        <span class="font-display font-black text-xs text-neutral-700">Entrepreneur in Residence</span>
+                                        <span class="text-neutral-400">|</span>
+                                        <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 font-bold border border-emerald-500 text-[10px] font-mono">En Producción</span>
+                                        <span class="text-neutral-400">|</span>
+                                        <span class="font-mono text-[11px] text-neutral-500">Conexión Directa a BigQuery</span>
+                                    </div>
+                                    <h3 class="font-display font-black text-2xl lg:text-3xl text-[#1E1E1E] leading-tight">
+                                        Conciliación de Licencias en BigQuery desde Consolas & Partner Hub
+                                    </h3>
+                                </div>
                             </div>
-                            
-                            <h3 class="font-display font-black text-2xl lg:text-3xl text-[#1E1E1E] leading-tight">
-                                Conciliación de Licencias en BigQuery desde Consolas & Partner Hub
-                            </h3>
                             
                             <div class="border-l-4 border-[#5A4A96] pl-3 py-1">
                                 <div class="font-display font-black text-xs uppercase tracking-wider text-[#5A4A96] mb-1 flex items-center gap-2">
@@ -1412,20 +1437,27 @@
                 <!-- BANNER SUPERIOR EJECUTIVO A LO LARGO (Inspirado en la estructura del Header) -->
                 <div class="bg-[#FFFEF8] border-2 border-black p-6 swiss-border mb-8">
                     <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-                        <!-- Left: Título y Objetivo Principal a lo largo -->
-                        <div class="max-w-3xl space-y-3">
-                            <div class="flex flex-wrap items-center gap-2">
-                                <span class="badge-swiss bg-[#C45BAA] text-white">Líder de Iniciativa</span>
-                                <span class="font-display font-black text-sm text-neutral-900">Carlos Espinosa · EIR</span>
-                                <span class="text-neutral-400">|</span>
-                                <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 font-bold border border-emerald-500 text-[10px] font-mono">En Producción</span>
-                                <span class="text-neutral-400">|</span>
-                                <span class="font-mono text-[11px] text-neutral-500">Conexión Directa a BigQuery</span>
+                        <!-- Left: Título y Objetivo Principal a lo largo con Foto del Líder -->
+                        <div class="max-w-3xl space-y-4">
+                            <div class="flex items-center gap-4 sm:gap-5">
+                                <div class="relative flex-shrink-0">
+                                    <img src="assets/team/carlos-espinosa.jpg" alt="Carlos Espinosa" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-black object-cover shadow-[3px_3px_0px_#C45BAA]" onerror="this.src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80'">
+                                    <span class="absolute -bottom-1 -right-1 bg-[#C45BAA] text-white text-[9px] font-mono font-bold px-1.5 py-0.5 border border-black shadow-[1px_1px_0px_#000]">EIR</span>
+                                </div>
+                                <div class="space-y-1.5 flex-1 min-w-0">
+                                    <div class="flex flex-wrap items-center gap-2">
+                                        <span class="badge-swiss bg-[#C45BAA] text-white">Líder: Carlos Espinosa</span>
+                                        <span class="font-display font-black text-xs text-neutral-700">Entrepreneur in Residence</span>
+                                        <span class="text-neutral-400">|</span>
+                                        <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 font-bold border border-emerald-500 text-[10px] font-mono">En Producción</span>
+                                        <span class="text-neutral-400">|</span>
+                                        <span class="font-mono text-[11px] text-neutral-500">Conexión Directa a BigQuery</span>
+                                    </div>
+                                    <h3 class="font-display font-black text-2xl lg:text-3xl text-[#1E1E1E] leading-tight">
+                                        Torre de Control de Incentivos Google Cloud & Deal Registration (G26)
+                                    </h3>
+                                </div>
                             </div>
-                            
-                            <h3 class="font-display font-black text-2xl lg:text-3xl text-[#1E1E1E] leading-tight">
-                                Torre de Control de Incentivos Google Cloud & Deal Registration (G26)
-                            </h3>
                             
                             <div class="border-l-4 border-[#C45BAA] pl-3 py-1">
                                 <div class="font-display font-black text-xs uppercase tracking-wider text-[#C45BAA] mb-1 flex items-center gap-2">
@@ -2497,7 +2529,10 @@
             <div class="grid grid-cols-12 h-full">
                 <div class="col-span-12 lg:col-span-5 bg-[#1899AF] text-white flex flex-col justify-center px-8 lg:px-16 relative">
                     <div class="shape-corner bg-[#FAF338] w-48 h-48 top-0 right-0 blend-multiply opacity-50"></div>
-                    <span class="badge-swiss bg-black text-[#FAF338] self-start mb-4 stagger-up">PATRICIO MARTIN · FINOPS GCP</span>
+                    <div class="flex items-center gap-3 mb-4 stagger-up">
+                        <img src="assets/team/patricio-martin.jpg" alt="Patricio Martin" class="w-12 h-12 rounded-full border-2 border-white object-cover shadow-[2px_2px_0px_#FAF338]" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80'">
+                        <span class="badge-swiss bg-black text-[#FAF338]">PATRICIO MARTIN · FINOPS GCP</span>
+                    </div>
                     <h2 class="font-display font-black text-3xl lg:text-5xl uppercase leading-none stagger-up delay-1">
                         FinOps & Control de Commits GCP
                     </h2>
@@ -2538,7 +2573,10 @@
         <div class="slide bg-[#F5F0E8]" id="slide-2">
             <div class="grid grid-cols-12 h-full">
                 <div class="col-span-12 lg:col-span-5 bg-[#DE5B48] text-white flex flex-col justify-center px-8 lg:px-16 relative">
-                    <span class="badge-swiss bg-black text-white self-start mb-4 stagger-up">JORGE CARABALLO · RENOVACIONES SMB</span>
+                    <div class="flex items-center gap-3 mb-4 stagger-up">
+                        <img src="assets/team/jorge-caraballo.jpg" alt="Jorge Caraballo" class="w-12 h-12 rounded-full border-2 border-white object-cover shadow-[2px_2px_0px_#000]" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80'">
+                        <span class="badge-swiss bg-black text-white">JORGE CARABALLO · RENOVACIONES SMB</span>
+                    </div>
                     <h2 class="font-display font-black text-3xl lg:text-5xl uppercase leading-none stagger-up delay-1">
                         Plataforma Renovaciones & Campañas SMB
                     </h2>
@@ -2593,7 +2631,10 @@
         <div class="slide bg-[#1E1E1E] text-white" id="slide-3">
             <div class="grid grid-cols-12 h-full">
                 <div class="col-span-12 lg:col-span-6 flex flex-col justify-center px-8 lg:px-16 z-20">
-                    <span class="badge-swiss bg-[#FAF338] text-black self-start mb-4 stagger-up">ANGEL SOLIS · WORKSPACE & GEMINI</span>
+                    <div class="flex items-center gap-3 mb-4 stagger-up">
+                        <img src="assets/team/angel-solis.jpg" alt="Angel Solis" class="w-12 h-12 rounded-full border-2 border-white object-cover shadow-[2px_2px_0px_#FAF338]" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80'">
+                        <span class="badge-swiss bg-[#FAF338] text-black font-bold">ANGEL SOLIS · WORKSPACE & GEMINI</span>
+                    </div>
                     <h2 class="font-display font-black text-3xl lg:text-5xl uppercase leading-none stagger-up delay-1 text-white">
                         Conciliación Workspace & Adopción Gemini
                     </h2>
@@ -2647,7 +2688,10 @@
         <div class="slide bg-[#FFFEF8]" id="slide-4">
             <div class="grid grid-cols-12 h-full">
                 <div class="col-span-12 lg:col-span-5 bg-[#C45BAA] text-white flex flex-col justify-center px-8 lg:px-16 relative">
-                    <span class="badge-swiss bg-black text-[#FAF338] self-start mb-4 stagger-up font-bold">CARLOS ESPINOSA · CONEXIÓN BIGQUERY & PARTNER HUB</span>
+                    <div class="flex items-center gap-3 mb-4 stagger-up">
+                        <img src="assets/team/carlos-espinosa.jpg" alt="Carlos Espinosa" class="w-12 h-12 rounded-full border-2 border-white object-cover shadow-[2px_2px_0px_#000]" onerror="this.src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80'">
+                        <span class="badge-swiss bg-black text-[#FAF338] font-bold">CARLOS ESPINOSA · CONEXIÓN BIGQUERY & PARTNER HUB</span>
+                    </div>
                     <h2 class="font-display font-black text-3xl lg:text-5xl uppercase leading-none stagger-up delay-1">
                         Torre de Control Incentivos & DR
                     </h2>
