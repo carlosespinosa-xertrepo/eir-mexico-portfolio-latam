@@ -301,53 +301,94 @@
     <main id="view-platform" class="min-h-screen pb-20">
         
         <!-- EXECUTIVE HERO BANNER -->
-        <section class="border-b-2 border-[#1E1E1E] bg-[#FFFEF8] px-4 sm:px-8 md:px-10 py-10 sm:py-12 lg:py-14">
+        <section class="border-b-2 border-[#1E1E1E] bg-[#FFFEF8] px-4 sm:px-8 md:px-10 py-8 sm:py-10 lg:py-12">
             <div class="max-w-7xl mx-auto">
-                <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-6 lg:gap-8 xl:gap-10">
-                    <div class="flex-1 min-w-0 max-w-2xl">
-                        <!-- Título en 3 renglones acortado y con highlight estético amarillo en LATAM -->
-                        <h1 class="font-display font-black uppercase tracking-tight text-[#1E1E1E]" style="font-size: clamp(2rem, 3.2vw, 3.35rem); line-height: 1.08;">
-                            <span class="hero-title-line1">Iniciativas EIR México</span>
-                            <span class="hero-title-line2">Alcance Regional</span>
-                            <span class="hero-title-line3">Escala <span class="bg-[#FAF338] text-black px-2 sm:px-2.5 py-0.5 inline-block">LATAM</span></span>
-                        </h1>
-                        
-                        <!-- Texto descriptivo con espaciado natural -->
-                        <p class="font-body text-base md:text-[18px] text-neutral-700 mt-5 leading-relaxed max-w-xl">
-                            Soluciones modulares desarrolladas por el equipo de <strong class="text-black">Entrepreneurs in Residence</strong>, listas para ser replicadas en <strong class="text-[#1899AF]">Colombia, Perú, Chile, Ecuador y México</strong>. Enfoque 100% en impacto, resultados comerciales y eficiencia operativa.
-                        </p>
+                <div class="flex flex-col xl:flex-row xl:items-start justify-between gap-8 lg:gap-10 xl:gap-12">
+                    <!-- Columna Izquierda: Narrativa ejecutiva equilibrada -->
+                    <div class="flex-1 min-w-0 max-w-2xl flex flex-col justify-between">
+                        <div>
+                            <!-- Título en 3 renglones acortado y con highlight estético amarillo en LATAM -->
+                            <h1 class="font-display font-black uppercase tracking-tight text-[#1E1E1E]" style="font-size: clamp(2.1rem, 3.4vw, 3.5rem); line-height: 1.06;">
+                                <span class="hero-title-line1">Iniciativas EIR México</span>
+                                <span class="hero-title-line2">Alcance Regional</span>
+                                <span class="hero-title-line3">Escala <span class="bg-[#FAF338] text-black px-2 sm:px-2.5 py-0.5 inline-block">LATAM</span></span>
+                            </h1>
+                            
+                            <!-- Texto descriptivo con espaciado natural -->
+                            <p class="font-body text-base md:text-[18px] text-neutral-700 mt-4 leading-relaxed max-w-2xl">
+                                Soluciones modulares desarrolladas por el equipo de <strong class="text-black">Entrepreneurs in Residence</strong>, listas para ser replicadas en <strong class="text-[#1899AF]">Colombia, Perú, Chile, Ecuador y México</strong>. Enfoque 100% en impacto, resultados comerciales y eficiencia operativa.
+                            </p>
+                        </div>
+
+                        <!-- Micro-badges informativos para balancear la altura del bloque -->
+                        <div class="flex flex-wrap items-center gap-2 mt-5">
+                            <span class="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-neutral-700 bg-[#EFE9D9] px-2.5 py-1 border border-black/15">
+                                <span class="w-1.5 h-1.5 bg-[#DE5B48]"></span>
+                                4 Proyectos en Producción
+                            </span>
+                            <span class="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-neutral-700 bg-[#EFE9D9] px-2.5 py-1 border border-black/15">
+                                <span class="w-1.5 h-1.5 bg-[#1899AF]"></span>
+                                Conexión BigQuery en Vivo
+                            </span>
+                            <span class="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-neutral-700 bg-[#EFE9D9] px-2.5 py-1 border border-black/15">
+                                <span class="w-1.5 h-1.5 bg-[#2E8B5A]"></span>
+                                Escalabilidad Regional
+                            </span>
+                        </div>
                     </div>
 
-                    <!-- Macro KPI Grid - Cuadro de la derecha con proporción balanceada, espaciado interno y sin solapar el título -->
-                    <div class="w-full xl:w-auto xl:min-w-[490px] xl:max-w-[530px] flex-shrink-0 bg-[#F2EDD8] p-5 sm:p-6 border-2 border-[#1E1E1E] shadow-[4px_4px_0px_#1E1E1E]">
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-0 md:divide-x-2 md:divide-black/20">
+                    <!-- Macro KPI Console - Matriz 2x2 equilibrada con cabecera suiza que armoniza en altura -->
+                    <div class="w-full xl:w-[460px] 2xl:w-[490px] flex-shrink-0 bg-[#F2EDD8] border-2 border-[#1E1E1E] shadow-[5px_5px_0px_#1E1E1E]">
+                        <!-- Card Header -->
+                        <div class="bg-[#1E1E1E] text-white px-4 py-2.5 flex items-center justify-between border-b-2 border-black">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-[#FAF338] animate-pulse"></span>
+                                <span class="font-mono text-xs font-bold uppercase tracking-wider">Impacto Consolidado EIR</span>
+                            </div>
+                            <span class="font-mono text-[10px] text-neutral-400 uppercase tracking-widest font-bold">LATAM 2026</span>
+                        </div>
+
+                        <!-- 2x2 Grid -->
+                        <div class="grid grid-cols-2 divide-x-2 divide-y-2 divide-black/20">
                             <!-- KPI 1 -->
-                            <div class="md:pr-4 flex flex-col justify-between min-h-[90px]">
-                                <div class="font-display font-black text-2xl sm:text-3xl text-[#1899AF] leading-none">$570K+</div>
-                                <div class="font-mono text-[10px] sm:text-[11px] font-bold uppercase text-neutral-700 mt-3 leading-tight tracking-wide">
-                                    USD Oportunidades & Ahorro
+                            <div class="p-4 sm:p-5 flex flex-col justify-between min-h-[95px]">
+                                <div class="font-mono text-[11px] font-bold uppercase text-neutral-600 tracking-wider">
+                                    Oportunidades & Ahorro
                                 </div>
+                                <div class="font-display font-black text-2xl sm:text-3xl text-[#1899AF] mt-2 leading-none">
+                                    $570K+
+                                </div>
+                                <div class="font-mono text-[10px] text-neutral-500 mt-1">USD blindados en cartera</div>
                             </div>
                             <!-- KPI 2 -->
-                            <div class="md:px-4 flex flex-col justify-between min-h-[90px]">
-                                <div class="font-display font-black text-2xl sm:text-3xl text-[#DE5B48] leading-none">336</div>
-                                <div class="font-mono text-[10px] sm:text-[11px] font-bold uppercase text-neutral-700 mt-3 leading-tight tracking-wide">
+                            <div class="p-4 sm:p-5 flex flex-col justify-between min-h-[95px]">
+                                <div class="font-mono text-[11px] font-bold uppercase text-neutral-600 tracking-wider">
                                     Cuentas Contactadas
                                 </div>
+                                <div class="font-display font-black text-2xl sm:text-3xl text-[#DE5B48] mt-2 leading-none">
+                                    336
+                                </div>
+                                <div class="font-mono text-[10px] text-neutral-500 mt-1">Cobertura masiva SMB</div>
                             </div>
                             <!-- KPI 3 -->
-                            <div class="md:px-4 flex flex-col justify-between min-h-[90px]">
-                                <div class="font-display font-black text-2xl sm:text-3xl text-[#2E8B5A] leading-none">82%</div>
-                                <div class="font-mono text-[10px] sm:text-[11px] font-bold uppercase text-neutral-700 mt-3 leading-tight tracking-wide">
-                                    Adopción IA (Gemini)
+                            <div class="p-4 sm:p-5 flex flex-col justify-between min-h-[95px]">
+                                <div class="font-mono text-[11px] font-bold uppercase text-neutral-600 tracking-wider">
+                                    Adopción IA Activa
                                 </div>
+                                <div class="font-display font-black text-2xl sm:text-3xl text-[#2E8B5A] mt-2 leading-none">
+                                    82%
+                                </div>
+                                <div class="font-mono text-[10px] text-neutral-500 mt-1">Uso de Gemini en clientes</div>
                             </div>
                             <!-- KPI 4 -->
-                            <div class="md:pl-4 flex flex-col justify-between min-h-[90px]">
-                                <div class="font-display font-black text-2xl sm:text-3xl text-[#1E1E1E] leading-none">5 PAÍSES</div>
-                                <div class="font-mono text-[10px] sm:text-[11px] font-bold uppercase text-neutral-700 mt-3 leading-tight tracking-wide">
-                                    Escalabilidad LATAM
+                            <div class="p-4 sm:p-5 flex flex-col justify-between min-h-[95px]">
+                                <div class="font-mono text-[11px] font-bold uppercase text-neutral-600 tracking-wider">
+                                    Escalabilidad
                                 </div>
+                                <div class="font-display font-black text-2xl sm:text-3xl text-[#1E1E1E] mt-2 leading-none">
+                                    5 PAÍSES
+                                </div>
+                                <div class="font-mono text-[10px] text-neutral-500 mt-1">Hub regional replicable</div>
                             </div>
                         </div>
                     </div>
