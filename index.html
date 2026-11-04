@@ -60,11 +60,11 @@
             --crema: #F2EDD8;
             --fondo-slides: #F5F0E8;
             --negro-xertica: #1E1E1E;
-            --celeste: #1899AF;
-            --magenta: #C45BAA;
+            --celeste: #5A4A96;
+            --magenta: #1E1E1E;
             --amarillo: #FAF338;
-            --rojo-coral: #DE5B48;
-            --verde: #2E8B5A;
+            --rojo-coral: #5A4A96;
+            --verde: #5A4A96;
             --violeta: #5A4A96;
             --font-display: 'Helvetica Neue', Helvetica, Arial, -apple-system, BlinkMacSystemFont, sans-serif;
             --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -116,22 +116,22 @@
 
         .swiss-border {
             border: 2px solid var(--negro-xertica);
-            box-shadow: 4px 4px 0px rgba(30, 30, 30, 0.95);
+            box-shadow: 4px 4px 0px #000;
         }
 
         .swiss-border-sm {
             border: 1.5px solid var(--negro-xertica);
-            box-shadow: 2px 2px 0px rgba(30, 30, 30, 0.95);
+            box-shadow: 2px 2px 0px #000;
         }
 
         .swiss-border-magenta {
             border: 2px solid var(--negro-xertica);
-            box-shadow: 4px 4px 0px var(--magenta);
+            box-shadow: 4px 4px 0px #000;
         }
 
         .swiss-border-cyan {
             border: 2px solid var(--negro-xertica);
-            box-shadow: 4px 4px 0px var(--celeste);
+            box-shadow: 4px 4px 0px #000;
         }
 
         .tab-btn {
@@ -143,7 +143,7 @@
         .tab-btn.active {
             background-color: var(--negro-xertica) !important;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            box-shadow: 4px 4px 0px #000;
             border-color: #000000 !important;
         }
 
@@ -170,7 +170,7 @@
         /* Específico para el botón LATAM activo */
         #tab-btn-latam.active {
             background-color: #1E1E1E !important;
-            box-shadow: 4px 4px 0px #FAF338 !important;
+            box-shadow: 4px 4px 0px #000 !important;
         }
         #tab-btn-latam.active .tab-title {
             color: #FAF338 !important;
@@ -266,7 +266,7 @@
 <body class="bg-[#F5F0E8] text-[#1E1E1E] antialiased selection:bg-[#FAF338] selection:text-black">
 
     <!-- TOP HEADER / CONTROLS (NAV OVERLAY) -->
-    <header class="sticky top-0 z-50 bg-[#FFFEF8] border-b-2 border-[#1E1E1E] px-4 md:px-8 py-3.5 flex flex-wrap justify-between items-center shadow-sm no-print">
+    <header class="sticky top-0 z-50 bg-[#FFFEF8] border-b-2 border-black px-4 md:px-8 py-3.5 flex flex-wrap justify-between items-center no-print">
         <div class="flex items-center gap-4">
             <div class="flex items-center gap-2.5">
                 <div class="w-8 h-8 bg-[#1E1E1E] flex items-center justify-center font-display font-black text-white text-lg tracking-tighter">
@@ -274,7 +274,7 @@
                 </div>
                 <div>
                     <div class="font-display font-black text-xl tracking-tight leading-none text-[#1E1E1E]">
-                        Xertica<span class="text-[#1899AF]">.ai</span>
+                        Xertica<span class="text-[#5A4A96]">.ai</span>
                     </div>
                     <div class="text-[10px] font-mono uppercase tracking-widest text-neutral-500 font-semibold mt-0.5">
                         EIR'S MÉXICO · LATAM PORTFOLIO 2026
@@ -289,11 +289,11 @@
 
         <!-- Actions: Share & Slides Mode -->
         <div class="flex items-center gap-2 mt-2 sm:mt-0">
-            <button id="btn-open-share-top" onclick="openShareModal()" title="Compartir propuesta ejecutiva formateada para Vanessa y líderes" class="px-2.5 py-1.5 bg-[#FFFEF8] hover:bg-[#FAF338] text-black border-2 border-black font-display font-bold text-xs uppercase shadow-[2px_2px_0px_#1E1E1E] transition-all hover:-translate-y-0.5 active:translate-y-0 hidden sm:flex items-center gap-1">
+            <button id="btn-open-share-top" onclick="openShareModal()" title="Compartir propuesta ejecutiva formateada para Vanessa y líderes" class="px-2.5 py-1.5 bg-[#FFFEF8] hover:bg-[#FAF338] text-black border-2 border-black font-display font-bold text-xs uppercase shadow-[2px_2px_0px_#000] transition-all hover:-translate-y-0.5 active:translate-y-0 hidden sm:flex items-center gap-1">
                 <span class="material-symbols-outlined text-sm">share</span>
                 <span class="text-[11px]">Compartir</span>
             </button>
-            <button id="btn-mode-slides" onclick="setAppMode('slides')" title="Ver en Modo Presentación / Slides (Pitch Deck)" aria-label="Modo Slides" class="p-2 bg-[#FFFEF8] hover:bg-[#FAF338] text-black border-2 border-black shadow-[2px_2px_0px_#1E1E1E] transition-all hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center">
+            <button id="btn-mode-slides" onclick="setAppMode('slides')" title="Ver en Modo Presentación / Slides (Pitch Deck)" aria-label="Modo Slides" class="p-2 bg-[#FFFEF8] hover:bg-[#FAF338] text-black border-2 border-black shadow-[2px_2px_0px_#000] transition-all hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center">
                 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="2" y="3" width="20" height="14" rx="1"></rect>
                     <line x1="8" y1="21" x2="16" y2="21"></line>
@@ -325,29 +325,29 @@
                             
                             <!-- Texto descriptivo con espaciado natural -->
                             <p class="font-body text-base md:text-[18px] text-neutral-700 mt-4 leading-relaxed max-w-2xl">
-                                Soluciones modulares desarrolladas por el equipo de <strong class="text-black">Entrepreneurs in Residence</strong>, listas para ser replicadas en <strong class="text-[#1899AF]">Colombia, Perú, Chile, Ecuador y México</strong>. Enfoque 100% en impacto, resultados comerciales y eficiencia operativa.
+                                Soluciones modulares desarrolladas por el equipo de <strong class="text-black">Entrepreneurs in Residence</strong>, listas para ser replicadas en <strong class="text-[#5A4A96]">Colombia, Perú, Chile, Ecuador y México</strong>. Enfoque 100% en impacto, resultados comerciales y eficiencia operativa.
                             </p>
                         </div>
 
                         <!-- Micro-badges informativos para balancear la altura del bloque -->
                         <div class="flex flex-wrap items-center gap-2 mt-5">
                             <span class="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-neutral-700 bg-[#EFE9D9] px-2.5 py-1 border border-black/15">
-                                <span class="w-1.5 h-1.5 bg-[#DE5B48]"></span>
+                                <span class="w-1.5 h-1.5 bg-[#5A4A96]"></span>
                                 4 Proyectos en Producción
                             </span>
                             <span class="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-neutral-700 bg-[#EFE9D9] px-2.5 py-1 border border-black/15">
-                                <span class="w-1.5 h-1.5 bg-[#1899AF]"></span>
+                                <span class="w-1.5 h-1.5 bg-[#FAF338]"></span>
                                 Telemetría y Datos en Vivo
                             </span>
                             <span class="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-neutral-700 bg-[#EFE9D9] px-2.5 py-1 border border-black/15">
-                                <span class="w-1.5 h-1.5 bg-[#2E8B5A]"></span>
+                                <span class="w-1.5 h-1.5 bg-[#5A4A96]"></span>
                                 Escalabilidad Regional
                             </span>
                         </div>
                     </div>
 
                     <!-- Macro KPI Console - Matriz 2x2 equilibrada con cabecera suiza que armoniza en altura -->
-                    <div class="w-full xl:w-[460px] 2xl:w-[490px] flex-shrink-0 bg-[#F2EDD8] border-2 border-[#1E1E1E] shadow-[5px_5px_0px_#1E1E1E]">
+                    <div class="w-full xl:w-[460px] 2xl:w-[490px] flex-shrink-0 bg-[#F2EDD8] border-2 border-[#1E1E1E] shadow-[5px_5px_0px_#000]">
                         <!-- Card Header -->
                         <div class="bg-[#1E1E1E] text-white px-4 py-2.5 flex items-center justify-between border-b-2 border-black">
                             <div class="flex items-center gap-2">
@@ -364,7 +364,7 @@
                                 <div class="font-mono text-[11px] font-bold uppercase text-neutral-600 tracking-wider">
                                     Oportunidades & Ahorro
                                 </div>
-                                <div class="font-display font-black text-2xl sm:text-3xl text-[#1899AF] mt-2 leading-none">
+                                <div class="font-display font-black text-2xl sm:text-3xl text-[#5A4A96] mt-2 leading-none">
                                     $570K+
                                 </div>
                                 <div class="font-mono text-[10px] text-neutral-500 mt-1">USD blindados en cartera</div>
@@ -374,7 +374,7 @@
                                 <div class="font-mono text-[11px] font-bold uppercase text-neutral-600 tracking-wider">
                                     Cuentas Contactadas
                                 </div>
-                                <div class="font-display font-black text-2xl sm:text-3xl text-[#DE5B48] mt-2 leading-none">
+                                <div class="font-display font-black text-2xl sm:text-3xl text-[#5A4A96] mt-2 leading-none">
                                     336
                                 </div>
                                 <div class="font-mono text-[10px] text-neutral-500 mt-1">Cobertura masiva SMB</div>
@@ -384,7 +384,7 @@
                                 <div class="font-mono text-[11px] font-bold uppercase text-neutral-600 tracking-wider">
                                     Adopción IA Activa
                                 </div>
-                                <div class="font-display font-black text-2xl sm:text-3xl text-[#2E8B5A] mt-2 leading-none">
+                                <div class="font-display font-black text-2xl sm:text-3xl text-[#5A4A96] mt-2 leading-none">
                                     82%
                                 </div>
                                 <div class="font-mono text-[10px] text-neutral-500 mt-1">Uso de Gemini en clientes</div>
@@ -412,9 +412,9 @@
                     <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 lg:gap-4">
                         <!-- Tab 1: Patricio -->
                         <button onclick="switchTab('patricio')" id="tab-btn-patricio" class="tab-btn active p-3 sm:p-3.5 border-2 border-black text-left flex items-center gap-3 bg-[#FFFEF8]">
-                            <img src="assets/team/patricio-martin.jpg" alt="Patricio Martin" class="w-11 h-11 rounded-full border-2 border-black object-cover shadow-[2px_2px_0px_#1899AF] flex-shrink-0" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80'">
+                            <img src="assets/team/patricio-martin.jpg" alt="Patricio Martin" class="w-11 h-11 rounded-full border-2 border-black object-cover shadow-[2px_2px_0px_#5A4A96] flex-shrink-0" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80'">
                             <div class="min-w-0 flex-1">
-                                <span class="badge-swiss bg-[#1899AF] text-white text-[9px] py-0.5 px-1.5 mb-1 inline-block">PATRICIO MARTIN</span>
+                                <span class="badge-swiss bg-[#5A4A96] text-white text-[9px] py-0.5 px-1.5 mb-1 inline-block">PATRICIO MARTIN</span>
                                 <div class="tab-title font-display font-bold text-xs sm:text-sm leading-tight text-neutral-900 truncate">FinOps & GCP Commits</div>
                                 <div class="tab-subtitle text-[10px] sm:text-[11px] font-mono mt-1 text-neutral-600 flex items-center truncate"><span class="material-symbols-outlined text-[13px] mr-1">trending_up</span> +110 Cuentas Mapeadas</div>
                             </div>
@@ -422,9 +422,9 @@
 
                         <!-- Tab 2: Jorge -->
                         <button onclick="switchTab('jorge')" id="tab-btn-jorge" class="tab-btn p-3 sm:p-3.5 border-2 border-black text-left flex items-center gap-3 bg-[#FFFEF8]">
-                            <img src="assets/team/jorge-caraballo.jpg" alt="Jorge Caraballo" class="w-11 h-11 rounded-full border-2 border-black object-cover shadow-[2px_2px_0px_#DE5B48] flex-shrink-0" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80'">
+                            <img src="assets/team/jorge-caraballo.jpg" alt="Jorge Caraballo" class="w-11 h-11 rounded-full border-2 border-black object-cover shadow-[2px_2px_0px_#5A4A96] flex-shrink-0" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80'">
                             <div class="min-w-0 flex-1">
-                                <span class="badge-swiss bg-[#DE5B48] text-white text-[9px] py-0.5 px-1.5 mb-1 inline-block">JORGE CARABALLO</span>
+                                <span class="badge-swiss bg-[#5A4A96] text-white text-[9px] py-0.5 px-1.5 mb-1 inline-block">JORGE CARABALLO</span>
                                 <div class="tab-title font-display font-bold text-xs sm:text-sm leading-tight text-neutral-900 truncate">Renovaciones & SMB</div>
                                 <div class="tab-subtitle text-[10px] sm:text-[11px] font-mono mt-1 text-neutral-600 flex items-center truncate"><span class="material-symbols-outlined text-[13px] mr-1">mail</span> 336 cuentas contactadas</div>
                             </div>
@@ -442,9 +442,9 @@
 
                         <!-- Tab 4: Carlos -->
                         <button onclick="switchTab('carlos')" id="tab-btn-carlos" class="tab-btn p-3 sm:p-3.5 border-2 border-black text-left flex items-center gap-3 bg-[#FFFEF8]">
-                            <img src="assets/team/carlos-espinosa.jpg" alt="Carlos Espinosa" class="w-11 h-11 rounded-full border-2 border-black object-cover shadow-[2px_2px_0px_#C45BAA] flex-shrink-0" onerror="this.src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80'">
+                            <img src="assets/team/carlos-espinosa.jpg" alt="Carlos Espinosa" class="w-11 h-11 rounded-full border-2 border-black object-cover shadow-[2px_2px_0px_#5A4A96] flex-shrink-0" onerror="this.src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80'">
                             <div class="min-w-0 flex-1">
-                                <span class="badge-swiss bg-[#C45BAA] text-white text-[9px] py-0.5 px-1.5 mb-1 inline-block">CARLOS ESPINOSA</span>
+                                <span class="badge-swiss bg-[#5A4A96] text-white text-[9px] py-0.5 px-1.5 mb-1 inline-block">CARLOS ESPINOSA</span>
                                 <div class="tab-title font-display font-bold text-xs sm:text-sm leading-tight text-neutral-900 truncate">Torre Control (G26)</div>
                                 <div class="tab-subtitle text-[10px] sm:text-[11px] font-mono mt-1 text-neutral-600 flex items-center truncate"><span class="material-symbols-outlined text-[13px] mr-1">shield</span> $136K+ Rebate Blindado</div>
                             </div>
@@ -477,12 +477,12 @@
                         <div class="max-w-3xl space-y-4">
                             <div class="flex items-center gap-4 sm:gap-5">
                                 <div class="relative flex-shrink-0">
-                                    <img src="assets/team/patricio-martin.jpg" alt="Patricio Martin" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-black object-cover shadow-[3px_3px_0px_#1899AF]" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80'">
-                                    <span class="absolute -bottom-1 -right-1 bg-[#1899AF] text-white text-[9px] font-mono font-bold px-1.5 py-0.5 border border-black shadow-[1px_1px_0px_#000]">EIR</span>
+                                    <img src="assets/team/patricio-martin.jpg" alt="Patricio Martin" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-black object-cover shadow-[3px_3px_0px_#000]" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80'">
+                                    <span class="absolute -bottom-1 -right-1 bg-[#5A4A96] text-white text-[9px] font-mono font-bold px-1.5 py-0.5 border border-black shadow-[1px_1px_0px_#000]">EIR</span>
                                 </div>
                                 <div class="space-y-1.5 flex-1 min-w-0">
                                     <div class="flex flex-wrap items-center gap-2">
-                                        <span class="badge-swiss bg-[#1899AF] text-white">Líder: Patricio Martin</span>
+                                        <span class="badge-swiss bg-[#5A4A96] text-white">Líder: Patricio Martin</span>
                                         <span class="font-display font-black text-xs text-neutral-700">Entrepreneur in Residence</span>
                                         <span class="text-neutral-400">|</span>
                                         <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 font-bold border border-emerald-500 text-[10px] font-mono">En Producción</span>
@@ -495,9 +495,9 @@
                                 </div>
                             </div>
                             
-                            <div class="border-l-4 border-[#1899AF] pl-3 py-1">
-                                <div class="font-display font-black text-xs uppercase tracking-wider text-[#1899AF] mb-1 flex items-center gap-2">
-                                    <span class="w-2.5 h-2.5 bg-[#1899AF] inline-block"></span> 1. Objetivo Principal
+                            <div class="border-l-4 border-[#5A4A96] pl-3 py-1">
+                                <div class="font-display font-black text-xs uppercase tracking-wider text-[#5A4A96] mb-1 flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 bg-[#5A4A96] inline-block"></span> 1. Objetivo Principal
                                 </div>
                                 <p class="font-display font-bold text-base text-neutral-900 leading-snug">
                                     Motor comercial y FinOps para convertir el consumo en pipeline y renovaciones estratégicas multianuales, evitando penalizaciones por under-commit.
@@ -512,7 +512,7 @@
                         <div class="bg-white border-2 border-black p-4 shadow-[4px_4px_0px_#000] flex-shrink-0 self-start lg:self-center">
                             <div class="flex items-center divide-x-2 divide-neutral-200 text-center font-mono">
                                 <div class="px-3 sm:px-4 first:pl-2">
-                                    <div class="font-display font-black text-2xl lg:text-3xl text-[#1899AF] leading-none">+110</div>
+                                    <div class="font-display font-black text-2xl lg:text-3xl text-[#5A4A96] leading-none">+110</div>
                                     <div class="text-[9px] uppercase font-bold text-neutral-600 mt-1.5 whitespace-nowrap">CUENTAS<br>MAPEADAS</div>
                                 </div>
                                 <div class="px-3 sm:px-4">
@@ -586,7 +586,7 @@
 
                             <div class="grid grid-cols-2 gap-3">
                                 <div class="bg-white border-2 border-black p-3.5 shadow-[2px_2px_0px_#000]">
-                                    <div class="font-display font-black text-3xl text-[#1899AF] leading-none">+8</div>
+                                    <div class="font-display font-black text-3xl text-[#5A4A96] leading-none">+8</div>
                                     <div class="text-[11px] font-mono font-bold text-neutral-800 mt-1 uppercase tracking-tight">Assessments Realizados</div>
                                     <div class="text-[10px] font-mono text-neutral-500 mt-0.5">Auditorías de ahorro y commits concluidas</div>
                                 </div>
@@ -600,7 +600,7 @@
                             <!-- Micro-cinta de contexto de universo mapeado -->
                             <div class="flex items-center justify-between bg-white/90 border border-black px-3 py-1.5 font-mono text-[11px]">
                                 <span class="text-neutral-700 font-bold flex items-center gap-1.5">
-                                    <span class="material-symbols-outlined text-sm text-[#1899AF]">monitoring</span> Universo Mapeado:
+                                    <span class="material-symbols-outlined text-sm text-[#5A4A96]">monitoring</span> Universo Mapeado:
                                 </span>
                                 <span class="font-bold text-neutral-900">+110 Cuentas Monitoreadas en FinOps 360</span>
                             </div>
@@ -636,8 +636,8 @@
                             <!-- Section Title & Target Teams -->
                             <div class="flex items-start justify-between gap-2 border-b-2 border-black pb-2.5">
                                 <div>
-                                    <div class="font-display font-black text-xs uppercase tracking-wider text-[#1899AF] flex items-center gap-1.5">
-                                        <span class="material-symbols-outlined text-[#1899AF] text-sm">public</span> 4. Escalabilidad & Replicabilidad LATAM
+                                    <div class="font-display font-black text-xs uppercase tracking-wider text-[#5A4A96] flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-[#5A4A96] text-sm">public</span> 4. Escalabilidad & Replicabilidad LATAM
                                     </div>
                                     <div class="text-[11px] font-mono text-neutral-600 mt-0.5">
                                         <strong>Equipos destino:</strong> FinOps Regional & Commercial GCP
@@ -667,7 +667,7 @@
                             <!-- Checkpoints de Replicabilidad e Iterabilidad -->
                             <div>
                                 <div class="text-[11px] font-display font-black uppercase tracking-wider text-neutral-800 mb-2 flex items-center gap-1.5">
-                                    <span class="w-2 h-2 bg-[#1899AF] inline-block"></span> Checkpoints de Replicabilidad e Iterabilidad:
+                                    <span class="w-2 h-2 bg-[#5A4A96] inline-block"></span> Checkpoints de Replicabilidad e Iterabilidad:
                                 </div>
                                 <ul class="space-y-1.5 font-body text-xs text-neutral-700">
                                     <li class="flex items-start gap-2 bg-white border border-neutral-200 p-2">
@@ -713,7 +713,7 @@
                                     <span class="font-mono text-xs font-bold text-neutral-700 ml-2">DEMOSTRACIÓN EN VIDEO (SCREEN RECORDING 45s)</span>
                                 </div>
                                 <div class="flex items-center gap-2">
-                                    <a href="https://script.google.com/a/macros/xertica.com/s/AKfycbzNFrFsFDN4T18OrzQSpXsOMM_OLqJIYhK8O0S77QUtDWLZq64TxkhNnM78moDX4BDKdQ/exec" target="_blank" class="px-3 py-1.5 bg-[#1899AF] text-white border-2 border-black text-xs font-display font-bold uppercase tracking-wider hover:bg-black transition-colors flex items-center gap-1.5 shadow-[2px_2px_0px_#000]">
+                                    <a href="https://script.google.com/a/macros/xertica.com/s/AKfycbzNFrFsFDN4T18OrzQSpXsOMM_OLqJIYhK8O0S77QUtDWLZq64TxkhNnM78moDX4BDKdQ/exec" target="_blank" class="px-4 py-2.5 bg-[#FAF338] text-black border-2 border-black text-xs font-display font-bold uppercase tracking-wider hover:bg-white transition-colors flex items-center justify-center gap-2 shadow-[2px_2px_0px_#000]">
                                         <span class="material-symbols-outlined text-sm">open_in_new</span> Abrir Herramienta en Producción
                                     </a>
                                 </div>
@@ -785,12 +785,12 @@
                         <div class="max-w-3xl space-y-4">
                             <div class="flex items-center gap-4 sm:gap-5">
                                 <div class="relative flex-shrink-0">
-                                    <img src="assets/team/jorge-caraballo.jpg" alt="Jorge Caraballo" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-black object-cover shadow-[3px_3px_0px_#DE5B48]" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80'">
-                                    <span class="absolute -bottom-1 -right-1 bg-[#DE5B48] text-white text-[9px] font-mono font-bold px-1.5 py-0.5 border border-black shadow-[1px_1px_0px_#000]">EIR</span>
+                                    <img src="assets/team/jorge-caraballo.jpg" alt="Jorge Caraballo" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-black object-cover shadow-[3px_3px_0px_#000]" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80'">
+                                    <span class="absolute -bottom-1 -right-1 bg-[#5A4A96] text-white text-[9px] font-mono font-bold px-1.5 py-0.5 border border-black shadow-[1px_1px_0px_#000]">EIR</span>
                                 </div>
                                 <div class="space-y-1.5 flex-1 min-w-0">
                                     <div class="flex flex-wrap items-center gap-2">
-                                        <span class="badge-swiss bg-[#DE5B48] text-white">Líder: Jorge Caraballo</span>
+                                        <span class="badge-swiss bg-[#5A4A96] text-white">Líder: Jorge Caraballo</span>
                                         <span class="font-display font-black text-xs text-neutral-700">Entrepreneur in Residence</span>
                                         <span class="text-neutral-400">|</span>
                                         <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 font-bold border border-emerald-500 text-[10px] font-mono">En Producción</span>
@@ -803,9 +803,9 @@
                                 </div>
                             </div>
                             
-                            <div class="border-l-4 border-[#DE5B48] pl-3 py-1">
-                                <div class="font-display font-black text-xs uppercase tracking-wider text-[#DE5B48] mb-1 flex items-center gap-2">
-                                    <span class="w-2.5 h-2.5 bg-[#DE5B48] inline-block"></span> 1. Objetivo Principal
+                            <div class="border-l-4 border-[#5A4A96] pl-3 py-1">
+                                <div class="font-display font-black text-xs uppercase tracking-wider text-[#5A4A96] mb-1 flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 bg-[#5A4A96] inline-block"></span> 1. Objetivo Principal
                                 </div>
                                 <p class="font-display font-bold text-base text-neutral-900 leading-snug">
                                     Automatización integral de campañas: desde carga masiva hasta detección real de interés (doble llamada a la acción) e historial comercial de seguimiento por cuenta a través de la herramienta.
@@ -820,7 +820,7 @@
                         <div class="bg-white border-2 border-black p-4 shadow-[4px_4px_0px_#000] flex-shrink-0 self-start lg:self-center">
                             <div class="flex items-center divide-x-2 divide-neutral-200 text-center font-mono">
                                 <div class="px-3 sm:px-4 first:pl-2">
-                                    <div class="font-display font-black text-2xl lg:text-3xl text-[#DE5B48] leading-none">336</div>
+                                    <div class="font-display font-black text-2xl lg:text-3xl text-[#5A4A96] leading-none">336</div>
                                     <div class="text-[9px] uppercase font-bold text-neutral-600 mt-1.5 whitespace-nowrap">CUENTAS<br>CONTACTADAS</div>
                                 </div>
                                 <div class="px-3 sm:px-4">
@@ -898,7 +898,7 @@
                             <!-- 3 KPI Cards Grid -->
                             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-3">
                                 <div class="bg-white border-2 border-black p-3.5 shadow-[2px_2px_0px_#000]">
-                                    <div class="font-display font-black text-3xl text-[#DE5B48] leading-none">336</div>
+                                    <div class="font-display font-black text-3xl text-[#5A4A96] leading-none">336</div>
                                     <div class="text-[11px] font-mono font-bold text-neutral-800 mt-1 uppercase tracking-tight">Cuentas Contactadas</div>
                                     <div class="text-[10px] font-mono text-neutral-600 mt-1 leading-snug">5 países: México, Colombia, Perú, Ecuador y Argentina.</div>
                                 </div>
@@ -908,7 +908,7 @@
                                     <div class="text-[10px] font-mono text-neutral-600 mt-1 leading-snug">324 de 336 cuentas recibieron el correo (96% entrega).</div>
                                 </div>
                                 <div class="bg-white border-2 border-black p-3.5 shadow-[2px_2px_0px_#000]">
-                                    <div class="font-display font-black text-3xl text-[#2E8B5A] leading-none">68%</div>
+                                    <div class="font-display font-black text-3xl text-[#5A4A96] leading-none">68%</div>
                                     <div class="text-[11px] font-mono font-bold text-neutral-800 mt-1 uppercase tracking-tight">Aperturas Reales</div>
                                     <div class="text-[10px] font-mono text-neutral-600 mt-1 leading-snug">222 de 324 cuentas entregadas lo abrieron (68% real).</div>
                                 </div>
@@ -950,8 +950,8 @@
                             <!-- Section Title & Target Teams -->
                             <div class="flex items-start justify-between gap-2 border-b-2 border-black pb-2.5">
                                 <div>
-                                    <div class="font-display font-black text-xs uppercase tracking-wider text-[#DE5B48] flex items-center gap-1.5">
-                                        <span class="material-symbols-outlined text-[#DE5B48] text-sm">public</span> 4. Escalabilidad y replicabilidad LATAM
+                                    <div class="font-display font-black text-xs uppercase tracking-wider text-[#5A4A96] flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-[#5A4A96] text-sm">public</span> 4. Escalabilidad y replicabilidad LATAM
                                     </div>
                                     <div class="text-[11px] font-mono text-neutral-600 mt-0.5">
                                         <strong>Equipos destino:</strong> Renovaciones SMB, Marketing Regional y Comerciales (CO, PE, CL, EC)
@@ -981,7 +981,7 @@
                             <!-- Checkpoints de Replicabilidad -->
                             <div>
                                 <div class="text-[11px] font-display font-black uppercase tracking-wider text-neutral-800 mb-2 flex items-center gap-1.5">
-                                    <span class="w-2 h-2 bg-[#DE5B48] inline-block"></span> Checkpoints de replicabilidad:
+                                    <span class="w-2 h-2 bg-[#5A4A96] inline-block"></span> Checkpoints de replicabilidad:
                                 </div>
                                 <ul class="space-y-1.5 font-body text-xs text-neutral-700">
                                     <li class="flex items-start gap-2 bg-white border border-neutral-200 p-2.5">
@@ -1052,7 +1052,7 @@
                                     <span class="font-mono text-xs font-bold text-neutral-700 ml-2">DEMOSTRACIÓN EN VIDEO (SCREEN RECORDING 45s)</span>
                                 </div>
                                 <div class="flex items-center gap-2">
-                                    <a href="https://script.google.com/a/macros/xertica.com/s/AKfycbwlwksFORqQZ5oMv6PvT5G-fPwupqWjCQPZPgcJraRPan50anciUZ7VZQ1FNjPC3H8v/exec" target="_blank" class="px-3 py-1.5 bg-[#DE5B48] text-white border-2 border-black text-xs font-display font-bold uppercase tracking-wider hover:bg-black transition-colors flex items-center gap-1.5 shadow-[2px_2px_0px_#000]">
+                                    <a href="https://script.google.com/a/macros/xertica.com/s/AKfycbwlwksFORqQZ5oMv6PvT5G-fPwupqWjCQPZPgcJraRPan50anciUZ7VZQ1FNjPC3H8v/exec" target="_blank" class="px-4 py-2.5 bg-[#FAF338] text-black border-2 border-black text-xs font-display font-bold uppercase tracking-wider hover:bg-white transition-colors flex items-center justify-center gap-2 shadow-[2px_2px_0px_#000]">
                                         <span class="material-symbols-outlined text-sm">open_in_new</span> Abrir Herramienta en Producción
                                     </a>
                                 </div>
@@ -1312,8 +1312,8 @@
                             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                                 <!-- Col 5: Dark Card -->
                                 <div class="lg:col-span-5 bg-[#1E1E1E] text-white p-6 sm:p-8 border-2 border-black shadow-[4px_4px_0px_#000] space-y-4">
-                                    <span class="badge-swiss bg-[#DE5B48] text-white font-bold">SLIDE 02 · VALOR OPERATIVO</span>
-                                    <h3 class="font-display font-black text-2xl sm:text-3xl uppercase leading-tight text-white border-b-4 border-[#DE5B48] pb-3">
+                                    <span class="badge-swiss bg-[#5A4A96] text-white font-bold">SLIDE 02 · VALOR OPERATIVO</span>
+                                    <h3 class="font-display font-black text-2xl sm:text-3xl uppercase leading-tight text-white border-b-4 border-[#5A4A96] pb-3">
                                         ¿En qué ayuda directamente?
                                     </h3>
                                     <p class="font-body text-xs sm:text-sm text-neutral-300 leading-relaxed">
@@ -1458,7 +1458,7 @@
                             <div class="flex flex-wrap items-center justify-between gap-3 pb-3.5 mb-4 border-b-2 border-black">
                                 <div class="flex items-center gap-3">
                                     <span class="badge-swiss bg-black text-white font-bold">SLIDE 04 · FICHA TÉCNICA</span>
-                                    <span class="font-display font-black text-xl text-neutral-900 tracking-tight">Xertica<span class="text-[#1899AF]">.ai</span></span>
+                                    <span class="font-display font-black text-xl text-neutral-900 tracking-tight">Xertica<span class="text-[#5A4A96]">.ai</span></span>
                                     <span class="border border-black px-2.5 py-0.5 text-[10px] font-mono font-bold uppercase rounded-full bg-white shadow-[1px_1px_0px_#000]">PROYECTO CORE</span>
                                 </div>
                                 <div class="flex items-center gap-2">
@@ -1741,7 +1741,7 @@
                         <div id="angel-slide-5" class="angel-slide hidden bg-[#FFFEF8] border-2 border-black p-6 sm:p-8 swiss-border shadow-[5px_5px_0px_#000]">
                             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                                 <!-- Col 5: Teal Swiss Block -->
-                                <div class="lg:col-span-5 bg-[#1899AF] text-white p-6 sm:p-8 border-2 border-black shadow-[4px_4px_0px_#000] space-y-5">
+                                <div class="lg:col-span-5 bg-[#5A4A96] text-white p-6 sm:p-8 border-2 border-black shadow-[4px_4px_0px_#000] space-y-5">
                                     <span class="badge-swiss bg-black text-[#FAF338] font-bold">SLIDE 05 · REPLICABILIDAD</span>
                                     <h3 class="font-display font-black text-2xl sm:text-3xl uppercase leading-tight text-white border-b-4 border-black pb-3">
                                         Escalabilidad LATAM
@@ -1839,12 +1839,12 @@
                         <div class="max-w-3xl space-y-4">
                             <div class="flex items-center gap-4 sm:gap-5">
                                 <div class="relative flex-shrink-0">
-                                    <img src="assets/team/carlos-espinosa.jpg" alt="Carlos Espinosa" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-black object-cover shadow-[3px_3px_0px_#C45BAA]" onerror="this.src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80'">
-                                    <span class="absolute -bottom-1 -right-1 bg-[#C45BAA] text-white text-[9px] font-mono font-bold px-1.5 py-0.5 border border-black shadow-[1px_1px_0px_#000]">EIR</span>
+                                    <img src="assets/team/carlos-espinosa.jpg" alt="Carlos Espinosa" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-black object-cover shadow-[3px_3px_0px_#000]" onerror="this.src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80'">
+                                    <span class="absolute -bottom-1 -right-1 bg-[#5A4A96] text-white text-[9px] font-mono font-bold px-1.5 py-0.5 border border-black shadow-[1px_1px_0px_#000]">EIR</span>
                                 </div>
                                 <div class="space-y-1.5 flex-1 min-w-0">
                                     <div class="flex flex-wrap items-center gap-2">
-                                        <span class="badge-swiss bg-[#C45BAA] text-white">Líder: Carlos Espinosa</span>
+                                        <span class="badge-swiss bg-[#5A4A96] text-white">Líder: Carlos Espinosa</span>
                                         <span class="font-display font-black text-xs text-neutral-700">Entrepreneur in Residence</span>
                                         <span class="text-neutral-400">|</span>
                                         <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 font-bold border border-emerald-500 text-[10px] font-mono">En Producción</span>
@@ -1857,9 +1857,9 @@
                                 </div>
                             </div>
                             
-                            <div class="border-l-4 border-[#C45BAA] pl-3 py-1">
-                                <div class="font-display font-black text-xs uppercase tracking-wider text-[#C45BAA] mb-1 flex items-center gap-2">
-                                    <span class="w-2.5 h-2.5 bg-[#C45BAA] inline-block"></span> 1. Objetivo Principal · Conciliación de Pipeline
+                            <div class="border-l-4 border-[#5A4A96] pl-3 py-1">
+                                <div class="font-display font-black text-xs uppercase tracking-wider text-[#5A4A96] mb-1 flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 bg-[#5A4A96] inline-block"></span> 1. Objetivo Principal · Conciliación de Pipeline
                                 </div>
                                 <p class="font-display font-bold text-base text-neutral-900 leading-snug">
                                     Semáforo operativo de conciliación: cruce del pipeline levantado en Partner Hub (Google) vs. pipeline generado o registrado en Salesforce.
@@ -1874,7 +1874,7 @@
                         <div class="bg-white border-2 border-black p-4 shadow-[4px_4px_0px_#000] flex-shrink-0 self-start lg:self-center">
                             <div class="flex items-center divide-x-2 divide-neutral-200 text-center font-mono">
                                 <div class="px-3 sm:px-4 first:pl-2">
-                                    <div class="font-display font-black text-2xl lg:text-3xl text-[#C45BAA] leading-none">$136K+</div>
+                                    <div class="font-display font-black text-2xl lg:text-3xl text-[#5A4A96] leading-none">$136K+</div>
                                     <div class="text-[9px] uppercase font-bold text-neutral-600 mt-1.5 whitespace-nowrap">REBATES<br>ASEGURADOS</div>
                                 </div>
                                 <div class="px-3 sm:px-4">
@@ -1949,7 +1949,7 @@
                             <!-- 2 Cajas Principales -->
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                 <div class="bg-white border-2 border-black p-3.5 shadow-[2px_2px_0px_#000]">
-                                    <div class="font-display font-black text-2xl sm:text-3xl text-[#C45BAA] leading-none">$136,051+ USD</div>
+                                    <div class="font-display font-black text-2xl sm:text-3xl text-[#5A4A96] leading-none">$136,051+ USD</div>
                                     <div class="text-[10px] font-mono font-bold uppercase text-neutral-600 mt-1">REBATE EN RIESGO BLINDADO</div>
                                     <p class="font-body text-xs text-neutral-700 mt-2 leading-tight">
                                         Detección y gestión oportuna de <strong>22 oportunidades críticas sin Deal Registration</strong>, protegiendo más de <strong>$1.74M USD de Net</strong>.
@@ -1967,11 +1967,11 @@
                             <!-- Assessments y Oportunidades Auditadas en Vivo -->
                             <div class="bg-white border-2 border-black p-3 shadow-[2px_2px_0px_#000]">
                                 <div class="font-display font-black text-[11px] uppercase tracking-wider text-neutral-900 mb-1 flex items-center gap-1.5">
-                                    <span class="material-symbols-outlined text-[#C45BAA] text-sm">fact_check</span> Assessments de Riesgo & Oportunidades Auditadas:
+                                    <span class="material-symbols-outlined text-[#5A4A96] text-sm">fact_check</span> Assessments de Riesgo & Oportunidades Auditadas:
                                 </div>
                                 <div class="grid grid-cols-2 gap-2 mt-2 pt-2 border-t border-neutral-200 text-xs font-mono">
                                     <div>
-                                        <div class="font-display font-bold text-base text-[#C45BAA]">22 Oportunidades Críticas</div>
+                                        <div class="font-display font-bold text-base text-[#5A4A96]">22 Oportunidades Críticas</div>
                                         <div class="text-[10px] text-neutral-600">Cuentas detectadas a tiempo sin registro en Partner Hub (+1.74M USD Net) para tramitar DR antes del cierre.</div>
                                     </div>
                                     <div>
@@ -2013,8 +2013,8 @@
                             <!-- Section Title & Target Teams -->
                             <div class="flex items-start justify-between gap-2 border-b-2 border-black pb-2.5">
                                 <div>
-                                    <div class="font-display font-black text-xs uppercase tracking-wider text-[#C45BAA] flex items-center gap-1.5">
-                                        <span class="material-symbols-outlined text-[#C45BAA] text-sm">public</span> 4. Escalabilidad & Replicabilidad LATAM
+                                    <div class="font-display font-black text-xs uppercase tracking-wider text-[#5A4A96] flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-[#5A4A96] text-sm">public</span> 4. Escalabilidad & Replicabilidad LATAM
                                     </div>
                                     <div class="text-[11px] font-mono text-neutral-600 mt-0.5 leading-snug">
                                         <strong>Equipos destino:</strong> Sales Operations Regional, Deal Desk, Directores Comerciales, Finanzas & Vendedores Workspace/GCP (México, Colombia, Perú, Chile).
@@ -2048,7 +2048,7 @@
                             <!-- Checkpoints de Replicabilidad e Iterabilidad -->
                             <div>
                                 <div class="text-[11px] font-display font-black uppercase tracking-wider text-neutral-800 mb-2 flex items-center gap-1.5">
-                                    <span class="w-2 h-2 bg-[#C45BAA] inline-block"></span> Checkpoints de Replicabilidad e Iterabilidad:
+                                    <span class="w-2 h-2 bg-[#5A4A96] inline-block"></span> Checkpoints de Replicabilidad e Iterabilidad:
                                 </div>
                                 <ul class="space-y-1.5 font-body text-xs text-neutral-700">
                                     <li class="flex items-start gap-2 bg-white border border-neutral-200 p-2">
@@ -2111,7 +2111,7 @@
                                     <span class="font-mono text-xs font-bold text-neutral-700 ml-2">DEMOSTRACIÓN EN VIDEO (SCREEN RECORDING 45s)</span>
                                 </div>
                                 <div class="flex items-center gap-2">
-                                    <a href="https://script.google.com/macros/s/AKfycbzdqBmml2SmWMDGuPkxVseJDAiqkADgPz15shyJk1Lg7RE1mjZ9F8q_1AgjXbMGrq2E/exec" target="_blank" class="px-3 py-1.5 bg-[#C45BAA] text-white border-2 border-black text-xs font-display font-bold uppercase tracking-wider hover:bg-black transition-colors flex items-center gap-1.5 shadow-[2px_2px_0px_#000]">
+                                    <a href="https://script.google.com/macros/s/AKfycbzdqBmml2SmWMDGuPkxVseJDAiqkADgPz15shyJk1Lg7RE1mjZ9F8q_1AgjXbMGrq2E/exec" target="_blank" class="px-4 py-2.5 bg-[#FAF338] text-black border-2 border-black text-xs font-display font-bold uppercase tracking-wider hover:bg-white transition-colors flex items-center justify-center gap-2 shadow-[2px_2px_0px_#000]">
                                         <span class="material-symbols-outlined text-sm">open_in_new</span> Abrir Herramienta en Producción
                                     </a>
                                 </div>
@@ -2205,12 +2205,12 @@
                             </div>
                             <div class="bg-neutral-50 border-2 border-black p-4 shadow-[2px_2px_0px_#000]">
                                 <div class="text-[10px] uppercase text-neutral-500 font-bold">Modelo de Adopción</div>
-                                <div class="font-display font-black text-2xl md:text-3xl text-[#1899AF] mt-1">Plug & Play</div>
+                                <div class="font-display font-black text-2xl md:text-3xl text-[#5A4A96] mt-1">Plug & Play</div>
                                 <div class="text-xs font-sans text-neutral-600 mt-0.5">Arquitectura 100% Serverless</div>
                             </div>
                             <div class="bg-neutral-50 border-2 border-black p-4 shadow-[2px_2px_0px_#000]">
                                 <div class="text-[10px] uppercase text-neutral-500 font-bold">Costo de Software</div>
-                                <div class="font-display font-black text-2xl md:text-3xl text-[#DE5B48] mt-1">$0 USD</div>
+                                <div class="font-display font-black text-2xl md:text-3xl text-[#5A4A96] mt-1">$0 USD</div>
                                 <div class="text-xs font-sans text-neutral-600 mt-0.5">Cero Licencias de Terceros</div>
                             </div>
                         </div>
@@ -2245,14 +2245,14 @@
                                     <tr class="hover:bg-cyan-50/50 transition-colors">
                                         <td class="p-4 border-r border-black align-top">
                                             <div class="flex items-center gap-2 mb-1">
-                                                <span class="w-3 h-3 rounded-full bg-[#1899AF] border border-black inline-block"></span>
+                                                <span class="w-3 h-3 rounded-full bg-[#5A4A96] border border-black inline-block"></span>
                                                 <span class="font-display font-bold text-sm text-neutral-900">FinOps & Control de Commits (BigQuery en Vivo)</span>
                                             </div>
                                             <div class="text-[11px] text-neutral-600 font-sans">
-                                                Líder: <strong class="text-[#1899AF]">Patricio Martin</strong> · EIR
+                                                Líder: <strong class="text-[#5A4A96]">Patricio Martin</strong> · EIR
                                             </div>
                                             <div class="mt-2 inline-flex items-center gap-1 px-2 py-0.5 bg-neutral-100 border border-neutral-300 text-[10px] font-mono">
-                                                <span class="material-symbols-outlined text-[#1899AF] text-[13px] mr-0.5">public</span> 100% LATAM (Regional)
+                                                <span class="material-symbols-outlined text-[#5A4A96] text-[13px] mr-0.5">public</span> 100% LATAM (Regional)
                                             </div>
                                         </td>
                                         <td class="p-4 border-r border-black align-top font-sans">
@@ -2267,7 +2267,7 @@
                                             <strong>Core Multi-Billing en BigQuery:</strong> Ingesta de datos en vivo desde BigQuery Partner Billing unificada para cualquier país de Xertica sin desarrollo adicional. Cada país solo vincula su repositorio de contratos.
                                         </td>
                                         <td class="p-4 text-center align-middle">
-                                            <button onclick="switchTab('patricio'); window.scrollTo({top: 380, behavior: 'smooth'});" class="px-3 py-1.5 bg-[#1899AF] text-white border-2 border-black font-display font-bold text-[11px] uppercase tracking-wider hover:bg-black transition-colors shadow-[2px_2px_0px_#000] whitespace-nowrap">
+                                            <button onclick="switchTab('patricio'); window.scrollTo({top: 380, behavior: 'smooth'});" class="px-3.5 py-1.5 bg-[#FFFEF8] hover:bg-[#FAF338] text-black border-2 border-black font-display font-bold text-[11px] uppercase tracking-wider shadow-[2px_2px_0px_#000] whitespace-nowrap transition-colors">
                                                 Ver Ficha ↗
                                             </button>
                                         </td>
@@ -2277,11 +2277,11 @@
                                     <tr class="hover:bg-red-50/50 transition-colors">
                                         <td class="p-4 border-r border-black align-top">
                                             <div class="flex items-center gap-2 mb-1">
-                                                <span class="w-3 h-3 rounded-full bg-[#DE5B48] border border-black inline-block"></span>
+                                                <span class="w-3 h-3 rounded-full bg-[#5A4A96] border border-black inline-block"></span>
                                                 <span class="font-display font-bold text-sm text-neutral-900">Plataforma de Renovaciones y Campañas Masivas SMB</span>
                                             </div>
                                             <div class="text-[11px] text-neutral-600 font-sans">
-                                                Líder: <strong class="text-[#DE5B48]">Jorge Caraballo</strong> · EIR
+                                                Líder: <strong class="text-[#5A4A96]">Jorge Caraballo</strong> · EIR
                                             </div>
                                             <div class="mt-2 inline-flex flex-wrap items-center gap-1 px-2 py-0.5 bg-neutral-100 border border-neutral-300 text-[10px] font-mono">
                                                 <span>🇲🇽</span> MX · <span>🇨🇴</span> CO · <span>🇵🇪</span> PE · <span>🇪🇨</span> EC · <span>🇦🇷</span> AR · <span>🇨🇱</span> CL
@@ -2299,7 +2299,7 @@
                                             <strong>Apps Script, Gmail y Google Sheets:</strong> Cada país solo requiere su base en CSV y su alias institucional. Plantillas editables por campaña e informe de impacto por cuenta y país con descarga a Excel restringido para cuentas @xertica.com.
                                         </td>
                                         <td class="p-4 text-center align-middle">
-                                            <button onclick="switchTab('jorge'); window.scrollTo({top: 380, behavior: 'smooth'});" class="px-3 py-1.5 bg-[#DE5B48] text-white border-2 border-black font-display font-bold text-[11px] uppercase tracking-wider hover:bg-black transition-colors shadow-[2px_2px_0px_#000] whitespace-nowrap">
+                                            <button onclick="switchTab('jorge'); window.scrollTo({top: 380, behavior: 'smooth'});" class="px-3.5 py-1.5 bg-[#FFFEF8] hover:bg-[#FAF338] text-black border-2 border-black font-display font-bold text-[11px] uppercase tracking-wider shadow-[2px_2px_0px_#000] whitespace-nowrap transition-colors">
                                                 Ver Ficha ↗
                                             </button>
                                         </td>
@@ -2331,7 +2331,7 @@
                                             <strong>Conexión Directa BigQuery & Apps Script:</strong> Ingesta y consultas continuas con datos en vivo desde Google Admin Console y Partner Hub. Lógicas de exclusión de Frontline y umbrales de discrepancia comercial configurables sin tocar código.
                                         </td>
                                         <td class="p-4 text-center align-middle">
-                                            <button onclick="switchTab('angel'); window.scrollTo({top: 380, behavior: 'smooth'});" class="px-3 py-1.5 bg-[#5A4A96] text-white border-2 border-black font-display font-bold text-[11px] uppercase tracking-wider hover:bg-black transition-colors shadow-[2px_2px_0px_#000] whitespace-nowrap">
+                                            <button onclick="switchTab('angel'); window.scrollTo({top: 380, behavior: 'smooth'});" class="px-3.5 py-1.5 bg-[#FFFEF8] hover:bg-[#FAF338] text-black border-2 border-black font-display font-bold text-[11px] uppercase tracking-wider shadow-[2px_2px_0px_#000] whitespace-nowrap transition-colors">
                                                 Ver Ficha ↗
                                             </button>
                                         </td>
@@ -2341,11 +2341,11 @@
                                     <tr class="hover:bg-pink-50/50 transition-colors">
                                         <td class="p-4 border-r border-black align-top">
                                             <div class="flex items-center gap-2 mb-1">
-                                                <span class="w-3 h-3 rounded-full bg-[#C45BAA] border border-black inline-block"></span>
+                                                <span class="w-3 h-3 rounded-full bg-[#5A4A96] border border-black inline-block"></span>
                                                 <span class="font-display font-bold text-sm text-neutral-900">Torre de Control Incentivos & DR · BigQuery en Vivo</span>
                                             </div>
                                             <div class="text-[11px] text-neutral-600 font-sans">
-                                                Líder: <strong class="text-[#C45BAA]">Carlos Espinosa</strong> · EIR
+                                                Líder: <strong class="text-[#5A4A96]">Carlos Espinosa</strong> · EIR
                                             </div>
                                             <div class="mt-2 inline-flex items-center gap-1 px-2 py-0.5 bg-neutral-100 border border-neutral-300 text-[10px] font-mono">
                                                 <span>🇲🇽</span> MX · <span>🇨🇴</span> CO · <span>🇵🇪</span> PE · <span>🇨🇱</span> CL (100% LATAM)
@@ -2363,7 +2363,7 @@
                                             <strong>Core Serverless Conectado a BigQuery & IA:</strong> Cruce continuo de datos vivos de Google Partner Hub y Salesforce. Reglas de umbrales ($10k WS, $60k GCP, $0 Gemini) y cálculo de incentivos en desarrollo con IA. UI Material Design 3.
                                         </td>
                                         <td class="p-4 text-center align-middle">
-                                            <button onclick="switchTab('carlos'); window.scrollTo({top: 380, behavior: 'smooth'});" class="px-3 py-1.5 bg-[#C45BAA] text-white border-2 border-black font-display font-bold text-[11px] uppercase tracking-wider hover:bg-black transition-colors shadow-[2px_2px_0px_#000] whitespace-nowrap">
+                                            <button onclick="switchTab('carlos'); window.scrollTo({top: 380, behavior: 'smooth'});" class="px-3.5 py-1.5 bg-[#FFFEF8] hover:bg-[#FAF338] text-black border-2 border-black font-display font-bold text-[11px] uppercase tracking-wider shadow-[2px_2px_0px_#000] whitespace-nowrap transition-colors">
                                                 Ver Ficha ↗
                                             </button>
                                         </td>
@@ -2381,7 +2381,7 @@
                             <div class="flex flex-wrap items-center gap-2 mb-2">
                                 <span class="badge-swiss bg-[#FAF338] text-black font-bold">CÉLULA DE INNOVACIÓN & PRODUCT BUILDING</span>
                                 <span class="badge-swiss bg-black text-[#FAF338] font-bold">EIR CORE SQUAD</span>
-                                <span class="badge-swiss bg-[#DE5B48] text-white font-bold">ALCANCE 100% REGIONAL</span>
+                                <span class="badge-swiss bg-[#5A4A96] text-white font-bold">ALCANCE 100% REGIONAL</span>
                             </div>
                             <h3 class="font-display font-black text-3xl md:text-5xl text-[#1E1E1E] uppercase mt-2">
                                 Equipo EIR México: Una Célula Integral de Alto Rendimiento
@@ -2431,14 +2431,14 @@
 
                             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                                 <!-- Eslabón 1: Jorge -->
-                                <div class="bg-white border-2 border-black p-4 shadow-[3px_3px_0px_#DE5B48] flex flex-col justify-between">
+                                <div class="bg-white border-2 border-black p-4 shadow-[3px_3px_0px_#000] flex flex-col justify-between">
                                     <div>
                                         <div class="flex items-center justify-between mb-2">
-                                            <span class="badge-swiss bg-[#DE5B48] text-white text-[9px]">FASE 1 · TRACCIÓN</span>
+                                            <span class="badge-swiss bg-[#5A4A96] text-white text-[9px]">FASE 1 · TRACCIÓN</span>
                                             <span class="font-mono text-xs font-bold text-neutral-400">01</span>
                                         </div>
                                         <h5 class="font-display font-black text-sm uppercase text-neutral-900">Demanda & Campañas SMB</h5>
-                                        <div class="text-[11px] font-mono text-[#DE5B48] font-bold mt-0.5">Jorge Caraballo · EIR</div>
+                                        <div class="text-[11px] font-mono text-[#5A4A96] font-bold mt-0.5">Jorge Caraballo · EIR</div>
                                         <p class="font-sans text-xs text-neutral-600 mt-2 leading-relaxed">
                                             Reactiva masivamente carteras desatendidas, mide interés en tiempo real y detecta qué cuentas necesitan regularizar licenciamiento o renovar.
                                         </p>
@@ -2467,14 +2467,14 @@
                                 </div>
 
                                 <!-- Eslabón 3: Patricio -->
-                                <div class="bg-white border-2 border-black p-4 shadow-[3px_3px_0px_#1899AF] flex flex-col justify-between">
+                                <div class="bg-white border-2 border-black p-4 shadow-[3px_3px_0px_#000] flex flex-col justify-between">
                                     <div>
                                         <div class="flex items-center justify-between mb-2">
-                                            <span class="badge-swiss bg-[#1899AF] text-white text-[9px]">FASE 3 · EXPANSIÓN CLOUD</span>
+                                            <span class="badge-swiss bg-[#5A4A96] text-white text-[9px]">FASE 3 · EXPANSIÓN CLOUD</span>
                                             <span class="font-mono text-xs font-bold text-neutral-400">03</span>
                                         </div>
                                         <h5 class="font-display font-black text-sm uppercase text-neutral-900">FinOps & Commits GCP</h5>
-                                        <div class="text-[11px] font-mono text-[#1899AF] font-bold mt-0.5">Patricio Martin · EIR</div>
+                                        <div class="text-[11px] font-mono text-[#5A4A96] font-bold mt-0.5">Patricio Martin · EIR</div>
                                         <p class="font-sans text-xs text-neutral-600 mt-2 leading-relaxed">
                                             Monitorea el consumo masivo en BigQuery, detecta riesgos de under-commit y capitaliza crecimientos para pactar contratos CUD multianuales de alto margen.
                                         </p>
@@ -2485,14 +2485,14 @@
                                 </div>
 
                                 <!-- Eslabón 4: Carlos -->
-                                <div class="bg-white border-2 border-black p-4 shadow-[3px_3px_0px_#C45BAA] flex flex-col justify-between">
+                                <div class="bg-white border-2 border-black p-4 shadow-[3px_3px_0px_#000] flex flex-col justify-between">
                                     <div>
                                         <div class="flex items-center justify-between mb-2">
-                                            <span class="badge-swiss bg-[#C45BAA] text-white text-[9px]">FASE 4 · MONETIZACIÓN</span>
+                                            <span class="badge-swiss bg-[#5A4A96] text-white text-[9px]">FASE 4 · MONETIZACIÓN</span>
                                             <span class="font-mono text-xs font-bold text-neutral-400">04</span>
                                         </div>
                                         <h5 class="font-display font-black text-sm uppercase text-neutral-900">Torre de Control Incentivos (G26)</h5>
-                                        <div class="text-[11px] font-mono text-[#C45BAA] font-bold mt-0.5">Carlos Espinosa · EIR</div>
+                                        <div class="text-[11px] font-mono text-[#5A4A96] font-bold mt-0.5">Carlos Espinosa · EIR</div>
                                         <p class="font-sans text-xs text-neutral-600 mt-2 leading-relaxed">
                                             Audita Salesforce vs Google Partner Advantage 2026. Su semáforo bloquea OCs sin Deal Registration y asegura hasta 16.1% de rebates y 2X Gemini, blindando el margen de todo el equipo.
                                         </p>
@@ -2702,13 +2702,13 @@
 
                             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                                 <!-- Card 1: Jorge Caraballo -->
-                                <div class="bg-[#FFFEF8] border-2 border-black p-4 flex flex-col justify-between shadow-[3px_3px_0px_#DE5B48] hover:-translate-y-0.5 transition-transform">
+                                <div class="bg-[#FFFEF8] border-2 border-black p-4 flex flex-col justify-between shadow-[3px_3px_0px_#000] hover:-translate-y-0.5 transition-transform">
                                     <div>
                                         <div class="flex items-center gap-3 mb-3">
-                                            <img src="assets/team/jorge-caraballo.jpg" alt="Jorge Caraballo" class="w-14 h-14 rounded-full border-2 border-black object-cover shadow-[2px_2px_0px_#DE5B48]">
+                                            <img src="assets/team/jorge-caraballo.jpg" alt="Jorge Caraballo" class="w-14 h-14 rounded-full border-2 border-black object-cover shadow-[2px_2px_0px_#5A4A96]">
                                             <div>
                                                 <div class="font-display font-black text-base text-neutral-900">Jorge Caraballo</div>
-                                                <span class="badge-swiss bg-[#DE5B48] text-white text-[9px] py-0.5 px-2 font-bold">EIR</span>
+                                                <span class="badge-swiss bg-[#5A4A96] text-white text-[9px] py-0.5 px-2 font-bold">EIR</span>
                                             </div>
                                         </div>
                                         <div class="bg-neutral-100 border border-neutral-300 p-1.5 text-[10px] font-mono text-neutral-800 font-bold mb-2">
@@ -2725,7 +2725,7 @@
                                         </div>
                                     </div>
                                     <div class="mt-4 pt-3 border-t border-neutral-200">
-                                        <button onclick="switchTab('jorge'); window.scrollTo({top: 380, behavior: 'smooth'});" class="w-full py-1.5 bg-[#DE5B48] text-white border border-black font-display font-bold text-[10px] uppercase hover:bg-black transition-colors">
+                                        <button onclick="switchTab('jorge'); window.scrollTo({top: 380, behavior: 'smooth'});" class="w-full py-1.5 bg-[#FFFEF8] hover:bg-[#FAF338] text-black border-2 border-black font-display font-bold text-[10px] uppercase shadow-[2px_2px_0px_#000] transition-colors">
                                              Ver Iniciativa ↗
                                         </button>
                                     </div>
@@ -2755,20 +2755,20 @@
                                         </div>
                                     </div>
                                     <div class="mt-4 pt-3 border-t border-neutral-200">
-                                        <button onclick="switchTab('angel'); window.scrollTo({top: 380, behavior: 'smooth'});" class="w-full py-1.5 bg-[#5A4A96] text-white border border-black font-display font-bold text-[10px] uppercase hover:bg-black transition-colors">
+                                        <button onclick="switchTab('angel'); window.scrollTo({top: 380, behavior: 'smooth'});" class="w-full py-1.5 bg-[#FFFEF8] hover:bg-[#FAF338] text-black border-2 border-black font-display font-bold text-[10px] uppercase shadow-[2px_2px_0px_#000] transition-colors">
                                              Ver Iniciativa ↗
                                         </button>
                                     </div>
                                 </div>
 
                                 <!-- Card 3: Patricio Martin -->
-                                <div class="bg-[#FFFEF8] border-2 border-black p-4 flex flex-col justify-between shadow-[3px_3px_0px_#1899AF] hover:-translate-y-0.5 transition-transform">
+                                <div class="bg-[#FFFEF8] border-2 border-black p-4 flex flex-col justify-between shadow-[3px_3px_0px_#000] hover:-translate-y-0.5 transition-transform">
                                     <div>
                                         <div class="flex items-center gap-3 mb-3">
-                                            <img src="assets/team/patricio-martin.jpg" alt="Patricio Martin" class="w-14 h-14 rounded-full border-2 border-black object-cover shadow-[2px_2px_0px_#1899AF]">
+                                            <img src="assets/team/patricio-martin.jpg" alt="Patricio Martin" class="w-14 h-14 rounded-full border-2 border-black object-cover shadow-[2px_2px_0px_#5A4A96]">
                                             <div>
                                                 <div class="font-display font-black text-base text-neutral-900">Patricio Martin</div>
-                                                <span class="badge-swiss bg-[#1899AF] text-white text-[9px] py-0.5 px-2 font-bold">EIR</span>
+                                                <span class="badge-swiss bg-[#5A4A96] text-white text-[9px] py-0.5 px-2 font-bold">EIR</span>
                                             </div>
                                         </div>
                                         <div class="bg-neutral-100 border border-neutral-300 p-1.5 text-[10px] font-mono text-neutral-800 font-bold mb-2">
@@ -2785,20 +2785,20 @@
                                         </div>
                                     </div>
                                     <div class="mt-4 pt-3 border-t border-neutral-200">
-                                        <button onclick="switchTab('patricio'); window.scrollTo({top: 380, behavior: 'smooth'});" class="w-full py-1.5 bg-[#1899AF] text-white border border-black font-display font-bold text-[10px] uppercase hover:bg-black transition-colors">
+                                        <button onclick="switchTab('patricio'); window.scrollTo({top: 380, behavior: 'smooth'});" class="w-full py-1.5 bg-[#FFFEF8] hover:bg-[#FAF338] text-black border-2 border-black font-display font-bold text-[10px] uppercase shadow-[2px_2px_0px_#000] transition-colors">
                                              Ver Iniciativa ↗
                                         </button>
                                     </div>
                                 </div>
 
                                 <!-- Card 4: Carlos Espinosa -->
-                                <div class="bg-[#FFFEF8] border-2 border-black p-4 flex flex-col justify-between shadow-[3px_3px_0px_#C45BAA] hover:-translate-y-0.5 transition-transform">
+                                <div class="bg-[#FFFEF8] border-2 border-black p-4 flex flex-col justify-between shadow-[3px_3px_0px_#000] hover:-translate-y-0.5 transition-transform">
                                     <div>
                                         <div class="flex items-center gap-3 mb-3">
-                                            <img src="assets/team/carlos-espinosa.jpg" alt="Carlos Espinosa" class="w-14 h-14 rounded-full border-2 border-black object-cover shadow-[2px_2px_0px_#C45BAA]">
+                                            <img src="assets/team/carlos-espinosa.jpg" alt="Carlos Espinosa" class="w-14 h-14 rounded-full border-2 border-black object-cover shadow-[2px_2px_0px_#5A4A96]">
                                             <div>
                                                 <div class="font-display font-black text-base text-neutral-900">Carlos Espinosa</div>
-                                                <span class="badge-swiss bg-[#C45BAA] text-white text-[9px] py-0.5 px-2 font-bold">EIR</span>
+                                                <span class="badge-swiss bg-[#5A4A96] text-white text-[9px] py-0.5 px-2 font-bold">EIR</span>
                                             </div>
                                         </div>
                                         <div class="bg-neutral-100 border border-neutral-300 p-1.5 text-[10px] font-mono text-neutral-800 font-bold mb-2">
@@ -2815,7 +2815,7 @@
                                         </div>
                                     </div>
                                     <div class="mt-4 pt-3 border-t border-neutral-200">
-                                        <button onclick="switchTab('carlos'); window.scrollTo({top: 380, behavior: 'smooth'});" class="w-full py-1.5 bg-[#C45BAA] text-white border-2 border-black font-display font-bold text-[10px] uppercase hover:bg-black transition-colors">
+                                        <button onclick="switchTab('carlos'); window.scrollTo({top: 380, behavior: 'smooth'});" class="w-full py-1.5 bg-[#FFFEF8] hover:bg-[#FAF338] text-black border-2 border-black font-display font-bold text-[10px] uppercase shadow-[2px_2px_0px_#000] transition-colors">
                                              Ver Iniciativa ↗
                                         </button>
                                     </div>
@@ -2825,7 +2825,7 @@
 
                         <!-- Bloque de Cierre: Activación Llave en Mano para Directores LATAM -->
                         <div class="pt-6 border-t-2 border-black">
-                            <div class="bg-[#1E1E1E] text-white p-6 border-2 border-black shadow-[4px_4px_0px_#FAF338]">
+                            <div class="bg-[#1E1E1E] text-white p-6 border-2 border-black shadow-[4px_4px_0px_#000]">
                                 <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
                                     <div>
                                         <div class="flex items-center gap-2 mb-1">
@@ -2868,7 +2868,7 @@
         <!-- Fixed Slide Controls Overlay -->
         <div class="fixed top-6 left-8 right-8 flex justify-between items-center z-40 pointer-events-none">
             <div class="font-display font-black text-2xl tracking-tighter" style="color: var(--negro-xertica)">
-                Xertica<span class="text-[#1899AF]">.ai</span>
+                Xertica<span class="text-[#5A4A96]">.ai</span>
             </div>
             <div class="flex gap-2 sm:gap-3 pointer-events-auto items-center">
                 <button onclick="prevSlide()" class="px-3 sm:px-4 py-2 border-2 border-black hover:bg-black hover:text-white transition-colors font-display font-bold text-xs uppercase bg-[#FFFEF8] shadow-[2px_2px_0px_#000]">
@@ -2896,7 +2896,7 @@
         <div class="slide active bg-[#F2EDD8]" id="slide-0">
             <div class="grid grid-cols-12 h-full">
                 <div class="col-span-12 lg:col-span-6 flex flex-col justify-center px-8 lg:px-16 z-20">
-                    <span class="badge-swiss bg-[#1899AF] text-white self-start mb-4 stagger-up">PORTFOLIO EIR MÉXICO 2026</span>
+                    <span class="badge-swiss bg-[#5A4A96] text-white self-start mb-4 stagger-up">PORTFOLIO EIR MÉXICO 2026</span>
                     <h1 class="font-display font-black text-5xl lg:text-7xl leading-[0.9] uppercase stagger-up delay-1">
                         Soluciones Escalables para LATAM
                     </h1>
@@ -2925,7 +2925,7 @@
         <!-- SLIDE 1: PATRICIO MARTIN - FINOPS -->
         <div class="slide bg-[#FFFEF8]" id="slide-1">
             <div class="grid grid-cols-12 h-full">
-                <div class="col-span-12 lg:col-span-5 bg-[#1899AF] text-white flex flex-col justify-center px-8 lg:px-16 relative">
+                <div class="col-span-12 lg:col-span-5 bg-[#5A4A96] text-white flex flex-col justify-center px-8 lg:px-16 relative">
                     <div class="shape-corner bg-[#FAF338] w-48 h-48 top-0 right-0 blend-multiply opacity-50"></div>
                     <div class="flex items-center gap-3 mb-4 stagger-up">
                         <img src="assets/team/patricio-martin.jpg" alt="Patricio Martin" class="w-12 h-12 rounded-full border-2 border-white object-cover shadow-[2px_2px_0px_#FAF338]" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80'">
@@ -2948,7 +2948,7 @@
                         <div class="border-l-4 border-black pl-3 py-1">
                             <strong>Consumo y análisis en vivo conectado a través de BigQuery:</strong> Telemetría directa sin reportes manuales desfasados.
                         </div>
-                        <div class="border-l-4 border-[#1899AF] pl-3 py-1">
+                        <div class="border-l-4 border-[#5A4A96] pl-3 py-1">
                             <strong>Consolidación de contratos Google y clientes:</strong> Cruce continuo de CUDs y commitments frente al ritmo de facturación.
                         </div>
                         <div class="border-l-4 border-indigo-600 pl-3 py-1">
@@ -2959,7 +2959,7 @@
                         </div>
                     </div>
                     <div class="mt-6 stagger-up delay-2">
-                        <a href="https://script.google.com/a/macros/xertica.com/s/AKfycbzNFrFsFDN4T18OrzQSpXsOMM_OLqJIYhK8O0S77QUtDWLZq64TxkhNnM78moDX4BDKdQ/exec" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 bg-[#1899AF] text-white border-2 border-black font-display font-black text-xs uppercase tracking-wider hover:bg-black transition-colors shadow-[4px_4px_0px_#000]">
+                        <a href="https://script.google.com/a/macros/xertica.com/s/AKfycbzNFrFsFDN4T18OrzQSpXsOMM_OLqJIYhK8O0S77QUtDWLZq64TxkhNnM78moDX4BDKdQ/exec" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 bg-[#FAF338] text-black border-2 border-black font-display font-black text-xs uppercase tracking-wider hover:bg-white transition-colors shadow-[4px_4px_0px_#000]">
                             <span class="material-symbols-outlined text-base">open_in_new</span> Abrir Herramienta en Producción ↗
                         </a>
                     </div>
@@ -2970,7 +2970,7 @@
         <!-- SLIDE 2: JORGE CARABALLO - RENOVACIONES & CAMPAÑAS SMB -->
         <div class="slide bg-[#F5F0E8]" id="slide-2">
             <div class="grid grid-cols-12 h-full">
-                <div class="col-span-12 lg:col-span-5 bg-[#DE5B48] text-white flex flex-col justify-center px-8 lg:px-16 relative">
+                <div class="col-span-12 lg:col-span-5 bg-[#5A4A96] text-white flex flex-col justify-center px-8 lg:px-16 relative">
                     <div class="flex items-center gap-3 mb-4 stagger-up">
                         <img src="assets/team/jorge-caraballo.jpg" alt="Jorge Caraballo" class="w-12 h-12 rounded-full border-2 border-white object-cover shadow-[2px_2px_0px_#000]" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80'">
                         <span class="badge-swiss bg-black text-white">JORGE CARABALLO · RENOVACIONES SMB</span>
@@ -2996,12 +2996,12 @@
                         </div>
                         <div class="bg-white border-2 border-black p-3">
                             <span class="text-neutral-500 block text-[10px] uppercase font-bold">OPEN RATE (222/324)</span>
-                            <span class="font-display font-black text-2xl sm:text-3xl text-[#DE5B48]">68%</span>
+                            <span class="font-display font-black text-2xl sm:text-3xl text-[#5A4A96]">68%</span>
                             <span class="text-[10px] text-neutral-600 block mt-0.5">Filtro anti-bot real</span>
                         </div>
                         <div class="bg-white border-2 border-black p-3">
                             <span class="text-neutral-500 block text-[10px] uppercase font-bold">COBERTURA</span>
-                            <span class="font-display font-black text-2xl sm:text-3xl text-[#2E8B5A]">5</span>
+                            <span class="font-display font-black text-2xl sm:text-3xl text-[#5A4A96]">5</span>
                             <span class="text-[10px] text-neutral-600 block mt-0.5">MX, CO, PE, EC, AR</span>
                         </div>
                     </div>
@@ -3009,7 +3009,7 @@
                         <div class="border-l-4 border-black pl-3 py-1">
                             <strong>Automatización Integral de Envíos:</strong> Carga masiva CSV, validación de plantilla y remitente desde <code class="bg-neutral-100 px-1 py-0.5 font-mono text-[11px]">renovaciones.xertica@xertica.com</code>.
                         </div>
-                        <div class="border-l-4 border-[#DE5B48] pl-3 py-1">
+                        <div class="border-l-4 border-[#5A4A96] pl-3 py-1">
                             <strong>Doble Llamada a la Acción & Historial:</strong> Distinción "Saber más" vs "Agendar sesión" y seguimiento por cuenta con 1 clic (WhatsApp/llamada).
                         </div>
                         <div class="border-l-4 border-emerald-600 pl-3 py-1 bg-emerald-50 text-emerald-950 p-2">
@@ -3017,7 +3017,7 @@
                         </div>
                     </div>
                     <div class="mt-5 stagger-up delay-3">
-                        <a href="https://script.google.com/a/macros/xertica.com/s/AKfycbwlwksFORqQZ5oMv6PvT5G-fPwupqWjCQPZPgcJraRPan50anciUZ7VZQ1FNjPC3H8v/exec" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 bg-[#DE5B48] text-white border-2 border-black font-display font-black text-xs uppercase tracking-wider hover:bg-black transition-colors shadow-[4px_4px_0px_#000]">
+                        <a href="https://script.google.com/a/macros/xertica.com/s/AKfycbwlwksFORqQZ5oMv6PvT5G-fPwupqWjCQPZPgcJraRPan50anciUZ7VZQ1FNjPC3H8v/exec" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 bg-[#FAF338] text-black border-2 border-black font-display font-black text-xs uppercase tracking-wider hover:bg-white transition-colors shadow-[4px_4px_0px_#000]">
                             <span class="material-symbols-outlined text-base">open_in_new</span> Abrir Herramienta en Producción ↗
                         </a>
                     </div>
@@ -3074,7 +3074,7 @@
                         </div>
                     </div>
                     <div class="mt-5 stagger-up delay-2">
-                        <a href="https://script.google.com/a/macros/xertica.com/s/AKfycbyc4jeUYpMTzBSgbyF7N157WhpUXzNKCeQxwveDhaCQ_RRv-CDsePoE91BaVGnF8JYamQ/exec" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 bg-[#5A4A96] text-white border-2 border-white font-display font-black text-xs uppercase tracking-wider hover:bg-white hover:text-black transition-colors shadow-[4px_4px_0px_#FAF338]">
+                        <a href="https://script.google.com/a/macros/xertica.com/s/AKfycbyc4jeUYpMTzBSgbyF7N157WhpUXzNKCeQxwveDhaCQ_RRv-CDsePoE91BaVGnF8JYamQ/exec" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 bg-[#5A4A96] text-white border-2 border-white font-display font-black text-xs uppercase tracking-wider hover:bg-white hover:text-black transition-colors shadow-[4px_4px_0px_#000]">
                             <span class="material-symbols-outlined text-base">open_in_new</span> Abrir Herramienta en Producción ↗
                         </a>
                     </div>
@@ -3085,7 +3085,7 @@
         <!-- SLIDE 4: CARLOS ESPINOSA - TORRE DE CONTROL DE INCENTIVOS G26 -->
         <div class="slide bg-[#FFFEF8]" id="slide-4">
             <div class="grid grid-cols-12 h-full">
-                <div class="col-span-12 lg:col-span-5 bg-[#C45BAA] text-white flex flex-col justify-center px-8 lg:px-16 relative">
+                <div class="col-span-12 lg:col-span-5 bg-[#5A4A96] text-white flex flex-col justify-center px-8 lg:px-16 relative">
                     <div class="flex items-center gap-3 mb-4 stagger-up">
                         <img src="assets/team/carlos-espinosa.jpg" alt="Carlos Espinosa" class="w-12 h-12 rounded-full border-2 border-white object-cover shadow-[2px_2px_0px_#000]" onerror="this.src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80'">
                         <span class="badge-swiss bg-black text-[#FAF338] font-bold">CARLOS ESPINOSA · CONEXIÓN BIGQUERY & PARTNER HUB</span>
@@ -3106,13 +3106,13 @@
                 <div class="col-span-12 lg:col-span-7 flex flex-col justify-center px-8 lg:px-16">
                     <h3 class="font-display font-bold text-2xl lg:text-3xl title-line stagger-up mb-6">Conciliación Pipeline & Margen 2026</h3>
                     <div class="space-y-4 font-body text-base stagger-up delay-1">
-                        <div class="border-l-4 border-[#C45BAA] pl-4 py-1">
+                        <div class="border-l-4 border-[#5A4A96] pl-4 py-1">
                             <strong>Semáforo de Conciliación Partner Hub vs. Salesforce:</strong> Cruce en tiempo real del pipeline levantado en Google vs. registrado en Salesforce, identificando oportunidades sin DR para asegurar cobro de incentivos al cierre.
                         </div>
                         <div class="border-l-4 border-black pl-4 py-1">
                             <strong>Cálculo de Incentivos con IA (En Construcción):</strong> Automatización inteligente con reglas oficiales de Google Cloud 2026 y fórmula Net to Google 80%.
                         </div>
-                        <div class="border-l-4 border-[#1899AF] pl-4 py-1">
+                        <div class="border-l-4 border-[#5A4A96] pl-4 py-1">
                             <strong>Radar Estratégico Gemini AI (PayOut 2X):</strong> Registro forzoso de Deal Registration desde 1 licencia para multiplicador del 20% y cobro doble.
                         </div>
                         <div class="border-l-4 border-emerald-600 pl-4 py-1">
@@ -3135,14 +3135,14 @@
                         4 líderes complementarios articulados en un solo flujo continuo de revenue: demanda masiva SMB, auditoría Workspace & IA, FinOps GCP y blindaje de rebates CRM.
                     </p>
                     <div class="grid grid-cols-1 md:grid-cols-4 gap-4 font-mono text-xs stagger-up delay-1">
-                        <div class="bg-[#FFFEF8] border-2 border-black p-4 shadow-[2px_2px_0px_#1899AF]">
-                            <span class="badge-swiss bg-[#1899AF] text-white text-[9px] mb-2 font-bold">FINOPS & COMMITS</span>
+                        <div class="bg-[#FFFEF8] border-2 border-black p-4 shadow-[2px_2px_0px_#5A4A96]">
+                            <span class="badge-swiss bg-[#5A4A96] text-white text-[9px] mb-2 font-bold">FINOPS & COMMITS</span>
                             <div class="font-display font-bold text-base font-sans text-neutral-900 mt-1">Patricio Martin</div>
                             <div class="text-[10px] text-emerald-700 font-bold mt-1">+8 Assessments · +$500K Opps SF</div>
                             <p class="font-sans text-xs text-neutral-600 mt-2">Integración con BigQuery billing export unificado para cualquier país.</p>
                         </div>
-                        <div class="bg-[#FFFEF8] border-2 border-black p-4 shadow-[2px_2px_0px_#DE5B48]">
-                            <span class="badge-swiss bg-[#DE5B48] text-white text-[9px] mb-2 font-bold">RENOVACIONES SMB</span>
+                        <div class="bg-[#FFFEF8] border-2 border-black p-4 shadow-[2px_2px_0px_#5A4A96]">
+                            <span class="badge-swiss bg-[#5A4A96] text-white text-[9px] mb-2 font-bold">RENOVACIONES SMB</span>
                             <div class="font-display font-bold text-base font-sans text-neutral-900 mt-1">Jorge Caraballo</div>
                             <div class="text-[10px] text-emerald-700 font-bold mt-1">336 Cuentas (5 Países) · 68% Open Rate</div>
                             <p class="font-sans text-xs text-neutral-600 mt-2">Flujo nativo con Apps Script, Gmail y Sheets. Informe Excel con acceso @xertica.com.</p>
@@ -3153,8 +3153,8 @@
                             <div class="text-[10px] text-emerald-700 font-bold mt-1">100% Revenue Protegido · 0 Días Manual</div>
                             <p class="font-sans text-xs text-neutral-600 mt-2">Integración nativa con bases de suscripciones y facturación regional.</p>
                         </div>
-                        <div class="bg-[#FFFEF8] border-2 border-black p-4 shadow-[2px_2px_0px_#C45BAA]">
-                            <span class="badge-swiss bg-[#C45BAA] text-white text-[9px] mb-2 font-bold">INCENTIVOS & DR (G26)</span>
+                        <div class="bg-[#FFFEF8] border-2 border-black p-4 shadow-[2px_2px_0px_#5A4A96]">
+                            <span class="badge-swiss bg-[#5A4A96] text-white text-[9px] mb-2 font-bold">INCENTIVOS & DR (G26)</span>
                             <div class="font-display font-bold text-base font-sans text-neutral-900 mt-1">Carlos Espinosa</div>
                             <div class="text-[10px] text-emerald-700 font-bold mt-1">$136K+ Rebate Blindado · $20M+ Pipeline</div>
                             <p class="font-sans text-xs text-neutral-600 mt-2">Apps Script V8, BigQuery, Sheets y Material Design 3. 100% Plug & Play.</p>
@@ -3198,7 +3198,7 @@
                     <h3 class="font-display font-black text-4xl lg:text-5xl uppercase leading-tight stagger-up mb-6">
                         Plataforma Lista para Presentación
                     </h3>
-                    <button onclick="setAppMode('platform')" class="bg-black text-white px-6 py-4 font-display font-bold text-sm uppercase tracking-wider border-2 border-black hover:bg-neutral-800 transition-colors shadow-[4px_4px_0px_rgba(0,0,0,0.3)]">
+                    <button onclick="setAppMode('platform')" class="bg-black text-white px-6 py-4 font-display font-bold text-sm uppercase tracking-wider border-2 border-black hover:bg-neutral-800 transition-colors shadow-[4px_4px_0px_#000]">
                         Explorar Hub Interactivo
                     </button>
                 </div>
@@ -3213,7 +3213,7 @@
         <div class="bg-[#FFFEF8] border-2 border-black p-6 max-w-xl w-full swiss-border">
             <div class="flex justify-between items-start pb-3 border-b-2 border-black mb-4">
                 <div>
-                    <span class="badge-swiss bg-[#1899AF] text-white text-[10px]">Slack / WhatsApp Ready</span>
+                    <span class="badge-swiss bg-[#5A4A96] text-white text-[10px]">Slack / WhatsApp Ready</span>
                     <h3 class="font-display font-black text-xl text-[#1E1E1E] mt-1">Resumen Ejecutivo para Vanessa Tinoco</h3>
                 </div>
                 <button onclick="closeShareModal()" class="hover:text-red-500 flex items-center"><span class="material-symbols-outlined text-2xl font-bold">close</span></button>
