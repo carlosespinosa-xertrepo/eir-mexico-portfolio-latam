@@ -1178,257 +1178,286 @@
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                    
-                    <!-- Left Column: Ficha Ejecutiva Digerible -->
-                    <div class="lg:col-span-5 space-y-6">
-
-                        <!-- 2. EN QUÉ AYUDA DIRECTAMENTE -->
-                        <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border">
-                            <div class="font-display font-black text-xs uppercase tracking-wider text-[#1E1E1E] mb-2.5 flex items-center gap-2">
-                                <span class="w-2.5 h-2.5 bg-[#1E1E1E] inline-block"></span> 2. ¿En qué ayuda directamente?
-                            </div>
-                            <ul class="space-y-3 font-body text-xs text-neutral-700">
-                                <li class="flex items-start gap-2.5">
-                                    <span class="material-symbols-outlined text-emerald-600 text-sm mt-0.5">check_circle</span>
-                                    <div>
-                                        <strong class="text-neutral-900">Conciliación automática (Partner Hub, Admin Console y bases comerciales):</strong> Cruce continuo para eliminar discrepancias de fechas de renovación y conteo de licencias totales, asegurando cierres de facturación impecables.
-                                    </div>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <span class="material-symbols-outlined text-emerald-600 text-sm mt-0.5">check_circle</span>
-                                    <div>
-                                        <strong class="text-neutral-900">Conocimiento de SKUs y licencias en vivo (Conexión directa vía BigQuery):</strong> Ingesta en tiempo real sin desfases manuales para mapear qué licencias están aprovisionadas en consola contra lo facturado en Partner Hub.
-                                    </div>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <span class="material-symbols-outlined text-emerald-600 text-sm mt-0.5">check_circle</span>
-                                    <div>
-                                        <strong class="text-neutral-900">Adopción de Workspace en vivo por cada cliente:</strong> Telemetría de uso por cuenta con alertas tempranas para detonar servicios de adopción, acompañamiento y upgrades oportunos.
-                                    </div>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <span class="material-symbols-outlined text-indigo-600 text-sm mt-0.5 fill">auto_awesome</span>
-                                    <div>
-                                        <strong class="text-neutral-900">Adopción de Gemini para asegurar activación y cobro de rebates:</strong> Monitoreo focalizado del consumo de Gemini para garantizar adopción efectiva y blindar el cumplimiento para cobro de incentivos.
-                                    </div>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <span class="material-symbols-outlined text-[#5A4A96] text-sm mt-0.5">analytics</span>
-                                    <div>
-                                        <strong class="text-neutral-900">Assessment de adopción detallada de clientes:</strong> Diagnóstico individualizado por cuenta y por SKU (aislando Frontline para no distorsionar métricas), entregando planes de acción claros para retención y expansión comercial.
-                                    </div>
-                                </li>
-                            </ul>
+                                <!-- ============================================== -->
+                <!-- SLIDE DECK PRESENTATION VIEW (ESTILO BANCOPPEL) -->
+                <!-- ============================================== -->
+                <div id="angel-deck-wrapper" class="space-y-6">
+                    <!-- Top Slide Navigation Bar -->
+                    <div class="bg-[#FFFEF8] border-2 border-black p-3.5 sm:p-4 swiss-border shadow-[4px_4px_0px_#000] flex flex-col md:flex-row md:items-center justify-between gap-3">
+                        <div class="flex items-center gap-2 sm:gap-3">
+                            <span class="badge-swiss bg-[#5A4A96] text-white font-bold flex items-center gap-1.5">
+                                <span class="material-symbols-outlined text-sm">slideshow</span> SLIDE DECK
+                            </span>
+                            <span id="angel-slide-counter" class="font-mono text-xs font-bold text-neutral-800 bg-neutral-100 border border-neutral-300 px-2 py-1">
+                                SLIDE [ 01 / 05 ]
+                            </span>
+                            <span class="font-display font-black text-xs uppercase tracking-wider text-neutral-600 hidden sm:inline">
+                                Conciliación Workspace & Gemini
+                            </span>
                         </div>
 
-                        <!-- 3. RESULTADOS CONCRETOS (MÉTRICAS CLAVE) -->
-                        <div class="bg-[#FAF338] border-2 border-black p-5 swiss-border space-y-3">
-                            <div class="font-display font-black text-xs uppercase tracking-wider text-black flex items-center gap-2">
-                                <span class="w-2.5 h-2.5 bg-black inline-block"></span> 3. Resultados Concretos (Métricas Clave)
-                            </div>
-
-                            <!-- Banner de Impacto Sugerido por Vanessa -->
-                            <div class="bg-black text-white p-3 border-2 border-black">
-                                <div class="text-[10px] font-mono text-[#FAF338] font-bold uppercase tracking-wider">Impacto Comprobado:</div>
-                                <div class="font-display font-black text-sm text-white mt-0.5">
-                                    100% de revenue protegido sin fugas por licencias huérfanas, cero horas manuales en cierres de mes y medición limpia de adopción (Capa 2 y Gemini).
-                                </div>
-                            </div>
-
-                            <div class="grid grid-cols-2 gap-3">
-                                <div class="bg-white border-2 border-black p-3.5 shadow-[2px_2px_0px_#000]">
-                                    <div class="font-display font-black text-3xl text-[#5A4A96] leading-none">100%</div>
-                                    <div class="text-[11px] font-mono font-bold text-neutral-800 mt-1 uppercase tracking-tight">Revenue Protegido</div>
-                                    <div class="text-[10px] font-mono text-neutral-600 mt-0.5 leading-snug">Cero fugas de ingresos por licencias huérfanas. Detección instantánea de discrepancias entre Console (aprovisionado) vs. Comercial (facturado).</div>
-                                </div>
-                                <div class="bg-white border-2 border-black p-3.5 shadow-[2px_2px_0px_#000]">
-                                    <div class="font-display font-black text-3xl text-emerald-600 leading-none">0 Días</div>
-                                    <div class="text-[11px] font-mono font-bold text-neutral-800 mt-1 uppercase tracking-tight">Cero Horas Manuales</div>
-                                    <div class="text-[10px] font-mono text-neutral-600 mt-0.5 leading-snug">Eliminación del trabajo manual en el cierre de mes y preparación de renovaciones. Sincronización automática de Partner Hub, Consola y bases comerciales.</div>
-                                </div>
-                            </div>
-
-                            <!-- Assessment de Adopción Detallada de Clientes -->
-                            <div class="bg-white border-2 border-black p-3.5 shadow-[2px_2px_0px_#000]">
-                                <div class="font-display font-black text-xs uppercase tracking-wider text-neutral-900 mb-1 flex items-center justify-between">
-                                    <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[#5A4A96] text-sm">analytics</span> Assessment de Adopción Detallada de Clientes:</span>
-                                    <span class="badge-swiss bg-emerald-100 text-emerald-800 text-[9px] font-bold">Activo en Herramienta</span>
-                                </div>
-                                <p class="text-xs font-mono text-neutral-700 leading-snug">
-                                    Diagnóstico granular por cliente cruzando curvas de uso de Workspace, activación de Gemini y alertas preventivas antes de la renovación.
-                                </p>
-                                <div class="grid grid-cols-2 gap-2 mt-2 pt-2 border-t border-neutral-200 text-xs font-mono">
-                                    <div>
-                                        <div class="font-display font-bold text-base text-neutral-900">+35K Licencias Auditadas</div>
-                                        <div class="text-[10px] text-neutral-600">Assessments en cuentas masivas (ej. Coppel +30K) y clientes clave en LATAM.</div>
-                                    </div>
-                                    <div>
-                                        <div class="font-display font-bold text-base text-[#5A4A96]">Activación Gemini</div>
-                                        <div class="text-[10px] text-neutral-600">Cuentas con alta adopción Capa 2 perfiladas para rampa de licenciamiento y rebates.</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="bg-white border-2 border-black p-3">
-                                <div class="font-display font-black text-[11px] uppercase tracking-wider text-neutral-900 mb-1 flex items-center gap-1.5">
-                                    <span class="material-symbols-outlined text-indigo-600 text-sm">query_stats</span> Visibilidad Real y Limpia (Capa 2):
-                                </div>
-                                <p class="text-xs font-mono font-semibold text-neutral-800">
-                                    100% de precisión en la curva de adopción al aislar SKUs inactivos (ej. Frontline), revelando el verdadero potencial de Upsell a Gemini.
-                                </p>
-                            </div>
+                        <!-- Stepper Pills -->
+                        <div class="flex items-center gap-1.5 overflow-x-auto pb-1 md:pb-0 font-display text-xs">
+                            <button onclick="switchAngelSlide(1)" id="angel-slide-nav-1" class="angel-slide-nav px-3 py-1.5 rounded-full border-2 border-black bg-[#FAF338] text-black font-bold shadow-[2px_2px_0px_#000] whitespace-nowrap">
+                                1. Demo en Video
+                            </button>
+                            <button onclick="switchAngelSlide(2)" id="angel-slide-nav-2" class="angel-slide-nav px-3 py-1.5 rounded-full border border-transparent hover:border-black hover:bg-neutral-100 text-neutral-700 font-semibold whitespace-nowrap transition-all">
+                                2. ¿En qué ayuda?
+                            </button>
+                            <button onclick="switchAngelSlide(3)" id="angel-slide-nav-3" class="angel-slide-nav px-3 py-1.5 rounded-full border border-transparent hover:border-black hover:bg-neutral-100 text-neutral-700 font-semibold whitespace-nowrap transition-all">
+                                3. Resultados Clave
+                            </button>
+                            <button onclick="switchAngelSlide(4)" id="angel-slide-nav-4" class="angel-slide-nav px-3 py-1.5 rounded-full border border-transparent hover:border-black hover:bg-neutral-100 text-neutral-700 font-semibold whitespace-nowrap transition-all">
+                                4. Ficha Técnica
+                            </button>
+                            <button onclick="switchAngelSlide(5)" id="angel-slide-nav-5" class="angel-slide-nav px-3 py-1.5 rounded-full border border-transparent hover:border-black hover:bg-neutral-100 text-neutral-700 font-semibold whitespace-nowrap transition-all">
+                                5. Replicabilidad LATAM
+                            </button>
                         </div>
 
-                        <!-- 4. ESCALABILIDAD & REPLICABILIDAD LATAM -->
-                        <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border space-y-4">
-                            <!-- Section Title & Target Teams -->
-                            <div class="flex items-start justify-between gap-2 border-b-2 border-black pb-2.5">
-                                <div>
-                                    <div class="font-display font-black text-xs uppercase tracking-wider text-[#5A4A96] flex items-center gap-1.5">
-                                        <span class="material-symbols-outlined text-[#5A4A96] text-sm">public</span> 4. Escalabilidad & Replicabilidad LATAM
-                                    </div>
-                                    <div class="text-[11px] font-mono text-neutral-600 mt-0.5">
-                                        <strong>Equipos destino:</strong> Customer Success Regional, CSMs & Commercial Workspace (MX, CO, PE, CL)
-                                    </div>
-                                </div>
-                                <span class="badge-swiss bg-emerald-100 text-emerald-800 border border-emerald-500 text-[10px] whitespace-nowrap font-bold">
-                                    100% LATAM
-                                </span>
-                            </div>
-
-                            <!-- Replicability Indicators Matrix -->
-                            <div class="grid grid-cols-3 gap-2 text-center font-mono">
-                                <div class="bg-neutral-100 border border-neutral-300 p-2">
-                                    <div class="text-[9px] uppercase tracking-wider text-neutral-500 font-bold">Arquitectura</div>
-                                    <div class="text-xs font-black text-neutral-900 mt-0.5">Serverless V8 & Sheets</div>
-                                </div>
-                                <div class="bg-neutral-100 border border-neutral-300 p-2">
-                                    <div class="text-[9px] uppercase tracking-wider text-neutral-500 font-bold">Complejidad</div>
-                                    <div class="text-xs font-black text-emerald-700 mt-0.5">Baja (Plug & Play)</div>
-                                </div>
-                                <div class="bg-neutral-100 border border-neutral-300 p-2">
-                                    <div class="text-[9px] uppercase tracking-wider text-neutral-500 font-bold">Compatibilidad</div>
-                                    <div class="text-xs font-black text-blue-700 mt-0.5">100% LATAM</div>
-                                </div>
-                            </div>
-
-                            <!-- Checkpoints de Replicabilidad e Iterabilidad -->
-                            <div>
-                                <div class="text-[11px] font-display font-black uppercase tracking-wider text-neutral-800 mb-2 flex items-center gap-1.5">
-                                    <span class="w-2 h-2 bg-[#5A4A96] inline-block"></span> Checkpoints de Replicabilidad e Iterabilidad:
-                                </div>
-                                <ul class="space-y-1.5 font-body text-xs text-neutral-700">
-                                    <li class="flex items-start gap-2 bg-white border border-neutral-200 p-2">
-                                        <span class="material-symbols-outlined text-emerald-600 text-sm mt-0.5">check_circle</span>
-                                        <div>
-                                            <strong>Core Reusable:</strong> Backend Serverless en Google Apps Script (V8) conectado de forma nativa a ecosistemas de Google Sheets. Arquitectura altamente flexible para conectar bases de datos regionales en minutos.
-                                        </div>
-                                    </li>
-                                    <li class="flex items-start gap-2 bg-white border border-neutral-200 p-2">
-                                        <span class="material-symbols-outlined text-emerald-600 text-sm mt-0.5">check_circle</span>
-                                        <div>
-                                            <strong>Iterabilidad Operativa:</strong> Las lógicas de exclusión de productos (como el mapeo dinámico de Frontline) y los umbrales de discrepancia comercial son configurables por el usuario final, sin necesidad de recompilar o tocar el código fuente.
-                                        </div>
-                                    </li>
-                                    <li class="flex items-start gap-2 bg-white border border-neutral-200 p-2">
-                                        <span class="material-symbols-outlined text-emerald-600 text-sm mt-0.5">check_circle</span>
-                                        <div>
-                                            <strong>Módulo de Adopción Extensible:</strong> Capacidad nativa para incorporar nuevas métricas de Partner Hub a futuro (ej. nuevos agentes de IA, Gemini Enterprise) y reflejarlas instantáneamente en el Dashboard Front-end.
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <!-- Tropicalización por País -->
-                            <div class="border-t border-neutral-200 pt-3">
-                                <div class="text-[11px] font-display font-black uppercase tracking-wider text-neutral-800 mb-2 flex items-center gap-1.5">
-                                    <span class="w-2 h-2 bg-black inline-block"></span> Matriz de Tropicalización:
-                                </div>
-                                <div class="grid grid-cols-2 gap-2 text-[11px] font-mono">
-                                    <div class="p-2 bg-neutral-50 border border-neutral-200">
-                                        <span class="font-bold text-neutral-900">🇲🇽 México:</span>
-                                        <div class="text-neutral-600 text-[10px] mt-0.5">Capacidad de procesar cuentas retail de ultra-alto volumen (ej. Coppel con +30K licencias), gestionando reglas específicas de adopción para su fuerza laboral mixta (Enterprise vs Frontline).</div>
-                                    </div>
-                                    <div class="p-2 bg-neutral-50 border border-neutral-200">
-                                        <span class="font-bold text-neutral-900">🇨🇴 Colombia:</span>
-                                        <div class="text-neutral-600 text-[10px] mt-0.5">Adaptación de columnas comerciales para cruzar ciclos de facturación locales y contratos de sector público/privado con la data aprovisionada en Google Console.</div>
-                                    </div>
-                                    <div class="p-2 bg-neutral-50 border border-neutral-200">
-                                        <span class="font-bold text-neutral-900">🇵🇪 Perú:</span>
-                                        <div class="text-neutral-600 text-[10px] mt-0.5">Alineación del radar de discrepancias con los tiers de licenciamiento y estructuras de facturación específicas para la cartera de clientes de Xertica Perú.</div>
-                                    </div>
-                                    <div class="p-2 bg-neutral-50 border border-neutral-200">
-                                        <span class="font-bold text-neutral-900">🇨🇱 Chile:</span>
-                                        <div class="text-neutral-600 text-[10px] mt-0.5">Mapeo de métricas comerciales cruzadas con presupuestación en UF (Unidad de Fomento), facilitando a los CSMs chilenos auditorías de renovación sin fricción.</div>
-                                    </div>
-                                </div>
-                            </div>
+                        <!-- Slide Action Buttons -->
+                        <div class="flex items-center gap-2 self-end md:self-auto">
+                            <button onclick="prevAngelSlide()" class="px-3 py-1.5 bg-white border-2 border-black font-display font-bold text-xs uppercase hover:bg-black hover:text-white transition-colors shadow-[2px_2px_0px_#000]">
+                                ← Ant
+                            </button>
+                            <button onclick="nextAngelSlide()" class="px-3 py-1.5 bg-[#FAF338] border-2 border-black font-display font-bold text-xs uppercase hover:bg-black hover:text-white transition-colors shadow-[2px_2px_0px_#000]">
+                                Sig →
+                            </button>
                         </div>
                     </div>
 
-                    <!-- Right Column: Interactive Media & Live Tool Simulator -->
-                    <div class="lg:col-span-7 space-y-6">
-                        <!-- Media Viewport Frame -->
-                        <div class="bg-[#FFFEF8] border-2 border-black p-4 swiss-border">
-                            <div class="flex flex-wrap items-center justify-between gap-2 pb-3 mb-3 border-b-2 border-black">
-                                <div class="flex items-center gap-2">
-                                    <span class="inline-block w-3 h-3 rounded-full bg-red-500 border border-black"></span>
-                                    <span class="inline-block w-3 h-3 rounded-full bg-yellow-400 border border-black"></span>
-                                    <span class="inline-block w-3 h-3 rounded-full bg-green-500 border border-black"></span>
-                                    <span class="font-mono text-xs font-bold text-neutral-700 ml-2">DEMOSTRACIÓN EN VIDEO (SCREEN RECORDING 45s)</span>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <a href="https://script.google.com/a/macros/xertica.com/s/AKfycbyc4jeUYpMTzBSgbyF7N157WhpUXzNKCeQxwveDhaCQ_RRv-CDsePoE91BaVGnF8JYamQ/exec" target="_blank" class="px-3 py-1.5 bg-[#5A4A96] text-white border-2 border-black text-xs font-display font-bold uppercase tracking-wider hover:bg-black transition-colors flex items-center gap-1.5 shadow-[2px_2px_0px_#000]">
-                                        <span class="material-symbols-outlined text-sm">open_in_new</span> Abrir Herramienta en Producción
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- Screen Container -->
-                            <div class="relative bg-neutral-900 border-2 border-black overflow-hidden aspect-[16/10] flex items-center justify-center">
-                                
-                                <!-- VIDEO SLOT -->
-                                <div id="media-video-angel" class="w-full h-full relative group">
-                                    <img src="assets/projects/torre-control-preventa.jpg" alt="Conciliación Workspace y Adopción" class="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105" onerror="this.src='assets/extracted/img_13.jpg'">
-                                    
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/30 flex flex-col justify-between p-6">
-                                        <div class="flex justify-between items-start">
-                                            <span class="badge-swiss bg-[#FAF338] text-black font-bold">Video Demo 45 Segundos</span>
-                                            <span class="font-mono text-xs text-white bg-black/60 px-2.5 py-1 border border-white/20">00:45 · Apps Script V8</span>
+                    <!-- SLIDE CONTAINER -->
+                    <div id="angel-slides-container">
+                        
+                        <!-- SLIDE 1: VIDEO DEMO & OVERVIEW -->
+                        <div id="angel-slide-1" class="angel-slide bg-[#FFFEF8] border-2 border-black p-6 sm:p-8 swiss-border shadow-[5px_5px_0px_#000]">
+                            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                                <!-- Col 5: Color Block & Vision -->
+                                <div class="lg:col-span-5 bg-[#5A4A96] text-white p-6 sm:p-8 border-2 border-black shadow-[4px_4px_0px_#000] space-y-5 relative overflow-hidden">
+                                    <div class="shape-corner bg-[#FAF338] w-40 h-40 top-0 right-0 blend-multiply opacity-40"></div>
+                                    <div class="flex items-center gap-2">
+                                        <span class="badge-swiss bg-black text-[#FAF338] font-bold">SLIDE 01 · DEMO</span>
+                                        <span class="badge-swiss bg-emerald-100 text-emerald-900 font-bold">En Producción</span>
+                                    </div>
+                                    <h3 class="font-display font-black text-2xl sm:text-3xl lg:text-4xl uppercase leading-tight text-white">
+                                        Conciliación Workspace & Adopción Gemini
+                                    </h3>
+                                    <p class="font-body text-xs sm:text-sm text-neutral-200 leading-relaxed">
+                                        Cruce continuo entre Google Admin Console, Partner Hub y bases comerciales en BigQuery. Visibilidad exacta de la base instalada sin discrepancias de facturación.
+                                    </p>
+                                    <div class="pt-4 border-t border-white/20 grid grid-cols-2 gap-3 text-center font-mono">
+                                        <div class="p-2.5 bg-black/40 border border-white/20">
+                                            <div class="font-display font-black text-2xl text-[#FAF338]">100%</div>
+                                            <div class="text-[9px] uppercase tracking-wider text-neutral-300 mt-1">Revenue Protegido</div>
                                         </div>
-
-                                        <div class="text-center">
-                                            <button onclick="playInteractiveDemo('angel')" class="w-16 h-16 rounded-full bg-[#FAF338] text-black border-2 border-black flex items-center justify-center text-2xl font-bold shadow-[4px_4px_0px_#000] hover:scale-110 transition-transform mx-auto">
-                                                ▶
-                                            </button>
-                                            <div class="font-display font-bold text-white text-lg mt-3 drop-shadow">Ver Conciliación Workspace & Adopción Gemini</div>
-                                            <div class="font-mono text-xs text-neutral-300">Cruce automatizado Partner Hub, Consola y bases comerciales</div>
+                                        <div class="p-2.5 bg-black/40 border border-white/20">
+                                            <div class="font-display font-black text-2xl text-emerald-400">+35K</div>
+                                            <div class="text-[9px] uppercase tracking-wider text-neutral-300 mt-1">Licencias Auditadas</div>
                                         </div>
+                                    </div>
+                                    <div class="pt-2">
+                                        <a href="https://script.google.com/a/macros/xertica.com/s/AKfycbyc4jeUYpMTzBSgbyF7N157WhpUXzNKCeQxwveDhaCQ_RRv-CDsePoE91BaVGnF8JYamQ/exec" target="_blank" class="w-full py-2.5 bg-[#FAF338] text-black border-2 border-black text-xs font-display font-bold uppercase tracking-wider hover:bg-white transition-colors flex items-center justify-center gap-2 shadow-[2px_2px_0px_#000]">
+                                            <span class="material-symbols-outlined text-sm">open_in_new</span> Abrir Herramienta en Producción
+                                        </a>
+                                    </div>
+                                </div>
 
-                                        <div class="flex items-center justify-between text-xs font-mono text-neutral-300">
-                                            <span>100% Revenue Protegido · 0 Días Manual</span>
-                                            <button onclick="openVideoSettings('angel')" class="underline hover:text-white font-bold flex items-center gap-1"><span class="material-symbols-outlined text-xs">settings</span> Subir / Enlazar Video (45s)</button>
+                                <!-- Col 7: Video Showcase Player -->
+                                <div class="lg:col-span-7 space-y-4">
+                                    <div class="border-2 border-black p-3 bg-neutral-100 flex items-center justify-between">
+                                        <div class="flex items-center gap-2">
+                                            <span class="inline-block w-3 h-3 rounded-full bg-red-500 border border-black"></span>
+                                            <span class="inline-block w-3 h-3 rounded-full bg-yellow-400 border border-black"></span>
+                                            <span class="inline-block w-3 h-3 rounded-full bg-green-500 border border-black"></span>
+                                            <span class="font-mono text-xs font-bold text-neutral-800 ml-1">SCREEN RECORDING DEMO (45s)</span>
+                                        </div>
+                                        <span class="font-mono text-[11px] text-neutral-600 bg-white px-2 py-0.5 border border-neutral-300">Apps Script V8</span>
+                                    </div>
+
+                                    <div class="relative bg-neutral-900 border-2 border-black overflow-hidden aspect-[16/10] flex items-center justify-center shadow-[4px_4px_0px_#000]">
+                                        <div id="media-video-angel" class="w-full h-full relative group">
+                                            <img src="assets/projects/torre-control-preventa.jpg" alt="Conciliación Workspace y Adopción" class="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105" onerror="this.src='assets/extracted/img_13.jpg'">
+                                            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/30 flex flex-col justify-between p-6">
+                                                <div class="flex justify-between items-start">
+                                                    <span class="badge-swiss bg-[#FAF338] text-black font-bold">Video Demo 45 Segundos</span>
+                                                    <span class="font-mono text-xs text-white bg-black/60 px-2.5 py-1 border border-white/20">00:45 · V8 Runtime</span>
+                                                </div>
+                                                <div class="text-center">
+                                                    <button onclick="playInteractiveDemo('angel')" class="w-16 h-16 rounded-full bg-[#FAF338] text-black border-2 border-black flex items-center justify-center text-2xl font-bold shadow-[4px_4px_0px_#000] hover:scale-110 transition-transform mx-auto">
+                                                        ▶
+                                                    </button>
+                                                    <div class="font-display font-bold text-white text-lg mt-3 drop-shadow">Ver Conciliación Workspace & Adopción Gemini</div>
+                                                    <div class="font-mono text-xs text-neutral-300">Cruce automatizado Partner Hub, Consola y bases comerciales</div>
+                                                </div>
+                                                <div class="flex items-center justify-between text-xs font-mono text-neutral-300">
+                                                    <span>100% Revenue Protegido · 0 Días Manual</span>
+                                                    <button onclick="openVideoSettings('angel')" class="underline hover:text-white font-bold flex items-center gap-1"><span class="material-symbols-outlined text-xs">settings</span> Enlazar Video</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="p-3 bg-amber-50 border-2 border-black flex items-start gap-2.5 text-xs font-mono text-neutral-800">
+                                        <span class="material-symbols-outlined text-amber-700 text-base mt-0.5">info</span>
+                                        <div>
+                                            <strong>Nota de Producción:</strong> El módulo de <em>Assessment de Adopción Detallada</em> (curvas de uso Workspace, activación Gemini y alertas preventivas) se encuentra plenamente operativo en vivo mediante el botón <em>"Abrir Herramienta en Producción"</em>.
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- Callout Nota Video Demo vs Herramienta en Vivo -->
-                            <div class="mt-3 p-3 bg-amber-50 border-2 border-black flex items-start gap-2.5">
-                                <span class="material-symbols-outlined text-amber-700 text-lg mt-0.5">info</span>
-                                <div class="text-xs font-mono text-neutral-800 leading-snug">
-                                    <strong class="text-neutral-900 block font-sans">Nota sobre video demostrativo:</strong>
-                                    El módulo de <strong>Assessment de Adopción Detallada por Cliente</strong> (con curvas de uso de Workspace, activación de Gemini y alertas preventivas) se encuentra plenamente operativo en vivo a través del botón superior <em>"Abrir Herramienta en Producción"</em> y está siendo integrado al corte del video.
-                                </div>
-                            </div>
-
                         </div>
 
-                        <!-- FICHA TÉCNICA Y DOCUMENTACIÓN OFICIAL (FORMATO XERTICA WEB APP) -->
-                        <div class="bg-[#FAF8F5] border-2 border-black p-4 sm:p-5 swiss-border shadow-[4px_4px_0px_#000]">
+                        <!-- SLIDE 2: ¿EN QUÉ AYUDA DIRECTAMENTE? -->
+                        <div id="angel-slide-2" class="angel-slide hidden bg-[#FFFEF8] border-2 border-black p-6 sm:p-8 swiss-border shadow-[5px_5px_0px_#000]">
+                            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                                <!-- Col 5: Dark Card -->
+                                <div class="lg:col-span-5 bg-[#1E1E1E] text-white p-6 sm:p-8 border-2 border-black shadow-[4px_4px_0px_#000] space-y-4">
+                                    <span class="badge-swiss bg-[#DE5B48] text-white font-bold">SLIDE 02 · VALOR OPERATIVO</span>
+                                    <h3 class="font-display font-black text-2xl sm:text-3xl uppercase leading-tight text-white border-b-4 border-[#DE5B48] pb-3">
+                                        ¿En qué ayuda directamente?
+                                    </h3>
+                                    <p class="font-body text-xs sm:text-sm text-neutral-300 leading-relaxed">
+                                        Elimina la fricción histórica entre los datos técnicos de la consola de Google y los contratos facturados en Partner Hub.
+                                    </p>
+                                    <div class="p-4 bg-white/10 border border-white/20 font-mono text-xs space-y-2">
+                                        <div class="text-[#FAF338] font-bold">BENEFICIO ESTRATÉGICO:</div>
+                                        <p class="text-neutral-200">
+                                            Equipos comerciales, de ingeniería y finanzas operan sobre una única fuente de verdad, blindando las renovaciones y garantizando el cobro de rebates.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Col 7: 5 Pillars List -->
+                                <div class="lg:col-span-7 space-y-3">
+                                    <div class="p-4 bg-white border-2 border-black shadow-[3px_3px_0px_#000] flex items-start gap-3">
+                                        <span class="material-symbols-outlined text-emerald-600 text-xl flex-shrink-0 mt-0.5">check_circle</span>
+                                        <div>
+                                            <strong class="font-display font-bold text-sm text-neutral-900 block">Conciliación automática (Partner Hub, Admin Console y bases comerciales)</strong>
+                                            <p class="font-body text-xs text-neutral-700 mt-1 leading-relaxed">
+                                                Cruce continuo para eliminar discrepancias de fechas de renovación y conteo de licencias totales, asegurando cierres de facturación impecables.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="p-4 bg-white border-2 border-black shadow-[3px_3px_0px_#000] flex items-start gap-3">
+                                        <span class="material-symbols-outlined text-emerald-600 text-xl flex-shrink-0 mt-0.5">check_circle</span>
+                                        <div>
+                                            <strong class="font-display font-bold text-sm text-neutral-900 block">Conocimiento de SKUs y licencias en vivo (Conexión vía BigQuery)</strong>
+                                            <p class="font-body text-xs text-neutral-700 mt-1 leading-relaxed">
+                                                Ingesta en tiempo real sin desfases manuales para mapear qué licencias están aprovisionadas en consola contra lo facturado en Partner Hub.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="p-4 bg-white border-2 border-black shadow-[3px_3px_0px_#000] flex items-start gap-3">
+                                        <span class="material-symbols-outlined text-emerald-600 text-xl flex-shrink-0 mt-0.5">check_circle</span>
+                                        <div>
+                                            <strong class="font-display font-bold text-sm text-neutral-900 block">Adopción de Workspace en vivo por cada cliente</strong>
+                                            <p class="font-body text-xs text-neutral-700 mt-1 leading-relaxed">
+                                                Telemetría de uso por cuenta con alertas tempranas para detonar servicios de adopción, acompañamiento y upgrades oportunos.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="p-4 bg-white border-2 border-black shadow-[3px_3px_0px_#000] flex items-start gap-3">
+                                        <span class="material-symbols-outlined text-indigo-600 text-xl flex-shrink-0 mt-0.5 fill">auto_awesome</span>
+                                        <div>
+                                            <strong class="font-display font-bold text-sm text-neutral-900 block">Adopción de Gemini para asegurar activación y cobro de rebates</strong>
+                                            <p class="font-body text-xs text-neutral-700 mt-1 leading-relaxed">
+                                                Monitoreo focalizado del consumo de Gemini para garantizar adopción efectiva y blindar el cumplimiento para cobro de incentivos.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="p-4 bg-white border-2 border-black shadow-[3px_3px_0px_#000] flex items-start gap-3">
+                                        <span class="material-symbols-outlined text-[#5A4A96] text-xl flex-shrink-0 mt-0.5">analytics</span>
+                                        <div>
+                                            <strong class="font-display font-bold text-sm text-neutral-900 block">Assessment de adopción detallada de clientes</strong>
+                                            <p class="font-body text-xs text-neutral-700 mt-1 leading-relaxed">
+                                                Diagnóstico individualizado por cuenta y por SKU (aislando Frontline para no distorsionar métricas), entregando planes de acción claros para retención y expansión comercial.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 3: RESULTADOS CONCRETOS & MÉTRICAS CLAVE -->
+                        <div id="angel-slide-3" class="angel-slide hidden bg-[#FFFEF8] border-2 border-black p-6 sm:p-8 swiss-border shadow-[5px_5px_0px_#000]">
+                            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                                <!-- Col 5: Yellow Swiss Banner -->
+                                <div class="lg:col-span-5 bg-[#FAF338] border-2 border-black p-6 sm:p-8 shadow-[4px_4px_0px_#000] space-y-5">
+                                    <span class="badge-swiss bg-black text-white font-bold">SLIDE 03 · MÉTRICAS DE IMPACTO</span>
+                                    <h3 class="font-display font-black text-2xl sm:text-3xl uppercase leading-tight text-black border-b-4 border-black pb-3">
+                                        Resultados Concretos
+                                    </h3>
+                                    <div class="bg-black text-white p-4 border-2 border-black">
+                                        <div class="text-[10px] font-mono text-[#FAF338] font-bold uppercase tracking-wider">Impacto Comprobado:</div>
+                                        <div class="font-display font-black text-sm text-white mt-1 leading-snug">
+                                            100% de revenue protegido sin fugas por licencias huérfanas, cero horas manuales en cierres de mes y medición limpia de adopción (Capa 2 y Gemini).
+                                        </div>
+                                    </div>
+                                    <p class="font-body text-xs text-neutral-800 leading-relaxed font-semibold">
+                                        Métricas auditadas y validadas en cuentas corporativas de escala regional en México y Sudamérica.
+                                    </p>
+                                </div>
+
+                                <!-- Col 7: Metric Cards Grid -->
+                                <div class="lg:col-span-7 space-y-4">
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                        <div class="bg-white border-2 border-black p-4 shadow-[3px_3px_0px_#000]">
+                                            <div class="font-display font-black text-4xl text-[#5A4A96] leading-none">100%</div>
+                                            <div class="text-xs font-mono font-bold text-neutral-900 mt-2 uppercase tracking-tight">Revenue Protegido</div>
+                                            <div class="text-[11px] font-body text-neutral-600 mt-1 leading-snug">
+                                                Cero fugas de ingresos por licencias huérfanas. Detección instantánea entre Console vs Comercial.
+                                            </div>
+                                        </div>
+                                        <div class="bg-white border-2 border-black p-4 shadow-[3px_3px_0px_#000]">
+                                            <div class="font-display font-black text-4xl text-emerald-600 leading-none">0 Días</div>
+                                            <div class="text-xs font-mono font-bold text-neutral-900 mt-2 uppercase tracking-tight">Cero Horas Manuales</div>
+                                            <div class="text-[11px] font-body text-neutral-600 mt-1 leading-snug">
+                                                Eliminación del trabajo manual en cierre de mes. Sincronización automática de Partner Hub y Consola.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-white border-2 border-black p-4 shadow-[3px_3px_0px_#000]">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <strong class="font-display font-black text-xs uppercase tracking-wider text-neutral-900 flex items-center gap-1.5">
+                                                <span class="material-symbols-outlined text-[#5A4A96] text-base">analytics</span> Assessment de Adopción Detallada
+                                            </strong>
+                                            <span class="badge-swiss bg-emerald-100 text-emerald-800 text-[10px] font-bold">Activo en Herramienta</span>
+                                        </div>
+                                        <p class="text-xs font-body text-neutral-700 leading-relaxed">
+                                            Diagnóstico granular por cliente cruzando curvas de uso de Workspace, activación de Gemini y alertas preventivas antes de la renovación.
+                                        </p>
+                                        <div class="grid grid-cols-2 gap-3 mt-3 pt-3 border-t border-neutral-200 text-xs font-mono">
+                                            <div>
+                                                <div class="font-display font-bold text-base text-neutral-900">+35K Licencias Auditadas</div>
+                                                <div class="text-[10px] text-neutral-600">Assessments en cuentas masivas (ej. Coppel +30K) y clientes clave LATAM.</div>
+                                            </div>
+                                            <div>
+                                                <div class="font-display font-bold text-base text-[#5A4A96]">Activación Gemini</div>
+                                                <div class="text-[10px] text-neutral-600">Cuentas con alta adopción Capa 2 perfiladas para rampa de licenciamiento y rebates.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-white border-2 border-black p-3.5 shadow-[3px_3px_0px_#000] flex items-center gap-3">
+                                        <span class="material-symbols-outlined text-indigo-600 text-2xl flex-shrink-0">query_stats</span>
+                                        <div>
+                                            <div class="font-display font-black text-xs uppercase tracking-wider text-neutral-900">Visibilidad Real y Limpia (Capa 2):</div>
+                                            <div class="text-xs font-mono text-neutral-700 mt-0.5">
+                                                100% de precisión en la curva de adopción al aislar SKUs inactivos (ej. Frontline), revelando el verdadero potencial de Upsell a Gemini.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 4: FICHA TÉCNICA & MANUAL DE USUARIO (FORMATO WEB APP OFICIAL) -->
+                        <div id="angel-slide-4" class="angel-slide hidden bg-[#FAF8F5] border-2 border-black p-5 sm:p-6 swiss-border shadow-[5px_5px_0px_#000]">
                             <!-- Header de la Ficha Técnica (Idéntico a Web App) -->
                             <div class="flex flex-wrap items-center justify-between gap-3 pb-3.5 mb-4 border-b-2 border-black">
-                                <div class="flex items-center gap-2.5">
+                                <div class="flex items-center gap-3">
+                                    <span class="badge-swiss bg-black text-white font-bold">SLIDE 04 · FICHA TÉCNICA</span>
                                     <span class="font-display font-black text-xl text-neutral-900 tracking-tight">Xertica<span class="text-[#1899AF]">.ai</span></span>
                                     <span class="border border-black px-2.5 py-0.5 text-[10px] font-mono font-bold uppercase rounded-full bg-white shadow-[1px_1px_0px_#000]">PROYECTO CORE</span>
                                 </div>
@@ -1494,13 +1523,13 @@
                                             <div>
                                                 <div class="font-bold text-neutral-900 mb-0.5">Escala de Auditoría: +35,000 Licencias Gestionadas</div>
                                                 <p class="text-neutral-700 leading-relaxed">
-                                                    Validación comprobada en cuentas de ultra-alto volumen (ej. Coppel +30K licencias) y clientes estratégicos en LATAM, permitiendo auditorías preventivas antes del ciclo de renovación.
+                                                    Validación comprobada en cuentas de ultra-alto volumen (ej. Coppel +30K licencias) y clientes estratégicos en LATAM.
                                                 </p>
                                             </div>
                                             <div>
                                                 <div class="font-bold text-neutral-900 mb-0.5">Monitoreo Limpio de Adopción & Gemini</div>
                                                 <p class="text-neutral-700 leading-relaxed">
-                                                    Aislamiento de SKUs no transaccionales (como Frontline) para revelar la verdadera curva de adopción de Capa 2 y asegurar el cobro de rebates e incentivos comerciales de Google Cloud.
+                                                    Aislamiento de SKUs no transaccionales (como Frontline) para revelar la verdadera curva de adopción de Capa 2 y asegurar el cobro de rebates de Google Cloud.
                                                 </p>
                                             </div>
                                         </div>
@@ -1514,7 +1543,6 @@
                                             Especificaciones de arquitectura, stack tecnológico e interoperabilidad regional.
                                         </p>
                                         <div class="space-y-3 font-body text-xs text-neutral-800">
-                                            <!-- Mini Matrix Ficha Rápida Integrada -->
                                             <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 font-mono text-xs mb-2.5">
                                                 <div class="p-2 bg-neutral-100 border border-neutral-300">
                                                     <div class="text-neutral-500 uppercase text-[9px] font-bold">Infraestructura</div>
@@ -1532,31 +1560,25 @@
                                             <div>
                                                 <div class="font-bold text-neutral-900 mb-0.5">Arquitectura Backend Serverless</div>
                                                 <p class="text-neutral-700 leading-relaxed">
-                                                    Backend 100% Serverless en Google Apps Script (V8 Runtime) conectado de forma nativa a ecosistemas de Google Sheets y BigQuery. $0 USD de costo de infraestructura en servidores.
+                                                    Backend 100% Serverless en Google Apps Script (V8 Runtime) conectado de forma nativa a ecosistemas de Google Sheets y BigQuery. $0 USD de costo de infraestructura.
                                                 </p>
                                             </div>
                                             <div>
                                                 <div class="font-bold text-neutral-900 mb-0.5">Modelo de Ingesta & Sincronización</div>
                                                 <p class="text-neutral-700 leading-relaxed">
-                                                    Cruce tripartito: Google Admin Console (Estado de Aprovisionamiento) + Partner Hub (Facturación & Rebates) + Bases comerciales. Soporte de sincronización forzada bajo demanda y lectura rápida vía caché en memoria.
+                                                    Cruce tripartito: Google Admin Console (Estado de Aprovisionamiento) + Partner Hub (Facturación) + Bases comerciales. Soporte de sincronización forzada bajo demanda.
                                                 </p>
                                             </div>
                                             <div>
                                                 <div class="font-bold text-neutral-900 mb-0.5">Seguridad & Autenticación Corporativa</div>
                                                 <p class="text-neutral-700 leading-relaxed">
-                                                    Acceso restringido a cuentas corporativas autorizadas <span class="bg-neutral-100 border border-neutral-300 rounded px-1.5 py-0.5 font-mono text-[11px]">@xertica.com</span> mediante OAuth2. Trazabilidad completa de auditoría y cero exposición de credenciales fuera de la nube de Google.
-                                                </p>
-                                            </div>
-                                            <div>
-                                                <div class="font-bold text-neutral-900 mb-0.5">Modelo de Adopción Regional</div>
-                                                <p class="text-neutral-700 leading-relaxed">
-                                                    Plug & Play inmediato para México, Colombia, Perú y Chile sin requerir despliegues complejos ni cambios en el código base.
+                                                    Acceso restringido a cuentas corporativas autorizadas <span class="bg-neutral-100 border border-neutral-300 rounded px-1.5 py-0.5 font-mono text-[11px]">@xertica.com</span> mediante OAuth2. Trazabilidad completa de auditoría.
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <!-- TAB 3: MANUAL DE USUARIO (EXACTO AL SCREENSHOT DEL LINK) -->
+                                    <!-- TAB 3: MANUAL DE USUARIO (EXACTO AL SCREENSHOT) -->
                                     <div id="angel-doc-panel-3" class="angel-doc-panel bg-white border-2 border-black rounded-xl p-4 sm:p-5 shadow-[3px_3px_0px_#000]">
                                         <h4 class="font-display font-black text-lg sm:text-xl text-neutral-900 leading-tight">3. Manual de Usuario</h4>
                                         <hr class="border-black my-2.5">
@@ -1601,25 +1623,25 @@
                                             <div>
                                                 <div class="font-bold text-neutral-900 mb-0.5">Capa 1: Conciliación Base (Contrato vs Consola)</div>
                                                 <p class="text-neutral-700 leading-relaxed">
-                                                    Algoritmo de confrontación matemática entre licencias activas en consola vs licencias contratadas. Detección automática de sobre-aprovisionamiento (costo no facturado) y sub-aprovisionamiento.
+                                                    Algoritmo de confrontación matemática entre licencias activas en consola vs licencias contratadas. Detección automática de sobre-aprovisionamiento y sub-aprovisionamiento.
                                                 </p>
                                             </div>
                                             <div>
                                                 <div class="font-bold text-neutral-900 mb-0.5">Capa 2: Adopción Activa (Capa 2 & Gemini)</div>
                                                 <p class="text-neutral-700 leading-relaxed">
-                                                    Telemetría de usuarios activos diarios y semanales (DAU/WAU), midiendo el uso efectivo de herramientas colaborativas y activación de licencias Gemini.
+                                                    Telemetría de usuarios activos diarios y semanales (DAU/WAU), midiendo el uso efectivo de herramientas colaborativas y activación de Gemini.
                                                 </p>
                                             </div>
                                             <div>
                                                 <div class="font-bold text-neutral-900 mb-0.5">Capa 3: Filtro de Sesgo de Frontline Worker</div>
                                                 <p class="text-neutral-700 leading-relaxed">
-                                                    Regla de exclusión configurable para aislar SKUs de Frontline y operarios de planta, evitando que distorsionen los porcentajes de adopción del personal de oficina y ejecutivos.
+                                                    Regla de exclusión configurable para aislar SKUs de Frontline y operarios de planta, evitando que distorsionen los porcentajes de adopción general.
                                                 </p>
                                             </div>
                                             <div>
                                                 <div class="font-bold text-neutral-900 mb-0.5">Capa 4: Alertas Preventivas de Renovación</div>
                                                 <p class="text-neutral-700 leading-relaxed">
-                                                    Disparadores automáticos de riesgo preventivo antes del vencimiento contractual para coordinar con el CSM el plan de retención o rampa de expansión.
+                                                    Disparadores automáticos de riesgo preventivo antes del vencimiento contractual para coordinar con el CSM el plan de retención.
                                                 </p>
                                             </div>
                                         </div>
@@ -1642,13 +1664,7 @@
                                             <div>
                                                 <div class="font-bold text-neutral-900 mb-0.5">Tableros de Dispersión y DIFF</div>
                                                 <p class="text-neutral-700 leading-relaxed">
-                                                    Visualización gráfica de brechas de licenciamiento con codificación de color (Verde: En regla, Amarillo: Alerta leve, Rojo: Discrepancia crítica).
-                                                </p>
-                                            </div>
-                                            <div>
-                                                <div class="font-bold text-neutral-900 mb-0.5">Curvas de Adopción por SKU</div>
-                                                <p class="text-neutral-700 leading-relaxed">
-                                                    Gráficas comparativas de adopción entre Google Workspace Enterprise, Business y complementos de Gemini.
+                                                    Visualización gráfica de brechas de licenciamiento con semaforización cromática (Verde: En regla, Rojo: Discrepancia crítica).
                                                 </p>
                                             </div>
                                             <div>
@@ -1677,13 +1693,7 @@
                                             <div>
                                                 <div class="font-bold text-neutral-900 mb-0.5">Privacidad y Aislamiento de Datos</div>
                                                 <p class="text-neutral-700 leading-relaxed">
-                                                    Operación dentro del perímetro seguro de Google Workspace / Google Cloud de Xertica. Ninguna credencial ni dato de cliente se expone a servicios de terceros.
-                                                </p>
-                                            </div>
-                                            <div>
-                                                <div class="font-bold text-neutral-900 mb-0.5">Cumplimiento y Registro de Auditoría</div>
-                                                <p class="text-neutral-700 leading-relaxed">
-                                                    Registro inmutable de accesos por usuario <span class="bg-neutral-100 border border-neutral-300 rounded px-1.5 py-0.5 font-mono text-[11px]">@xertica.com</span> para auditar qué consultor consultó o sincronizó cada cuenta.
+                                                    Operación dentro del perímetro seguro de Google Workspace / Google Cloud de Xertica. Cero exposición externa de credenciales.
                                                 </p>
                                             </div>
                                         </div>
@@ -1726,9 +1736,96 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
 
+                        <!-- SLIDE 5: ESCALABILIDAD & REPLICABILIDAD LATAM -->
+                        <div id="angel-slide-5" class="angel-slide hidden bg-[#FFFEF8] border-2 border-black p-6 sm:p-8 swiss-border shadow-[5px_5px_0px_#000]">
+                            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                                <!-- Col 5: Teal Swiss Block -->
+                                <div class="lg:col-span-5 bg-[#1899AF] text-white p-6 sm:p-8 border-2 border-black shadow-[4px_4px_0px_#000] space-y-5">
+                                    <span class="badge-swiss bg-black text-[#FAF338] font-bold">SLIDE 05 · REPLICABILIDAD</span>
+                                    <h3 class="font-display font-black text-2xl sm:text-3xl uppercase leading-tight text-white border-b-4 border-black pb-3">
+                                        Escalabilidad LATAM
+                                    </h3>
+                                    <p class="font-body text-xs sm:text-sm text-neutral-100 leading-relaxed">
+                                        <strong>Equipos destino:</strong> Customer Success Regional, CSMs & Commercial Workspace (MX, CO, PE, CL).
+                                    </p>
+                                    <div class="grid grid-cols-3 gap-2 text-center font-mono text-black">
+                                        <div class="bg-white border-2 border-black p-2.5">
+                                            <div class="text-[9px] uppercase tracking-wider text-neutral-600 font-bold">Arquitectura</div>
+                                            <div class="text-xs font-black mt-1">Serverless V8</div>
+                                        </div>
+                                        <div class="bg-white border-2 border-black p-2.5">
+                                            <div class="text-[9px] uppercase tracking-wider text-neutral-600 font-bold">Complejidad</div>
+                                            <div class="text-xs font-black text-emerald-700 mt-1">Baja (P&P)</div>
+                                        </div>
+                                        <div class="bg-white border-2 border-black p-2.5">
+                                            <div class="text-[9px] uppercase tracking-wider text-neutral-600 font-bold">Cobertura</div>
+                                            <div class="text-xs font-black text-blue-700 mt-1">100% LATAM</div>
+                                        </div>
+                                    </div>
+                                    <p class="font-body text-xs text-neutral-100">
+                                        Estructura modular para replicar en cualquier subsidiaria de Xertica en cuestión de minutos.
+                                    </p>
+                                </div>
+
+                                <!-- Col 7: Checkpoints & Tropicalización -->
+                                <div class="lg:col-span-7 space-y-4">
+                                    <div class="bg-white border-2 border-black p-4 shadow-[3px_3px_0px_#000]">
+                                        <div class="text-xs font-display font-black uppercase tracking-wider text-neutral-800 mb-2 flex items-center gap-1.5">
+                                            <span class="w-2 h-2 bg-[#5A4A96] inline-block"></span> Checkpoints de Replicabilidad e Iterabilidad:
+                                        </div>
+                                        <ul class="space-y-2 font-body text-xs text-neutral-700">
+                                            <li class="flex items-start gap-2 bg-neutral-50 border border-neutral-200 p-2.5">
+                                                <span class="material-symbols-outlined text-emerald-600 text-sm mt-0.5">check_circle</span>
+                                                <div>
+                                                    <strong>Core Reusable:</strong> Backend Serverless en Google Apps Script (V8) conectado nativamente a Google Sheets. Arquitectura flexible para conectar bases regionales.
+                                                </div>
+                                            </li>
+                                            <li class="flex items-start gap-2 bg-neutral-50 border border-neutral-200 p-2.5">
+                                                <span class="material-symbols-outlined text-emerald-600 text-sm mt-0.5">check_circle</span>
+                                                <div>
+                                                    <strong>Iterabilidad Operativa:</strong> Lógicas de exclusión de productos (mapeo Frontline) y umbrales comerciales configurables por el usuario final sin tocar código fuente.
+                                                </div>
+                                            </li>
+                                            <li class="flex items-start gap-2 bg-neutral-50 border border-neutral-200 p-2.5">
+                                                <span class="material-symbols-outlined text-emerald-600 text-sm mt-0.5">check_circle</span>
+                                                <div>
+                                                    <strong>Módulo de Adopción Extensible:</strong> Capacidad nativa para incorporar nuevas métricas de Partner Hub a futuro (Gemini Enterprise) y reflejarlas al instante.
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="bg-white border-2 border-black p-4 shadow-[3px_3px_0px_#000]">
+                                        <div class="text-xs font-display font-black uppercase tracking-wider text-neutral-800 mb-2 flex items-center gap-1.5">
+                                            <span class="w-2 h-2 bg-black inline-block"></span> Matriz de Tropicalización por País:
+                                        </div>
+                                        <div class="grid grid-cols-2 gap-2 text-[11px] font-mono">
+                                            <div class="p-2.5 bg-neutral-50 border border-neutral-200">
+                                                <span class="font-bold text-neutral-900">🇲🇽 México:</span>
+                                                <div class="text-neutral-600 text-[10px] mt-0.5">Capacidad para cuentas retail de ultra-alto volumen (ej. Coppel +30K licencias) con fuerza laboral mixta.</div>
+                                            </div>
+                                            <div class="p-2.5 bg-neutral-50 border border-neutral-200">
+                                                <span class="font-bold text-neutral-900">🇨🇴 Colombia:</span>
+                                                <div class="text-neutral-600 text-[10px] mt-0.5">Adaptación de columnas comerciales para cruzar ciclos de facturación locales y contratos públicos/privados.</div>
+                                            </div>
+                                            <div class="p-2.5 bg-neutral-50 border border-neutral-200">
+                                                <span class="font-bold text-neutral-900">🇵🇪 Perú:</span>
+                                                <div class="text-neutral-600 text-[10px] mt-0.5">Alineación del radar de discrepancias con tiers de licenciamiento y facturación de Xertica Perú.</div>
+                                            </div>
+                                            <div class="p-2.5 bg-neutral-50 border border-neutral-200">
+                                                <span class="font-bold text-neutral-900">🇨🇱 Chile:</span>
+                                                <div class="text-neutral-600 text-[10px] mt-0.5">Mapeo comercial cruzado con presupuestación en UF (Unidad de Fomento) para auditorías sin fricción.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
+
             </div>
 
             <!-- ============================================== -->
@@ -3324,6 +3421,65 @@ La plataforma cuenta con 2 modos:
                 }
             });
         }
+
+        // ==========================================
+        // SLIDE DECK PRESENTATION ENGINE (ANGEL SOLIS)
+        // ==========================================
+        let currentAngelSlide = 1;
+        const totalAngelSlides = 5;
+
+        function switchAngelSlide(slideNum) {
+            if (slideNum < 1 || slideNum > totalAngelSlides) return;
+            currentAngelSlide = slideNum;
+
+            const counter = document.getElementById('angel-slide-counter');
+            if (counter) {
+                counter.textContent = `SLIDE [ 0${slideNum} / 0${totalAngelSlides} ]`;
+            }
+
+            for (let i = 1; i <= totalAngelSlides; i++) {
+                const slide = document.getElementById('angel-slide-' + i);
+                const navBtn = document.getElementById('angel-slide-nav-' + i);
+                if (slide) {
+                    if (i === slideNum) {
+                        slide.classList.remove('hidden');
+                    } else {
+                        slide.classList.add('hidden');
+                    }
+                }
+                if (navBtn) {
+                    if (i === slideNum) {
+                        navBtn.className = 'angel-slide-nav px-3 py-1.5 rounded-full border-2 border-black bg-[#FAF338] text-black font-bold shadow-[2px_2px_0px_#000] whitespace-nowrap';
+                    } else {
+                        navBtn.className = 'angel-slide-nav px-3 py-1.5 rounded-full border border-transparent hover:border-black hover:bg-neutral-100 text-neutral-700 font-semibold whitespace-nowrap transition-all';
+                    }
+                }
+            }
+        }
+
+        function nextAngelSlide() {
+            let next = currentAngelSlide + 1;
+            if (next > totalAngelSlides) next = 1;
+            switchAngelSlide(next);
+        }
+
+        function prevAngelSlide() {
+            let prev = currentAngelSlide - 1;
+            if (prev < 1) prev = totalAngelSlides;
+            switchAngelSlide(prev);
+        }
+
+        // Navegación por flechas del teclado en el deck
+        document.addEventListener('keydown', function(e) {
+            const angelPanel = document.getElementById('panel-angel');
+            if (angelPanel && !angelPanel.classList.contains('hidden')) {
+                if (e.key === 'ArrowRight') {
+                    nextAngelSlide();
+                } else if (e.key === 'ArrowLeft') {
+                    prevAngelSlide();
+                }
+            }
+        });
 
         // Sub-Tab Switching para Ficha Técnica / Documentación Oficial de Angel Solis
         function switchAngelDocTab(tabIndex) {
