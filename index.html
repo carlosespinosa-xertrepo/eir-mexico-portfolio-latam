@@ -532,245 +532,764 @@
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                    
-                    <!-- Left Column: Ficha Ejecutiva Digerible -->
-                    <div class="lg:col-span-5 space-y-6">
-
-                        <!-- 2. EN QUÉ AYUDA DIRECTAMENTE -->
-                        <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border">
-                            <div class="font-display font-black text-xs uppercase tracking-wider text-[#1E1E1E] mb-2.5 flex items-center gap-2">
-                                <span class="w-2.5 h-2.5 bg-[#1E1E1E] inline-block"></span> 2. ¿En qué ayuda directamente?
-                            </div>
-                            <ul class="space-y-3 font-body text-xs text-neutral-700">
-                                <li class="flex items-start gap-2.5">
-                                    <span class="material-symbols-outlined text-emerald-600 text-sm mt-0.5">check_circle</span>
-                                    <div>
-                                        <strong class="text-neutral-900">Consumo y análisis en vivo conectado a través de BigQuery:</strong> Enlace continuo al repositorio de BigQuery Billing que procesa la telemetría en tiempo real, eliminando reportes manuales desfasados.
-                                    </div>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <span class="material-symbols-outlined text-emerald-600 text-sm mt-0.5">check_circle</span>
-                                    <div>
-                                        <strong class="text-neutral-900">Consolidación de contratos Google y clientes:</strong> Cruce automático de compromisos contractuales asumidos (CUDs/commits) frente a ritmo de consumo real para detectar desviaciones a tiempo.
-                                    </div>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <span class="material-symbols-outlined text-emerald-600 text-sm mt-0.5">check_circle</span>
-                                    <div>
-                                        <strong class="text-neutral-900">Conversión de consumo a pipeline comercial:</strong> Identificación proactiva de riesgos de penalización (under-commit) y sobreconsumos para detonar renovaciones multianuales anticipadas y servicios de FinOps.
-                                    </div>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <span class="material-symbols-outlined text-indigo-600 text-sm mt-0.5 fill">auto_awesome</span>
-                                    <div>
-                                        <strong class="text-neutral-900">Consultor estratégico asistido por Gemini:</strong> Análisis de la cartera en lenguaje natural para interpretar patrones de gasto en BigQuery y recomendar planes de acción comerciales ejecutivos.
-                                    </div>
-                                </li>
-                            </ul>
+                <div id="pato-deck-wrapper" class="space-y-6">
+                    <!-- Top Slide Navigation Bar -->
+                    <div class="bg-[#FFFEF8] border-2 border-black p-3.5 sm:p-4 swiss-border shadow-[4px_4px_0px_#000] flex flex-col md:flex-row md:items-center justify-between gap-3">
+                        <div class="flex items-center gap-2 sm:gap-3">
+                            <span class="badge-swiss bg-[#5A4A96] text-white font-bold flex items-center gap-1.5">
+                                <span class="material-symbols-outlined text-sm">slideshow</span> SLIDE DECK
+                            </span>
+                            <span id="pato-slide-counter" class="font-mono text-xs font-bold text-neutral-800 bg-neutral-100 border border-neutral-300 px-2 py-1">
+                                SLIDE [ 01 / 05 ]
+                            </span>
+                            <span class="font-display font-black text-xs uppercase tracking-wider text-neutral-600 hidden sm:inline">
+                                FinOps & Control de Commits GCP
+                            </span>
                         </div>
 
-                        <!-- 3. RESULTADOS CONCRETOS (MÉTRICAS CLAVE & POTENCIAL) -->
-                        <div class="bg-[#FAF338] border-2 border-black p-5 swiss-border space-y-3">
-                            <div class="font-display font-black text-xs uppercase tracking-wider text-black flex items-center gap-2">
-                                <span class="w-2.5 h-2.5 bg-black inline-block"></span> 3. Resultados Concretos (Métricas Clave & Potencial)
-                            </div>
-
-                            <!-- Banner de Impacto Sugerido por Vanessa -->
-                            <div class="bg-black text-white p-3 border-2 border-black">
-                                <div class="text-[10px] font-mono text-[#FAF338] font-bold uppercase tracking-wider">Impacto Comprobado:</div>
-                                <div class="font-display font-black text-sm text-white mt-0.5">
-                                    +110 cuentas mapeadas y segmentadas en FinOps 360, blindaje en cuentas de alto consumo (PAYG +USD 1M) y consultor estratégico asistido por Gemini.
-                                </div>
-                            </div>
-
-                            <div class="grid grid-cols-2 gap-3">
-                                <div class="bg-white border-2 border-black p-3.5 shadow-[2px_2px_0px_#000]">
-                                    <div class="font-display font-black text-3xl text-[#5A4A96] leading-none">+8</div>
-                                    <div class="text-[11px] font-mono font-bold text-neutral-800 mt-1 uppercase tracking-tight">Assessments Realizados</div>
-                                    <div class="text-[10px] font-mono text-neutral-500 mt-0.5">Auditorías de ahorro y commits concluidas</div>
-                                </div>
-                                <div class="bg-white border-2 border-black p-3.5 shadow-[2px_2px_0px_#000]">
-                                    <div class="font-display font-black text-2xl sm:text-3xl text-emerald-700 leading-none">+$500K <span class="text-xs font-sans font-bold text-neutral-600">USD</span></div>
-                                    <div class="text-[11px] font-mono font-bold text-neutral-800 mt-1 uppercase tracking-tight">Opps en Salesforce</div>
-                                    <div class="text-[10px] font-mono text-neutral-500 mt-0.5">Pipeline en negociación activa con clientes</div>
-                                </div>
-                            </div>
-                            
-                            <!-- Micro-cinta de contexto de universo mapeado -->
-                            <div class="flex items-center justify-between bg-white/90 border border-black px-3 py-1.5 font-mono text-[11px]">
-                                <span class="text-neutral-700 font-bold flex items-center gap-1.5">
-                                    <span class="material-symbols-outlined text-sm text-[#5A4A96]">monitoring</span> Universo Mapeado:
-                                </span>
-                                <span class="font-bold text-neutral-900">+110 Cuentas Monitoreadas en FinOps 360</span>
-                            </div>
-                            
-                            <!-- Insights de Negocio & Casos Reales Mapeados -->
-                            <div class="mt-3.5 bg-white border-2 border-black p-3">
-                                <div class="font-display font-black text-[11px] uppercase tracking-wider text-neutral-900 mb-2 flex items-center gap-1.5">
-                                    <span class="material-symbols-outlined text-amber-500 text-sm">lightbulb</span> Insights de Negocio & Casos Reales Mapeados:
-                                </div>
-                                <div class="space-y-2 text-[11px] font-body text-neutral-700">
-                                    <div class="p-2 bg-neutral-50 border border-neutral-200">
-                                        <strong class="text-neutral-900 block font-sans flex items-center gap-1"><span class="material-symbols-outlined text-cyan-600 text-[14px]">sync</span> Conversión a Commits / CUDs (Despegar, Zucarmex):</strong>
-                                        <span class="text-neutral-600">Cuentas en Pay-As-You-Go con gasto acumulado masivo (+$1M USD), listas para formalizar contratos de compromiso que aseguran ingresos cautivos y margen alto para Xertica.</span>
-                                    </div>
-                                    <div class="p-2 bg-neutral-50 border border-neutral-200">
-                                        <strong class="text-neutral-900 block font-sans flex items-center gap-1"><span class="material-symbols-outlined text-indigo-600 text-[14px]">shield</span> Blindaje Anti-Penalización (DIMEX):</strong>
-                                        <span class="text-neutral-600">Detección oportuna de clientes con bajo avance de consumo (5% de meta) frente a compromisos altos ($1.1M USD), acelerando migración de cargas para evitar penalizaciones contractuales.</span>
-                                    </div>
-                                    <div class="p-2 bg-neutral-50 border border-neutral-200">
-                                        <strong class="text-neutral-900 block font-sans flex items-center gap-1"><span class="material-symbols-outlined text-emerald-600 text-[14px]">trending_up</span> Renegociación por Sobreconsumo (BanRegio):</strong>
-                                        <span class="text-neutral-600">Intervención proactiva en cuentas con sobredemanda (117% sobre meta) para frenar sobrecostos y renegociar ampliaciones contractuales.</span>
-                                    </div>
-                                    <div class="p-2 bg-neutral-50 border border-neutral-200">
-                                        <strong class="text-neutral-900 block font-sans flex items-center gap-1"><span class="material-symbols-outlined text-neutral-700 text-[14px]">description</span> Modelo Probado de Propuesta (VivaAerobus):</strong>
-                                        <span class="text-neutral-600">Caso de referencia con auditoría y presentación de ahorros concluida, actualmente en negociación comercial.</span>
-                                    </div>
-                                </div>
-                            </div>
+                        <!-- Stepper Pills -->
+                        <div class="flex items-center gap-1.5 overflow-x-auto pb-1 md:pb-0 font-display text-xs">
+                            <button onclick="switchPatoSlide(1)" id="pato-slide-nav-1" class="pato-slide-nav px-3 py-1.5 rounded-full border-2 border-black bg-[#FAF338] text-black font-bold shadow-[2px_2px_0px_#000] whitespace-nowrap">
+                                1. Demo en Video
+                            </button>
+                            <button onclick="switchPatoSlide(2)" id="pato-slide-nav-2" class="pato-slide-nav px-3 py-1.5 rounded-full border border-transparent hover:border-black hover:bg-neutral-100 text-neutral-700 font-semibold whitespace-nowrap transition-all">
+                                2. ¿En qué ayuda?
+                            </button>
+                            <button onclick="switchPatoSlide(3)" id="pato-slide-nav-3" class="pato-slide-nav px-3 py-1.5 rounded-full border border-transparent hover:border-black hover:bg-neutral-100 text-neutral-700 font-semibold whitespace-nowrap transition-all">
+                                3. Resultados Concretos
+                            </button>
+                            <button onclick="switchPatoSlide(4)" id="pato-slide-nav-4" class="pato-slide-nav px-3 py-1.5 rounded-full border border-transparent hover:border-black hover:bg-neutral-100 text-neutral-700 font-semibold whitespace-nowrap transition-all">
+                                4. Ficha Técnica Oficial
+                            </button>
+                            <button onclick="switchPatoSlide(5)" id="pato-slide-nav-5" class="pato-slide-nav px-3 py-1.5 rounded-full border border-transparent hover:border-black hover:bg-neutral-100 text-neutral-700 font-semibold whitespace-nowrap transition-all">
+                                5. Escalabilidad LATAM
+                            </button>
                         </div>
 
-                        <!-- 4. ESCALABILIDAD & REPLICABILIDAD LATAM -->
-                        <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border space-y-4">
-                            <!-- Section Title & Target Teams -->
-                            <div class="flex items-start justify-between gap-2 border-b-2 border-black pb-2.5">
-                                <div>
-                                    <div class="font-display font-black text-xs uppercase tracking-wider text-[#5A4A96] flex items-center gap-1.5">
-                                        <span class="material-symbols-outlined text-[#5A4A96] text-sm">public</span> 4. Escalabilidad & Replicabilidad LATAM
-                                    </div>
-                                    <div class="text-[11px] font-mono text-neutral-600 mt-0.5">
-                                        <strong>Equipos destino:</strong> FinOps Regional & Commercial GCP
-                                    </div>
-                                </div>
-                                <span class="badge-swiss bg-emerald-100 text-emerald-800 border border-emerald-500 text-[10px] whitespace-nowrap font-bold">
-                                    100% LATAM
-                                </span>
-                            </div>
-
-                            <!-- Replicability Indicators Matrix -->
-                            <div class="grid grid-cols-3 gap-2 text-center font-mono">
-                                <div class="bg-neutral-100 border border-neutral-300 p-2">
-                                    <div class="text-[9px] uppercase tracking-wider text-neutral-500 font-bold">Arquitectura</div>
-                                    <div class="text-xs font-black text-neutral-900 mt-0.5">Multi-Billing Cloud</div>
-                                </div>
-                                <div class="bg-neutral-100 border border-neutral-300 p-2">
-                                    <div class="text-[9px] uppercase tracking-wider text-neutral-500 font-bold">Complejidad</div>
-                                    <div class="text-xs font-black text-emerald-700 mt-0.5">Baja (Plug & Play)</div>
-                                </div>
-                                <div class="bg-neutral-100 border border-neutral-300 p-2">
-                                    <div class="text-[9px] uppercase tracking-wider text-neutral-500 font-bold">Compatibilidad</div>
-                                    <div class="text-xs font-black text-blue-700 mt-0.5">100% LATAM</div>
-                                </div>
-                            </div>
-
-                            <!-- Checkpoints de Replicabilidad e Iterabilidad -->
-                            <div>
-                                <div class="text-[11px] font-display font-black uppercase tracking-wider text-neutral-800 mb-2 flex items-center gap-1.5">
-                                    <span class="w-2 h-2 bg-[#5A4A96] inline-block"></span> Checkpoints de Replicabilidad e Iterabilidad:
-                                </div>
-                                <ul class="space-y-1.5 font-body text-xs text-neutral-700">
-                                    <li class="flex items-start gap-2 bg-white border border-neutral-200 p-2">
-                                        <span class="material-symbols-outlined text-emerald-600 text-sm mt-0.5">check_circle</span>
-                                        <div>
-                                            <strong>Core Multi-Billing Reusable:</strong> Conexión directa a BigQuery Partner Billing unificada para cualquier país o cuenta de facturación de Xertica sin desarrollo adicional.
-                                        </div>
-                                    </li>
-                                    <li class="flex items-start gap-2 bg-white border border-neutral-200 p-2">
-                                        <span class="material-symbols-outlined text-emerald-600 text-sm mt-0.5">check_circle</span>
-                                        <div>
-                                            <strong>Gobernanza y Cero Costo de Licencias:</strong> Aplicación web empresarial protegida con Google Workspace OAuth nativo, sin costos en software de terceros.
-                                        </div>
-                                    </li>
-                                    <li class="flex items-start gap-2 bg-white border border-neutral-200 p-2">
-                                        <span class="material-symbols-outlined text-emerald-600 text-sm mt-0.5">check_circle</span>
-                                        <div>
-                                            <strong>Playbook FinOps Homologado:</strong> Estandariza la prospección, seguimiento y reglas de alerta para los equipos comerciales de toda la región.
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <!-- Nota de Replicabilidad -->
-                            <div class="border-t border-neutral-200 pt-3">
-                                <div class="p-2.5 bg-[#FAF338]/30 border-2 border-black text-xs font-mono">
-                                    <span class="font-bold text-neutral-900 inline-flex items-center gap-1"><span class="material-symbols-outlined text-neutral-900 text-[14px]">push_pin</span> Nota de Replicabilidad:</span>
-                                    <span class="text-neutral-800"> Cada país únicamente deberá habilitar un repositorio local con sus contratos comerciales de GCP y compromisos de commit para conectarse a la plataforma.</span>
-                                </div>
-                            </div>
+                        <!-- Slide Action Buttons -->
+                        <div class="flex items-center gap-2 self-end md:self-auto">
+                            <button onclick="prevPatoSlide()" class="px-3 py-1.5 bg-white border-2 border-black font-display font-bold text-xs uppercase hover:bg-black hover:text-white transition-colors shadow-[2px_2px_0px_#000]">
+                                ← Ant
+                            </button>
+                            <button onclick="nextPatoSlide()" class="px-3 py-1.5 bg-[#FAF338] border-2 border-black font-display font-bold text-xs uppercase hover:bg-black hover:text-white transition-colors shadow-[2px_2px_0px_#000]">
+                                Sig →
+                            </button>
                         </div>
                     </div>
 
-                    <!-- Right Column: Interactive Media & Live Tool Simulator -->
-                    <div id="media-column-patricio" class="lg:col-span-7 space-y-6">
-                        <!-- Media Viewport Frame -->
-                        <div class="bg-[#FFFEF8] border-2 border-black p-4 swiss-border">
-                            <div class="flex flex-wrap items-center justify-between gap-2 pb-3 mb-3 border-b-2 border-black">
-                                <div class="flex items-center gap-2">
-                                    <span class="inline-block w-3 h-3 rounded-full bg-red-500 border border-black"></span>
-                                    <span class="inline-block w-3 h-3 rounded-full bg-yellow-400 border border-black"></span>
-                                    <span class="inline-block w-3 h-3 rounded-full bg-green-500 border border-black"></span>
-                                    <span class="font-mono text-xs font-bold text-neutral-700 ml-2">DEMOSTRACIÓN EN VIDEO (SCREEN RECORDING 45s)</span>
+                    <!-- SLIDE CONTAINER -->
+                    <div id="pato-slides-container">
+                        
+                        <!-- SLIDE 1: VIDEO DEMO & OVERVIEW -->
+                        <div id="pato-slide-1" class="pato-slide bg-[#FFFEF8] border-2 border-black p-6 sm:p-8 swiss-border shadow-[5px_5px_0px_#000]">
+                            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                                <!-- Col 5: Color Block & Vision -->
+                                <div class="lg:col-span-5 bg-[#5A4A96] text-white p-6 sm:p-8 border-2 border-black shadow-[4px_4px_0px_#000] space-y-5 relative overflow-hidden">
+                                    <div class="flex items-center justify-between">
+                                        <span class="badge-swiss bg-black text-[#FAF338] font-bold">SLIDE 01 · DEMO & VISIÓN EJECUTIVA</span>
+                                        <span class="font-mono text-[10px] text-white/80 uppercase">EIR PROYECTO 02</span>
+                                    </div>
+                                    <h3 class="font-display font-black text-2xl sm:text-3xl uppercase leading-tight text-white border-b-4 border-black pb-3">
+                                        FinOps & Control de Commits GCP
+                                    </h3>
+                                    <div class="font-mono text-xs uppercase tracking-wider text-[#FAF338] font-bold">
+                                        Optimizador de Compromisos Financieros & Telemetría BigQuery
+                                    </div>
+                                    <p class="font-body text-xs sm:text-sm text-neutral-100 leading-relaxed">
+                                        Cruce automatizado en tiempo real de telemetría BigQuery Billing con compromisos contractuales asumidos (CUDs/commits) sobre <strong>más de 110 cuentas de clientes</strong> para reducir costos de infraestructura Cloud y evitar penalizaciones financieras.
+                                    </p>
+                                    <div class="grid grid-cols-3 gap-2 pt-2 border-t border-white/20 text-center font-mono">
+                                        <div class="bg-black/30 p-2 border border-white/20">
+                                            <div class="text-xs sm:text-sm font-black text-[#FAF338]">+110</div>
+                                            <div class="text-[9px] text-neutral-200 uppercase mt-0.5">Cuentas Monitoreadas</div>
+                                        </div>
+                                        <div class="bg-black/30 p-2 border border-white/20">
+                                            <div class="text-xs sm:text-sm font-black text-[#FAF338]">+8</div>
+                                            <div class="text-[9px] text-neutral-200 uppercase mt-0.5">Assessments FinOps</div>
+                                        </div>
+                                        <div class="bg-black/30 p-2 border border-white/20">
+                                            <div class="text-xs sm:text-sm font-black text-[#FAF338]">+$500K</div>
+                                            <div class="text-[9px] text-neutral-200 uppercase mt-0.5">Pipeline USD</div>
+                                        </div>
+                                    </div>
+                                    <div class="pt-2 space-y-2">
+                                        <a href="https://script.google.com/a/macros/xertica.com/s/AKfycbzNFrFsFDN4T18OrzQSpXsOMM_OLqJIYhK8O0S77QUtDWLZq64TxkhNnM78moDX4BDKdQ/exec" target="_blank" class="w-full py-3 bg-[#FAF338] hover:bg-white text-black font-display font-black text-xs uppercase tracking-wider border-2 border-black shadow-[3px_3px_0px_#000] hover:shadow-[1px_1px_0px_#000] hover:translate-x-0.5 hover:translate-y-0.5 transition-all flex items-center justify-center gap-2 block text-center">
+                                            <span class="material-symbols-outlined text-sm">open_in_new</span> Abrir Herramienta en Producción (GAS)
+                                        </a>
+                                        <button onclick="switchPatoSlide(4)" class="w-full py-2.5 bg-white/10 hover:bg-white text-white hover:text-black font-display font-bold text-xs uppercase tracking-wider border-2 border-black transition-all flex items-center justify-center gap-2">
+                                            <span class="material-symbols-outlined text-sm">description</span> Ver Ficha Técnica Oficial (Slide 4)
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Col 7: Video Player Slot -->
+                                <div class="lg:col-span-7 space-y-3">
+                                    <div class="relative bg-black border-2 border-black overflow-hidden aspect-[16/10] flex items-center justify-center shadow-[4px_4px_0px_#000]">
+                                        <!-- VIDEO SLOT -->
+                                        <div id="media-video-patricio" class="w-full h-full relative group">
+                                            <img src="assets/projects/finops-msp-commercial.jpg" alt="FinOps Dashboard" class="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105" onerror="this.src='assets/extracted/img_14.jpg'">
+                                            
+                                            <!-- Video Overlay Controls -->
+                                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/30 flex flex-col justify-between p-6">
+                                                <div class="flex justify-between items-start">
+                                                    <span class="badge-swiss bg-[#FAF338] text-black font-bold">Video Demo 45 Segundos</span>
+                                                    <span class="font-mono text-xs text-white bg-black/60 px-2.5 py-1 border border-white/20">00:45 · 1080p HD</span>
+                                                </div>
+
+                                                <div class="text-center">
+                                                    <button onclick="playInteractiveDemo('patricio')" class="w-16 h-16 rounded-full bg-[#FAF338] text-black border-2 border-black flex items-center justify-center text-2xl font-bold shadow-[4px_4px_0px_#000] hover:scale-110 transition-transform mx-auto">
+                                                        ▶
+                                                    </button>
+                                                    <div class="font-display font-bold text-white text-lg mt-3 drop-shadow">Ver Demostración del FinOps & Commit Engine</div>
+                                                    <div class="font-mono text-xs text-neutral-300">Exploración del cálculo de Over/Under commit por cliente</div>
+                                                </div>
+
+                                                <div class="flex items-center justify-between text-xs font-mono text-neutral-300">
+                                                    <span>Métricas de 160 Clientes Analizados</span>
+                                                    <button onclick="openVideoSettings('patricio')" class="underline hover:text-white font-bold flex items-center gap-1"><span class="material-symbols-outlined text-xs">settings</span> Subir / Enlazar Video (45s)</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-between text-[11px] font-mono text-neutral-600 px-1">
+                                        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-500 inline-block"></span> Demostración Técnica Interactiva</span>
+                                        <span>Resolución: 1080p · Google Cloud BigQuery</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 2: EN QUE AYUDA DIRECTAMENTE -->
+                        <div id="pato-slide-2" class="pato-slide hidden bg-[#FFFEF8] border-2 border-black p-6 sm:p-8 swiss-border shadow-[5px_5px_0px_#000]">
+                            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                                <!-- Col 5: Dark Card -->
+                                <div class="lg:col-span-5 bg-[#1E1E1E] text-white p-6 sm:p-8 border-2 border-black shadow-[4px_4px_0px_#000] space-y-4">
+                                    <span class="badge-swiss bg-[#FAF338] text-black font-bold">SLIDE 02 · PROPÓSITO & IMPACTO</span>
+                                    <h3 class="font-display font-black text-2xl sm:text-3xl uppercase leading-tight text-white border-b-4 border-black pb-3">
+                                        ¿En qué ayuda directamente?
+                                    </h3>
+                                    <p class="font-body text-xs sm:text-sm text-neutral-300 leading-relaxed">
+                                        Eliminamos la ceguera financiera en el consumo de nube de nuestros clientes. El motor cruza datos diarios de facturación con compromisos contractuales, convirtiendo desviaciones de consumo en oportunidades comerciales tangibles.
+                                    </p>
+                                    <div class="space-y-2 pt-2 border-t border-neutral-700 text-xs font-mono">
+                                        <div class="flex items-center justify-between p-2 bg-neutral-900 border border-neutral-700">
+                                            <span class="text-neutral-400">Telemetría:</span>
+                                            <span class="font-bold text-[#FAF338]">Cero Desfase (BigQuery Live)</span>
+                                        </div>
+                                        <div class="flex items-center justify-between p-2 bg-neutral-900 border border-neutral-700">
+                                            <span class="text-neutral-400">Riesgo Financiero:</span>
+                                            <span class="font-bold text-emerald-400">Blindaje Anti-Penalizaciones</span>
+                                        </div>
+                                        <div class="flex items-center justify-between p-2 bg-neutral-900 border border-neutral-700">
+                                            <span class="text-neutral-400">Monetización:</span>
+                                            <span class="font-bold text-white">Upsell Proactivo en Renovaciones</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Col 7: Feature Grid -->
+                                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div class="bg-white border-2 border-black p-4 space-y-2 shadow-[3px_3px_0px_#000]">
+                                        <div class="flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-emerald-600 text-xl">database</span>
+                                            <h4 class="font-display font-bold text-sm text-neutral-900 leading-tight">Telemetría BigQuery en Vivo</h4>
+                                        </div>
+                                        <p class="font-body text-xs text-neutral-700 leading-relaxed">
+                                            Enlace continuo al repositorio de BigQuery Billing que procesa la telemetría en tiempo real, eliminando reportes manuales desfasados.
+                                        </p>
+                                    </div>
+
+                                    <div class="bg-white border-2 border-black p-4 space-y-2 shadow-[3px_3px_0px_#000]">
+                                        <div class="flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-blue-600 text-xl">contract</span>
+                                            <h4 class="font-display font-bold text-sm text-neutral-900 leading-tight">Consolidación Google & Clientes</h4>
+                                        </div>
+                                        <p class="font-body text-xs text-neutral-700 leading-relaxed">
+                                            Cruce automático de compromisos contractuales asumidos (CUDs/commits) frente a ritmo de consumo real para detectar desviaciones a tiempo.
+                                        </p>
+                                    </div>
+
+                                    <div class="bg-white border-2 border-black p-4 space-y-2 shadow-[3px_3px_0px_#000]">
+                                        <div class="flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-[#5A4A96] text-xl">trending_up</span>
+                                            <h4 class="font-display font-bold text-sm text-neutral-900 leading-tight">Conversión a Pipeline Comercial</h4>
+                                        </div>
+                                        <p class="font-body text-xs text-neutral-700 leading-relaxed">
+                                            Identificación proactiva de riesgos de penalización (under-commit) y sobreconsumos para detonar renovaciones multianuales anticipadas y servicios FinOps.
+                                        </p>
+                                    </div>
+
+                                    <div class="bg-white border-2 border-black p-4 space-y-2 shadow-[3px_3px_0px_#000]">
+                                        <div class="flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-indigo-600 text-xl">auto_awesome</span>
+                                            <h4 class="font-display font-bold text-sm text-neutral-900 leading-tight">Consultor Gemini Asistido</h4>
+                                        </div>
+                                        <p class="font-body text-xs text-neutral-700 leading-relaxed">
+                                            Análisis de la cartera en lenguaje natural para interpretar patrones de gasto en BigQuery y recomendar planes de acción comerciales ejecutivos.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 3: RESULTADOS CONCRETOS -->
+                        <div id="pato-slide-3" class="pato-slide hidden bg-[#FFFEF8] border-2 border-black p-6 sm:p-8 swiss-border shadow-[5px_5px_0px_#000]">
+                            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                                <!-- Col 5: Yellow Swiss Banner -->
+                                <div class="lg:col-span-5 bg-[#FAF338] border-2 border-black p-6 sm:p-8 shadow-[4px_4px_0px_#000] space-y-5">
+                                    <span class="badge-swiss bg-black text-[#FAF338] font-bold">SLIDE 03 · MÉTRICAS & CASOS</span>
+                                    <h3 class="font-display font-black text-2xl sm:text-3xl uppercase leading-tight text-black border-b-4 border-black pb-3">
+                                        Resultados Concretos
+                                    </h3>
+                                    <p class="font-body text-xs sm:text-sm text-neutral-800 leading-relaxed">
+                                        Métricas auditadas y casos de negocio tangibles generados sobre cuentas estratégicas de Google Cloud en México y LATAM mediante el FinOps Engine.
+                                    </p>
+                                    <div class="grid grid-cols-3 gap-2 text-center font-mono">
+                                        <div class="bg-white border-2 border-black p-2.5">
+                                            <div class="text-base sm:text-lg font-black text-neutral-900">+8</div>
+                                            <div class="text-[9px] uppercase tracking-wider text-neutral-600 font-bold mt-1">Assessments</div>
+                                        </div>
+                                        <div class="bg-white border-2 border-black p-2.5">
+                                            <div class="text-base sm:text-lg font-black text-emerald-700">+$500K</div>
+                                            <div class="text-[9px] uppercase tracking-wider text-neutral-600 font-bold mt-1">Pipeline USD</div>
+                                        </div>
+                                        <div class="bg-white border-2 border-black p-2.5">
+                                            <div class="text-base sm:text-lg font-black text-[#5A4A96]">+110</div>
+                                            <div class="text-[9px] uppercase tracking-wider text-neutral-600 font-bold mt-1">Cuentas</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-xs font-mono text-neutral-700 bg-black/5 p-3 border border-black/20">
+                                        <strong>Impacto Clave:</strong> 100% de clientes bajo monitoreo protegidos contra penalizaciones por subutilización de commits GCP.
+                                    </div>
+                                </div>
+
+                                <!-- Col 7: Business Cases -->
+                                <div class="lg:col-span-7 space-y-3">
+                                    <div class="text-xs font-display font-black uppercase tracking-wider text-neutral-800 mb-1 flex items-center gap-1.5">
+                                        <span class="w-2.5 h-2.5 bg-[#5A4A96] inline-block"></span> Casos Reales de Negocio & Oportunidad:
+                                    </div>
+                                    <div class="space-y-2 text-xs font-body text-neutral-700">
+                                        <div class="p-3 bg-white border-2 border-black shadow-[2px_2px_0px_#000]">
+                                            <strong class="text-neutral-900 block font-display flex items-center gap-1.5 mb-1">
+                                                <span class="material-symbols-outlined text-[#5A4A96] text-sm">sync</span> Conversión a Commits / CUDs (Despegar, Zucarmex):
+                                            </strong>
+                                            <span class="text-neutral-600 leading-relaxed block">
+                                                Cuentas en Pay-As-You-Go con gasto acumulado masivo (+$1M USD), listas para formalizar contratos de compromiso que aseguran ingresos cautivos y margen alto para Xertica.
+                                            </span>
+                                        </div>
+
+                                        <div class="p-3 bg-white border-2 border-black shadow-[2px_2px_0px_#000]">
+                                            <strong class="text-neutral-900 block font-display flex items-center gap-1.5 mb-1">
+                                                <span class="material-symbols-outlined text-indigo-600 text-sm">shield</span> Blindaje Anti-Penalización (DIMEX):
+                                            </strong>
+                                            <span class="text-neutral-600 leading-relaxed block">
+                                                Detección oportuna de clientes con bajo avance de consumo (5% de meta) frente a compromisos altos ($1.1M USD), acelerando migración de cargas para evitar penalizaciones contractuales.
+                                            </span>
+                                        </div>
+
+                                        <div class="p-3 bg-white border-2 border-black shadow-[2px_2px_0px_#000]">
+                                            <strong class="text-neutral-900 block font-display flex items-center gap-1.5 mb-1">
+                                                <span class="material-symbols-outlined text-emerald-600 text-sm">trending_up</span> Renegociación por Sobreconsumo (BanRegio):
+                                            </strong>
+                                            <span class="text-neutral-600 leading-relaxed block">
+                                                Intervención proactiva en cuentas con sobredemanda (117% sobre meta) para frenar sobrecostos y renegociar ampliaciones contractuales.
+                                            </span>
+                                        </div>
+
+                                        <div class="p-3 bg-white border-2 border-black shadow-[2px_2px_0px_#000]">
+                                            <strong class="text-neutral-900 block font-display flex items-center gap-1.5 mb-1">
+                                                <span class="material-symbols-outlined text-neutral-700 text-sm">description</span> Modelo Probado de Propuesta (VivaAerobus):
+                                            </strong>
+                                            <span class="text-neutral-600 leading-relaxed block">
+                                                Caso de referencia con auditoría y presentación de ahorros concluida, actualmente en negociación comercial.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 4: FICHA TECNICA & MANUAL OFICIAL (GAS WEB APP) -->
+                        <div id="pato-slide-4" class="pato-slide hidden bg-[#FAF8F5] border-2 border-black p-5 sm:p-6 swiss-border shadow-[5px_5px_0px_#000]">
+                            <!-- Header de la Ficha Técnica (Idéntico a Web App) -->
+                            <div class="flex flex-wrap items-center justify-between gap-3 pb-3.5 mb-4 border-b-2 border-black">
+                                <div class="flex items-center gap-3">
+                                    <span class="badge-swiss bg-black text-white font-bold">SLIDE 04 · FICHA TÉCNICA</span>
+                                    <span class="font-display font-black text-xl text-neutral-900 tracking-tight">Xertica<span class="text-[#5A4A96]">.ai</span></span>
+                                    <span class="border border-black px-2.5 py-0.5 text-[10px] font-mono font-bold uppercase rounded-full bg-white shadow-[1px_1px_0px_#000]">PROYECTO CORE · FINOPS GCP</span>
                                 </div>
                                 <div class="flex items-center gap-2">
-                                    <a href="https://script.google.com/a/macros/xertica.com/s/AKfycbzNFrFsFDN4T18OrzQSpXsOMM_OLqJIYhK8O0S77QUtDWLZq64TxkhNnM78moDX4BDKdQ/exec" target="_blank" class="px-4 py-2.5 bg-[#FAF338] text-black border-2 border-black text-xs font-display font-bold uppercase tracking-wider hover:bg-white transition-colors flex items-center justify-center gap-2 shadow-[2px_2px_0px_#000]">
-                                        <span class="material-symbols-outlined text-sm">open_in_new</span> Abrir Herramienta en Producción
+                                    <a href="https://script.google.com/a/macros/xertica.com/s/AKfycbzNFrFsFDN4T18OrzQSpXsOMM_OLqJIYhK8O0S77QUtDWLZq64TxkhNnM78moDX4BDKdQ/exec" target="_blank" class="px-2.5 py-1 bg-white hover:bg-neutral-100 border border-black text-[11px] font-mono font-bold text-neutral-800 transition-colors flex items-center gap-1 shadow-[2px_2px_0px_#000]">
+                                        <span class="material-symbols-outlined text-xs">open_in_new</span> Abrir Ficha Web App (GAS)
                                     </a>
                                 </div>
                             </div>
 
-                            <!-- Screen Container -->
-                            <div class="relative bg-neutral-900 border-2 border-black overflow-hidden aspect-[16/10] flex items-center justify-center">
-                                
-                                <!-- VIDEO SLOT -->
-                                <div id="media-video-patricio" class="w-full h-full relative group">
-                                    <img src="assets/projects/finops-msp-commercial.jpg" alt="FinOps Dashboard" class="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105" onerror="this.src='assets/extracted/img_14.jpg'">
-                                    
-                                    <!-- Video Overlay Controls -->
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/30 flex flex-col justify-between p-6">
-                                        <div class="flex justify-between items-start">
-                                            <span class="badge-swiss bg-[#FAF338] text-black font-bold">Video Demo 45 Segundos</span>
-                                            <span class="font-mono text-xs text-white bg-black/60 px-2.5 py-1 border border-white/20">00:45 · 1080p HD</span>
-                                        </div>
+                            <!-- Layout Sidebar + Document Content -->
+                            <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-5 items-start">
+                                <!-- Navigation Sidebar (7 Secciones) -->
+                                <div class="md:col-span-4 border-b-2 md:border-b-0 md:border-r-2 border-black pb-3 md:pb-0 md:pr-3.5">
+                                    <div class="text-[10px] font-mono font-bold uppercase tracking-wider text-neutral-500 mb-2">Secciones Ficha Técnica</div>
+                                    <nav class="flex md:flex-col gap-1.5 overflow-x-auto md:overflow-visible pb-2 md:pb-0 font-display text-xs">
+                                        <button onclick="switchPatoDocTab(1)" id="pato-doc-btn-1" class="pato-doc-btn text-left px-3 py-1.5 rounded-full border border-transparent hover:border-black hover:bg-white transition-all whitespace-nowrap text-neutral-700 font-semibold">
+                                            1. Valor e Impacto
+                                        </button>
+                                        <button onclick="switchPatoDocTab(2)" id="pato-doc-btn-2" class="pato-doc-btn text-left px-3 py-1.5 rounded-full border border-transparent hover:border-black hover:bg-white transition-all whitespace-nowrap text-neutral-700 font-semibold">
+                                            2. Ficha Técnica
+                                        </button>
+                                        <button onclick="switchPatoDocTab(3)" id="pato-doc-btn-3" class="pato-doc-btn text-left px-3 py-1.5 rounded-full border-2 border-black bg-[#FAF338] text-black font-bold shadow-[2px_2px_0px_#000] whitespace-nowrap">
+                                            3. Manual de Usuario
+                                        </button>
+                                        <button onclick="switchPatoDocTab(4)" id="pato-doc-btn-4" class="pato-doc-btn text-left px-3 py-1.5 rounded-full border border-transparent hover:border-black hover:bg-white transition-all whitespace-nowrap text-neutral-700 font-semibold">
+                                            4. Motor de Reglas (Capas)
+                                        </button>
+                                        <button onclick="switchPatoDocTab(5)" id="pato-doc-btn-5" class="pato-doc-btn text-left px-3 py-1.5 rounded-full border border-transparent hover:border-black hover:bg-white transition-all whitespace-nowrap text-neutral-700 font-semibold">
+                                            5. Filtros y Gráficas
+                                        </button>
+                                        <button onclick="switchPatoDocTab(6)" id="pato-doc-btn-6" class="pato-doc-btn text-left px-3 py-1.5 rounded-full border border-transparent hover:border-black hover:bg-white transition-all whitespace-nowrap text-neutral-700 font-semibold">
+                                            6. IA y Privacidad
+                                        </button>
+                                        <button onclick="switchPatoDocTab(7)" id="pato-doc-btn-7" class="pato-doc-btn text-left px-3 py-1.5 rounded-full border border-transparent hover:border-black hover:bg-white transition-all whitespace-nowrap text-neutral-700 font-semibold">
+                                            7. Roadmap y Evolución
+                                        </button>
+                                    </nav>
 
-                                        <div class="text-center">
-                                            <button onclick="playInteractiveDemo('patricio')" class="w-16 h-16 rounded-full bg-[#FAF338] text-black border-2 border-black flex items-center justify-center text-2xl font-bold shadow-[4px_4px_0px_#000] hover:scale-110 transition-transform mx-auto">
-                                                ▶
-                                            </button>
-                                            <div class="font-display font-bold text-white text-lg mt-3 drop-shadow">Ver Demostración del FinOps & Commit Engine</div>
-                                            <div class="font-mono text-xs text-neutral-300">Exploración del cálculo de Over/Under commit por cliente</div>
+                                    <!-- Quick Tool Specs Box -->
+                                    <div class="hidden md:block mt-4 p-3 bg-white border border-black shadow-[2px_2px_0px_#000] text-[11px] font-mono space-y-1.5">
+                                        <div class="text-[9px] uppercase tracking-wider text-neutral-500 font-bold">Resumen de Ficha</div>
+                                        <div class="flex justify-between text-neutral-800">
+                                            <span>Líder EIR:</span>
+                                            <span class="font-bold">Patricio Martin</span>
                                         </div>
+                                        <div class="flex justify-between text-neutral-800">
+                                            <span>Arquitectura:</span>
+                                            <span class="font-bold">GCP BigQuery + GAS</span>
+                                        </div>
+                                        <div class="flex justify-between text-neutral-800">
+                                            <span>Estado:</span>
+                                            <span class="font-bold text-emerald-700">Producción Activa</span>
+                                        </div>
+                                        <div class="flex justify-between text-neutral-800">
+                                            <span>Autenticación:</span>
+                                            <span class="font-bold">@xertica.com</span>
+                                        </div>
+                                    </div>
+                                </div>
 
-                                        <div class="flex items-center justify-between text-xs font-mono text-neutral-300">
-                                            <span>Métricas de 160 Clientes Analizados</span>
-                                            <button onclick="openVideoSettings('patricio')" class="underline hover:text-white font-bold flex items-center gap-1"><span class="material-symbols-outlined text-xs">settings</span> Subir / Enlazar Video (45s)</button>
+                                <!-- Document Content Area -->
+                                <div class="md:col-span-8">
+
+                                    <!-- TAB 1: VALOR E IMPACTO -->
+                                    <div id="pato-doc-panel-1" class="pato-doc-panel hidden bg-white border-2 border-black rounded-xl p-4 sm:p-5 shadow-[3px_3px_0px_#000]">
+                                        <h4 class="font-display font-black text-lg sm:text-xl text-neutral-900 leading-tight">1. Valor e Impacto</h4>
+                                        <hr class="border-black my-2.5">
+                                        <p class="font-body text-xs text-neutral-700 leading-relaxed mb-4">
+                                            Motor FinOps automatizado para auditoría de compromisos contractuales de Google Cloud Platform (CUDs / Commits). Elimina la incertidumbre financiera mensual en +110 cuentas activas de clientes Xertica en LATAM.
+                                        </p>
+
+                                        <div class="space-y-3 font-body text-xs">
+                                            <div class="bg-neutral-50 border border-neutral-300 p-3 rounded">
+                                                <h5 class="font-display font-bold text-neutral-900 mb-1 flex items-center gap-1.5">
+                                                    <span class="material-symbols-outlined text-sm text-[#5A4A96]">target</span> El Problema que Resuelve
+                                                </h5>
+                                                <p class="text-neutral-700 leading-relaxed">
+                                                    Los compromisos de uso acordados con Google (CUDs) generan penalizaciones financieras severas si el cliente subutiliza el cómputo reservado, o sobrecostos On-Demand si excede su capacidad sin cobertura. Anteriormente, estos desvíos se detectaban tarde, al emitirse la factura contable.
+                                                </p>
+                                            </div>
+
+                                            <div class="bg-neutral-50 border border-neutral-300 p-3 rounded">
+                                                <h5 class="font-display font-bold text-neutral-900 mb-1 flex items-center gap-1.5">
+                                                    <span class="material-symbols-outlined text-sm text-emerald-600">verified</span> La Solución en Producción
+                                                </h5>
+                                                <p class="text-neutral-700 leading-relaxed">
+                                                    Extracción automática diaria de BigQuery Cloud Billing que proyecta el ritmo de consumo contra la meta contractual. Clasifica las cuentas en semáforo de riesgo y genera la ficha ejecutiva de renegociación comercial.
+                                                </p>
+                                            </div>
+
+                                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 font-mono text-center">
+                                                <div class="bg-neutral-100 border border-neutral-300 p-2">
+                                                    <div class="text-[10px] text-neutral-600 uppercase">Cuentas</div>
+                                                    <div class="font-bold text-sm text-neutral-900 mt-0.5">+110</div>
+                                                </div>
+                                                <div class="bg-neutral-100 border border-neutral-300 p-2">
+                                                    <div class="text-[10px] text-neutral-600 uppercase">Assessments</div>
+                                                    <div class="font-bold text-sm text-neutral-900 mt-0.5">+8</div>
+                                                </div>
+                                                <div class="bg-neutral-100 border border-neutral-300 p-2">
+                                                    <div class="text-[10px] text-neutral-600 uppercase">Pipeline USD</div>
+                                                    <div class="font-bold text-sm text-emerald-700 mt-0.5">+$500K</div>
+                                                </div>
+                                                <div class="bg-neutral-100 border border-neutral-300 p-2">
+                                                    <div class="text-[10px] text-neutral-600 uppercase">Penalizaciones</div>
+                                                    <div class="font-bold text-sm text-blue-700 mt-0.5">0 USD</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- TAB 2: FICHA TECNICA -->
+                                    <div id="pato-doc-panel-2" class="pato-doc-panel hidden bg-white border-2 border-black rounded-xl p-4 sm:p-5 shadow-[3px_3px_0px_#000]">
+                                        <h4 class="font-display font-black text-lg sm:text-xl text-neutral-900 leading-tight">2. Ficha Técnica</h4>
+                                        <hr class="border-black my-2.5">
+                                        <p class="font-body text-xs text-neutral-700 leading-relaxed mb-3">
+                                            Especificaciones de arquitectura, flujo de telemetría y seguridad de la plataforma FinOps.
+                                        </p>
+
+                                        <div class="space-y-3 font-mono text-xs">
+                                            <div class="border border-neutral-300 p-3 bg-neutral-50 space-y-1.5">
+                                                <div class="font-bold text-neutral-900 uppercase text-[11px] flex items-center gap-1.5">
+                                                    <span class="material-symbols-outlined text-sm text-[#5A4A96]">memory</span> Stack Tecnológico
+                                                </div>
+                                                <div class="grid grid-cols-2 gap-2 text-[11px] text-neutral-700">
+                                                    <div>• <strong>Cloud Ingestion:</strong> BigQuery Billing Export</div>
+                                                    <div>• <strong>Backend:</strong> Google Apps Script (V8 Engine)</div>
+                                                    <div>• <strong>Database:</strong> Google Sheets & BigQuery Tables</div>
+                                                    <div>• <strong>Frontend UI:</strong> HTML5 / Tailwind / Looker Engine</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="border border-neutral-300 p-3 bg-neutral-50 space-y-1.5">
+                                                <div class="font-bold text-neutral-900 uppercase text-[11px] flex items-center gap-1.5">
+                                                    <span class="material-symbols-outlined text-sm text-blue-600">sync_alt</span> Pipeline de Datos (ETL)
+                                                </div>
+                                                <ol class="list-decimal list-inside space-y-1 text-[11px] text-neutral-700 font-body">
+                                                    <li><strong>Extracción Diaria:</strong> Export automático de Google Cloud Billing a datasets particionados en BigQuery.</li>
+                                                    <li><strong>Normalización FinOps:</strong> Cruce de SKU IDs, SKUs de CUDs (Compute Engine, Memory, GKE, Cloud SQL) y tarifas contractuales pactadas.</li>
+                                                    <li><strong>Cálculo de Desviación:</strong> Algoritmo de velocidad de quema (Burn Rate) que proyecta sobreconsumos o subutilizaciones al cierre del contrato.</li>
+                                                    <li><strong>Exposición:</strong> Renderizado reactivo en Web App para ejecutivos comerciales y consultores FinOps.</li>
+                                                </ol>
+                                            </div>
+
+                                            <div class="border border-neutral-300 p-3 bg-neutral-50">
+                                                <div class="font-bold text-neutral-900 uppercase text-[11px] mb-1">Seguridad & Cumplimiento</div>
+                                                <div class="text-[11px] text-neutral-700 font-body">
+                                                    Acceso restringido por OAuth2 corporativo a dominio <code>@xertica.com</code>. Permisos IAM de solo lectura en BigQuery (Data Viewer). Cero almacenamiento de contraseñas o tokens expuestos en cliente.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- TAB 3: MANUAL DE USUARIO (3 PASOS CLAVE) -->
+                                    <div id="pato-doc-panel-3" class="pato-doc-panel bg-white border-2 border-black rounded-xl p-4 sm:p-5 shadow-[3px_3px_0px_#000]">
+                                        <h4 class="font-display font-black text-lg sm:text-xl text-neutral-900 leading-tight">3. Manual de Usuario</h4>
+                                        <hr class="border-black my-2.5">
+                                        <p class="font-body text-xs text-neutral-700 leading-relaxed mb-4">
+                                            Guía operativa paso a paso para auditar cuentas de clientes y generar fichas ejecutivas de optimización FinOps.
+                                        </p>
+
+                                        <!-- Flujo en 3 Pasos -->
+                                        <div class="space-y-4">
+                                            <!-- PASO 1 -->
+                                            <div class="border-2 border-black p-3.5 bg-neutral-50 shadow-[2px_2px_0px_#000]">
+                                                <div class="flex items-center justify-between mb-2">
+                                                    <span class="badge-swiss bg-black text-white font-bold text-[10px]">PASO 01</span>
+                                                    <span class="font-mono text-[11px] font-bold text-neutral-600">Acceso & Validación de Cuenta</span>
+                                                </div>
+                                                <h5 class="font-display font-bold text-xs sm:text-sm text-neutral-900 mb-1.5">
+                                                    Autenticación Corporativa @xertica.com
+                                                </h5>
+                                                <p class="font-body text-xs text-neutral-700 leading-relaxed mb-2.5">
+                                                    Abrir la Web App en Google Apps Script. El sistema verifica automáticamente la identidad mediante Google Identity. Solo usuarios autorizados de la práctica FinOps y Comercial tienen acceso al catálogo multi-billing.
+                                                </p>
+                                                <div class="bg-white border border-neutral-300 p-2.5 rounded font-mono text-[11px] text-neutral-800 flex items-center justify-between">
+                                                    <span>Enlace Web App:</span>
+                                                    <a href="https://script.google.com/a/macros/xertica.com/s/AKfycbzNFrFsFDN4T18OrzQSpXsOMM_OLqJIYhK8O0S77QUtDWLZq64TxkhNnM78moDX4BDKdQ/exec" target="_blank" class="text-[#5A4A96] font-bold underline hover:text-black flex items-center gap-1">
+                                                        <span>Abrir GAS Web App</span>
+                                                        <span class="material-symbols-outlined text-xs">open_in_new</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <!-- PASO 2 -->
+                                            <div class="border-2 border-black p-3.5 bg-neutral-50 shadow-[2px_2px_0px_#000]">
+                                                <div class="flex items-center justify-between mb-2">
+                                                    <span class="badge-swiss bg-[#5A4A96] text-white font-bold text-[10px]">PASO 02</span>
+                                                    <span class="font-mono text-[11px] font-bold text-neutral-600">Sincronización BigQuery</span>
+                                                </div>
+                                                <h5 class="font-display font-bold text-xs sm:text-sm text-neutral-900 mb-1.5">
+                                                    Selección de Cliente y Carga de Telemetría
+                                                </h5>
+                                                <p class="font-body text-xs text-neutral-700 leading-relaxed mb-2">
+                                                    Seleccionar el cliente objetivo en el selector desplegable (ej. Despegar, Zucarmex, DIMEX, BanRegio o VivaAerobus). El motor consulta BigQuery Billing y calcula el porcentaje de quema actual vs. el compromiso pactado.
+                                                </p>
+                                                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 font-mono text-[10px]">
+                                                    <div class="p-2 bg-emerald-50 border border-emerald-300 text-emerald-800 font-bold">
+                                                        ✓ En Rango (85% - 100%)
+                                                    </div>
+                                                    <div class="p-2 bg-amber-50 border border-amber-300 text-amber-800 font-bold">
+                                                        ⚠ Alerta (&lt;85% Subcommit)
+                                                    </div>
+                                                    <div class="p-2 bg-blue-50 border border-blue-300 text-blue-800 font-bold">
+                                                        ↑ Sobreconsumo (&gt;100%)
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- PASO 3 -->
+                                            <div class="border-2 border-black p-3.5 bg-neutral-50 shadow-[2px_2px_0px_#000]">
+                                                <div class="flex items-center justify-between mb-2">
+                                                    <span class="badge-swiss bg-[#FAF338] text-black font-bold text-[10px]">PASO 03</span>
+                                                    <span class="font-mono text-[11px] font-bold text-neutral-600">Análisis y Exportación</span>
+                                                </div>
+                                                <h5 class="font-display font-bold text-xs sm:text-sm text-neutral-900 mb-1.5">
+                                                    Ficha Expandible y Plan de Acción Comercial
+                                                </h5>
+                                                <p class="font-body text-xs text-neutral-700 leading-relaxed mb-2.5">
+                                                    Hacer clic en el cliente para expandir el desglose detallado de SKUs: núcleos de CPU, RAM, almacenamiento y licencias. Exportar la ficha ejecutiva a Google Sheets o PDF para presentar la propuesta de ahorro y nuevo CUD al cliente.
+                                                </p>
+                                                <div class="bg-white border border-neutral-300 p-2.5 rounded text-[11px] font-mono text-neutral-700 flex items-center justify-between">
+                                                    <span>Formato de Salida:</span>
+                                                    <span class="font-bold text-neutral-900">Excel / Google Sheets / Reporte PDF C-Level</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- TAB 4: MOTOR DE REGLAS (CAPAS FINOPS) -->
+                                    <div id="pato-doc-panel-4" class="pato-doc-panel hidden bg-white border-2 border-black rounded-xl p-4 sm:p-5 shadow-[3px_3px_0px_#000]">
+                                        <h4 class="font-display font-black text-lg sm:text-xl text-neutral-900 leading-tight">4. Motor de Reglas (Capas FinOps)</h4>
+                                        <hr class="border-black my-2.5">
+                                        <p class="font-body text-xs text-neutral-700 leading-relaxed mb-4">
+                                            Matriz algorítmica de 4 capas para detección de ineficiencias de nube y mitigación de riesgos contractuales.
+                                        </p>
+
+                                        <div class="space-y-3 font-body text-xs">
+                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
+                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
+                                                    <span class="badge-swiss bg-black text-white text-[9px] px-1.5 py-0.5">CAPA 1</span>
+                                                    Auditoría de CUDs (Committed Use Discounts)
+                                                </div>
+                                                <p class="text-neutral-700 leading-relaxed">
+                                                    Evalúa la tasa de utilización de compromisos de cómputo y memoria a 1 o 3 años. Si el uso cae por debajo del 85%, emite bandera roja para redistribución de cargas de trabajo.
+                                                </p>
+                                            </div>
+
+                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
+                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
+                                                    <span class="badge-swiss bg-black text-white text-[9px] px-1.5 py-0.5">CAPA 2</span>
+                                                    Detección de Sobreconsumo (On-Demand Waste)
+                                                </div>
+                                                <p class="text-neutral-700 leading-relaxed">
+                                                    Identifica workloads que pagan tarifa de lista On-Demand por más de 60 días continuos. Cuantifica el ahorro neto que obtendría el cliente al formalizar un nuevo commit (descuentos de hasta 57%).
+                                                </p>
+                                            </div>
+
+                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
+                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
+                                                    <span class="badge-swiss bg-black text-white text-[9px] px-1.5 py-0.5">CAPA 3</span>
+                                                    Simulación Predictiva & Forecasting
+                                                </div>
+                                                <p class="text-neutral-700 leading-relaxed">
+                                                    Calcula escenarios hipotéticos de crecimiento estacional o migración de nuevos sistemas hacia GCP, proyectando el impacto directo en el P&amp;L del cliente.
+                                                </p>
+                                            </div>
+
+                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
+                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
+                                                    <span class="badge-swiss bg-black text-white text-[9px] px-1.5 py-0.5">CAPA 4</span>
+                                                    Alertas Preventivas de Vencimiento
+                                                </div>
+                                                <p class="text-neutral-700 leading-relaxed">
+                                                    Disparador de notificaciones a 90, 60 y 30 días previos a la expiración de contratos multianuales con Google Cloud, evitando caídas abruptas a tarifa plena.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- TAB 5: FILTROS Y GRAFICAS -->
+                                    <div id="pato-doc-panel-5" class="pato-doc-panel hidden bg-white border-2 border-black rounded-xl p-4 sm:p-5 shadow-[3px_3px_0px_#000]">
+                                        <h4 class="font-display font-black text-lg sm:text-xl text-neutral-900 leading-tight">5. Filtros y Gráficas</h4>
+                                        <hr class="border-black my-2.5">
+                                        <p class="font-body text-xs text-neutral-700 leading-relaxed mb-4">
+                                            Capacidades analíticas multidimensionales incorporadas en el tablero interactivo.
+                                        </p>
+
+                                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 font-body text-xs">
+                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded space-y-1.5">
+                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-1.5">
+                                                    <span class="material-symbols-outlined text-sm text-[#5A4A96]">filter_alt</span> Filtros Disponibles
+                                                </div>
+                                                <ul class="list-disc list-inside space-y-1 text-neutral-700 font-mono text-[11px]">
+                                                    <li>Por Cliente / Billing Account ID</li>
+                                                    <li>Por Proyecto GCP individual</li>
+                                                    <li>Por Familia de Máquina (N2, C2, E2, TPU)</li>
+                                                    <li>Por Región de Nube (us-central1, etc.)</li>
+                                                    <li>Por Tipo de Descuento (CUD 1a / 3a / SUD)</li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded space-y-1.5">
+                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-1.5">
+                                                    <span class="material-symbols-outlined text-sm text-emerald-600">bar_chart</span> Visualizaciones Clave
+                                                </div>
+                                                <ul class="list-disc list-inside space-y-1 text-neutral-700 font-mono text-[11px]">
+                                                    <li>Gráfica de Cobertura CUD vs. Consumo Real</li>
+                                                    <li>Curva de Gasto On-Demand vs. Bonificado</li>
+                                                    <li>Matriz de Semáforo de Riesgo Contractual</li>
+                                                    <li>Distribución de Gasto por Servicio Core</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- TAB 6: IA Y PRIVACIDAD -->
+                                    <div id="pato-doc-panel-6" class="pato-doc-panel hidden bg-white border-2 border-black rounded-xl p-4 sm:p-5 shadow-[3px_3px_0px_#000]">
+                                        <h4 class="font-display font-black text-lg sm:text-xl text-neutral-900 leading-tight">6. IA y Privacidad</h4>
+                                        <hr class="border-black my-2.5">
+                                        <p class="font-body text-xs text-neutral-700 leading-relaxed mb-4">
+                                            Asistencia inteligente para síntesis ejecutiva bajo estándares corporativos de privacidad y seguridad Cloud.
+                                        </p>
+
+                                        <div class="space-y-3 font-body text-xs">
+                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
+                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
+                                                    <span class="material-symbols-outlined text-[#5A4A96] text-sm">auto_awesome</span>
+                                                    Asesor FinOps con Gemini
+                                                </div>
+                                                <p class="text-neutral-700 leading-relaxed">
+                                                    Interpreta tablas complejas de facturación en BigQuery y genera resúmenes en lenguaje natural para audiencias C-Level (CFO, CTO, Directores de Finanzas), destacando ahorros y recomendaciones en viñetas ejecutivas.
+                                                </p>
+                                            </div>
+
+                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
+                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
+                                                    <span class="material-symbols-outlined text-emerald-600 text-sm">shield</span>
+                                                    Política Estricta de Cero Retención
+                                                </div>
+                                                <p class="text-neutral-700 leading-relaxed">
+                                                    Ningún dato financiero, nombre de cliente o identificador de proyecto es utilizado para entrenar modelos públicos. Las consultas se ejecutan en Google Cloud Vertex AI Enterprise con cifrado end-to-end.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- TAB 7: ROADMAP Y EVOLUCION -->
+                                    <div id="pato-doc-panel-7" class="pato-doc-panel hidden bg-white border-2 border-black rounded-xl p-4 sm:p-5 shadow-[3px_3px_0px_#000]">
+                                        <h4 class="font-display font-black text-lg sm:text-xl text-neutral-900 leading-tight">7. Roadmap y Evolución</h4>
+                                        <hr class="border-black my-2.5">
+                                        <p class="font-body text-xs text-neutral-700 leading-relaxed mb-4">
+                                            Evolución continua del motor de telemetría y siguientes hitos de escalabilidad regional.
+                                        </p>
+
+                                        <div class="space-y-2.5 font-body text-xs">
+                                            <div class="border border-neutral-300 p-3 bg-emerald-50 rounded flex items-start gap-2.5">
+                                                <span class="material-symbols-outlined text-emerald-700 text-sm mt-0.5">check_circle</span>
+                                                <div>
+                                                    <strong class="text-emerald-900 block font-display">Fase 1: Conexión BigQuery &amp; +110 Cuentas (Completada)</strong>
+                                                    <span class="text-emerald-800 text-[11px]">Consolidación multi-billing, ingesta diaria y tablero ejecutivo en producción.</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="border border-neutral-300 p-3 bg-blue-50 rounded flex items-start gap-2.5">
+                                                <span class="material-symbols-outlined text-blue-700 text-sm mt-0.5">pending</span>
+                                                <div>
+                                                    <strong class="text-blue-900 block font-display">Fase 2: Automatización de Assessments &amp; Alertas (En Curso)</strong>
+                                                    <span class="text-blue-800 text-[11px]">Envío automático de notificaciones de riesgo a líderes comerciales y CSMs vía Google Chat / Slack.</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded flex items-start gap-2.5">
+                                                <span class="material-symbols-outlined text-neutral-500 text-sm mt-0.5">schedule</span>
+                                                <div>
+                                                    <strong class="text-neutral-900 block font-display">Fase 3: Multi-Cloud FinOps &amp; Autopilot (Q1 2027)</strong>
+                                                    <span class="text-neutral-700 text-[11px]">Ampliación de telemetría a AWS Savings Plans y Azure Reserved Instances para clientes con infraestructuras híbridas.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 5: ESCALABILIDAD LATAM -->
+                        <div id="pato-slide-5" class="pato-slide hidden bg-[#FFFEF8] border-2 border-black p-6 sm:p-8 swiss-border shadow-[5px_5px_0px_#000]">
+                            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                                <!-- Col 5: Swiss Block -->
+                                <div class="lg:col-span-5 bg-[#5A4A96] text-white p-6 sm:p-8 border-2 border-black shadow-[4px_4px_0px_#000] space-y-5">
+                                    <span class="badge-swiss bg-black text-[#FAF338] font-bold">SLIDE 05 · REPLICABILIDAD</span>
+                                    <h3 class="font-display font-black text-2xl sm:text-3xl uppercase leading-tight text-white border-b-4 border-black pb-3">
+                                        Escalabilidad LATAM
+                                    </h3>
+                                    <p class="font-body text-xs sm:text-sm text-neutral-100 leading-relaxed">
+                                        <strong>Equipos destino:</strong> FinOps Regional, CSMs &amp; Commercial GCP (MX, CO, PE, CL).
+                                    </p>
+                                    <div class="grid grid-cols-3 gap-2 text-center font-mono text-black">
+                                        <div class="bg-white border-2 border-black p-2.5">
+                                            <div class="text-[9px] uppercase tracking-wider text-neutral-600 font-bold">Arquitectura</div>
+                                            <div class="text-xs font-black mt-1">Multi-Billing</div>
+                                        </div>
+                                        <div class="bg-white border-2 border-black p-2.5">
+                                            <div class="text-[9px] uppercase tracking-wider text-neutral-600 font-bold">Complejidad</div>
+                                            <div class="text-xs font-black text-emerald-700 mt-1">Baja (P&amp;P)</div>
+                                        </div>
+                                        <div class="bg-white border-2 border-black p-2.5">
+                                            <div class="text-[9px] uppercase tracking-wider text-neutral-600 font-bold">Cobertura</div>
+                                            <div class="text-xs font-black text-blue-700 mt-1">100% LATAM</div>
+                                        </div>
+                                    </div>
+                                    <p class="font-body text-xs text-neutral-100">
+                                        Estructura modular para auditar cualquier cuenta de facturación de Google Cloud en LATAM en minutos.
+                                    </p>
+                                </div>
+
+                                <!-- Col 7: Checkpoints & Tropicalización -->
+                                <div class="lg:col-span-7 space-y-4">
+                                    <div class="bg-white border-2 border-black p-4 shadow-[3px_3px_0px_#000]">
+                                        <div class="text-xs font-display font-black uppercase tracking-wider text-neutral-800 mb-2 flex items-center gap-1.5">
+                                            <span class="w-2 h-2 bg-[#5A4A96] inline-block"></span> Checkpoints de Replicabilidad e Iterabilidad:
+                                        </div>
+                                        <ul class="space-y-2 font-body text-xs text-neutral-700">
+                                            <li class="flex items-start gap-2 bg-neutral-50 border border-neutral-200 p-2.5">
+                                                <span class="material-symbols-outlined text-emerald-600 text-sm mt-0.5">check_circle</span>
+                                                <div>
+                                                    <strong>Core Multi-Billing Reusable:</strong> Consultas BigQuery y orquestación Apps Script parametrizables para cualquier cuenta de facturación maestra de Google Cloud en LATAM.
+                                                </div>
+                                            </li>
+                                            <li class="flex items-start gap-2 bg-neutral-50 border border-neutral-200 p-2.5">
+                                                <span class="material-symbols-outlined text-emerald-600 text-sm mt-0.5">check_circle</span>
+                                                <div>
+                                                    <strong>Iterabilidad Operativa:</strong> Umbrales de desviación de consumo (alerta preventiva en 80%, crítico en 95%) editables sin tocar código fuente.
+                                                </div>
+                                            </li>
+                                            <li class="flex items-start gap-2 bg-neutral-50 border border-neutral-200 p-2.5">
+                                                <span class="material-symbols-outlined text-emerald-600 text-sm mt-0.5">check_circle</span>
+                                                <div>
+                                                    <strong>Ficha Ejecutiva Estandarizada:</strong> Formato de reporte de diagnóstico listo para presentación ejecutiva C-Level con branding de Xertica.
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Tropicalización Regional -->
+                                    <div class="bg-white border-2 border-black p-4 shadow-[3px_3px_0px_#000]">
+                                        <div class="text-xs font-display font-black uppercase tracking-wider text-neutral-800 mb-2 flex items-center gap-1.5">
+                                            <span class="w-2 h-2 bg-[#FAF338] inline-block border border-black"></span> Tropicalización Regulatoria y Fiscal:
+                                        </div>
+                                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 font-mono text-xs">
+                                            <div class="p-2.5 bg-neutral-50 border border-neutral-200">
+                                                <span class="font-bold text-neutral-900">🇲🇽 México:</span>
+                                                <div class="text-neutral-600 text-[10px] mt-0.5">Cruce con contratos en MXN/USD y validación de retenciones fiscales de servicios Cloud.</div>
+                                            </div>
+                                            <div class="p-2.5 bg-neutral-50 border border-neutral-200">
+                                                <span class="font-bold text-neutral-900">🇨🇴 Colombia:</span>
+                                                <div class="text-neutral-600 text-[10px] mt-0.5">Ajuste de tasas impositivas y retención en la fuente para facturación local.</div>
+                                            </div>
+                                            <div class="p-2.5 bg-neutral-50 border border-neutral-200">
+                                                <span class="font-bold text-neutral-900">🇵🇪 Perú:</span>
+                                                <div class="text-neutral-600 text-[10px] mt-0.5">Monitoreo en Soles/USD con cálculo de detracciones fiscales en servicios digitales.</div>
+                                            </div>
+                                            <div class="p-2.5 bg-neutral-50 border border-neutral-200">
+                                                <span class="font-bold text-neutral-900">🇨🇱 Chile:</span>
+                                                <div class="text-neutral-600 text-[10px] mt-0.5">Mapeo presupuestal con conversión a UF para auditorías financieras corporativas.</div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
 
-                        <!-- Technical Specs Accordion -->
-                        <div class="bg-[#FFFEF8] border-2 border-black p-4 swiss-border">
-                            <h5 class="font-display font-bold text-sm uppercase tracking-wider mb-2">Ficha Técnica Rápida para LATAM:</h5>
-                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-xs">
-                                <div class="p-2.5 bg-neutral-100 border border-neutral-300">
-                                    <div class="text-neutral-500 uppercase text-[10px]">Stack Técnico</div>
-                                    <div class="font-bold mt-0.5">BigQuery · Sheets API · Tailwind</div>
-                                </div>
-                                <div class="p-2.5 bg-neutral-100 border border-neutral-300">
-                                    <div class="text-neutral-500 uppercase text-[10px]">Fuentes de Datos</div>
-                                    <div class="font-bold mt-0.5">Partner Billing · Cloud Console</div>
-                                </div>
-                                <div class="p-2.5 bg-neutral-100 border border-neutral-300">
-                                    <div class="text-neutral-500 uppercase text-[10px]">Cobertura Regional</div>
-                                    <div class="font-bold mt-0.5 text-emerald-700">100% LATAM Multi-País</div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-
                 </div>
             </div>
 
@@ -3423,6 +3942,70 @@ La plataforma cuenta con 2 modos:
         }
 
         // ==========================================
+        // ==========================================
+        // SLIDE DECK PRESENTATION ENGINE (PATRICIO MARTIN)
+        // ==========================================
+        let currentPatoSlide = 1;
+        const totalPatoSlides = 5;
+
+        function switchPatoSlide(slideNum) {
+            if (slideNum < 1 || slideNum > totalPatoSlides) return;
+            currentPatoSlide = slideNum;
+
+            const counter = document.getElementById('pato-slide-counter');
+            if (counter) {
+                counter.textContent = `SLIDE [ 0${slideNum} / 0${totalPatoSlides} ]`;
+            }
+
+            for (let i = 1; i <= totalPatoSlides; i++) {
+                const slide = document.getElementById('pato-slide-' + i);
+                const navBtn = document.getElementById('pato-slide-nav-' + i);
+                if (slide) {
+                    if (i === slideNum) {
+                        slide.classList.remove('hidden');
+                    } else {
+                        slide.classList.add('hidden');
+                    }
+                }
+                if (navBtn) {
+                    if (i === slideNum) {
+                        navBtn.className = 'pato-slide-nav px-3 py-1.5 rounded-full border-2 border-black bg-[#FAF338] text-black font-bold shadow-[2px_2px_0px_#000] whitespace-nowrap';
+                    } else {
+                        navBtn.className = 'pato-slide-nav px-3 py-1.5 rounded-full border border-transparent hover:border-black hover:bg-neutral-100 text-neutral-700 font-semibold whitespace-nowrap transition-all';
+                    }
+                }
+            }
+        }
+
+        function nextPatoSlide() {
+            let next = currentPatoSlide + 1;
+            if (next > totalPatoSlides) next = 1;
+            switchPatoSlide(next);
+        }
+
+        function prevPatoSlide() {
+            let prev = currentPatoSlide - 1;
+            if (prev < 1) prev = totalPatoSlides;
+            switchPatoSlide(prev);
+        }
+
+        // Sub-Tab Switching para Ficha Técnica / Documentación Oficial de Patricio Martin
+        function switchPatoDocTab(tabIndex) {
+            for (let i = 1; i <= 7; i++) {
+                const btn = document.getElementById('pato-doc-btn-' + i);
+                const panel = document.getElementById('pato-doc-panel-' + i);
+                if (!btn || !panel) continue;
+                
+                if (i === tabIndex) {
+                    btn.className = 'pato-doc-btn text-left px-3 py-1.5 rounded-full border-2 border-black bg-[#FAF338] text-black font-bold shadow-[2px_2px_0px_#000] whitespace-nowrap';
+                    panel.classList.remove('hidden');
+                } else {
+                    btn.className = 'pato-doc-btn text-left px-3 py-1.5 rounded-full border border-transparent hover:border-black hover:bg-white transition-all whitespace-nowrap text-neutral-700 font-semibold';
+                    panel.classList.add('hidden');
+                }
+            }
+        }
+
         // SLIDE DECK PRESENTATION ENGINE (ANGEL SOLIS)
         // ==========================================
         let currentAngelSlide = 1;
@@ -3469,8 +4052,17 @@ La plataforma cuenta con 2 modos:
             switchAngelSlide(prev);
         }
 
-        // Navegación por flechas del teclado en el deck
+        // Navegación por flechas del teclado en los decks
         document.addEventListener('keydown', function(e) {
+            const patoPanel = document.getElementById('panel-patricio');
+            if (patoPanel && !patoPanel.classList.contains('hidden')) {
+                if (e.key === 'ArrowRight') {
+                    nextPatoSlide();
+                } else if (e.key === 'ArrowLeft') {
+                    prevPatoSlide();
+                }
+            }
+
             const angelPanel = document.getElementById('panel-angel');
             if (angelPanel && !angelPanel.classList.contains('hidden')) {
                 if (e.key === 'ArrowRight') {
