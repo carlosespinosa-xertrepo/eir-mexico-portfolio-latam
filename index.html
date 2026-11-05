@@ -2521,281 +2521,815 @@
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                    
-                    <!-- Left Column: Ficha Ejecutiva Digerible -->
-                    <div class="lg:col-span-5 space-y-6">
-
-                        <!-- 2. EN QUÉ AYUDA DIRECTAMENTE -->
-                        <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border">
-                            <div class="font-display font-black text-xs uppercase tracking-wider text-[#1E1E1E] mb-2.5 flex items-center gap-2">
-                                <span class="w-2.5 h-2.5 bg-[#1E1E1E] inline-block"></span> 2. ¿En qué ayuda directamente?
-                            </div>
-                            <ul class="space-y-3 font-body text-xs text-neutral-700">
-                                <li class="flex items-start gap-2.5">
-                                    <span class="material-symbols-outlined text-emerald-600 text-sm mt-0.5">check_circle</span>
-                                    <div>
-                                        <strong class="text-neutral-900">Semáforo Operativo de Conciliación de Pipeline (Partner Hub vs. Salesforce):</strong> Cruce automatizado del pipeline levantado en Partner Hub (Google) contra el registrado en Salesforce, alertando sobre oportunidades activas sin registro de Deal Registration (DR) para garantizar que califiquen a cobro potencial de incentivos al cierre comercial.
-                                    </div>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <span class="material-symbols-outlined text-emerald-600 text-sm mt-0.5">check_circle</span>
-                                    <div>
-                                        <strong class="text-neutral-900">Cálculo de Incentivos Automatizado (En Construcción con IA):</strong> Módulo algorítmico asistido por inteligencia artificial y las reglas oficiales de incentivos Google Cloud 2026, calculando el Net to Google (fórmula <code>Monto Bruto * 0.80</code>) y proyectando el monto exacto de rebates aplicables.
-                                    </div>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <span class="material-symbols-outlined text-amber-500 text-sm mt-0.5 fill">auto_awesome</span>
-                                    <div>
-                                        <strong class="text-neutral-900">Radar Estratégico Gemini AI (Umbral $0 & PayOut 2X):</strong> Identificación proactiva de oportunidades desde 1 sola licencia para exigir Deal Registration inmediato, asegurando que califiquen para el multiplicador del 20% y cobro doble de incentivo.
-                                    </div>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <span class="material-symbols-outlined text-emerald-600 text-sm mt-0.5">check_circle</span>
-                                    <div>
-                                        <strong class="text-neutral-900">Alert Desk & Colaboración Comercial-Finanzas:</strong> Coordinación directa entre ventas, operaciones y finanzas para no perder ventanas de registro antes del cierre de oportunidades en Salesforce.
-                                    </div>
-                                </li>
-                            </ul>
+                <div id="carlos-deck-wrapper" class="space-y-6">
+                    <!-- Top Slide Navigation Bar -->
+                    <div class="bg-[#FFFEF8] border-2 border-black p-3.5 sm:p-4 swiss-border shadow-[4px_4px_0px_#000] flex flex-col md:flex-row md:items-center justify-between gap-3">
+                        <div class="flex items-center gap-2 sm:gap-3">
+                            <span class="badge-swiss bg-[#5A4A96] text-white font-bold flex items-center gap-1.5">
+                                <span class="material-symbols-outlined text-sm">slideshow</span> SLIDE DECK
+                            </span>
+                            <span id="carlos-slide-counter" class="font-mono text-xs font-bold text-neutral-800 bg-neutral-100 border border-neutral-300 px-2 py-1">
+                                SLIDE [ 01 / 05 ]
+                            </span>
+                            <span class="font-display font-black text-xs uppercase tracking-wider text-neutral-600 hidden sm:inline">
+                                Incentivos Google Cloud &amp; Deal Registration G26
+                            </span>
                         </div>
 
-                        <!-- 3. RESULTADOS CONCRETOS (MÉTRICAS CLAVE) -->
-                        <div class="bg-[#FAF338] border-2 border-black p-5 swiss-border space-y-3">
-                            <div class="font-display font-black text-xs uppercase tracking-wider text-black flex items-center gap-2">
-                                <span class="w-2.5 h-2.5 bg-black inline-block"></span> 3. Resultados Concretos (Métricas Clave)
-                            </div>
-                            
-                            <!-- Banner de Impacto Sugerido por Vanessa -->
-                            <div class="bg-black text-white p-3 border-2 border-black">
-                                <div class="text-[10px] font-mono text-[#FAF338] font-bold uppercase tracking-wider">Impacto Comprobado:</div>
-                                <div class="font-display font-black text-sm text-white mt-0.5">
-                                    Más de USD 136,000 en rebates asegurados y cero revisiones manuales mediante auditoría en tiempo real.
-                                </div>
-                            </div>
-
-                            <!-- 2 Cajas Principales -->
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                <div class="bg-white border-2 border-black p-3.5 shadow-[2px_2px_0px_#000]">
-                                    <div class="font-display font-black text-2xl sm:text-3xl text-[#5A4A96] leading-none">$136,051+ USD</div>
-                                    <div class="text-[10px] font-mono font-bold uppercase text-neutral-600 mt-1">REBATE EN RIESGO BLINDADO</div>
-                                    <p class="font-body text-xs text-neutral-700 mt-2 leading-tight">
-                                        Detección y gestión oportuna de <strong>22 oportunidades críticas sin Deal Registration</strong>, protegiendo más de <strong>$1.74M USD de Net</strong>.
-                                    </p>
-                                </div>
-                                <div class="bg-white border-2 border-black p-3.5 shadow-[2px_2px_0px_#000]">
-                                    <div class="font-display font-black text-2xl sm:text-3xl text-neutral-900 leading-none">0 Días</div>
-                                    <div class="text-[10px] font-mono font-bold uppercase text-neutral-600 mt-1">CERO REVISIONES MANUALES</div>
-                                    <p class="font-body text-xs text-neutral-700 mt-2 leading-tight">
-                                        Datos en vivo: Conexión continua a BigQuery cruzando Salesforce y Partner Hub sin hojas de cálculo.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Assessments y Oportunidades Auditadas en Vivo -->
-                            <div class="bg-white border-2 border-black p-3 shadow-[2px_2px_0px_#000]">
-                                <div class="font-display font-black text-[11px] uppercase tracking-wider text-neutral-900 mb-1 flex items-center gap-1.5">
-                                    <span class="material-symbols-outlined text-[#5A4A96] text-sm">fact_check</span> Assessments de Riesgo & Oportunidades Auditadas:
-                                </div>
-                                <div class="grid grid-cols-2 gap-2 mt-2 pt-2 border-t border-neutral-200 text-xs font-mono">
-                                    <div>
-                                        <div class="font-display font-bold text-base text-[#5A4A96]">22 Oportunidades Críticas</div>
-                                        <div class="text-[10px] text-neutral-600">Cuentas detectadas a tiempo sin registro en Partner Hub (+1.74M USD Net) para tramitar DR antes del cierre.</div>
-                                    </div>
-                                    <div>
-                                        <div class="font-display font-bold text-base text-emerald-700">+$20M USD con DR</div>
-                                        <div class="text-[10px] text-neutral-600">Pipeline auditado y conciliado en tiempo real con Deal Registration en Partner Hub, listo para cobro al ganar.</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Métrica Destacada 1: Pipeline Liberado -->
-                            <div class="bg-white border-2 border-black p-3 flex items-start gap-3 shadow-[2px_2px_0px_#000]">
-                                <span class="material-symbols-outlined text-indigo-600 text-2xl">query_stats</span>
-                                <div class="text-xs">
-                                    <span class="font-display font-black text-sm text-neutral-900 block leading-tight">
-                                        $20,079,979 USD de Pipeline Calificado para Incentivos
-                                    </span>
-                                    <span class="text-neutral-700 font-sans mt-0.5 block">
-                                        Identificación y validación de oportunidades con Deal Registration aprobado por Google en Partner Hub, candidatas directas para cobro de incentivos al cierre comercial.
-                                    </span>
-                                </div>
-                            </div>
-
-                            <!-- Métrica Destacada 2: Cuentas Gemini -->
-                            <div class="bg-white border-2 border-black p-3 flex items-start gap-3 shadow-[2px_2px_0px_#000]">
-                                <span class="material-symbols-outlined text-amber-500 text-2xl fill">bolt</span>
-                                <div class="text-xs">
-                                    <span class="font-display font-black text-sm text-neutral-900 block leading-tight">
-                                        10 Cuentas Estratégicas Gemini Blindadas
-                                    </span>
-                                    <span class="text-neutral-700 font-sans mt-0.5 block">
-                                        Monitoreo especializado de cuentas con IA generativa, asegurando la activación del rampa 25/75 de adopción en 90 días para el cobro del 100% del incentivo oficial.
-                                    </span>
-                                </div>
-                            </div>
+                        <!-- Stepper Pills -->
+                        <div class="flex items-center gap-1.5 overflow-x-auto pb-1 md:pb-0 font-display text-xs">
+                            <button onclick="switchCarlosSlide(1)" id="carlos-slide-nav-1" class="carlos-slide-nav px-3 py-1.5 rounded-full border-2 border-black bg-[#FAF338] text-black font-bold shadow-[2px_2px_0px_#000] whitespace-nowrap">
+                                1. Demo en Video
+                            </button>
+                            <button onclick="switchCarlosSlide(2)" id="carlos-slide-nav-2" class="carlos-slide-nav px-3 py-1.5 rounded-full border border-transparent hover:border-black hover:bg-neutral-100 text-neutral-700 font-semibold whitespace-nowrap transition-all">
+                                2. ¿En qué ayuda?
+                            </button>
+                            <button onclick="switchCarlosSlide(3)" id="carlos-slide-nav-3" class="carlos-slide-nav px-3 py-1.5 rounded-full border border-transparent hover:border-black hover:bg-neutral-100 text-neutral-700 font-semibold whitespace-nowrap transition-all">
+                                3. Resultados Concretos
+                            </button>
+                            <button onclick="switchCarlosSlide(4)" id="carlos-slide-nav-4" class="carlos-slide-nav px-3 py-1.5 rounded-full border border-transparent hover:border-black hover:bg-neutral-100 text-neutral-700 font-semibold whitespace-nowrap transition-all">
+                                4. Ficha Técnica Oficial
+                            </button>
+                            <button onclick="switchCarlosSlide(5)" id="carlos-slide-nav-5" class="carlos-slide-nav px-3 py-1.5 rounded-full border border-transparent hover:border-black hover:bg-neutral-100 text-neutral-700 font-semibold whitespace-nowrap transition-all">
+                                5. Escalabilidad LATAM
+                            </button>
                         </div>
 
-                        <!-- 4. ESCALABILIDAD & REPLICABILIDAD LATAM -->
-                        <div class="bg-[#FFFEF8] border-2 border-black p-5 swiss-border space-y-4">
-                            <!-- Section Title & Target Teams -->
-                            <div class="flex items-start justify-between gap-2 border-b-2 border-black pb-2.5">
-                                <div>
-                                    <div class="font-display font-black text-xs uppercase tracking-wider text-[#5A4A96] flex items-center gap-1.5">
-                                        <span class="material-symbols-outlined text-[#5A4A96] text-sm">public</span> 4. Escalabilidad & Replicabilidad LATAM
-                                    </div>
-                                    <div class="text-[11px] font-mono text-neutral-600 mt-0.5 leading-snug">
-                                        <strong>Equipos destino:</strong> Sales Operations Regional, Deal Desk, Directores Comerciales, Finanzas & Vendedores Workspace/GCP (México, Colombia, Perú, Chile).
-                                    </div>
-                                </div>
-                                <span class="badge-swiss bg-emerald-100 text-emerald-800 border border-emerald-500 text-[10px] whitespace-nowrap font-bold">
-                                    Plug & Play
-                                </span>
-                            </div>
-
-                            <!-- Replicability Indicators Matrix (4 Columns) -->
-                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center font-mono">
-                                <div class="bg-neutral-100 border border-neutral-300 p-2">
-                                    <div class="text-[9px] uppercase tracking-wider text-neutral-500 font-bold">Arquitectura</div>
-                                    <div class="text-xs font-black text-neutral-900 mt-0.5">Serverless & BigQuery</div>
-                                </div>
-                                <div class="bg-neutral-100 border border-neutral-300 p-2">
-                                    <div class="text-[9px] uppercase tracking-wider text-neutral-500 font-bold">Complejidad</div>
-                                    <div class="text-xs font-black text-emerald-700 mt-0.5">Baja (Plug & Play)</div>
-                                </div>
-                                <div class="bg-neutral-100 border border-neutral-300 p-2">
-                                    <div class="text-[9px] uppercase tracking-wider text-neutral-500 font-bold">Compatibilidad</div>
-                                    <div class="text-xs font-black text-blue-700 mt-0.5">100% LATAM</div>
-                                </div>
-                                <div class="bg-neutral-100 border border-neutral-300 p-2">
-                                    <div class="text-[9px] uppercase tracking-wider text-neutral-500 font-bold">Cobertura</div>
-                                    <div class="text-xs font-black text-purple-700 mt-0.5">100% Multi-país</div>
-                                </div>
-                            </div>
-
-                            <!-- Checkpoints de Replicabilidad e Iterabilidad -->
-                            <div>
-                                <div class="text-[11px] font-display font-black uppercase tracking-wider text-neutral-800 mb-2 flex items-center gap-1.5">
-                                    <span class="w-2 h-2 bg-[#5A4A96] inline-block"></span> Checkpoints de Replicabilidad e Iterabilidad:
-                                </div>
-                                <ul class="space-y-1.5 font-body text-xs text-neutral-700">
-                                    <li class="flex items-start gap-2 bg-white border border-neutral-200 p-2">
-                                        <span class="material-symbols-outlined text-emerald-600 text-sm mt-0.5">check_circle</span>
-                                        <div>
-                                            <strong>Core Reusable Serverless:</strong> Arquitectura ligera en Google Apps Script (V8) conectada de forma transparente a BigQuery y Google Sheets. Cero costos de infraestructura de servidores externos y despliegue instantáneo mediante Web App.
-                                        </div>
-                                    </li>
-                                    <li class="flex items-start gap-2 bg-white border border-neutral-200 p-2">
-                                        <span class="material-symbols-outlined text-emerald-600 text-sm mt-0.5">check_circle</span>
-                                        <div>
-                                            <strong>Iterabilidad Operativa:</strong> Reglas de umbrales ($10k Workspace, $60k GCP, $0 Gemini) y porcentajes de margen configurables directamente desde la interfaz, sin requerir cambios en el código fuente.
-                                        </div>
-                                    </li>
-                                    <li class="flex items-start gap-2 bg-white border border-neutral-200 p-2">
-                                        <span class="material-symbols-outlined text-emerald-600 text-sm mt-0.5">check_circle</span>
-                                        <div>
-                                            <strong>Frontend Google Material Design 3:</strong> Sistema de cards ejecutivas (fondo blanco, contornos distintivos y semáforos Google), adaptable a cualquier pantalla corporativa y optimizado para la toma rápida de decisiones.
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <!-- Matriz de Tropicalización Regional -->
-                            <div class="border-t border-neutral-200 pt-3">
-                                <div class="text-[11px] font-display font-black uppercase tracking-wider text-neutral-800 mb-2 flex items-center gap-1.5">
-                                    <span class="w-2 h-2 bg-black inline-block"></span> Matriz de Tropicalización Regional:
-                                </div>
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] font-mono">
-                                    <div class="p-2 bg-neutral-50 border border-neutral-200">
-                                        <span class="font-bold text-neutral-900">🇲🇽 México:</span>
-                                        <div class="text-neutral-600 text-[10px] mt-0.5 font-sans">Procesamiento de cuentas corporativas de ultra-alto volumen y sector público, gestionando validaciones estrictas de fechas de cierre y contratos multianuales en moneda combinada (USD / MXN).</div>
-                                    </div>
-                                    <div class="p-2 bg-neutral-50 border border-neutral-200">
-                                        <span class="font-bold text-neutral-900">🇨🇴 Colombia:</span>
-                                        <div class="text-neutral-600 text-[10px] mt-0.5 font-sans">Adaptación de campos comerciales para cruzar ciclos de facturación local, licitaciones y contratos de gobierno con las aprobaciones de Co-sell de Google Colombia.</div>
-                                    </div>
-                                    <div class="p-2 bg-neutral-50 border border-neutral-200">
-                                        <span class="font-bold text-neutral-900">🇵🇪 Perú:</span>
-                                        <div class="text-neutral-600 text-[10px] mt-0.5 font-sans">Alineación del radar financiero con los tiers de licenciamiento y estructuras de facturación multimoneda (USD y Soles) para la cartera corporativa de Xertica Perú.</div>
-                                    </div>
-                                    <div class="p-2 bg-neutral-50 border border-neutral-200">
-                                        <span class="font-bold text-neutral-900">🇨🇱 Chile:</span>
-                                        <div class="text-neutral-600 text-[10px] mt-0.5 font-sans">Mapeo de métricas comerciales cruzadas con presupuestación en UF (Unidad de Fomento), convirtiendo a Net to Google USD para cumplir con los umbrales oficiales sin distorsiones cambiarias.</div>
-                                    </div>
-                                </div>
-                            </div>
+                        <!-- Slide Action Buttons -->
+                        <div class="flex items-center gap-2 self-end md:self-auto">
+                            <button onclick="prevCarlosSlide()" class="px-3 py-1.5 bg-white border-2 border-black font-display font-bold text-xs uppercase hover:bg-black hover:text-white transition-colors shadow-[2px_2px_0px_#000]">
+                                ← Ant
+                            </button>
+                            <button onclick="nextCarlosSlide()" class="px-3 py-1.5 bg-[#FAF338] border-2 border-black font-display font-bold text-xs uppercase hover:bg-black hover:text-white transition-colors shadow-[2px_2px_0px_#000]">
+                                Sig →
+                            </button>
                         </div>
                     </div>
 
-                    <!-- Right Column: Interactive Media, Specs & Live Simulator -->
-                    <div class="lg:col-span-7 space-y-6">
-                        <!-- Media Viewport Frame -->
-                        <div class="bg-[#FFFEF8] border-2 border-black p-4 swiss-border">
-                            <div class="flex flex-wrap items-center justify-between gap-2 pb-3 mb-3 border-b-2 border-black">
-                                <div class="flex items-center gap-2">
-                                    <span class="inline-block w-3 h-3 rounded-full bg-red-500 border border-black"></span>
-                                    <span class="inline-block w-3 h-3 rounded-full bg-yellow-400 border border-black"></span>
-                                    <span class="inline-block w-3 h-3 rounded-full bg-green-500 border border-black"></span>
-                                    <span class="font-mono text-xs font-bold text-neutral-700 ml-2">DEMOSTRACIÓN EN VIDEO (SCREEN RECORDING 45s)</span>
+                    <!-- SLIDE CONTAINER -->
+                    <div id="carlos-slides-container">
+                        
+                        <!-- SLIDE 1: VIDEO DEMO & OVERVIEW -->
+                        <div id="carlos-slide-1" class="carlos-slide bg-[#FFFEF8] border-2 border-black p-6 sm:p-8 swiss-border shadow-[5px_5px_0px_#000]">
+                            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                                <!-- Col 5: Color Block & Vision -->
+                                <div class="lg:col-span-5 bg-[#5A4A96] text-white p-6 sm:p-8 border-2 border-black shadow-[4px_4px_0px_#000] space-y-5 relative overflow-hidden">
+                                    <div class="flex items-center justify-between">
+                                        <span class="badge-swiss bg-black text-[#FAF338] font-bold">SLIDE 01 · DEMO &amp; VISIÓN EJECUTIVA</span>
+                                        <span class="font-mono text-[10px] text-white/80 uppercase">EIR PROYECTO 04</span>
+                                    </div>
+                                    <h3 class="font-display font-black text-2xl sm:text-3xl uppercase leading-tight text-white border-b-4 border-black pb-3">
+                                        Incentivos Google Cloud &amp; Deal Registration
+                                    </h3>
+                                    <div class="font-mono text-xs uppercase tracking-wider text-[#FAF338] font-bold">
+                                        Conciliación Salesforce vs. Partner Advantage &amp; Motor Inverso de Rebates (G26)
+                                    </div>
+                                    <p class="font-body text-xs sm:text-sm text-neutral-100 leading-relaxed">
+                                        Cruce automatizado en tiempo real de Salesforce contra Google Partner Advantage Hub para auditar órdenes de compra, erradicar la pérdida de rebates por falta de Deal Registration y calcular al instante la matriz completa de los <strong>6 programas de incentivos 2026</strong>.
+                                    </p>
+                                    <div class="grid grid-cols-3 gap-2 pt-2 border-t border-white/20 text-center font-mono">
+                                        <div class="bg-black/30 p-2 border border-white/20">
+                                            <div class="text-xs sm:text-sm font-black text-[#FAF338]">+$13.5M</div>
+                                            <div class="text-[9px] text-neutral-200 uppercase mt-0.5">Pipeline USD</div>
+                                        </div>
+                                        <div class="bg-black/30 p-2 border border-white/20">
+                                            <div class="text-xs sm:text-sm font-black text-[#FAF338]">&gt;$850K</div>
+                                            <div class="text-[9px] text-neutral-200 uppercase mt-0.5">Rebates Protegidos</div>
+                                        </div>
+                                        <div class="bg-black/30 p-2 border border-white/20">
+                                            <div class="text-xs sm:text-sm font-black text-[#FAF338]">0%</div>
+                                            <div class="text-[9px] text-neutral-200 uppercase mt-0.5">Pérdida Expiración</div>
+                                        </div>
+                                    </div>
+                                    <div class="pt-2 space-y-2">
+                                        <a href="https://script.google.com/a/macros/xertica.com/s/AKfycbzgo_OhpKbm8jt_NLEs9pTYwPY3JVchGd_eVVRid1XWDeclsyhxjoqIgUYb3lnpxf4Y/exec" target="_blank" class="w-full py-3 bg-[#FAF338] hover:bg-white text-black font-display font-black text-xs uppercase tracking-wider border-2 border-black shadow-[3px_3px_0px_#000] hover:shadow-[1px_1px_0px_#000] hover:translate-x-0.5 hover:translate-y-0.5 transition-all flex items-center justify-center gap-2 block text-center">
+                                            <span class="material-symbols-outlined text-sm">open_in_new</span> Abrir Herramienta en Producción (GAS)
+                                        </a>
+                                        <button onclick="switchCarlosSlide(4)" class="w-full py-2.5 bg-white/10 hover:bg-white text-white hover:text-black font-display font-bold text-xs uppercase tracking-wider border-2 border-black transition-all flex items-center justify-center gap-2">
+                                            <span class="material-symbols-outlined text-sm">description</span> Ver Ficha Técnica Oficial (Slide 4)
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Col 7: Video Player Slot -->
+                                <div class="lg:col-span-7 space-y-3">
+                                    <div class="relative bg-black border-2 border-black overflow-hidden aspect-[16/10] flex items-center justify-center shadow-[4px_4px_0px_#000]">
+                                        <!-- VIDEO SLOT -->
+                                        <div id="media-video-carlos" class="w-full h-full relative group">
+                                            <img src="assets/projects/eir-projects-showcase.jpg" alt="Torre de Control Incentivos &amp; Deal Registration" class="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105" onerror="this.src='assets/extracted/img_21.jpg'">
+                                            
+                                            <!-- Video Overlay Controls -->
+                                            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/30 flex flex-col justify-between p-6">
+                                                <div class="flex justify-between items-start">
+                                                    <span class="badge-swiss bg-[#FAF338] text-black font-bold">Video Demo 45 Segundos</span>
+                                                    <span class="font-mono text-xs text-white bg-black/60 px-2.5 py-1 border border-white/20">00:45 · Apps Script V8 · v116</span>
+                                                </div>
+
+                                                <div class="text-center">
+                                                    <button onclick="playInteractiveDemo('carlos')" class="w-16 h-16 rounded-full bg-[#FAF338] text-black border-2 border-black flex items-center justify-center text-2xl font-bold shadow-[4px_4px_0px_#000] hover:scale-110 transition-transform mx-auto">
+                                                        ▶
+                                                    </button>
+                                                    <div class="font-display font-bold text-white text-lg mt-3 drop-shadow">Ver Demostración del Conciliador de Incentivos</div>
+                                                    <div class="font-mono text-xs text-neutral-300">Auditoría en vivo de Pedidos vs. Partner Hub &amp; Calculadora Inversa</div>
+                                                </div>
+
+                                                <div class="flex items-center justify-between text-xs font-mono text-neutral-300">
+                                                    <span>Métricas de +$13.5M USD Conciliados</span>
+                                                    <button onclick="openVideoSettings('carlos')" class="underline hover:text-white font-bold flex items-center gap-1"><span class="material-symbols-outlined text-xs">settings</span> Subir / Enlazar Video (45s)</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-between text-[11px] font-mono text-neutral-600 px-1">
+                                        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-500 inline-block"></span> Demostración Técnica Interactiva</span>
+                                        <span>Resolución: 1080p · Google Apps Script Serverless</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 2: EN QUE AYUDA DIRECTAMENTE -->
+                        <div id="carlos-slide-2" class="carlos-slide hidden bg-[#FFFEF8] border-2 border-black p-6 sm:p-8 swiss-border shadow-[5px_5px_0px_#000]">
+                            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                                <!-- Col 5: Dark Card -->
+                                <div class="lg:col-span-5 bg-[#1E1E1E] text-white p-6 sm:p-8 border-2 border-black shadow-[4px_4px_0px_#000] space-y-4">
+                                    <span class="badge-swiss bg-[#FAF338] text-black font-bold">SLIDE 02 · PROPÓSITO &amp; IMPACTO</span>
+                                    <h3 class="font-display font-black text-2xl sm:text-3xl uppercase leading-tight text-white border-b-4 border-black pb-3">
+                                        ¿En qué ayuda directamente?
+                                    </h3>
+                                    <p class="font-body text-xs sm:text-sm text-neutral-300 leading-relaxed">
+                                        Erradicamos la fuga silenciosa de margen y rebates en Google Cloud ("Money Left on the Table"). La plataforma conecta Salesforce con Partner Advantage para frenar pedidos sin Deal Registration antes de que se aprovisionen licencias, y simula en segundos los 6 incentivos oficiales.
+                                    </p>
+                                    <div class="space-y-2 pt-2 border-t border-neutral-700 text-xs font-mono">
+                                        <div class="flex items-center justify-between p-2 bg-neutral-900 border border-neutral-700">
+                                            <span class="text-neutral-400">Trazabilidad CRM vs. Hub:</span>
+                                            <span class="font-bold text-[#FAF338]">Fuzzy RegEx Matcher (006)</span>
+                                        </div>
+                                        <div class="flex items-center justify-between p-2 bg-neutral-900 border border-neutral-700">
+                                            <span class="text-neutral-400">Blindaje Anti-Expiración:</span>
+                                            <span class="font-bold text-emerald-400">Alerta Temprana (Día 150)</span>
+                                        </div>
+                                        <div class="flex items-center justify-between p-2 bg-neutral-900 border border-neutral-700">
+                                            <span class="text-neutral-400">Matriz Multiprograma:</span>
+                                            <span class="font-bold text-white">Calculadora Lead-First 6X</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Col 7: Feature Grid -->
+                                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div class="bg-white border-2 border-black p-4 space-y-2 shadow-[3px_3px_0px_#000]">
+                                        <div class="flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-emerald-600 text-xl">sync_alt</span>
+                                            <h4 class="font-display font-bold text-sm text-neutral-900 leading-tight">Conciliación Salesforce ⇄ Partner Hub</h4>
+                                        </div>
+                                        <p class="font-body text-xs text-neutral-700 leading-relaxed">
+                                            Eliminación del cotejo manual entre el CRM y el portal de Google; cotejo automatizado bidireccional indexado por Opp ID, código y cuenta.
+                                        </p>
+                                    </div>
+
+                                    <div class="bg-white border-2 border-black p-4 space-y-2 shadow-[3px_3px_0px_#000]">
+                                        <div class="flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-rose-600 text-xl">block</span>
+                                            <h4 class="font-display font-bold text-sm text-neutral-900 leading-tight">Retención Preventiva sin Deal ID</h4>
+                                        </div>
+                                        <p class="font-body text-xs text-neutral-700 leading-relaxed">
+                                            Bloqueo normativo en Sales Ops para pedidos superiores a umbral ($10k GWS / $60k GCP), protegiendo más de $850k USD en rebates de co-sell.
+                                        </p>
+                                    </div>
+
+                                    <div class="bg-white border-2 border-black p-4 space-y-2 shadow-[3px_3px_0px_#000]">
+                                        <div class="flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-[#5A4A96] text-xl">calculate</span>
+                                            <h4 class="font-display font-bold text-sm text-neutral-900 leading-tight">Calculadora Inversa Multivariable</h4>
+                                        </div>
+                                        <p class="font-body text-xs text-neutral-700 leading-relaxed">
+                                            Auditoría simultánea de los 6 programas de incentivos 2026 (Sell Rebates, Gemini Velocity 2X, Fondos GET 4X, PSF, DV y Reseller) en 1 clic.
+                                        </p>
+                                    </div>
+
+                                    <div class="bg-white border-2 border-black p-4 space-y-2 shadow-[3px_3px_0px_#000]">
+                                        <div class="flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-indigo-600 text-xl">auto_awesome</span>
+                                            <h4 class="font-display font-bold text-sm text-neutral-900 leading-tight">Sincronización BigQuery &amp; Gemini</h4>
+                                        </div>
+                                        <p class="font-body text-xs text-neutral-700 leading-relaxed">
+                                            Vistas analíticas centralizadas en BigQuery y asistente de IA para redacción automática de argumentarios de venta y solicitudes DAF.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 3: RESULTADOS CONCRETOS -->
+                        <div id="carlos-slide-3" class="carlos-slide hidden bg-[#FFFEF8] border-2 border-black p-6 sm:p-8 swiss-border shadow-[5px_5px_0px_#000]">
+                            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                                <!-- Col 5: Yellow Swiss Banner -->
+                                <div class="lg:col-span-5 bg-[#FAF338] border-2 border-black p-6 sm:p-8 shadow-[4px_4px_0px_#000] space-y-5">
+                                    <span class="badge-swiss bg-black text-[#FAF338] font-bold">SLIDE 03 · MÉTRICAS &amp; CASOS</span>
+                                    <h3 class="font-display font-black text-2xl sm:text-3xl uppercase leading-tight text-black border-b-4 border-black pb-3">
+                                        Resultados Concretos
+                                    </h3>
+                                    <p class="font-body text-xs sm:text-sm text-neutral-800 leading-relaxed">
+                                        Métricas auditadas y casos de negocio tangibles generados sobre la cartera corporativa de Google Cloud mediante la Torre de Control de Incentivos.
+                                    </p>
+                                    <div class="grid grid-cols-3 gap-2 text-center font-mono">
+                                        <div class="bg-white border-2 border-black p-2.5">
+                                            <div class="text-base sm:text-lg font-black text-neutral-900">+$13.5M</div>
+                                            <div class="text-[9px] uppercase tracking-wider text-neutral-600 font-bold mt-1">Pipeline USD</div>
+                                        </div>
+                                        <div class="bg-white border-2 border-black p-2.5">
+                                            <div class="text-base sm:text-lg font-black text-emerald-700">&gt;$850K</div>
+                                            <div class="text-[9px] uppercase tracking-wider text-neutral-600 font-bold mt-1">Rebates USD</div>
+                                        </div>
+                                        <div class="bg-white border-2 border-black p-2.5">
+                                            <div class="text-base sm:text-lg font-black text-[#5A4A96]">~14h</div>
+                                            <div class="text-[9px] uppercase tracking-wider text-neutral-600 font-bold mt-1">Ahorro Semanal</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-xs font-mono text-neutral-700 bg-black/5 p-3 border border-black/20">
+                                        <strong>Impacto Clave:</strong> 0% de pérdidas por expiración de 180 días gracias al sistema de alertas tempranas al día 150 en Partner Hub.
+                                    </div>
+                                </div>
+
+                                <!-- Col 7: Business Cases -->
+                                <div class="lg:col-span-7 space-y-3">
+                                    <div class="text-xs font-display font-black uppercase tracking-wider text-neutral-800 mb-1 flex items-center gap-1.5">
+                                        <span class="w-2.5 h-2.5 bg-[#5A4A96] inline-block"></span> Casos Reales de Negocio &amp; Oportunidad:
+                                    </div>
+                                    <div class="space-y-2 text-xs font-body text-neutral-700">
+                                        <div class="p-3 bg-white border-2 border-black shadow-[2px_2px_0px_#000]">
+                                            <strong class="text-neutral-900 block font-display flex items-center gap-1.5 mb-1">
+                                                <span class="material-symbols-outlined text-[#5A4A96] text-sm">shield</span> Protección de Rebates Co-Sell (&gt;$850,000 USD):
+                                            </strong>
+                                            <span class="text-neutral-600 leading-relaxed block">
+                                                Salvaguarda de incentivos financieros mediante la retención preventiva de pedidos que superan el umbral oficial ($10k GWS / $60k GCP) sin Deal Registration ID antes de su facturación y aprovisionamiento.
+                                            </span>
+                                        </div>
+
+                                        <div class="p-3 bg-white border-2 border-black shadow-[2px_2px_0px_#000]">
+                                            <strong class="text-neutral-900 block font-display flex items-center gap-1.5 mb-1">
+                                                <span class="material-symbols-outlined text-indigo-600 text-sm">attach_money</span> Co-Inversión Fondo GET 4X ROI (Bolsa Global $750M):
+                                            </strong>
+                                            <span class="text-neutral-600 leading-relaxed block">
+                                                Cálculo automático de elegibilidad para co-financiar hasta el 25% del valor anual de grandes contratos de migración bajo la regla 4X ROI, acelerando cierres comerciales de alto impacto.
+                                            </span>
+                                        </div>
+
+                                        <div class="p-3 bg-white border-2 border-black shadow-[2px_2px_0px_#000]">
+                                            <strong class="text-neutral-900 block font-display flex items-center gap-1.5 mb-1">
+                                                <span class="material-symbols-outlined text-emerald-600 text-sm">speed</span> Acelerador Gemini Velocity Rebate 2X:
+                                            </strong>
+                                            <span class="text-neutral-600 leading-relaxed block">
+                                                Captura de hasta $60 USD por seat (para compras de ≥10 licencias Enterprise) proyectando hasta $250,000 USD en rebates adicionales bajo directrices oficiales 2026.
+                                            </span>
+                                        </div>
+
+                                        <div class="p-3 bg-white border-2 border-black shadow-[2px_2px_0px_#000]">
+                                            <strong class="text-neutral-900 block font-display flex items-center gap-1.5 mb-1">
+                                                <span class="material-symbols-outlined text-neutral-700 text-sm">hourglass_empty</span> Eficiencia en Sales Operations (~14 Horas/Sem):
+                                            </strong>
+                                            <span class="text-neutral-600 leading-relaxed block">
+                                                Eliminación completa del cotejo manual entre Salesforce y hojas de cálculo para Ingrid López y Vanessa Tinoco, reduciendo el proceso a una auditoría semafórica en 1 clic.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 4: FICHA TECNICA & MANUAL OFICIAL (GAS WEB APP) -->
+                        <div id="carlos-slide-4" class="carlos-slide hidden bg-[#FAF8F5] border-2 border-black p-5 sm:p-6 swiss-border shadow-[5px_5px_0px_#000]">
+                            <!-- Header de la Ficha Técnica (Idéntico a Web App) -->
+                            <div class="flex flex-wrap items-center justify-between gap-3 pb-3.5 mb-4 border-b-2 border-black">
+                                <div class="flex items-center gap-3">
+                                    <span class="badge-swiss bg-black text-white font-bold">SLIDE 04 · FICHA TÉCNICA</span>
+                                    <span class="font-display font-black text-xl text-neutral-900 tracking-tight">Xertica<span class="text-[#5A4A96]">.ai</span></span>
+                                    <span class="border border-black px-2.5 py-0.5 text-[10px] font-mono font-bold uppercase rounded-full bg-white shadow-[1px_1px_0px_#000]">PROYECTO CORE · INCENTIVOS G26</span>
                                 </div>
                                 <div class="flex items-center gap-2">
-                                    <a href="https://script.google.com/macros/s/AKfycbzdqBmml2SmWMDGuPkxVseJDAiqkADgPz15shyJk1Lg7RE1mjZ9F8q_1AgjXbMGrq2E/exec" target="_blank" class="px-4 py-2.5 bg-[#FAF338] text-black border-2 border-black text-xs font-display font-bold uppercase tracking-wider hover:bg-white transition-colors flex items-center justify-center gap-2 shadow-[2px_2px_0px_#000]">
-                                        <span class="material-symbols-outlined text-sm">open_in_new</span> Abrir Herramienta en Producción
+                                    <a href="https://script.google.com/a/macros/xertica.com/s/AKfycbzgo_OhpKbm8jt_NLEs9pTYwPY3JVchGd_eVVRid1XWDeclsyhxjoqIgUYb3lnpxf4Y/exec" target="_blank" class="px-2.5 py-1 bg-white hover:bg-neutral-100 border border-black text-[11px] font-mono font-bold text-neutral-800 transition-colors flex items-center gap-1 shadow-[2px_2px_0px_#000]">
+                                        <span class="material-symbols-outlined text-xs">open_in_new</span> Abrir Ficha Web App (GAS)
                                     </a>
                                 </div>
                             </div>
 
-                            <!-- Screen Container -->
-                            <div class="relative bg-neutral-900 border-2 border-black overflow-hidden aspect-[16/10] flex items-center justify-center">
-                                
-                                <!-- VIDEO SLOT -->
-                                <div id="media-video-carlos" class="w-full h-full relative group">
-                                    <img src="assets/projects/eir-projects-showcase.jpg" alt="Torre de Control Incentivos & Deal Registration" class="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105" onerror="this.src='assets/extracted/img_21.jpg'">
-                                    
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/30 flex flex-col justify-between p-6">
-                                        <div class="flex justify-between items-start">
-                                            <span class="badge-swiss bg-[#FAF338] text-black font-bold">Video Demo 45 Segundos</span>
-                                            <span class="font-mono text-xs text-white bg-black/60 px-2.5 py-1 border border-white/20">00:45 · Apps Script V8 · M3</span>
-                                        </div>
+                            <!-- Layout Sidebar + Document Content -->
+                            <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-5 items-start">
+                                <!-- Navigation Sidebar (7 Secciones) -->
+                                <div class="md:col-span-4 border-b-2 md:border-b-0 md:border-r-2 border-black pb-3 md:pb-0 md:pr-3.5">
+                                    <div class="text-[10px] font-mono font-bold uppercase tracking-wider text-neutral-500 mb-2">Secciones Ficha Técnica</div>
+                                    <nav class="flex md:flex-col gap-1.5 overflow-x-auto md:overflow-visible pb-2 md:pb-0 font-display text-xs">
+                                        <button onclick="switchCarlosDocTab(1)" id="carlos-doc-btn-1" class="carlos-doc-btn text-left px-3 py-1.5 rounded-full border border-transparent hover:border-black hover:bg-white transition-all whitespace-nowrap text-neutral-700 font-semibold">
+                                            1. Valor e Impacto
+                                        </button>
+                                        <button onclick="switchCarlosDocTab(2)" id="carlos-doc-btn-2" class="carlos-doc-btn text-left px-3 py-1.5 rounded-full border border-transparent hover:border-black hover:bg-white transition-all whitespace-nowrap text-neutral-700 font-semibold">
+                                            2. Ficha Técnica
+                                        </button>
+                                        <button onclick="switchCarlosDocTab(3)" id="carlos-doc-btn-3" class="carlos-doc-btn text-left px-3 py-1.5 rounded-full border-2 border-black bg-[#FAF338] text-black font-bold shadow-[2px_2px_0px_#000] whitespace-nowrap">
+                                            3. Manual de Usuario
+                                        </button>
+                                        <button onclick="switchCarlosDocTab(4)" id="carlos-doc-btn-4" class="carlos-doc-btn text-left px-3 py-1.5 rounded-full border border-transparent hover:border-black hover:bg-white transition-all whitespace-nowrap text-neutral-700 font-semibold">
+                                            4. Motor de Reglas (Capas)
+                                        </button>
+                                        <button onclick="switchCarlosDocTab(5)" id="carlos-doc-btn-5" class="carlos-doc-btn text-left px-3 py-1.5 rounded-full border border-transparent hover:border-black hover:bg-white transition-all whitespace-nowrap text-neutral-700 font-semibold">
+                                            5. Filtros y Gráficas
+                                        </button>
+                                        <button onclick="switchCarlosDocTab(6)" id="carlos-doc-btn-6" class="carlos-doc-btn text-left px-3 py-1.5 rounded-full border border-transparent hover:border-black hover:bg-white transition-all whitespace-nowrap text-neutral-700 font-semibold">
+                                            6. IA y Privacidad
+                                        </button>
+                                        <button onclick="switchCarlosDocTab(7)" id="carlos-doc-btn-7" class="carlos-doc-btn text-left px-3 py-1.5 rounded-full border border-transparent hover:border-black hover:bg-white transition-all whitespace-nowrap text-neutral-700 font-semibold">
+                                            7. Roadmap y Evolución
+                                        </button>
+                                    </nav>
 
-                                        <div class="text-center">
-                                            <button onclick="playInteractiveDemo('carlos')" class="w-16 h-16 rounded-full bg-[#FAF338] text-black border-2 border-black flex items-center justify-center text-2xl font-bold shadow-[4px_4px_0px_#000] hover:scale-110 transition-transform mx-auto">
-                                                ▶
-                                            </button>
-                                            <div class="font-display font-bold text-white text-lg mt-3 drop-shadow">Ver Torre de Control de Incentivos & Deal Registration</div>
-                                            <div class="font-mono text-xs text-neutral-300">Conciliación Partner Hub vs. Salesforce, cálculo Net 80% y rebates en vivo</div>
+                                    <!-- Quick Tool Specs Box (Estandarizado) -->
+                                    <div class="hidden md:block mt-4 p-3 bg-white border border-black shadow-[2px_2px_0px_#000] text-[11px] font-mono space-y-1.5">
+                                        <div class="text-[9px] uppercase tracking-wider text-neutral-500 font-bold">Resumen de Ficha</div>
+                                        <div class="flex justify-between text-neutral-800">
+                                            <span>Líder EIR:</span>
+                                            <span class="font-bold">Carlos Espinosa</span>
                                         </div>
-
-                                        <div class="flex items-center justify-between text-xs font-mono text-neutral-300">
-                                            <span>$136K+ Rebate Blindado · $20.0M+ Pipeline · 10 Cuentas Gemini</span>
-                                            <button onclick="openVideoSettings('carlos')" class="underline hover:text-white font-bold flex items-center gap-1"><span class="material-symbols-outlined text-xs">settings</span> Subir / Enlazar Video (45s)</button>
+                                        <div class="flex justify-between text-neutral-800">
+                                            <span>Arquitectura:</span>
+                                            <span class="font-bold">Apps Script V8 · BigQuery</span>
+                                        </div>
+                                        <div class="flex justify-between text-neutral-800">
+                                            <span>Estado:</span>
+                                            <span class="font-bold text-emerald-700">Producción Activa (v116)</span>
+                                        </div>
+                                        <div class="flex justify-between text-neutral-800">
+                                            <span>Autenticación:</span>
+                                            <span class="font-bold">@xertica.com</span>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
+                                <!-- Document Content Area -->
+                                <div class="md:col-span-8">
+
+                                    <!-- TAB 1: VALOR E IMPACTO -->
+                                    <div id="carlos-doc-panel-1" class="carlos-doc-panel hidden bg-white border-2 border-black rounded-xl p-4 sm:p-5 shadow-[3px_3px_0px_#000]">
+                                        <h4 class="font-display font-black text-lg sm:text-xl text-neutral-900 leading-tight">1. Valor e Impacto</h4>
+                                        <hr class="border-black my-2.5">
+                                        <p class="font-body text-xs text-neutral-700 leading-relaxed mb-4">
+                                            Torre de control operacional y motor de auditoría financiera en tiempo real para capturar y proteger los márgenes, rebates y fondos de co-inversión otorgados por Google Cloud Partner Advantage en LATAM.
+                                        </p>
+
+                                        <div class="space-y-3 font-body text-xs">
+                                            <div class="bg-neutral-50 border border-neutral-300 p-3 rounded">
+                                                <h5 class="font-display font-bold text-neutral-900 mb-1 flex items-center gap-1.5">
+                                                    <span class="material-symbols-outlined text-sm text-[#5A4A96]">target</span> El Problema que Resuelve
+                                                </h5>
+                                                <p class="text-neutral-700 leading-relaxed">
+                                                    Desfase manual entre Salesforce y Google Partner Hub, pérdida silenciosa de rebates ("Money Left on the Table") por oportunidades sin Deal Registration o expiradas inadvertidamente a los 180 días naturales, y alta complejidad al empaquetar los 6 nuevos programas de incentivos simultáneos de 2026.
+                                                </p>
+                                            </div>
+
+                                            <div class="bg-neutral-50 border border-neutral-300 p-3 rounded">
+                                                <h5 class="font-display font-bold text-neutral-900 mb-1 flex items-center gap-1.5">
+                                                    <span class="material-symbols-outlined text-sm text-emerald-600">verified</span> La Solución en Producción
+                                                </h5>
+                                                <p class="text-neutral-700 leading-relaxed">
+                                                    Web App corporativa Serverless que cruza en tiempo real el universo comercial de Salesforce contra Google Partner Advantage Hub. Ejecuta un motor multivariable bajo la normativa oficial Google Cloud 2026 e incorpora una Calculadora Inversa ("Lead First") que audita instantáneamente los 6 programas de incentivos.
+                                                </p>
+                                            </div>
+
+                                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 font-mono text-center">
+                                                <div class="bg-neutral-100 border border-neutral-300 p-2">
+                                                    <div class="text-[10px] text-neutral-600 uppercase">Pipeline Auditado</div>
+                                                    <div class="font-bold text-sm text-neutral-900 mt-0.5">+$13.5M USD</div>
+                                                </div>
+                                                <div class="bg-neutral-100 border border-neutral-300 p-2">
+                                                    <div class="text-[10px] text-neutral-600 uppercase">Rebates Protegidos</div>
+                                                    <div class="font-bold text-sm text-emerald-700 mt-0.5">&gt;$850K USD</div>
+                                                </div>
+                                                <div class="bg-neutral-100 border border-neutral-300 p-2">
+                                                    <div class="text-[10px] text-neutral-600 uppercase">Expiración 180d</div>
+                                                    <div class="font-bold text-sm text-blue-700 mt-0.5">0% Pérdida</div>
+                                                </div>
+                                                <div class="bg-neutral-100 border border-neutral-300 p-2">
+                                                    <div class="text-[10px] text-neutral-600 uppercase">Ahorro Sales Ops</div>
+                                                    <div class="font-bold text-sm text-purple-700 mt-0.5">~14h / Sem</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="border border-neutral-200 p-2.5 bg-white text-[11px] font-mono text-neutral-600">
+                                                <strong>Stakeholders Directos:</strong> Sales Operations (Ingrid López, Vanessa Tinoco), Account Executives Comerciales, Partner Managers Google Cloud y Dirección Comercial C-Level.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- TAB 2: FICHA TÉCNICA -->
+                                    <div id="carlos-doc-panel-2" class="carlos-doc-panel hidden bg-white border-2 border-black rounded-xl p-4 sm:p-5 shadow-[3px_3px_0px_#000]">
+                                        <h4 class="font-display font-black text-lg sm:text-xl text-neutral-900 leading-tight">2. Ficha Técnica &amp; Arquitectura</h4>
+                                        <hr class="border-black my-2.5">
+                                        <p class="font-body text-xs text-neutral-700 leading-relaxed mb-3">
+                                            Especificaciones de arquitectura Serverless, stack tecnológico integral y pipeline ETL.
+                                        </p>
+
+                                        <div class="space-y-3 font-mono text-xs">
+                                            <div class="border border-neutral-300 p-3 bg-neutral-50 space-y-1.5">
+                                                <div class="font-bold text-neutral-900 uppercase text-[11px] flex items-center gap-1.5">
+                                                    <span class="material-symbols-outlined text-sm text-[#5A4A96]">memory</span> Stack Tecnológico Integral
+                                                </div>
+                                                <div class="grid grid-cols-2 gap-2 text-[11px] text-neutral-700">
+                                                    <div>• <strong>Frontend UI/UX:</strong> HTML5 + Tailwind Neo-Brutalista (Latencia &lt;800ms)</div>
+                                                    <div>• <strong>Backend:</strong> Google Apps Script (V8 Engine Serverless)</div>
+                                                    <div>• <strong>Ingesta &amp; Datos:</strong> Google Sheets API + BigQuery Cloud View</div>
+                                                    <div>• <strong>Despliegue &amp; CLI:</strong> Git + Google Clasp (@google/clasp)</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="border border-neutral-300 p-3 bg-neutral-50 space-y-1.5">
+                                                <div class="font-bold text-neutral-900 uppercase text-[11px] flex items-center gap-1.5">
+                                                    <span class="material-symbols-outlined text-sm text-blue-600">sync_alt</span> Pipeline de Datos (ETL) y Conciliación
+                                                </div>
+                                                <ol class="list-decimal list-inside space-y-1 text-[11px] text-neutral-700 font-body">
+                                                    <li><strong>Extracción Indexada:</strong> Lectura de hojas maestras de ventas (MX Detalle Opp, MX Bookings sin OC y Net to Google).</li>
+                                                    <li><strong>Normalización en Memoria:</strong> Construcción de mapa bidireccional indexado por ID Salesforce (006...), código de oportunidad y Fuzzy Match.</li>
+                                                    <li><strong>Cálculo Financiero:</strong> Deducción automática de márgenes de partner (20% en Workspace/Gemini, 12% en GCP) para determinar el Net to Google real.</li>
+                                                    <li><strong>Cruce Semafórico &amp; Payload JSON:</strong> Clasificación instantánea contra Partner Hub y renderizado en frontend hidratando tarjetas KPI.</li>
+                                                </ol>
+                                            </div>
+
+                                            <div class="border border-neutral-300 p-3 bg-neutral-50">
+                                                <div class="font-bold text-neutral-900 uppercase text-[11px] mb-1">Seguridad, Gobernanza &amp; Privacidad</div>
+                                                <div class="text-[11px] text-neutral-700 font-body">
+                                                    Autenticación OAuth2 corporativa restringida a <code>@xertica.com</code>. Principio de mínimo privilegio sin edición directa de bases maestras. Cero almacenamiento en servidores de terceros (procesamiento volátil en RAM aislada).
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- TAB 3: MANUAL DE USUARIO (3 PASOS CLAVE) -->
+                                    <div id="carlos-doc-panel-3" class="carlos-doc-panel bg-white border-2 border-black rounded-xl p-4 sm:p-5 shadow-[3px_3px_0px_#000]">
+                                        <h4 class="font-display font-black text-lg sm:text-xl text-neutral-900 leading-tight">3. Manual de Usuario</h4>
+                                        <hr class="border-black my-2.5">
+                                        <p class="font-body text-xs text-neutral-700 leading-relaxed mb-4">
+                                            Flujo operativo en 3 pasos para Sales Operations, ejecutivos comerciales y líderes de alianzas.
+                                        </p>
+
+                                        <!-- Flujo en 3 Pasos -->
+                                        <div class="space-y-4">
+                                            <!-- PASO 1 -->
+                                            <div class="border-2 border-black p-3.5 bg-neutral-50 shadow-[2px_2px_0px_#000]">
+                                                <div class="flex items-center justify-between mb-2">
+                                                    <span class="badge-swiss bg-black text-white font-bold text-[10px]">PASO 01</span>
+                                                    <span class="font-mono text-[11px] font-bold text-neutral-600">Acceso &amp; Selección de Vista</span>
+                                                </div>
+                                                <h5 class="font-display font-bold text-xs sm:text-sm text-neutral-900 mb-1.5">
+                                                    Autenticación Corporativa @xertica.com
+                                                </h5>
+                                                <p class="font-body text-xs text-neutral-700 leading-relaxed mb-2.5">
+                                                    Abrir la Web App en Google Apps Script. El sistema valida la sesión corporativa y permite alternar en 1 clic entre: Torre de Control (<code>?view=torre</code>), Calculadora Inversa (<code>?view=incentivos</code>), One-Page Resumen (<code>?view=onepage</code>) y Guía Normativa (<code>?view=guia</code>).
+                                                </p>
+                                                <div class="bg-white border border-neutral-300 p-2.5 rounded font-mono text-[11px] text-neutral-800 flex items-center justify-between">
+                                                    <span>Enlace Web App (v116):</span>
+                                                    <a href="https://script.google.com/a/macros/xertica.com/s/AKfycbzgo_OhpKbm8jt_NLEs9pTYwPY3JVchGd_eVVRid1XWDeclsyhxjoqIgUYb3lnpxf4Y/exec" target="_blank" class="text-[#5A4A96] font-bold underline hover:text-black flex items-center gap-1">
+                                                        <span>Abrir GAS Web App</span>
+                                                        <span class="material-symbols-outlined text-xs">open_in_new</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <!-- PASO 2 -->
+                                            <div class="border-2 border-black p-3.5 bg-neutral-50 shadow-[2px_2px_0px_#000]">
+                                                <div class="flex items-center justify-between mb-2">
+                                                    <span class="badge-swiss bg-[#5A4A96] text-white font-bold text-[10px]">PASO 02</span>
+                                                    <span class="font-mono text-[11px] font-bold text-neutral-600">Torre de Control Operativa</span>
+                                                </div>
+                                                <h5 class="font-display font-bold text-xs sm:text-sm text-neutral-900 mb-1.5">
+                                                    Auditoría Semafórica de Pedidos (Sales Operations)
+                                                </h5>
+                                                <p class="font-body text-xs text-neutral-700 leading-relaxed mb-2">
+                                                    El operador visualiza el universo de pedidos clasificado por el semáforo normativo de retención y liberación preventiva:
+                                                </p>
+                                                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 font-mono text-[10px]">
+                                                    <div class="p-2 bg-rose-50 border border-rose-300 text-rose-800 font-bold">
+                                                        🔴 Bloqueada (Falta DR)
+                                                    </div>
+                                                    <div class="p-2 bg-emerald-50 border border-emerald-300 text-emerald-800 font-bold">
+                                                        🟢 Protegida con DR
+                                                    </div>
+                                                    <div class="p-2 bg-blue-50 border border-blue-300 text-blue-800 font-bold">
+                                                        🔵 Renovación Pura
+                                                    </div>
+                                                    <div class="p-2 bg-neutral-100 border border-neutral-300 text-neutral-800 font-bold">
+                                                        ⚪ Exenta (&lt; Umbral)
+                                                    </div>
+                                                </div>
+                                                <p class="font-body text-[11px] text-neutral-600 mt-2">
+                                                    Al hacer clic en cualquier fila, se expande la ficha con enlace directo a Salesforce (006...) y plantilla de correo para notificar al comercial responsable (con reasignación automática si el comercial está inactivo).
+                                                </p>
+                                            </div>
+
+                                            <!-- PASO 3 -->
+                                            <div class="border-2 border-black p-3.5 bg-neutral-50 shadow-[2px_2px_0px_#000]">
+                                                <div class="flex items-center justify-between mb-2">
+                                                    <span class="badge-swiss bg-[#FAF338] text-black font-bold text-[10px]">PASO 03</span>
+                                                    <span class="font-mono text-[11px] font-bold text-neutral-600">Simulación Inversa Lead-First</span>
+                                                </div>
+                                                <h5 class="font-display font-bold text-xs sm:text-sm text-neutral-900 mb-1.5">
+                                                    Carga de Lead y Matriz Total de Elegibilidad
+                                                </h5>
+                                                <p class="font-body text-xs text-neutral-700 leading-relaxed mb-2.5">
+                                                    Seleccionar una oportunidad en el dropdown de Salesforce o usar presets rápidos ($3.6k, $18k, $36k, $180k). El sistema enciende en vivo las 6 tarjetas de incentivos, calcula el monto consolidado en USD ("Money on the Table"), proyecta la fecha bancaria de cobro (+60 días) y genera el pitch comercial con botón de copia en 1 clic.
+                                                </p>
+                                                <div class="bg-white border border-neutral-300 p-2.5 rounded text-[11px] font-mono text-neutral-700 flex items-center justify-between">
+                                                    <span>Formato de Salida:</span>
+                                                    <span class="font-bold text-neutral-900">One-Page Directivo / Pitch Comercial / Reporte Sales Ops</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- TAB 4: MOTOR DE REGLAS (CAPAS Y NORMATIVA) -->
+                                    <div id="carlos-doc-panel-4" class="carlos-doc-panel hidden bg-white border-2 border-black rounded-xl p-4 sm:p-5 shadow-[3px_3px_0px_#000]">
+                                        <h4 class="font-display font-black text-lg sm:text-xl text-neutral-900 leading-tight">4. Motor de Reglas (Capas de Conciliación y Normativa)</h4>
+                                        <hr class="border-black my-2.5">
+                                        <p class="font-body text-xs text-neutral-700 leading-relaxed mb-4">
+                                            Matriz algorítmica de 8 capas que codifica fielmente el marco reglamentario oficial de Google Cloud Partner Advantage 2026.
+                                        </p>
+
+                                        <div class="space-y-3 font-body text-xs">
+                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
+                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
+                                                    <span class="badge-swiss bg-black text-white text-[9px] px-1.5 py-0.5">CAPA 1</span>
+                                                    Trazabilidad CRM vs. Hub
+                                                </div>
+                                                <p class="text-neutral-700 leading-relaxed">
+                                                    Cruzamiento del identificador de oportunidad de Salesforce (006...) con el Deal Registration ID de Google Partner Advantage Hub.
+                                                </p>
+                                            </div>
+
+                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
+                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
+                                                    <span class="badge-swiss bg-black text-white text-[9px] px-1.5 py-0.5">CAPA 2</span>
+                                                    Cálculo de "Net to Google"
+                                                </div>
+                                                <p class="text-neutral-700 leading-relaxed font-mono text-[11px]">
+                                                    Workspace &amp; Gemini: Monto Bruto × 0.80 (20% Margen Partner) · GCP Infra/Datos: Monto Bruto × 0.88 (12% Margen Partner).
+                                                </p>
+                                            </div>
+
+                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
+                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
+                                                    <span class="badge-swiss bg-black text-white text-[9px] px-1.5 py-0.5">CAPA 3</span>
+                                                    Umbrales de Deal Registration
+                                                </div>
+                                                <p class="text-neutral-700 leading-relaxed font-mono text-[11px]">
+                                                    GWS Net ≥ $10,000 USD · GCP Net ≥ $60,000 USD · Gemini Enterprise: $0 USD (Aplica desde 1 licencia).
+                                                </p>
+                                            </div>
+
+                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
+                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
+                                                    <span class="badge-swiss bg-black text-white text-[9px] px-1.5 py-0.5">CAPA 4</span>
+                                                    Sell Rebates Co-Sell
+                                                </div>
+                                                <p class="text-neutral-700 leading-relaxed">
+                                                    Nuevo Logo: 10% base · Acelerador PyME (&lt;100 asientos): 20% · Attach Gemini: Multiplicador 1.5X · Renovación: 1.5% de retención.
+                                                </p>
+                                            </div>
+
+                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
+                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
+                                                    <span class="badge-swiss bg-black text-white text-[9px] px-1.5 py-0.5">CAPA 5</span>
+                                                    Gemini Velocity Rebate 2X
+                                                </div>
+                                                <p class="text-neutral-700 leading-relaxed font-mono text-[11px]">
+                                                    $60 USD por seat para compras de ≥10 licencias Enterprise (Cap de $250,000 USD). Pagos escalonados H1 (25%), H2 (25%), H3 (50%).
+                                                </p>
+                                            </div>
+
+                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
+                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
+                                                    <span class="badge-swiss bg-black text-white text-[9px] px-1.5 py-0.5">CAPA 6</span>
+                                                    Fondo GET 4X Co-Inversión (Bolsa $750M USD)
+                                                </div>
+                                                <p class="text-neutral-700 leading-relaxed font-mono text-[11px]">
+                                                    Fondo Máximo = Compromiso Anual Bruto / 4. Co-financia hasta 25% del deal en servicios de consultoría bajo hitos 20% / 40% / 40%.
+                                                </p>
+                                            </div>
+
+                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
+                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
+                                                    <span class="badge-swiss bg-black text-white text-[9px] px-1.5 py-0.5">CAPA 7</span>
+                                                    Fondos PSF &amp; DV (&lt;90 días)
+                                                </div>
+                                                <p class="text-neutral-700 leading-relaxed font-mono text-[11px]">
+                                                    Partner Services Funds (PSF): $30 USD / seat (New ≥50 licencias) · Deployment Velocity (DV): $15 USD / seat o 5% Net to Google.
+                                                </p>
+                                            </div>
+
+                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
+                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
+                                                    <span class="badge-swiss bg-black text-white text-[9px] px-1.5 py-0.5">CAPA 8</span>
+                                                    Semáforo de Vigencia &amp; Cobro Bancario
+                                                </div>
+                                                <p class="text-neutral-700 leading-relaxed font-mono text-[11px]">
+                                                    Límite normativo de Deal Registration: 180 días (Alerta preventiva al día 150). Fecha estimada de cobro = Fin de mes + 60 días naturales.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- TAB 5: FILTROS Y GRÁFICAS -->
+                                    <div id="carlos-doc-panel-5" class="carlos-doc-panel hidden bg-white border-2 border-black rounded-xl p-4 sm:p-5 shadow-[3px_3px_0px_#000]">
+                                        <h4 class="font-display font-black text-lg sm:text-xl text-neutral-900 leading-tight">5. Filtros, Visualizaciones y Dashboards</h4>
+                                        <hr class="border-black my-2.5">
+                                        <p class="font-body text-xs text-neutral-700 leading-relaxed mb-4">
+                                            Capacidades analíticas y vistas multidimensionales bajo la identidad visual Neo-Brutalista de Xértica.
+                                        </p>
+
+                                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 font-body text-xs">
+                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded space-y-1.5">
+                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-1.5">
+                                                    <span class="material-symbols-outlined text-sm text-[#5A4A96]">filter_alt</span> Filtros Disponibles
+                                                </div>
+                                                <ul class="list-disc list-inside space-y-1 text-neutral-700 font-mono text-[11px]">
+                                                    <li>Búsqueda en vivo (Cliente, Opp ID 006, Deal ID)</li>
+                                                    <li>Por Semáforo (Bloqueadas, Protegidas, Exentas, Renovaciones)</li>
+                                                    <li>Por Familia de Producto (Workspace, GCP, Gemini)</li>
+                                                    <li>Por Ejecutivo Comercial / Comerciales Inactivos</li>
+                                                    <li>Por Rango de Monto y Trimestre Fiscal</li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded space-y-1.5">
+                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-1.5">
+                                                    <span class="material-symbols-outlined text-sm text-emerald-600">bar_chart</span> Visualizaciones Clave
+                                                </div>
+                                                <ul class="list-disc list-inside space-y-1 text-neutral-700 font-mono text-[11px]">
+                                                    <li>Hero Banner "Money on the Table" consolidado</li>
+                                                    <li>Matriz 3x2 con las 6 tarjetas de incentivos en vivo</li>
+                                                    <li>Cronograma de cobro bancario (+60 días)</li>
+                                                    <li>Semáforo de vigencia de registros (Día 150 a 180)</li>
+                                                    <li>One-Page Resumen Ejecutivo para comités C-Level</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- TAB 6: IA Y PRIVACIDAD -->
+                                    <div id="carlos-doc-panel-6" class="carlos-doc-panel hidden bg-white border-2 border-black rounded-xl p-4 sm:p-5 shadow-[3px_3px_0px_#000]">
+                                        <h4 class="font-display font-black text-lg sm:text-xl text-neutral-900 leading-tight">6. Inteligencia Artificial y Privacidad</h4>
+                                        <hr class="border-black my-2.5">
+                                        <p class="font-body text-xs text-neutral-700 leading-relaxed mb-4">
+                                            Asistencia inteligente para síntesis ejecutiva y generación de argumentarios comerciales bajo estándares corporativos.
+                                        </p>
+
+                                        <div class="space-y-3 font-body text-xs">
+                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
+                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
+                                                    <span class="material-symbols-outlined text-[#5A4A96] text-sm">auto_awesome</span>
+                                                    Asistente Gemini 2.5 Flash Integrado
+                                                </div>
+                                                <p class="text-neutral-700 leading-relaxed">
+                                                    Generación dinámica de argumentarios comerciales (Pitch Fondo GET 4X) para explicar al cliente cómo Google co-financia hasta el 25% de la consultoría de Xértica sin costo, síntesis de riesgo de cartera y redacción preventiva de solicitudes de extensión al día 150.
+                                                </p>
+                                            </div>
+
+                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
+                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
+                                                    <span class="material-symbols-outlined text-emerald-600 text-sm">shield</span>
+                                                    Aislamiento de Sesión y Cero Re-Entrenamiento
+                                                </div>
+                                                <p class="text-neutral-700 leading-relaxed">
+                                                    Los datos analizados por la IA operan bajo solicitudes aisladas en memoria volátil. Cumplimiento de la política empresarial de Google Cloud: las cifras comerciales, clientes y márgenes de Xértica nunca se utilizan para entrenar modelos públicos de lenguaje.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- TAB 7: ROADMAP Y EVOLUCIÓN -->
+                                    <div id="carlos-doc-panel-7" class="carlos-doc-panel hidden bg-white border-2 border-black rounded-xl p-4 sm:p-5 shadow-[3px_3px_0px_#000]">
+                                        <h4 class="font-display font-black text-lg sm:text-xl text-neutral-900 leading-tight">7. Roadmap y Evolución</h4>
+                                        <hr class="border-black my-2.5">
+                                        <p class="font-body text-xs text-neutral-700 leading-relaxed mb-4">
+                                            Plan de iteraciones, integraciones y expansión a nuevos territorios.
+                                        </p>
+
+                                        <div class="space-y-2.5 font-body text-xs">
+                                            <div class="border border-neutral-300 p-3 bg-emerald-50 rounded flex items-start gap-2.5">
+                                                <span class="material-symbols-outlined text-emerald-700 text-sm mt-0.5">check_circle</span>
+                                                <div>
+                                                    <strong class="text-emerald-900 block font-display">Fase 1: Conciliación 006 vs DR &amp; Calculadora Lead-First (Completada - v116)</strong>
+                                                    <span class="text-emerald-800 text-[11px]">Extracción automatizada, semáforo operativo de pedidos, motor de 6 incentivos 2026 y alertas al día 150 en producción.</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="border border-neutral-300 p-3 bg-blue-50 rounded flex items-start gap-2.5">
+                                                <span class="material-symbols-outlined text-blue-700 text-sm mt-0.5">pending</span>
+                                                <div>
+                                                    <strong class="text-blue-900 block font-display">Fase 2: Alertas Push Google Chat &amp; BigQuery Views (En Curso - Q4 2026)</strong>
+                                                    <span class="text-blue-800 text-[11px]">Webhooks automáticos al día 150 para solicitar extensiones de 30 días y consolidación histórica en BigQuery.</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded flex items-start gap-2.5">
+                                                <span class="material-symbols-outlined text-neutral-500 text-sm mt-0.5">schedule</span>
+                                                <div>
+                                                    <strong class="text-neutral-900 block font-display">Fase 3: Integración API Bidireccional &amp; Auto-Registro (Q1/Q2 2027)</strong>
+                                                    <span class="text-neutral-700 text-[11px]">Registro de oportunidades en Google Cloud con 1 clic desde Salesforce y conciliación de liquidaciones bancarias.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
 
-                        <!-- Ficha Técnica Rápida para LATAM -->
-                        <div class="bg-[#FFFEF8] border-2 border-black p-4 swiss-border">
-                            <h5 class="font-display font-bold text-sm uppercase tracking-wider mb-2">Ficha Técnica Rápida para LATAM:</h5>
-                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-xs">
-                                <div class="p-2.5 bg-neutral-100 border border-neutral-300">
-                                    <div class="text-neutral-500 uppercase text-[10px] font-bold">Infraestructura</div>
-                                    <div class="font-bold mt-0.5 text-neutral-900">Apps Script V8 · BigQuery · Sheets · HTML5 M3</div>
+                        <!-- SLIDE 5: ESCALABILIDAD LATAM -->
+                        <div id="carlos-slide-5" class="carlos-slide hidden bg-[#FFFEF8] border-2 border-black p-6 sm:p-8 swiss-border shadow-[5px_5px_0px_#000]">
+                            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                                <!-- Col 5: Swiss Block -->
+                                <div class="lg:col-span-5 bg-[#5A4A96] text-white p-6 sm:p-8 border-2 border-black shadow-[4px_4px_0px_#000] space-y-5">
+                                    <span class="badge-swiss bg-black text-[#FAF338] font-bold">SLIDE 05 · REPLICABILIDAD</span>
+                                    <h3 class="font-display font-black text-2xl sm:text-3xl uppercase leading-tight text-white border-b-4 border-black pb-3">
+                                        Escalabilidad LATAM
+                                    </h3>
+                                    <p class="font-body text-xs sm:text-sm text-neutral-100 leading-relaxed">
+                                        <strong>Equipos destino:</strong> Sales Operations Regional, Partner Managers Google &amp; Commercial Directors (MX, CO, PE, CL).
+                                    </p>
+                                    <div class="grid grid-cols-3 gap-2 text-center font-mono text-black">
+                                        <div class="bg-white border-2 border-black p-2.5">
+                                            <div class="text-[9px] uppercase tracking-wider text-neutral-600 font-bold">Arquitectura</div>
+                                            <div class="text-xs font-black mt-1">Serverless V8</div>
+                                        </div>
+                                        <div class="bg-white border-2 border-black p-2.5">
+                                            <div class="text-[9px] uppercase tracking-wider text-neutral-600 font-bold">Complejidad</div>
+                                            <div class="text-xs font-black text-emerald-700 mt-1">Baja (P&amp;P)</div>
+                                        </div>
+                                        <div class="bg-white border-2 border-black p-2.5">
+                                            <div class="text-[9px] uppercase tracking-wider text-neutral-600 font-bold">Cobertura</div>
+                                            <div class="text-xs font-black text-blue-700 mt-1">100% LATAM</div>
+                                        </div>
+                                    </div>
+                                    <p class="font-body text-xs text-neutral-100">
+                                        Estructura modular para auditar cualquier pipeline regional de Google Cloud en LATAM en minutos.
+                                    </p>
                                 </div>
-                                <div class="p-2.5 bg-neutral-100 border border-neutral-300">
-                                    <div class="text-neutral-500 uppercase text-[10px] font-bold">Módulos Activos</div>
-                                    <div class="font-bold mt-0.5 text-neutral-900">Torre de Control · Simulador · Quiz · Alert Desk</div>
-                                </div>
-                                <div class="p-2.5 bg-neutral-100 border border-neutral-300">
-                                    <div class="text-neutral-500 uppercase text-[10px] font-bold">Replicabilidad</div>
-                                    <div class="font-bold mt-0.5 text-emerald-700">Sin código adicional · 100% LATAM Plug & Play</div>
+
+                                <!-- Col 7: Checkpoints & Tropicalización -->
+                                <div class="lg:col-span-7 space-y-4">
+                                    <div class="bg-white border-2 border-black p-4 shadow-[3px_3px_0px_#000]">
+                                        <div class="text-xs font-display font-black uppercase tracking-wider text-neutral-800 mb-2 flex items-center gap-1.5">
+                                            <span class="w-2 h-2 bg-[#5A4A96] inline-block"></span> Checkpoints de Replicabilidad e Iterabilidad:
+                                        </div>
+                                        <ul class="space-y-2 font-body text-xs text-neutral-700">
+                                            <li class="flex items-start gap-2 bg-neutral-50 border border-neutral-200 p-2.5">
+                                                <span class="material-symbols-outlined text-emerald-600 text-sm mt-0.5">check_circle</span>
+                                                <div>
+                                                    <strong>Core Multi-Moneda Reusable:</strong> Motor de conversión y deducción Net to Google parametrizable para cualquier subsidiaria de Xertica en LATAM.
+                                                </div>
+                                            </li>
+                                            <li class="flex items-start gap-2 bg-neutral-50 border border-neutral-200 p-2.5">
+                                                <span class="material-symbols-outlined text-emerald-600 text-sm mt-0.5">check_circle</span>
+                                                <div>
+                                                    <strong>Iterabilidad de Programas:</strong> Catálogo normativo de incentivos actualizable dinámicamente sin tocar la lógica de conciliación principal.
+                                                </div>
+                                            </li>
+                                            <li class="flex items-start gap-2 bg-neutral-50 border border-neutral-200 p-2.5">
+                                                <span class="material-symbols-outlined text-emerald-600 text-sm mt-0.5">check_circle</span>
+                                                <div>
+                                                    <strong>Ficha de Retención Ejecutiva:</strong> Formato estandarizado para comités comerciales semanales en toda la región con branding de Xertica.
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Tropicalización Regional -->
+                                    <div class="bg-white border-2 border-black p-4 shadow-[3px_3px_0px_#000]">
+                                        <div class="text-xs font-display font-black uppercase tracking-wider text-neutral-800 mb-2 flex items-center gap-1.5">
+                                            <span class="w-2 h-2 bg-[#FAF338] inline-block border border-black"></span> Tropicalización Regulatoria y Fiscal:
+                                        </div>
+                                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 font-mono text-xs">
+                                            <div class="p-2.5 bg-neutral-50 border border-neutral-200">
+                                                <span class="font-bold text-neutral-900">🇲🇽 México:</span>
+                                                <div class="text-neutral-600 text-[10px] mt-0.5">Cruce con contratos en MXN/USD y retención de OC para cumplimiento fiscal SAT.</div>
+                                            </div>
+                                            <div class="p-2.5 bg-neutral-50 border border-neutral-200">
+                                                <span class="font-bold text-neutral-900">🇨🇴 Colombia:</span>
+                                                <div class="text-neutral-600 text-[10px] mt-0.5">Conciliación con TRM oficial y retención en la fuente para cobro de rebates.</div>
+                                            </div>
+                                            <div class="p-2.5 bg-neutral-50 border border-neutral-200">
+                                                <span class="font-bold text-neutral-900">🇵🇪 Perú:</span>
+                                                <div class="text-neutral-600 text-[10px] mt-0.5">Monitoreo en Soles/USD con cálculo de detracciones en servicios digitales.</div>
+                                            </div>
+                                            <div class="p-2.5 bg-neutral-50 border border-neutral-200">
+                                                <span class="font-bold text-neutral-900">🇨🇱 Chile:</span>
+                                                <div class="text-neutral-600 text-[10px] mt-0.5">Mapeo presupuestal con conversión a UF para auditorías comerciales corporativas.</div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                     </div>
-
                 </div>
             </div>
 
@@ -4179,6 +4713,15 @@ La plataforma cuenta con 2 modos:
                     prevAngelSlide();
                 }
             }
+
+            const carlosPanel = document.getElementById('panel-carlos');
+            if (carlosPanel && !carlosPanel.classList.contains('hidden')) {
+                if (e.key === 'ArrowRight') {
+                    nextCarlosSlide();
+                } else if (e.key === 'ArrowLeft') {
+                    prevCarlosSlide();
+                }
+            }
         });
 
         // Sub-Tab Switching para Ficha Técnica / Documentación Oficial de Angel Solis
@@ -4197,6 +4740,71 @@ La plataforma cuenta con 2 modos:
                 }
             }
         }
+
+        // ==========================================
+        // SLIDE DECK PRESENTATION ENGINE (CARLOS ESPINOSA)
+        // ==========================================
+        let currentCarlosSlide = 1;
+        const totalCarlosSlides = 5;
+
+        function switchCarlosSlide(slideNum) {
+            if (slideNum < 1 || slideNum > totalCarlosSlides) return;
+            currentCarlosSlide = slideNum;
+
+            const counter = document.getElementById('carlos-slide-counter');
+            if (counter) {
+                counter.textContent = 'SLIDE [ 0' + slideNum + ' / 0' + totalCarlosSlides + ' ]';
+            }
+
+            for (let i = 1; i <= totalCarlosSlides; i++) {
+                const slide = document.getElementById('carlos-slide-' + i);
+                const navBtn = document.getElementById('carlos-slide-nav-' + i);
+                if (slide) {
+                    if (i === slideNum) {
+                        slide.classList.remove('hidden');
+                    } else {
+                        slide.classList.add('hidden');
+                    }
+                }
+                if (navBtn) {
+                    if (i === slideNum) {
+                        navBtn.className = 'carlos-slide-nav px-3 py-1.5 rounded-full border-2 border-black bg-[#FAF338] text-black font-bold shadow-[2px_2px_0px_#000] whitespace-nowrap';
+                    } else {
+                        navBtn.className = 'carlos-slide-nav px-3 py-1.5 rounded-full border border-transparent hover:border-black hover:bg-neutral-100 text-neutral-700 font-semibold whitespace-nowrap transition-all';
+                    }
+                }
+            }
+        }
+
+        function nextCarlosSlide() {
+            let next = currentCarlosSlide + 1;
+            if (next > totalCarlosSlides) next = 1;
+            switchCarlosSlide(next);
+        }
+
+        function prevCarlosSlide() {
+            let prev = currentCarlosSlide - 1;
+            if (prev < 1) prev = totalCarlosSlides;
+            switchCarlosSlide(prev);
+        }
+
+        // Sub-Tab Switching para Ficha Técnica / Documentación Oficial de Carlos Espinosa
+        function switchCarlosDocTab(tabIndex) {
+            for (let i = 1; i <= 7; i++) {
+                const btn = document.getElementById('carlos-doc-btn-' + i);
+                const panel = document.getElementById('carlos-doc-panel-' + i);
+                if (!btn || !panel) continue;
+                
+                if (i === tabIndex) {
+                    btn.className = 'carlos-doc-btn text-left px-3 py-1.5 rounded-full border-2 border-black bg-[#FAF338] text-black font-bold shadow-[2px_2px_0px_#000] whitespace-nowrap';
+                    panel.classList.remove('hidden');
+                } else {
+                    btn.className = 'carlos-doc-btn text-left px-3 py-1.5 rounded-full border border-transparent hover:border-black hover:bg-white transition-all whitespace-nowrap text-neutral-700 font-semibold';
+                    panel.classList.add('hidden');
+                }
+            }
+        }
+
 
         // ==========================================
         // EIR TEAM AUTH & CLOUD VIDEO SYNC ENGINE
