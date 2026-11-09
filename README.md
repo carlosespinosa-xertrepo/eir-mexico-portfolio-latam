@@ -60,7 +60,7 @@ Si deseas compartir un enlace desplegado en vivo con Vanessa y el equipo:
 # Iniciar sesión y desplegar directamente a producción:
 npx vercel --prod
 ```
-*Vercel detectará automáticamente `vercel.json` y generará una URL pública instantánea (ej. `https://eir-portfolio-latam.vercel.app`).*
+*Vercel detectará automáticamente `vercel.json` y generará una URL pública instantánea (ej. `https://carlosespinosa-xertrepo.github.io/eir-mexico-portfolio-latam/`).*
 
 ---
 
@@ -74,7 +74,7 @@ Hola Vane! Buen día.
 Te compartimos la plataforma interactiva desplegada con los 4 proyectos del equipo EIR México listos para implementarse en LATAM:
 
 🔗 Enlace de la Plataforma:
-https://eir-portfolio-latam.vercel.app/ (y en local)
+https://carlosespinosa-xertrepo.github.io/eir-mexico-portfolio-latam/ (y en local)
 
 Resumen ejecutivo digerible de cada proyecto:
 

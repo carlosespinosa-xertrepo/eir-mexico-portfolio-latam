@@ -879,49 +879,44 @@
                                 <!-- Document Content Area -->
                                 <div class="md:col-span-8">
 
-                                    <!-- TAB 1: VALOR E IMPACTO -->
+                                                                        <!-- TAB 1: VALOR E IMPACTO -->
                                     <div id="pato-doc-panel-1" class="pato-doc-panel hidden bg-white border-2 border-black rounded-xl p-4 sm:p-5 shadow-[3px_3px_0px_#000]">
-                                        <h4 class="font-display font-black text-lg sm:text-xl text-neutral-900 leading-tight">1. Valor e Impacto</h4>
+                                        <h4 class="font-display font-black text-lg sm:text-xl text-neutral-900 leading-tight">1. Valor e Impacto de Negocio</h4>
                                         <hr class="border-black my-2.5">
                                         <p class="font-body text-xs text-neutral-700 leading-relaxed mb-4">
-                                            Motor FinOps automatizado para auditoría de compromisos contractuales de Google Cloud Platform (CUDs / Commits). Elimina la incertidumbre financiera mensual en +110 cuentas activas de clientes Xertica en LATAM.
+                                            El sistema de <strong>Inteligencia Comercial Xertica</strong> (<em>Strategic Consumption Intelligence</em>) no es solo un dashboard de consulta: es el núcleo operativo que transforma horas de trabajo manual en inteligencia de negocios accionable. Este proyecto nació de la necesidad de centralizar fuentes de datos desconectadas (facturación GCP vs. contratos comerciales y acuerdos de commit) y ha evolucionado hacia un motor integral de auditoría financiera, tracking de renovaciones y estrategia comercial de clientes.
                                         </p>
 
                                         <div class="space-y-3 font-body text-xs">
                                             <div class="bg-neutral-50 border border-neutral-300 p-3 rounded">
                                                 <h5 class="font-display font-bold text-neutral-900 mb-1 flex items-center gap-1.5">
-                                                    <span class="material-symbols-outlined text-sm text-[#5A4A96]">target</span> El Problema que Resuelve
+                                                    <span class="material-symbols-outlined text-sm text-[#5A4A96]">target</span> Propuesta de Valor Central
                                                 </h5>
-                                                <p class="text-neutral-700 leading-relaxed">
-                                                    Los compromisos de uso acordados con Google (CUDs) generan penalizaciones financieras severas si el cliente subutiliza el cómputo reservado, o sobrecostos On-Demand si excede su capacidad sin cobertura. Anteriormente, estos desvíos se detectaban tarde, al emitirse la factura contable.
-                                                </p>
+                                                <ul class="list-disc list-inside space-y-1.5 text-neutral-700 leading-relaxed">
+                                                    <li><strong>Prevención de Fugas de Capital (Revenue Leakage):</strong> Identifica matemáticamente las brechas entre el costo pagado a Google (<strong>Net</strong>) y la facturación realizada al cliente (<strong>Gross</strong>), detectando márgenes bajos, desvíos y riesgos financieros en tiempo real.</li>
+                                                    <li><strong>Detección de Oportunidades y Renovaciones (Upsell / Commit):</strong> El <strong>Radar de Renovaciones</strong> visibiliza con 30, 60 y 90 días de anticipación los contratos comerciales próximos a expirar, facilitando marcar directamente estatus de atención comercial para retener y expandir cuentas.</li>
+                                                    <li><strong>Eficiencia Operativa (Ahorro de Tiempo):</strong> Sustituye procesos manuales de cruce de hojas de cálculo y CSVs que tomaban días, consolidándolos en una plataforma web de "un solo clic" accesible al instante para directores, FinOps y Account Managers.</li>
+                                                    <li><strong>Visibilidad Holística de Grupos Empresariales:</strong> Agrupa automáticamente múltiples cuentas bajo su respectivo <strong>Holding</strong> (ej. Cotemar, Grupo México, Clip, etc.) sin perder la capacidad de analizar individualmente cada ID de facturación.</li>
+                                                </ul>
                                             </div>
 
-                                            <div class="bg-neutral-50 border border-neutral-300 p-3 rounded">
-                                                <h5 class="font-display font-bold text-neutral-900 mb-1 flex items-center gap-1.5">
-                                                    <span class="material-symbols-outlined text-sm text-emerald-600">verified</span> La Solución en Producción
+                                            <div class="bg-neutral-50 border border-neutral-300 p-3 rounded mt-3">
+                                                <h5 class="font-display font-bold text-neutral-900 mb-2 flex items-center gap-1.5">
+                                                    <span class="material-symbols-outlined text-sm text-emerald-600">verified</span> Métricas de Impacto
                                                 </h5>
-                                                <p class="text-neutral-700 leading-relaxed">
-                                                    Extracción automática diaria de BigQuery Cloud Billing que proyecta el ritmo de consumo contra la meta contractual. Clasifica las cuentas en semáforo de riesgo y genera la ficha ejecutiva de renegociación comercial.
-                                                </p>
-                                            </div>
-
-                                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 font-mono text-center">
-                                                <div class="bg-neutral-100 border border-neutral-300 p-2">
-                                                    <div class="text-[10px] text-neutral-600 uppercase">Cuentas</div>
-                                                    <div class="font-bold text-sm text-neutral-900 mt-0.5">+110</div>
-                                                </div>
-                                                <div class="bg-neutral-100 border border-neutral-300 p-2">
-                                                    <div class="text-[10px] text-neutral-600 uppercase">Assessments</div>
-                                                    <div class="font-bold text-sm text-neutral-900 mt-0.5">+8</div>
-                                                </div>
-                                                <div class="bg-neutral-100 border border-neutral-300 p-2">
-                                                    <div class="text-[10px] text-neutral-600 uppercase">Pipeline USD</div>
-                                                    <div class="font-bold text-sm text-emerald-700 mt-0.5">+$500K</div>
-                                                </div>
-                                                <div class="bg-neutral-100 border border-neutral-300 p-2">
-                                                    <div class="text-[10px] text-neutral-600 uppercase">Penalizaciones</div>
-                                                    <div class="font-bold text-sm text-blue-700 mt-0.5">0 USD</div>
+                                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 font-mono text-center">
+                                                    <div class="bg-neutral-100 border border-neutral-300 p-2">
+                                                        <div class="text-[10px] text-neutral-600 uppercase">Trazabilidad Gross vs. Net</div>
+                                                        <div class="font-bold text-sm text-neutral-900 mt-0.5">100%</div>
+                                                    </div>
+                                                    <div class="bg-neutral-100 border border-neutral-300 p-2">
+                                                        <div class="text-[10px] text-neutral-600 uppercase">Alertas Preventivas</div>
+                                                        <div class="font-bold text-sm text-neutral-900 mt-0.5">30 / 60 / 90 días</div>
+                                                    </div>
+                                                    <div class="bg-neutral-100 border border-neutral-300 p-2">
+                                                        <div class="text-[10px] text-neutral-600 uppercase">Velocidad de Carga</div>
+                                                        <div class="font-bold text-sm text-emerald-700 mt-0.5">&lt; 1 segundo</div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -929,168 +924,162 @@
 
                                     <!-- TAB 2: FICHA TECNICA -->
                                     <div id="pato-doc-panel-2" class="pato-doc-panel hidden bg-white border-2 border-black rounded-xl p-4 sm:p-5 shadow-[3px_3px_0px_#000]">
-                                        <h4 class="font-display font-black text-lg sm:text-xl text-neutral-900 leading-tight">2. Ficha Técnica</h4>
+                                        <h4 class="font-display font-black text-lg sm:text-xl text-neutral-900 leading-tight">2. Ficha Técnica y Arquitectura</h4>
                                         <hr class="border-black my-2.5">
                                         <p class="font-body text-xs text-neutral-700 leading-relaxed mb-3">
-                                            Especificaciones de arquitectura, flujo de telemetría y seguridad de la plataforma FinOps.
+                                            <strong>Nombre Técnico:</strong> <code>Strategic Consumption Intelligence GCP v256+</code><br>
+                                            <strong>Líder del Proyecto / Product Owner:</strong> Patricio Martin<br>
+                                            <strong>Nivel de Madurez:</strong> En Producción (Despliegue Multi-usuario Seguro)<br>
+                                            <strong>ID Permanente de Despliegue:</strong> <code class="break-all">AKfycbzNFrFsFDN4T18OrzQSpXsOMM_OLqJIYhK8O0S77QUtDWLZq64TxkhNnM78moDX4BDKdQ</code><br>
+                                            <strong>Acceso Oficial (Shortlink):</strong> <a href="https://carlosespinosa-xertrepo.github.io/eir-mexico-portfolio-latam/" target="_blank" class="text-blue-600 underline">https://carlosespinosa-xertrepo.github.io/eir-mexico-portfolio-latam/</a>
                                         </p>
 
-                                        <div class="space-y-3 font-mono text-xs">
+                                        <div class="space-y-3 font-body text-xs">
                                             <div class="border border-neutral-300 p-3 bg-neutral-50 space-y-1.5">
-                                                <div class="font-bold text-neutral-900 uppercase text-[11px] flex items-center gap-1.5">
-                                                    <span class="material-symbols-outlined text-sm text-[#5A4A96]">memory</span> Stack Tecnológico
+                                                <div class="font-bold text-neutral-900 uppercase text-[11px] flex items-center gap-1.5 font-mono">
+                                                    <span class="material-symbols-outlined text-sm text-[#5A4A96]">memory</span> Stack y Tecnologías Clave
                                                 </div>
-                                                <div class="grid grid-cols-2 gap-2 text-[11px] text-neutral-700">
-                                                    <div>• <strong>Cloud Ingestion:</strong> BigQuery Billing Export</div>
-                                                    <div>• <strong>Backend:</strong> Google Apps Script (V8 Engine)</div>
-                                                    <div>• <strong>Database:</strong> Google Sheets & BigQuery Tables</div>
-                                                    <div>• <strong>Frontend UI:</strong> HTML5 / Tailwind / Looker Engine</div>
+                                                <ul class="list-disc list-inside space-y-1 text-neutral-700">
+                                                    <li><strong>Core Backend:</strong> Google Apps Script - V8 (REST asíncrono)</li>
+                                                    <li><strong>Frontend Autónomo:</strong> React 18 + Vite Singlefile (Tailwind, Lucide)</li>
+                                                    <li><strong>Bases de Datos Vivas:</strong> Lectura/escritura estructurada sobre Google Sheets</li>
+                                                    <li><strong>Telemetría y Persistencia:</strong> PropertiesService para auditoría silenciosa</li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="border border-neutral-300 p-3 bg-neutral-50 space-y-2">
+                                                <div class="font-bold text-neutral-900 uppercase text-[11px] flex items-center gap-1.5 font-mono">
+                                                    <span class="material-symbols-outlined text-sm text-emerald-600">database</span> Directorio de Hojas Conectadas
+                                                </div>
+                                                <div class="space-y-2 text-neutral-700">
+                                                    <div>
+                                                        <strong>1. Hoja Principal de Consumo GCP y Commits</strong><br>
+                                                        <span class="text-[11px]">Pestaña Crítica: <code>App Script Herramienta Commit</code>. Consolidación diaria de facturación GCP. ⚠️ NUNCA renombrar esta pestaña.</span>
+                                                    </div>
+                                                    <div>
+                                                        <strong>2. Hoja de Oportunidades y Preventa</strong><br>
+                                                        <span class="text-[11px]">Pestaña: <code>Seguimiento_Oportunidades</code>. Panel complementario de notas comerciales.</span>
+                                                    </div>
+                                                    <div>
+                                                        <strong>3. Auditoría y Telemetría Corporativa</strong><br>
+                                                        <span class="text-[11px]">Pestaña: <code>Auditoria_Telemetria</code>. Registro silencioso de sesiones y accesos.</span>
+                                                    </div>
                                                 </div>
                                             </div>
 
                                             <div class="border border-neutral-300 p-3 bg-neutral-50 space-y-1.5">
-                                                <div class="font-bold text-neutral-900 uppercase text-[11px] flex items-center gap-1.5">
-                                                    <span class="material-symbols-outlined text-sm text-blue-600">sync_alt</span> Pipeline de Datos (ETL)
+                                                <div class="font-bold text-neutral-900 uppercase text-[11px] flex items-center gap-1.5 font-mono">
+                                                    <span class="material-symbols-outlined text-sm text-orange-600">build</span> Guía de Relevo Operativo (Handover)
                                                 </div>
-                                                <ol class="list-decimal list-inside space-y-1 text-[11px] text-neutral-700 font-body">
-                                                    <li><strong>Extracción Diaria:</strong> Export automático de Google Cloud Billing a datasets particionados en BigQuery.</li>
-                                                    <li><strong>Normalización FinOps:</strong> Cruce de SKU IDs, SKUs de CUDs (Compute Engine, Memory, GKE, Cloud SQL) y tarifas contractuales pactadas.</li>
-                                                    <li><strong>Cálculo de Desviación:</strong> Algoritmo de velocidad de quema (Burn Rate) que proyecta sobreconsumos o subutilizaciones al cierre del contrato.</li>
-                                                    <li><strong>Exposición:</strong> Renderizado reactivo en Web App para ejecutivos comerciales y consultores FinOps.</li>
-                                                </ol>
-                                            </div>
-
-                                            <div class="border border-neutral-300 p-3 bg-neutral-50">
-                                                <div class="font-bold text-neutral-900 uppercase text-[11px] mb-1">Seguridad & Cumplimiento</div>
-                                                <div class="text-[11px] text-neutral-700 font-body">
-                                                    Acceso restringido por OAuth2 corporativo a dominio <code>@xertica.com</code>. Permisos IAM de solo lectura en BigQuery (Data Viewer). Cero almacenamiento de contraseñas o tokens expuestos en cliente.
+                                                <div class="text-[11px] text-neutral-700">
+                                                    Para compilar y desplegar, ejecutar desde la raíz:
+                                                    <pre class="bg-black text-white p-2 mt-1 rounded font-mono text-[9px] overflow-x-auto">npm run build
+npx @google/clasp push --force
+npx @google/clasp version "Cambios"
+npx @google/clasp deploy -i AKfycbzNFrFs... -V &lt;version&gt;</pre>
+                                                    <p class="mt-1 text-red-600 font-bold">🚨 NUNCA ejecutar clasp undeploy ni desplegar sin el flag -i.</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <!-- TAB 3: MANUAL DE USUARIO (3 PASOS CLAVE) -->
-                                    <div id="pato-doc-panel-3" class="pato-doc-panel bg-white border-2 border-black rounded-xl p-4 sm:p-5 shadow-[3px_3px_0px_#000]">
+                                    <!-- TAB 3: MANUAL DE USUARIO -->
+                                    <div id="pato-doc-panel-3" class="pato-doc-panel hidden bg-white border-2 border-black rounded-xl p-4 sm:p-5 shadow-[3px_3px_0px_#000]">
                                         <h4 class="font-display font-black text-lg sm:text-xl text-neutral-900 leading-tight">3. Manual de Usuario</h4>
                                         <hr class="border-black my-2.5">
                                         <p class="font-body text-xs text-neutral-700 leading-relaxed mb-4">
-                                            Guía operativa paso a paso para auditar cuentas de clientes y generar fichas ejecutivas de optimización FinOps.
+                                            Instrucciones operativas para el uso diario de la plataforma.
                                         </p>
 
-                                        <!-- Flujo en 3 Pasos -->
-                                        <div class="space-y-4">
-                                            <!-- PASO 1 -->
-                                            <div class="border-2 border-black p-3.5 bg-neutral-50 shadow-[2px_2px_0px_#000]">
-                                                <div class="flex items-center justify-between mb-2">
-                                                    <span class="badge-swiss bg-black text-white font-bold text-[10px]">PASO 01</span>
-                                                    <span class="font-mono text-[11px] font-bold text-neutral-600">Acceso & Validación de Cuenta</span>
+                                        <div class="space-y-3 font-body text-xs">
+                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
+                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
+                                                    <span class="badge-swiss bg-black text-white text-[9px] px-1.5 py-0.5">PASO 1</span>
+                                                    Autenticación Segura
                                                 </div>
-                                                <h5 class="font-display font-bold text-xs sm:text-sm text-neutral-900 mb-1.5">
-                                                    Autenticación Corporativa @xertica.com
-                                                </h5>
-                                                <p class="font-body text-xs text-neutral-700 leading-relaxed mb-2.5">
-                                                    Abrir la Web App en Google Apps Script. El sistema verifica automáticamente la identidad mediante Google Identity. Solo usuarios autorizados de la práctica FinOps y Comercial tienen acceso al catálogo multi-billing.
+                                                <p class="text-neutral-700 leading-relaxed">
+                                                    Ingrese mediante el enlace oficial. Requiere inicio de sesión con cuenta corporativa <code>@xertica.com</code>. El sistema valida la identidad automáticamente sin contraseñas adicionales.
                                                 </p>
-                                                <div class="bg-white border border-neutral-300 p-2.5 rounded font-mono text-[11px] text-neutral-800 flex items-center justify-between">
-                                                    <span>Enlace Web App:</span>
-                                                    <a href="https://script.google.com/a/macros/xertica.com/s/AKfycbzNFrFsFDN4T18OrzQSpXsOMM_OLqJIYhK8O0S77QUtDWLZq64TxkhNnM78moDX4BDKdQ/exec" target="_blank" class="text-[#5A4A96] font-bold underline hover:text-black flex items-center gap-1">
-                                                        <span>Abrir GAS Web App</span>
-                                                        <span class="material-symbols-outlined text-xs">open_in_new</span>
-                                                    </a>
-                                                </div>
                                             </div>
 
-                                            <!-- PASO 2 -->
-                                            <div class="border-2 border-black p-3.5 bg-neutral-50 shadow-[2px_2px_0px_#000]">
-                                                <div class="flex items-center justify-between mb-2">
-                                                    <span class="badge-swiss bg-[#5A4A96] text-white font-bold text-[10px]">PASO 02</span>
-                                                    <span class="font-mono text-[11px] font-bold text-neutral-600">Sincronización BigQuery</span>
+                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
+                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
+                                                    <span class="badge-swiss bg-black text-white text-[9px] px-1.5 py-0.5">PASO 2</span>
+                                                    Consolidado 360° (Dashboard)
                                                 </div>
-                                                <h5 class="font-display font-bold text-xs sm:text-sm text-neutral-900 mb-1.5">
-                                                    Selección de Cliente y Carga de Telemetría
-                                                </h5>
-                                                <p class="font-body text-xs text-neutral-700 leading-relaxed mb-2">
-                                                    Seleccionar el cliente objetivo en el selector desplegable (ej. Despegar, Zucarmex, DIMEX, BanRegio o VivaAerobus). El motor consulta BigQuery Billing y calcula el porcentaje de quema actual vs. el compromiso pactado.
+                                                <p class="text-neutral-700 leading-relaxed">
+                                                    La cabecera muestra 4 KPIs: Facturación Gross, Costo Net, Margen USD y Margen %. Utilice el selector de meses o el <strong>Prorrateo Diario</strong> para comparar periodos continuos o auditorías en curso.
                                                 </p>
-                                                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 font-mono text-[10px]">
-                                                    <div class="p-2 bg-emerald-50 border border-emerald-300 text-emerald-800 font-bold">
-                                                        ✓ En Rango (85% - 100%)
-                                                    </div>
-                                                    <div class="p-2 bg-amber-50 border border-amber-300 text-amber-800 font-bold">
-                                                        ⚠ Alerta (&lt;85% Subcommit)
-                                                    </div>
-                                                    <div class="p-2 bg-blue-50 border border-blue-300 text-blue-800 font-bold">
-                                                        ↑ Sobreconsumo (&gt;100%)
-                                                    </div>
-                                                </div>
                                             </div>
 
-                                            <!-- PASO 3 -->
-                                            <div class="border-2 border-black p-3.5 bg-neutral-50 shadow-[2px_2px_0px_#000]">
-                                                <div class="flex items-center justify-between mb-2">
-                                                    <span class="badge-swiss bg-[#FAF338] text-black font-bold text-[10px]">PASO 03</span>
-                                                    <span class="font-mono text-[11px] font-bold text-neutral-600">Análisis y Exportación</span>
+                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
+                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
+                                                    <span class="badge-swiss bg-black text-white text-[9px] px-1.5 py-0.5">PASO 3</span>
+                                                    Ficha Expandible del Cliente
                                                 </div>
-                                                <h5 class="font-display font-bold text-xs sm:text-sm text-neutral-900 mb-1.5">
-                                                    Ficha Expandible y Plan de Acción Comercial
-                                                </h5>
-                                                <p class="font-body text-xs text-neutral-700 leading-relaxed mb-2.5">
-                                                    Hacer clic en el cliente para expandir el desglose detallado de SKUs: núcleos de CPU, RAM, almacenamiento y licencias. Exportar la ficha ejecutiva a Google Sheets o PDF para presentar la propuesta de ahorro y nuevo CUD al cliente.
+                                                <p class="text-neutral-700 leading-relaxed">
+                                                    Dé clic en cualquier fila para abrir el panel lateral 360°. Muestra: Histórico mensual, commits activos vs cerrados, enlaces a contratos y recomendaciones tácticas.
                                                 </p>
-                                                <div class="bg-white border border-neutral-300 p-2.5 rounded text-[11px] font-mono text-neutral-700 flex items-center justify-between">
-                                                    <span>Formato de Salida:</span>
-                                                    <span class="font-bold text-neutral-900">Excel / Google Sheets / Reporte PDF C-Level</span>
+                                            </div>
+
+                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
+                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
+                                                    <span class="badge-swiss bg-black text-white text-[9px] px-1.5 py-0.5">PASO 4</span>
+                                                    Radar de Renovaciones
                                                 </div>
+                                                <p class="text-neutral-700 leading-relaxed">
+                                                    Categoriza contratos por vencer en 30, 60 y 90 días. Usuarios autorizados pueden marcar el estatus: <code>Falta revisar</code>, <code>En proceso</code>, <code>Propuesta enviada</code>, <code>Resuelto</code>, <code>No renovará</code>.
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <!-- TAB 4: MOTOR DE REGLAS (CAPAS FINOPS) -->
+                                    <!-- TAB 4: MOTOR DE REGLAS -->
                                     <div id="pato-doc-panel-4" class="pato-doc-panel hidden bg-white border-2 border-black rounded-xl p-4 sm:p-5 shadow-[3px_3px_0px_#000]">
-                                        <h4 class="font-display font-black text-lg sm:text-xl text-neutral-900 leading-tight">4. Motor de Reglas (Capas FinOps)</h4>
+                                        <h4 class="font-display font-black text-lg sm:text-xl text-neutral-900 leading-tight">4. Motor de Reglas (Capas de Negocio)</h4>
                                         <hr class="border-black my-2.5">
                                         <p class="font-body text-xs text-neutral-700 leading-relaxed mb-4">
-                                            Matriz algorítmica de 4 capas para detección de ineficiencias de nube y mitigación de riesgos contractuales.
+                                            Lógica matemática y clasificación automática aplicada sobre cada registro:
                                         </p>
 
                                         <div class="space-y-3 font-body text-xs">
                                             <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
                                                 <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
                                                     <span class="badge-swiss bg-black text-white text-[9px] px-1.5 py-0.5">CAPA 1</span>
-                                                    Auditoría de CUDs (Committed Use Discounts)
+                                                    Clasificación FIRMADO vs. PAYG
                                                 </div>
                                                 <p class="text-neutral-700 leading-relaxed">
-                                                    Evalúa la tasa de utilización de compromisos de cómputo y memoria a 1 o 3 años. Si el uso cae por debajo del 85%, emite bandera roja para redistribución de cargas de trabajo.
+                                                    Una cuenta se cataloga como <strong>FIRMADO</strong> si posee contrato activo, meta de cliente/Google mayor a cero, ID de commit asignado o estatus Abierto. De lo contrario, se clasifica como <strong>PAYG</strong> (Consumo bajo demanda).
                                                 </p>
                                             </div>
 
                                             <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
                                                 <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
                                                     <span class="badge-swiss bg-black text-white text-[9px] px-1.5 py-0.5">CAPA 2</span>
-                                                    Detección de Sobreconsumo (On-Demand Waste)
+                                                    Tipos de Suscripción
                                                 </div>
                                                 <p class="text-neutral-700 leading-relaxed">
-                                                    Identifica workloads que pagan tarifa de lista On-Demand por más de 60 días continuos. Cuantifica el ahorro neto que obtendría el cliente al formalizar un nuevo commit (descuentos de hasta 57%).
+                                                    El motor inspecciona la columna <code>Tipo</code> para categorizar dinámicamente: <code>Commit Google</code>, <code>Payment</code> y <code>Prepago</code>. Previene duplicidades visuales si el valor coincide con el nombre de cuenta.
                                                 </p>
                                             </div>
 
                                             <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
                                                 <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
                                                     <span class="badge-swiss bg-black text-white text-[9px] px-1.5 py-0.5">CAPA 3</span>
-                                                    Simulación Predictiva & Forecasting
+                                                    Mínimos y Máximos (Multianual)
                                                 </div>
                                                 <p class="text-neutral-700 leading-relaxed">
-                                                    Calcula escenarios hipotéticos de crecimiento estacional o migración de nuevos sistemas hacia GCP, proyectando el impacto directo en el P&amp;L del cliente.
+                                                    Parsea esquemas multianuales extrayendo rangos de compromiso por Año 1, Año 2 y Año 3, calculando el porcentaje de cumplimiento mensual.
                                                 </p>
                                             </div>
 
                                             <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
                                                 <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
                                                     <span class="badge-swiss bg-black text-white text-[9px] px-1.5 py-0.5">CAPA 4</span>
-                                                    Alertas Preventivas de Vencimiento
+                                                    Consolidación de Holdings
                                                 </div>
                                                 <p class="text-neutral-700 leading-relaxed">
-                                                    Disparador de notificaciones a 90, 60 y 30 días previos a la expiración de contratos multianuales con Google Cloud, evitando caídas abruptas a tarifa plena.
+                                                    Cuentas y razones sociales subsidiarias que comparten Grupo Empresarial se consolidan bajo su Holding matriz, sumando consumos y consolidando contratos sin pérdida de granularidad.
                                                 </p>
                                             </div>
                                         </div>
@@ -1098,7 +1087,7 @@
 
                                     <!-- TAB 5: FILTROS Y GRAFICAS -->
                                     <div id="pato-doc-panel-5" class="pato-doc-panel hidden bg-white border-2 border-black rounded-xl p-4 sm:p-5 shadow-[3px_3px_0px_#000]">
-                                        <h4 class="font-display font-black text-lg sm:text-xl text-neutral-900 leading-tight">5. Filtros y Gráficas</h4>
+                                        <h4 class="font-display font-black text-lg sm:text-xl text-neutral-900 leading-tight">5. Filtros, Métricas y Gráficas</h4>
                                         <hr class="border-black my-2.5">
                                         <p class="font-body text-xs text-neutral-700 leading-relaxed mb-4">
                                             Capacidades analíticas multidimensionales incorporadas en el tablero interactivo.
@@ -1107,57 +1096,69 @@
                                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 font-body text-xs">
                                             <div class="border border-neutral-300 p-3 bg-neutral-50 rounded space-y-1.5">
                                                 <div class="font-display font-bold text-neutral-900 flex items-center gap-1.5">
-                                                    <span class="material-symbols-outlined text-sm text-[#5A4A96]">filter_alt</span> Filtros Disponibles
+                                                    <span class="material-symbols-outlined text-sm text-[#5A4A96]">filter_alt</span> Rango de Meses y Prorrateo
                                                 </div>
-                                                <ul class="list-disc list-inside space-y-1 text-neutral-700 font-mono text-[11px]">
-                                                    <li>Por Cliente / Billing Account ID</li>
-                                                    <li>Por Proyecto GCP individual</li>
-                                                    <li>Por Familia de Máquina (N2, C2, E2, TPU)</li>
-                                                    <li>Por Región de Nube (us-central1, etc.)</li>
-                                                    <li>Por Tipo de Descuento (CUD 1a / 3a / SUD)</li>
-                                                </ul>
+                                                <p class="text-neutral-700">
+                                                    Permite evaluar el consumo en cualquier periodo continuo. Al activar <strong>Prorrateo Diario</strong>, calcula proporcionalmente los días transcurridos para auditar consumos en curso sin esperar al cierre contable.
+                                                </p>
                                             </div>
 
                                             <div class="border border-neutral-300 p-3 bg-neutral-50 rounded space-y-1.5">
                                                 <div class="font-display font-bold text-neutral-900 flex items-center gap-1.5">
-                                                    <span class="material-symbols-outlined text-sm text-emerald-600">bar_chart</span> Visualizaciones Clave
+                                                    <span class="material-symbols-outlined text-sm text-emerald-600">bar_chart</span> Visión Financiera Dinámica
                                                 </div>
-                                                <ul class="list-disc list-inside space-y-1 text-neutral-700 font-mono text-[11px]">
-                                                    <li>Gráfica de Cobertura CUD vs. Consumo Real</li>
-                                                    <li>Curva de Gasto On-Demand vs. Bonificado</li>
-                                                    <li>Matriz de Semáforo de Riesgo Contractual</li>
-                                                    <li>Distribución de Gasto por Servicio Core</li>
-                                                </ul>
+                                                <p class="text-neutral-700">
+                                                    Con un clic, la plataforma recalcula todos los gráficos para reflejar la perspectiva del cliente (<strong>Gross</strong> / Facturado) o la perspectiva de costo de Google (<strong>Net</strong> / Margen).
+                                                </p>
+                                            </div>
+                                            
+                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded space-y-1.5 sm:col-span-2">
+                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-1.5">
+                                                    <span class="material-symbols-outlined text-sm text-[#5A4A96]">search</span> Búsqueda y Filtro Multi-Suscripción
+                                                </div>
+                                                <p class="text-neutral-700">
+                                                    Filtro desplegable multi-selección (<code>Payment</code>, <code>Prepago</code>, <code>Commit Google</code>, <code>PAYG</code>) con búsqueda por texto y ordenamiento dinámico por margen o volumen de consumo en tiempo real.
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
 
                                     <!-- TAB 6: IA Y PRIVACIDAD -->
                                     <div id="pato-doc-panel-6" class="pato-doc-panel hidden bg-white border-2 border-black rounded-xl p-4 sm:p-5 shadow-[3px_3px_0px_#000]">
-                                        <h4 class="font-display font-black text-lg sm:text-xl text-neutral-900 leading-tight">6. IA y Privacidad</h4>
+                                        <h4 class="font-display font-black text-lg sm:text-xl text-neutral-900 leading-tight">6. IA, Privacidad y Telemetría</h4>
                                         <hr class="border-black my-2.5">
                                         <p class="font-body text-xs text-neutral-700 leading-relaxed mb-4">
-                                            Asistencia inteligente para síntesis ejecutiva bajo estándares corporativos de privacidad y seguridad Cloud.
+                                            Asistencia inteligente y cumplimiento de estándares corporativos de privacidad y seguridad Cloud.
                                         </p>
 
                                         <div class="space-y-3 font-body text-xs">
                                             <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
                                                 <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
-                                                    <span class="material-symbols-outlined text-[#5A4A96] text-sm">auto_awesome</span>
-                                                    Asesor FinOps con Gemini
+                                                    <span class="material-symbols-outlined text-[#5A4A96] text-sm">shield_lock</span>
+                                                    Privacidad Absoluta de Datos Comerciales
                                                 </div>
                                                 <p class="text-neutral-700 leading-relaxed">
-                                                    Interpreta tablas complejas de facturación en BigQuery y genera resúmenes en lenguaje natural para audiencias C-Level (CFO, CTO, Directores de Finanzas), destacando ahorros y recomendaciones en viñetas ejecutivas.
+                                                    Toda la información de facturación y compromisos reside exclusivamente dentro del dominio protegido de Google Workspace de Xertica. No se envían datos financieros a APIs de terceros.
                                                 </p>
                                             </div>
 
                                             <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
                                                 <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
-                                                    <span class="material-symbols-outlined text-emerald-600 text-sm">shield</span>
-                                                    Política Estricta de Cero Retención
+                                                    <span class="material-symbols-outlined text-emerald-600 text-sm">radar</span>
+                                                    Telemetría de Accesos y Auditoría
                                                 </div>
                                                 <p class="text-neutral-700 leading-relaxed">
-                                                    Ningún dato financiero, nombre de cliente o identificador de proyecto es utilizado para entrenar modelos públicos. Las consultas se ejecutan en Google Cloud Vertex AI Enterprise con cifrado end-to-end.
+                                                    Cada inicio de sesión y marcado de estatus registra una huella de auditoría en <code>PropertiesService</code> y en la pestaña <code>Auditoria_Telemetria</code> (usuario, fecha, dispositivo y acción).
+                                                </p>
+                                            </div>
+                                            
+                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
+                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
+                                                    <span class="material-symbols-outlined text-[#5A4A96] text-sm">lightbulb</span>
+                                                    Motor Heurístico de Recomendaciones
+                                                </div>
+                                                <p class="text-neutral-700 leading-relaxed">
+                                                    Genera sugerencias comerciales automáticas por cliente, alertando sobre riesgos de subconsumo (<em>under-consumption</em>) o sugiriendo conversiones de PAYG a contratos formalizados con compromisos de volumen.
                                                 </p>
                                             </div>
                                         </div>
@@ -1165,34 +1166,46 @@
 
                                     <!-- TAB 7: ROADMAP Y EVOLUCION -->
                                     <div id="pato-doc-panel-7" class="pato-doc-panel hidden bg-white border-2 border-black rounded-xl p-4 sm:p-5 shadow-[3px_3px_0px_#000]">
-                                        <h4 class="font-display font-black text-lg sm:text-xl text-neutral-900 leading-tight">7. Roadmap y Evolución</h4>
+                                        <h4 class="font-display font-black text-lg sm:text-xl text-neutral-900 leading-tight">7. Roadmap y Evolución del Proyecto</h4>
                                         <hr class="border-black my-2.5">
                                         <p class="font-body text-xs text-neutral-700 leading-relaxed mb-4">
-                                            Evolución continua del motor de telemetría y siguientes hitos de escalabilidad regional.
+                                            Evolución continua del motor de telemetría y siguientes hitos de escalabilidad.
                                         </p>
 
                                         <div class="space-y-2.5 font-body text-xs">
                                             <div class="border border-neutral-300 p-3 bg-emerald-50 rounded flex items-start gap-2.5">
                                                 <span class="material-symbols-outlined text-emerald-700 text-sm mt-0.5">check_circle</span>
                                                 <div>
-                                                    <strong class="text-emerald-900 block font-display">Fase 1: Conexión BigQuery &amp; +110 Cuentas (Completada)</strong>
-                                                    <span class="text-emerald-800 text-[11px]">Consolidación multi-billing, ingesta diaria y tablero ejecutivo en producción.</span>
-                                                </div>
-                                            </div>
-
-                                            <div class="border border-neutral-300 p-3 bg-blue-50 rounded flex items-start gap-2.5">
-                                                <span class="material-symbols-outlined text-blue-700 text-sm mt-0.5">pending</span>
-                                                <div>
-                                                    <strong class="text-blue-900 block font-display">Fase 2: Automatización de Assessments &amp; Alertas (En Curso)</strong>
-                                                    <span class="text-blue-800 text-[11px]">Envío automático de notificaciones de riesgo a líderes comerciales y CSMs vía Google Chat / Slack.</span>
+                                                    <strong class="text-emerald-900 block font-display">v256 - v261 (Versión Actual en Producción)</strong>
+                                                    <ul class="list-disc list-inside text-emerald-800 text-[11px] mt-1 space-y-0.5">
+                                                        <li>Rediseño y lanzamiento del Portal de Manual & Ficha Técnica.</li>
+                                                        <li>Panel de Telemetría de Solo Lectura con filtros avanzados.</li>
+                                                        <li>Soporte preventivo para nuevo tipo de suscripción (<code>Prepago</code>).</li>
+                                                        <li>Prevención de redundancia visual en nombres de cuenta vs. tipo.</li>
+                                                        <li>Guía de Relevo Operativo (Handover) con snippets interactivos.</li>
+                                                    </ul>
                                                 </div>
                                             </div>
 
                                             <div class="border border-neutral-300 p-3 bg-neutral-50 rounded flex items-start gap-2.5">
-                                                <span class="material-symbols-outlined text-neutral-500 text-sm mt-0.5">schedule</span>
+                                                <span class="material-symbols-outlined text-neutral-500 text-sm mt-0.5">history</span>
                                                 <div>
-                                                    <strong class="text-neutral-900 block font-display">Fase 3: Multi-Cloud FinOps &amp; Autopilot (Q1 2027)</strong>
-                                                    <span class="text-neutral-700 text-[11px]">Ampliación de telemetría a AWS Savings Plans y Azure Reserved Instances para clientes con infraestructuras híbridas.</span>
+                                                    <strong class="text-neutral-900 block font-display">Histórico de Versiones Recientes</strong>
+                                                    <ul class="list-disc list-inside text-neutral-700 text-[11px] mt-1 space-y-0.5">
+                                                        <li><strong>v255:</strong> Marcado interactivo de Estatus en Radar de Renovaciones con persistencia directa en servidor y filtros por estado.</li>
+                                                        <li><strong>v250 - v254:</strong> Soporte para múltiples contratos cerrados, filtro de prorrateo diario, optimización de velocidad de carga reactiva con bundle inlined.</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div class="border border-neutral-300 p-3 bg-blue-50 rounded flex items-start gap-2.5">
+                                                <span class="material-symbols-outlined text-blue-700 text-sm mt-0.5">rocket_launch</span>
+                                                <div>
+                                                    <strong class="text-blue-900 block font-display">Próximas Integraciones (Planificado)</strong>
+                                                    <ul class="list-disc list-inside text-blue-800 text-[11px] mt-1 space-y-0.5">
+                                                        <li>Conexión bidireccional con Salesforce para sincronización de etapas de oportunidad.</li>
+                                                        <li>Notificaciones automatizadas por correo ante desvíos críticos de consumo Gross/Net.</li>
+                                                    </ul>
                                                 </div>
                                             </div>
                                         </div>
@@ -1786,7 +1799,7 @@
                                         </div>
                                     </div>
                                     <div class="pt-2">
-                                        <a href="https://script.google.com/a/macros/xertica.com/s/AKfycbyc4jeUYpMTzBSgbyF7N157WhpUXzNKCeQxwveDhaCQ_RRv-CDsePoE91BaVGnF8JYamQ/exec" target="_blank" class="w-full py-2.5 bg-[#FAF338] text-black border-2 border-black text-xs font-display font-bold uppercase tracking-wider hover:bg-white transition-colors flex items-center justify-center gap-2 shadow-[2px_2px_0px_#000]">
+                                        <a href="https://script.google.com/a/macros/xertica.com/s/AKfycbwkvMpWByf9XUNcNTNPvimFfvwuQjxusrm5IfwYH_XG-hBXMewiufAxa8ch0hLmjab-rQ/exec?pli=1" target="_blank" class="w-full py-2.5 bg-[#FAF338] text-black border-2 border-black text-xs font-display font-bold uppercase tracking-wider hover:bg-white transition-colors flex items-center justify-center gap-2 shadow-[2px_2px_0px_#000]">
                                             <span class="material-symbols-outlined text-sm">open_in_new</span> Abrir Herramienta en Producción
                                         </a>
                                     </div>
@@ -4251,7 +4264,7 @@
                         </div>
                     </div>
                     <div class="mt-5 stagger-up delay-2">
-                        <a href="https://script.google.com/a/macros/xertica.com/s/AKfycbyc4jeUYpMTzBSgbyF7N157WhpUXzNKCeQxwveDhaCQ_RRv-CDsePoE91BaVGnF8JYamQ/exec" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 bg-[#5A4A96] text-white border-2 border-white font-display font-black text-xs uppercase tracking-wider hover:bg-white hover:text-black transition-colors shadow-[4px_4px_0px_#000]">
+                        <a href="https://script.google.com/a/macros/xertica.com/s/AKfycbwkvMpWByf9XUNcNTNPvimFfvwuQjxusrm5IfwYH_XG-hBXMewiufAxa8ch0hLmjab-rQ/exec?pli=1" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 bg-[#5A4A96] text-white border-2 border-white font-display font-black text-xs uppercase tracking-wider hover:bg-white hover:text-black transition-colors shadow-[4px_4px_0px_#000]">
                             <span class="material-symbols-outlined text-base">open_in_new</span> Abrir Herramienta en Producción ↗
                         </a>
                     </div>
