@@ -879,334 +879,455 @@
                                 <!-- Document Content Area -->
                                 <div class="md:col-span-8">
 
-                                                                        <!-- TAB 1: VALOR E IMPACTO -->
-                                    <div id="pato-doc-panel-1" class="pato-doc-panel hidden bg-white border-2 border-black rounded-xl p-4 sm:p-5 shadow-[3px_3px_0px_#000]">
-                                        <h4 class="font-display font-black text-lg sm:text-xl text-neutral-900 leading-tight">1. Valor e Impacto de Negocio</h4>
-                                        <hr class="border-black my-2.5">
-                                        <p class="font-body text-xs text-neutral-700 leading-relaxed mb-4">
-                                            El sistema de <strong>Inteligencia Comercial Xertica</strong> (<em>Strategic Consumption Intelligence</em>) no es solo un dashboard de consulta: es el núcleo operativo que transforma horas de trabajo manual en inteligencia de negocios accionable. Este proyecto nació de la necesidad de centralizar fuentes de datos desconectadas (facturación GCP vs. contratos comerciales y acuerdos de commit) y ha evolucionado hacia un motor integral de auditoría financiera, tracking de renovaciones y estrategia comercial de clientes.
+                                                                                                            <!-- TAB 1: VALOR E IMPACTO -->
+                                    <div id="pato-doc-panel-1" class="pato-doc-panel hidden bg-[#FAF8F5] border-2 border-black rounded-xl p-6 shadow-[5px_5px_0px_#000]">
+                                        <h4 class="font-display font-black text-2xl text-neutral-900 leading-tight mb-2">1. Valor e Impacto de Negocio</h4>
+                                        <hr class="border-neutral-300 my-4">
+                                        <p class="font-body text-xs sm:text-sm text-neutral-700 leading-relaxed mb-6 font-bold">
+                                            El sistema de Inteligencia Comercial Xertica (Strategic Consumption Intelligence) no es solo un dashboard de consulta, es el núcleo operativo que transforma horas de trabajo manual en inteligencia de negocios accionable. Este proyecto nació de la necesidad de centralizar fuentes de datos desconectadas (facturación GCP vs contratos comerciales y acuerdos de commit) y ha evolucionado hacia un motor de auditoría financiera, tracking de renovaciones y estrategia comercial de clientes.
                                         </p>
 
-                                        <div class="space-y-3 font-body text-xs">
-                                            <div class="bg-neutral-50 border border-neutral-300 p-3 rounded">
-                                                <h5 class="font-display font-bold text-neutral-900 mb-1 flex items-center gap-1.5">
-                                                    <span class="material-symbols-outlined text-sm text-[#5A4A96]">target</span> Propuesta de Valor Central
-                                                </h5>
-                                                <ul class="list-disc list-inside space-y-1.5 text-neutral-700 leading-relaxed">
-                                                    <li><strong>Prevención de Fugas de Capital (Revenue Leakage):</strong> Identifica matemáticamente las brechas entre el costo pagado a Google (<strong>Net</strong>) y la facturación realizada al cliente (<strong>Gross</strong>), detectando márgenes bajos, desvíos y riesgos financieros en tiempo real.</li>
-                                                    <li><strong>Detección de Oportunidades y Renovaciones (Upsell / Commit):</strong> El <strong>Radar de Renovaciones</strong> visibiliza con 30, 60 y 90 días de anticipación los contratos comerciales próximos a expirar, facilitando marcar directamente estatus de atención comercial para retener y expandir cuentas.</li>
-                                                    <li><strong>Eficiencia Operativa (Ahorro de Tiempo):</strong> Sustituye procesos manuales de cruce de hojas de cálculo y CSVs que tomaban días, consolidándolos en una plataforma web de "un solo clic" accesible al instante para directores, FinOps y Account Managers.</li>
-                                                    <li><strong>Visibilidad Holística de Grupos Empresariales:</strong> Agrupa automáticamente múltiples cuentas bajo su respectivo <strong>Holding</strong> (ej. Cotemar, Grupo México, Clip, etc.) sin perder la capacidad de analizar individualmente cada ID de facturación.</li>
-                                                </ul>
-                                            </div>
+                                        <div class="bg-white border-2 border-neutral-800 p-5 rounded-xl mb-6 shadow-sm">
+                                            <h5 class="font-display font-bold text-neutral-900 mb-4 flex items-center gap-1.5 text-sm">
+                                                🌟 Propuesta de Valor Central
+                                            </h5>
+                                            <ul class="list-disc list-inside space-y-3 text-neutral-700 leading-relaxed text-xs">
+                                                <li><strong>Prevención de Fugas de Capital (Revenue Leakage):</strong> Identifica matemáticamente las brechas entre el costo pagado a Google (Net) y la facturación realizada al cliente (Gross), detectando márgenes bajos, desvíos y riesgos financieros en tiempo real.</li>
+                                                <li><strong>Detección de Oportunidades y Renovaciones (Upsell / Commit):</strong> El Radar de Renovaciones visibiliza con 30, 60 y 90 días de anticipación los contratos comerciales próximos a expirar, facilitando marcar directamente estatus de atención comercial para retener y expandir cuentas.</li>
+                                                <li><strong>Eficiencia Operativa (Ahorro de Tiempo):</strong> Sustituye procesos manuales de cruce de hojas de cálculo y CSVs que tomaban días, consolidándolos en una plataforma web de "un solo clic" accesible al instante para directores, FinOps y Account Managers.</li>
+                                                <li><strong>Visibilidad Holística de Grupos Empresariales:</strong> Agrupa automáticamente múltiples cuentas bajo su respectivo Holding (ej. Cotemar, Grupo México, etc.) sin perder la capacidad de analizar individualmente cada ID de facturación.</li>
+                                            </ul>
+                                        </div>
 
-                                            <div class="bg-neutral-50 border border-neutral-300 p-3 rounded mt-3">
-                                                <h5 class="font-display font-bold text-neutral-900 mb-2 flex items-center gap-1.5">
-                                                    <span class="material-symbols-outlined text-sm text-emerald-600">verified</span> Métricas de Impacto
-                                                </h5>
-                                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 font-mono text-center">
-                                                    <div class="bg-neutral-100 border border-neutral-300 p-2">
-                                                        <div class="text-[10px] text-neutral-600 uppercase">Trazabilidad Gross vs. Net</div>
-                                                        <div class="font-bold text-sm text-neutral-900 mt-0.5">100%</div>
-                                                    </div>
-                                                    <div class="bg-neutral-100 border border-neutral-300 p-2">
-                                                        <div class="text-[10px] text-neutral-600 uppercase">Alertas Preventivas</div>
-                                                        <div class="font-bold text-sm text-neutral-900 mt-0.5">30 / 60 / 90 días</div>
-                                                    </div>
-                                                    <div class="bg-neutral-100 border border-neutral-300 p-2">
-                                                        <div class="text-[10px] text-neutral-600 uppercase">Velocidad de Carga</div>
-                                                        <div class="font-bold text-sm text-emerald-700 mt-0.5">&lt; 1 segundo</div>
-                                                    </div>
-                                                </div>
+                                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-center">
+                                            <div class="bg-[#EAF5E5] border-2 border-[#1E8A37] p-4 rounded-xl flex flex-col items-center justify-center">
+                                                <div class="font-black text-2xl text-[#1E8A37] mb-1">100%</div>
+                                                <div class="text-[10px] text-black font-bold uppercase mb-1">Trazabilidad Gross vs Net</div>
+                                                <div class="text-[9px] text-neutral-600 font-sans">Margen bruto y neto por cuenta y commit</div>
+                                            </div>
+                                            <div class="bg-[#FFF4B0] border-2 border-black p-4 rounded-xl flex flex-col items-center justify-center">
+                                                <div class="font-black text-2xl text-black mb-1">30/60/90</div>
+                                                <div class="text-[10px] text-black font-bold uppercase mb-1">Días de Anticipación</div>
+                                                <div class="text-[9px] text-neutral-600 font-sans">Alertas preventivas de contratos por vencer</div>
+                                            </div>
+                                            <div class="bg-[#F0F4FF] border-2 border-[#38569A] p-4 rounded-xl flex flex-col items-center justify-center">
+                                                <div class="font-black text-2xl text-[#38569A] mb-1">&lt; 1 seg</div>
+                                                <div class="text-[10px] text-black font-bold uppercase mb-1">Tiempo de Consulta</div>
+                                                <div class="text-[9px] text-neutral-600 font-sans">Carga reactiva con caché inteligente</div>
                                             </div>
                                         </div>
                                     </div>
 
                                     <!-- TAB 2: FICHA TECNICA -->
-                                    <div id="pato-doc-panel-2" class="pato-doc-panel hidden bg-white border-2 border-black rounded-xl p-4 sm:p-5 shadow-[3px_3px_0px_#000]">
-                                        <h4 class="font-display font-black text-lg sm:text-xl text-neutral-900 leading-tight">2. Ficha Técnica y Arquitectura</h4>
-                                        <hr class="border-black my-2.5">
-                                        <p class="font-body text-xs text-neutral-700 leading-relaxed mb-3">
-                                            <strong>Nombre Técnico:</strong> <code>Strategic Consumption Intelligence GCP v256+</code><br>
-                                            <strong>Líder del Proyecto / Product Owner:</strong> Patricio Martin<br>
-                                            <strong>Nivel de Madurez:</strong> En Producción (Despliegue Multi-usuario Seguro)<br>
-                                            <strong>ID Permanente de Despliegue:</strong> <code class="break-all">AKfycbzNFrFsFDN4T18OrzQSpXsOMM_OLqJIYhK8O0S77QUtDWLZq64TxkhNnM78moDX4BDKdQ</code><br>
-                                            <strong>Acceso Oficial (Shortlink):</strong> <a href="https://carlosespinosa-xertrepo.github.io/eir-mexico-portfolio-latam/" target="_blank" class="text-blue-600 underline">https://carlosespinosa-xertrepo.github.io/eir-mexico-portfolio-latam/</a>
+                                    <div id="pato-doc-panel-2" class="pato-doc-panel hidden bg-[#FAF8F5] border-2 border-black rounded-xl p-6 shadow-[5px_5px_0px_#000]">
+                                        <h4 class="font-display font-black text-2xl text-neutral-900 leading-tight mb-2">2. Ficha Técnica y Arquitectura</h4>
+                                        <hr class="border-neutral-300 my-4">
+                                        <p class="font-body text-xs text-neutral-700 leading-relaxed mb-6 font-bold space-y-1">
+                                            <span class="block"><strong>Nombre Técnico:</strong> Strategic Consumption Intelligence GCP v256+</span>
+                                            <span class="block"><strong>Líder del Proyecto / Product Owner:</strong> Patricio Martin</span>
+                                            <span class="block"><strong>Nivel de Madurez:</strong> En Producción (Despliegue Multi-usuario Seguro)</span>
+                                            <span class="block"><strong>Enlace de Despliegue Oficial:</strong> <code class="bg-neutral-100 px-1 rounded">https://xertica-links1.vercel.app/Inteligencia Comercial</code></span>
                                         </p>
 
-                                        <div class="space-y-3 font-body text-xs">
-                                            <div class="border border-neutral-300 p-3 bg-neutral-50 space-y-1.5">
-                                                <div class="font-bold text-neutral-900 uppercase text-[11px] flex items-center gap-1.5 font-mono">
-                                                    <span class="material-symbols-outlined text-sm text-[#5A4A96]">memory</span> Stack y Tecnologías Clave
+                                        <h5 class="font-display font-bold text-neutral-900 mb-3 text-sm">Stack y Tecnologías Clave</h5>
+                                        <ul class="list-disc list-inside space-y-2.5 text-xs text-neutral-700 mb-8 leading-relaxed">
+                                            <li><strong>Core Backend:</strong> Google Apps Script (Motor V8), ejecutado asíncronamente vía <code>google.script.run</code> y endpoints REST (<code>doGet(e)</code>).</li>
+                                            <li><strong>Frontend Autónomo:</strong> Desarrollado en React 18 con Vite (Singlefile bundle), Tailwind CSS y Lucide Icons, sin dependencias externas pesadas para garantizar tiempos de carga sub-segundo en Google Workspace.</li>
+                                            <li><strong>Bases de Datos Vivas (Single-Source-of-Truth):</strong> Lectura directa y estructurada de Hojas de Google ("App Script Herramienta Commit") sin depender de hojas vulnerables a errores de escritura.</li>
+                                            <li><strong>Telemetría y Estado Persistente:</strong> Uso de <code>PropertiesService</code> para el registro silencioso de auditoría de accesos y estatus de renovación.</li>
+                                        </ul>
+
+                                        <div class="border-2 border-neutral-800 p-5 rounded-xl bg-white space-y-4 relative mb-8">
+                                            <div class="absolute -top-3 right-4 bg-[#FAF338] text-black border-2 border-black px-2 py-0.5 text-[9px] font-bold uppercase rounded-md shadow-[1px_1px_0px_#000]">Bases de Datos Vivas</div>
+                                            <h5 class="font-display font-bold text-neutral-900 flex items-center gap-1.5 text-sm mb-4">
+                                                <span class="material-symbols-outlined text-base">description</span> Hojas de Cálculo Conectadas y Enlaces Directos
+                                            </h5>
+                                            
+                                            <div class="bg-white border-2 border-[#1E8A37] rounded-xl p-4">
+                                                <div class="flex flex-wrap justify-between items-center gap-2 mb-3">
+                                                    <h6 class="font-bold text-[#1E8A37] text-xs flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-[#1E8A37]"></div> 1. Hoja Principal de Consumo GCP y Commits (Sábana Maestra)</h6>
+                                                    <a href="https://docs.google.com/spreadsheets/d/1z4hIeBDPTQYxatm3KH7G5YX9JwNxFYN0LMOBGRe-NZ0/edit" target="_blank" class="bg-[#1E8A37] text-white px-2.5 py-1 text-[10px] rounded-md flex items-center gap-1 font-bold shadow-sm hover:bg-[#156e2a] transition-colors"><span class="material-symbols-outlined text-[12px]">open_in_new</span> Abrir Google Sheet Principal</a>
                                                 </div>
-                                                <ul class="list-disc list-inside space-y-1 text-neutral-700">
-                                                    <li><strong>Core Backend:</strong> Google Apps Script - V8 (REST asíncrono)</li>
-                                                    <li><strong>Frontend Autónomo:</strong> React 18 + Vite Singlefile (Tailwind, Lucide)</li>
-                                                    <li><strong>Bases de Datos Vivas:</strong> Lectura/escritura estructurada sobre Google Sheets</li>
-                                                    <li><strong>Telemetría y Persistencia:</strong> PropertiesService para auditoría silenciosa</li>
-                                                </ul>
+                                                <div class="text-[10px] text-neutral-700 space-y-2 bg-neutral-50 p-3 rounded border border-neutral-200">
+                                                    <div class="flex items-center gap-2"><strong>Pestaña Crítica de Lectura:</strong> <span class="bg-[#FAF338] font-mono px-1 rounded border border-neutral-300">App Script Herramienta Commit</span> <strong>Spreadsheet ID:</strong> <code>1z4...</code></div>
+                                                    <div>
+                                                        <strong class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">refresh</span> Rutina de Actualización Matutina (Cómo se alimenta):</strong>
+                                                        Cada mañana, el proceso automatizado de extracción de facturación de GCP consolida el consumo acumulado y actualiza esta pestaña.
+                                                    </div>
+                                                    <div class="text-red-700 bg-red-50 p-2 border border-red-200 rounded mt-1">
+                                                        ⚠️ <strong>Regla de Continuidad:</strong> El backend de Google Apps Script busca esta pestaña exactamente por su nombre. <strong>NUNCA se debe renombrar ni borrar la pestaña</strong>, o la aplicación entrará en modo de contingencia.
+                                                    </div>
+                                                </div>
                                             </div>
 
-                                            <div class="border border-neutral-300 p-3 bg-neutral-50 space-y-2">
-                                                <div class="font-bold text-neutral-900 uppercase text-[11px] flex items-center gap-1.5 font-mono">
-                                                    <span class="material-symbols-outlined text-sm text-emerald-600">database</span> Directorio de Hojas Conectadas
+                                            <div class="bg-white border-2 border-[#38569A] rounded-xl p-4">
+                                                <div class="flex flex-wrap justify-between items-center gap-2 mb-3">
+                                                    <h6 class="font-bold text-[#38569A] text-xs flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-[#38569A]"></div> 2. Hoja de Oportunidades y Preventa (Paulina / Proyecciones)</h6>
+                                                    <a href="https://docs.google.com/spreadsheets/d/1uP0QG0JqgCbVrdz1WPN98j-dBDm94k6kBz_Vvw4Q3RE/edit" target="_blank" class="bg-[#38569A] text-white px-2.5 py-1 text-[10px] rounded-md flex items-center gap-1 font-bold shadow-sm hover:bg-[#2c447a] transition-colors"><span class="material-symbols-outlined text-[12px]">open_in_new</span> Abrir Google Sheet Oportunidades</a>
                                                 </div>
-                                                <div class="space-y-2 text-neutral-700">
-                                                    <div>
-                                                        <strong>1. Hoja Principal de Consumo GCP y Commits</strong><br>
-                                                        <span class="text-[11px]">Pestaña Crítica: <code>App Script Herramienta Commit</code>. Consolidación diaria de facturación GCP. ⚠️ NUNCA renombrar esta pestaña.</span>
-                                                    </div>
-                                                    <div>
-                                                        <strong>2. Hoja de Oportunidades y Preventa</strong><br>
-                                                        <span class="text-[11px]">Pestaña: <code>Seguimiento_Oportunidades</code>. Panel complementario de notas comerciales.</span>
-                                                    </div>
-                                                    <div>
-                                                        <strong>3. Auditoría y Telemetría Corporativa</strong><br>
-                                                        <span class="text-[11px]">Pestaña: <code>Auditoria_Telemetria</code>. Registro silencioso de sesiones y accesos.</span>
-                                                    </div>
+                                                <div class="text-[10px] text-neutral-700 bg-neutral-50 p-3 rounded border border-neutral-200">
+                                                    <div class="mb-1"><strong>Pestaña Conectada:</strong> <code>Seguimiento_Oportunidades</code></div>
+                                                    Alimenta el panel complementario de seguimiento comercial, proyección de ahorros para clientes y registro de notas tácticas de preventa.
                                                 </div>
                                             </div>
 
-                                            <div class="border border-neutral-300 p-3 bg-neutral-50 space-y-1.5">
-                                                <div class="font-bold text-neutral-900 uppercase text-[11px] flex items-center gap-1.5 font-mono">
-                                                    <span class="material-symbols-outlined text-sm text-orange-600">build</span> Guía de Relevo Operativo (Handover)
+                                            <div class="bg-white border-2 border-[#D97706] rounded-xl p-4">
+                                                <div class="flex flex-wrap justify-between items-center gap-2 mb-3">
+                                                    <h6 class="font-bold text-[#D97706] text-xs flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-[#D97706]"></div> 3. Pestaña de Auditoría y Telemetría Corporativa</h6>
+                                                    <button class="bg-[#FAF338] text-black border border-black px-2.5 py-1 text-[10px] rounded-md flex items-center gap-1 font-bold shadow-sm"><span class="material-symbols-outlined text-[12px]">visibility</span> Ver Panel de Telemetría (Solo Lectura)</button>
                                                 </div>
-                                                <div class="text-[11px] text-neutral-700">
-                                                    Para compilar y desplegar, ejecutar desde la raíz:
-                                                    <pre class="bg-black text-white p-2 mt-1 rounded font-mono text-[9px] overflow-x-auto">npm run build
-npx @google/clasp push --force
-npx @google/clasp version "Cambios"
-npx @google/clasp deploy -i AKfycbzNFrFs... -V &lt;version&gt;</pre>
-                                                    <p class="mt-1 text-red-600 font-bold">🚨 NUNCA ejecutar clasp undeploy ni desplegar sin el flag -i.</p>
+                                                <div class="text-[10px] text-neutral-700 bg-neutral-50 p-3 rounded border border-neutral-200 space-y-2">
+                                                    <div><strong>Ubicación Pestaña:</strong> <code>Auditoria_Telemetria</code> (Dentro de la Hoja Principal)</div>
+                                                    <div>Registra silenciosamente cada sesión iniciada: correo del colaborador <code>@xertica.com</code>, timestamp exacto, duración y conteo de accesos para medir adopción.</div>
+                                                    <div class="bg-blue-50 border border-blue-200 text-blue-800 p-2 rounded flex gap-1.5 items-start">
+                                                        <span class="material-symbols-outlined text-[14px]">info</span>
+                                                        <span>Acceso Seguro y Restringido: Accesible en el botón superior, los usuarios acceden a una vista 100% de solo lectura sin privilegios para eliminar/alterar registros.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="border-2 border-neutral-800 p-5 rounded-xl bg-white space-y-3 relative mb-8">
+                                            <div class="absolute -top-3 right-4 bg-[#FAF338] text-black border-2 border-black px-2 py-0.5 text-[9px] font-bold uppercase rounded-md shadow-[1px_1px_0px_#000]">Mapeo De Campos</div>
+                                            <h5 class="font-display font-bold text-neutral-900 flex items-center gap-1.5 text-sm mb-3">
+                                                <span class="material-symbols-outlined text-base">manage_search</span> Diccionario de Columnas Críticas (Estructura de la Sábana)
+                                            </h5>
+                                            <div class="overflow-x-auto">
+                                                <table class="w-full text-[10px] text-left border-collapse">
+                                                    <thead>
+                                                        <tr class="bg-neutral-100 border-b-2 border-black">
+                                                            <th class="p-2 font-bold text-neutral-900">Columna en Sheet</th>
+                                                            <th class="p-2 font-bold text-neutral-900">Propósito y Comportamiento en la App</th>
+                                                            <th class="p-2 font-bold text-neutral-900">Valores Esperados</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="divide-y divide-neutral-200 font-sans text-neutral-700">
+                                                        <tr>
+                                                            <td class="p-2 font-bold"><code>Account</code> / <code>Cliente</code></td>
+                                                            <td class="p-2">Nombre comercial principal de la cuenta. Se usa para filtros y búsqueda.</td>
+                                                            <td class="p-2 text-neutral-500">Texto (ej. Cotemar, Clip, etc.)</td>
+                                                        </tr>
+                                                        <tr class="bg-neutral-50">
+                                                            <td class="p-2 font-bold"><code>Holding</code> / <code>Grupo</code></td>
+                                                            <td class="p-2">Si una empresa tiene subsidiarias, agrupa automáticamente las cuentas bajo el holding matriz.</td>
+                                                            <td class="p-2 text-neutral-500">Texto o vacío</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="p-2 font-bold"><code>Tipo de suscripción</code> / <code>Tipo</code></td>
+                                                            <td class="p-2">Clasifica el modelo de contratación. El código reconoce alias automáticos (<code>Tipo</code>, <code>TIPO</code>).</td>
+                                                            <td class="p-2 font-bold text-emerald-700">Payment, Prepago, Commit Google o vacío</td>
+                                                        </tr>
+                                                        <tr class="bg-neutral-50">
+                                                            <td class="p-2 font-bold"><code>Gross M-X</code> / <code>Net M-X</code></td>
+                                                            <td class="p-2">Columnas de consumo mensual. Gross = Facturado al cliente; Net = Costo real de Google.</td>
+                                                            <td class="p-2 text-neutral-500">Números decimales (USD)</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="p-2 font-bold"><code>Fecha Inicio</code> / <code>Fecha Fin</code></td>
+                                                            <td class="p-2">Vigencia contractual. Si la fecha de fin está a menos de 30/60/90 días, enciende alertas en el Radar.</td>
+                                                            <td class="p-2 text-neutral-500">Fechas válidas (YYYY-MM-DD o DD/MM/YYYY)</td>
+                                                        </tr>
+                                                        <tr class="bg-neutral-50">
+                                                            <td class="p-2 font-bold"><code>Meta Mes Cliente</code> / <code>Google</code></td>
+                                                            <td class="p-2">Compromiso mensual estipulado. Se usa para calcular las barras de progreso y porcentajes.</td>
+                                                            <td class="p-2 text-neutral-500">Números decimales (USD)</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                        <div class="border-2 border-neutral-800 p-5 sm:p-6 rounded-xl bg-[#1E1E1E] text-white space-y-5 relative">
+                                            <div class="absolute -top-3 right-4 bg-red-600 text-white border-2 border-black px-2 py-0.5 text-[9px] font-bold uppercase rounded-md shadow-[1px_1px_0px_#000] flex items-center gap-1">⚠️ Continuidad Crítica</div>
+                                            
+                                            <div class="flex items-center gap-3">
+                                                <div class="bg-[#FAF338] text-black w-8 h-8 rounded-full flex items-center justify-center font-bold border-2 border-black shadow-[2px_2px_0px_#000]">
+                                                    <span class="material-symbols-outlined text-sm">shield_person</span>
+                                                </div>
+                                                <div>
+                                                    <h5 class="font-display font-bold text-[#FAF338] text-base">Guía de Relevo Operativo (Handover)</h5>
+                                                    <p class="text-[10px] text-neutral-300">Protocolo de mantenibilidad técnica para nuevos administradores o ingenieros</p>
+                                                </div>
+                                            </div>
+
+                                            <p class="text-xs text-neutral-300 leading-relaxed border-b border-neutral-700 pb-4">
+                                                Si la persona a cargo del proyecto cambia o se retira de la empresa, quien asuma el sistema debe seguir estrictamente estas 4 directrices para garantizar cero interrupciones de servicio:
+                                            </p>
+
+                                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                <div class="bg-[#2D2D2D] border border-neutral-600 rounded-lg p-4">
+                                                    <h6 class="font-bold text-[#FAF338] text-sm mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-sm">folder</span> 1. ¿Dónde vive el código fuente?</h6>
+                                                    <p class="text-[10px] text-neutral-300 mb-2">
+                                                        El proyecto es una aplicación desarrollada en React 18 + Vite empaquetada en un solo archivo inlined (<code>index.html</code>) para correr montada directamente dentro del motor de Google Apps Script.
+                                                    </p>
+                                                    <div class="flex gap-2 mt-3">
+                                                        <span class="bg-[#FAF338] text-black text-[9px] px-1.5 py-0.5 rounded font-bold">Frontend: src/</span>
+                                                        <span class="bg-neutral-600 text-white text-[9px] px-1.5 py-0.5 rounded font-bold">Backend: API.gs</span>
+                                                        <span class="bg-neutral-600 text-white text-[9px] px-1.5 py-0.5 rounded font-bold">V8 Engine</span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="bg-[#2D2D2D] border border-neutral-600 rounded-lg p-4">
+                                                    <h6 class="font-bold text-[#FAF338] text-sm mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-sm">terminal</span> 2. ¿Cómo compilar y desplegar?</h6>
+                                                    <div class="bg-black border border-neutral-700 rounded p-2 text-[9px] font-mono text-neutral-300 space-y-1 overflow-x-auto">
+                                                        <div><span class="text-green-400">1.</span> npm run build</div>
+                                                        <div><span class="text-green-400">2.</span> npx @google/clasp push --force</div>
+                                                        <div><span class="text-green-400">3.</span> npx @google/clasp version "Descripción"</div>
+                                                        <div><span class="text-green-400">4.</span> npx @google/clasp deploy -i AKfycbzNFrFs... -V &lt;version&gt;</div>
+                                                    </div>
+                                                    <p class="text-[9px] text-neutral-400 mt-2 flex items-center gap-1">
+                                                        <span class="material-symbols-outlined text-[10px]">info</span> Ejecutar siempre desde la raíz del proyecto para subir el despliegue correcto.
+                                                    </p>
+                                                </div>
+
+                                                <div class="bg-[#2D2D2D] border border-neutral-600 rounded-lg p-4">
+                                                    <div class="flex justify-between items-start mb-2">
+                                                        <h6 class="font-bold text-[#FAF338] text-sm flex items-center gap-2"><span class="material-symbols-outlined text-sm">warning</span> 3. Regla Inviolable del ID</h6>
+                                                        <span class="bg-red-600 text-white text-[8px] px-1.5 py-0.5 rounded font-bold uppercase">No Cambiar</span>
+                                                    </div>
+                                                    <p class="text-[10px] text-neutral-300 mb-2">
+                                                        <strong>NUNCA</strong> ejecutar <code>clasp undeploy</code> ni crear un nuevo despliegue sin el flag <code>-i</code>.
+                                                    </p>
+                                                    <div class="bg-black border border-neutral-700 rounded p-1.5 text-[9px] font-mono text-neutral-400 break-all">
+                                                        ID OFICIAL PERMANENTE:<br>
+                                                        <span class="text-white">AKfycbzNFrFsFDN4T18OrzQSpXsOMM_OLqJIYhK8O0S77QUtDWLZq...</span>
+                                                    </div>
+                                                    <p class="text-[9px] text-red-400 mt-2 font-bold">
+                                                        Este ID está amarrado al link corporativo. Si se altera, todos los usuarios perderán acceso.
+                                                    </p>
+                                                </div>
+
+                                                <div class="bg-[#2D2D2D] border border-neutral-600 rounded-lg p-4">
+                                                    <h6 class="font-bold text-[#FAF338] text-sm mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-sm">edit</span> 4. ¿Si cambian nombre de columna?</h6>
+                                                    <p class="text-[10px] text-neutral-300 mb-2">
+                                                        El lector de clases en <code>src/services/dataService.js</code> utiliza la función <code>getRowVal(row, aliases)</code>.
+                                                    </p>
+                                                    <div class="bg-black border border-neutral-700 rounded p-2 text-[9px] font-mono text-neutral-300 overflow-x-auto">
+                                                        <span class="text-neutral-500">// Ejemplo: Agregar nuevo alias en 10 segundos</span><br>
+                                                        <span class="text-blue-300">tipoSuscripcion:</span> <span class="text-yellow-200">getRowVal</span>(row, ['Tipo de sus cripción', 'Tipo', 'TIPO', <span class="text-green-300">'Modalidad'</span>])
+                                                    </div>
+                                                    <p class="text-[9px] text-neutral-400 mt-2">
+                                                        Basta con añadir el nuevo nombre al array de alias para que la plataforma recupere el sentido sin errores ni interrupciones.
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
                                     <!-- TAB 3: MANUAL DE USUARIO -->
-                                    <div id="pato-doc-panel-3" class="pato-doc-panel hidden bg-white border-2 border-black rounded-xl p-4 sm:p-5 shadow-[3px_3px_0px_#000]">
-                                        <h4 class="font-display font-black text-lg sm:text-xl text-neutral-900 leading-tight">3. Manual de Usuario</h4>
-                                        <hr class="border-black my-2.5">
-                                        <p class="font-body text-xs text-neutral-700 leading-relaxed mb-4">
-                                            Instrucciones operativas para el uso diario de la plataforma.
+                                    <div id="pato-doc-panel-3" class="pato-doc-panel hidden bg-[#FAF8F5] border-2 border-black rounded-xl p-6 shadow-[5px_5px_0px_#000]">
+                                        <h4 class="font-display font-black text-2xl text-neutral-900 leading-tight mb-2">3. Manual de Usuario</h4>
+                                        <hr class="border-neutral-300 my-4">
+                                        <p class="font-body text-xs sm:text-sm text-neutral-700 leading-relaxed mb-6 font-bold">
+                                            Flujo de trabajo optimizado para Consultores, FinOps y Customer Success.
                                         </p>
 
-                                        <div class="space-y-3 font-body text-xs">
-                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
-                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
-                                                    <span class="badge-swiss bg-black text-white text-[9px] px-1.5 py-0.5">PASO 1</span>
-                                                    Autenticación Segura
+                                        <div class="space-y-6 font-body text-xs">
+                                            <div class="flex items-start gap-3">
+                                                <div class="w-6 h-6 rounded-full bg-[#FAF338] border-2 border-black flex items-center justify-center font-bold text-black flex-shrink-0 mt-0.5 text-xs shadow-[1px_1px_0px_#000]">1</div>
+                                                <div>
+                                                    <h5 class="font-display font-bold text-neutral-900 mb-1.5 text-sm">Paso 1: Autenticación Segura y Acceso Corporativo</h5>
+                                                    <p class="text-neutral-700 leading-relaxed">
+                                                        Acceda al enlace oficial de la plataforma. El sistema exige el uso de una cuenta corporativa <code>@xertica.com</code>. En el primer acceso, Google validará su identidad para el registro de auditoría del administrador.
+                                                    </p>
                                                 </div>
-                                                <p class="text-neutral-700 leading-relaxed">
-                                                    Ingrese mediante el enlace oficial. Requiere inicio de sesión con cuenta corporativa <code>@xertica.com</code>. El sistema valida la identidad automáticamente sin contraseñas adicionales.
-                                                </p>
                                             </div>
 
-                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
-                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
-                                                    <span class="badge-swiss bg-black text-white text-[9px] px-1.5 py-0.5">PASO 2</span>
-                                                    Consolidado 360° (Dashboard)
+                                            <div class="flex items-start gap-3">
+                                                <div class="w-6 h-6 rounded-full bg-[#FAF338] border-2 border-black flex items-center justify-center font-bold text-black flex-shrink-0 mt-0.5 text-xs shadow-[1px_1px_0px_#000]">2</div>
+                                                <div>
+                                                    <h5 class="font-display font-bold text-neutral-900 mb-1.5 text-sm">Paso 2: Consolidado 360° y Análisis de Consumo (Dashboard Principal)</h5>
+                                                    <p class="text-neutral-700 leading-relaxed">
+                                                        La plataforma muestra en la cabecera los 4 KPIs estratégicos: Facturación Gross, Costo Net, Margen USD y Margen %. Utilice el selector de meses o active el selector de rango de fechas con prorrateo diario para comparar periodos exactos de consumo.
+                                                    </p>
                                                 </div>
-                                                <p class="text-neutral-700 leading-relaxed">
-                                                    La cabecera muestra 4 KPIs: Facturación Gross, Costo Net, Margen USD y Margen %. Utilice el selector de meses o el <strong>Prorrateo Diario</strong> para comparar periodos continuos o auditorías en curso.
-                                                </p>
                                             </div>
 
-                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
-                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
-                                                    <span class="badge-swiss bg-black text-white text-[9px] px-1.5 py-0.5">PASO 3</span>
-                                                    Ficha Expandible del Cliente
+                                            <div class="flex items-start gap-3">
+                                                <div class="w-6 h-6 rounded-full bg-[#FAF338] border-2 border-black flex items-center justify-center font-bold text-black flex-shrink-0 mt-0.5 text-xs shadow-[1px_1px_0px_#000]">3</div>
+                                                <div>
+                                                    <h5 class="font-display font-bold text-neutral-900 mb-1.5 text-sm">Paso 3: Ficha Expandible del Cliente (Drawer 360°)</h5>
+                                                    <p class="text-neutral-700 leading-relaxed">
+                                                        Haga clic en cualquier fila o tarjeta para abrir el panel 360° lateral del cliente. Aquí podrá consultar el histórico mensual de consumo, commits activos vs cerrados, enlaces directos a contratos y adéndums, y la recomendación comercial del sistema.
+                                                    </p>
                                                 </div>
-                                                <p class="text-neutral-700 leading-relaxed">
-                                                    Dé clic en cualquier fila para abrir el panel lateral 360°. Muestra: Histórico mensual, commits activos vs cerrados, enlaces a contratos y recomendaciones tácticas.
-                                                </p>
                                             </div>
 
-                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
-                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
-                                                    <span class="badge-swiss bg-black text-white text-[9px] px-1.5 py-0.5">PASO 4</span>
-                                                    Radar de Renovaciones
+                                            <div class="flex items-start gap-3">
+                                                <div class="w-6 h-6 rounded-full bg-[#FAF338] border-2 border-black flex items-center justify-center font-bold text-black flex-shrink-0 mt-0.5 text-xs shadow-[1px_1px_0px_#000]">4</div>
+                                                <div>
+                                                    <h5 class="font-display font-bold text-neutral-900 mb-1.5 text-sm">Paso 4: Radar de Renovaciones y Alertas de Vencimiento</h5>
+                                                    <p class="text-neutral-700 leading-relaxed">
+                                                        En la pestaña de Seguimiento, el Radar categoriza automáticamente contratos en riesgo en 30, 60 y 90 días. Los usuarios autorizados pueden marcar directamente el estatus de la cuenta (<span class="bg-orange-100 text-orange-800 px-1 font-mono rounded">Falta revisar</span>, <span class="bg-blue-100 text-blue-800 px-1 font-mono rounded">En proceso</span>, <span class="bg-purple-100 text-purple-800 px-1 font-mono rounded">Propuesta enviada</span>, <span class="bg-emerald-100 text-emerald-800 px-1 font-mono rounded">Resuelto</span>, <span class="bg-neutral-200 text-neutral-700 px-1 font-mono rounded">No renovará</span>) con sincronización inmediata.
+                                                    </p>
                                                 </div>
-                                                <p class="text-neutral-700 leading-relaxed">
-                                                    Categoriza contratos por vencer en 30, 60 y 90 días. Usuarios autorizados pueden marcar el estatus: <code>Falta revisar</code>, <code>En proceso</code>, <code>Propuesta enviada</code>, <code>Resuelto</code>, <code>No renovará</code>.
-                                                </p>
                                             </div>
                                         </div>
                                     </div>
 
                                     <!-- TAB 4: MOTOR DE REGLAS -->
-                                    <div id="pato-doc-panel-4" class="pato-doc-panel hidden bg-white border-2 border-black rounded-xl p-4 sm:p-5 shadow-[3px_3px_0px_#000]">
-                                        <h4 class="font-display font-black text-lg sm:text-xl text-neutral-900 leading-tight">4. Motor de Reglas (Capas de Negocio)</h4>
-                                        <hr class="border-black my-2.5">
-                                        <p class="font-body text-xs text-neutral-700 leading-relaxed mb-4">
-                                            Lógica matemática y clasificación automática aplicada sobre cada registro:
+                                    <div id="pato-doc-panel-4" class="pato-doc-panel hidden bg-[#FAF8F5] border-2 border-black rounded-xl p-6 shadow-[5px_5px_0px_#000]">
+                                        <h4 class="font-display font-black text-2xl text-neutral-900 leading-tight mb-2">4. Motor de Reglas (Capas de Negocio)</h4>
+                                        <hr class="border-neutral-300 my-4">
+                                        <p class="font-body text-xs sm:text-sm text-neutral-700 leading-relaxed mb-6 font-bold">
+                                            Lógica matemática y clasificación automática aplicada sobre cada fila de la sábana de datos.
                                         </p>
 
-                                        <div class="space-y-3 font-body text-xs">
-                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
-                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
-                                                    <span class="badge-swiss bg-black text-white text-[9px] px-1.5 py-0.5">CAPA 1</span>
-                                                    Clasificación FIRMADO vs. PAYG
+                                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 font-body text-xs">
+                                            <div class="bg-white border-2 border-neutral-800 p-4 rounded-xl shadow-sm">
+                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-2 text-sm">
+                                                    <span class="bg-[#1E8A37] text-white text-[10px] px-1.5 py-0.5 rounded font-bold">Capa 1</span>
+                                                    Clasificación FIRMADO vs PAYG
                                                 </div>
                                                 <p class="text-neutral-700 leading-relaxed">
-                                                    Una cuenta se cataloga como <strong>FIRMADO</strong> si posee contrato activo, meta de cliente/Google mayor a cero, ID de commit asignado o estatus Abierto. De lo contrario, se clasifica como <strong>PAYG</strong> (Consumo bajo demanda).
+                                                    Una cuenta se cataloga como FIRMADO si posee contrato activo, meta de cliente/Google mayor a cero, ID de commit asignado o estatus Abierto. De lo contrario, se clasifica como PAYG (Pay As You Go / Consumo bajo demanda).
                                                 </p>
                                             </div>
 
-                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
-                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
-                                                    <span class="badge-swiss bg-black text-white text-[9px] px-1.5 py-0.5">CAPA 2</span>
-                                                    Tipos de Suscripción
+                                            <div class="bg-white border-2 border-neutral-800 p-4 rounded-xl shadow-sm">
+                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-2 text-sm">
+                                                    <span class="bg-[#FAF338] text-black border border-black text-[10px] px-1.5 py-0.5 rounded font-bold">Capa 2</span>
+                                                    Suscripciones (Commit, Payment, Prepago)
                                                 </div>
                                                 <p class="text-neutral-700 leading-relaxed">
-                                                    El motor inspecciona la columna <code>Tipo</code> para categorizar dinámicamente: <code>Commit Google</code>, <code>Payment</code> y <code>Prepago</code>. Previene duplicidades visuales si el valor coincide con el nombre de cuenta.
+                                                    El motor inspecciona la columna de tipo para extraer etiquetas dinámicas: Commit Google, Payment y Prepago. Si no hay valor o coincide con el nombre de cuenta, se previene duplicidad visual y se mantiene la limpieza en tablas.
                                                 </p>
                                             </div>
 
-                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
-                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
-                                                    <span class="badge-swiss bg-black text-white text-[9px] px-1.5 py-0.5">CAPA 3</span>
-                                                    Mínimos y Máximos (Multianual)
+                                            <div class="bg-white border-2 border-neutral-800 p-4 rounded-xl shadow-sm">
+                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-2 text-sm">
+                                                    <span class="bg-[#38569A] text-white text-[10px] px-1.5 py-0.5 rounded font-bold">Capa 3</span>
+                                                    Mínimos y Máximos (Min / Max)
                                                 </div>
                                                 <p class="text-neutral-700 leading-relaxed">
-                                                    Parsea esquemas multianuales extrayendo rangos de compromiso por Año 1, Año 2 y Año 3, calculando el porcentaje de cumplimiento mensual.
+                                                    Parsea esquemas multianuales extrayendo rangos de compromiso por Año 1, Año 2 y Año 3, calculando el cumplimiento mensual contra la meta correspondiente.
                                                 </p>
                                             </div>
 
-                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
-                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
-                                                    <span class="badge-swiss bg-black text-white text-[9px] px-1.5 py-0.5">CAPA 4</span>
-                                                    Consolidación de Holdings
+                                            <div class="bg-white border-2 border-neutral-800 p-4 rounded-xl shadow-sm">
+                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-2 text-sm">
+                                                    <span class="bg-neutral-200 text-neutral-800 border border-neutral-300 text-[10px] px-1.5 py-0.5 rounded font-bold">Capa 4</span>
+                                                    Consolidación de Holdings y Grupos
                                                 </div>
                                                 <p class="text-neutral-700 leading-relaxed">
-                                                    Cuentas y razones sociales subsidiarias que comparten Grupo Empresarial se consolidan bajo su Holding matriz, sumando consumos y consolidando contratos sin pérdida de granularidad.
+                                                    Las subsidiarias que comparten Grupo Empresarial se consolidan bajo una cuenta matriz Holding, sumando consumos Net/Gross y consolidando sus múltiples contratos sin pérdida de datos.
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
 
                                     <!-- TAB 5: FILTROS Y GRAFICAS -->
-                                    <div id="pato-doc-panel-5" class="pato-doc-panel hidden bg-white border-2 border-black rounded-xl p-4 sm:p-5 shadow-[3px_3px_0px_#000]">
-                                        <h4 class="font-display font-black text-lg sm:text-xl text-neutral-900 leading-tight">5. Filtros, Métricas y Gráficas</h4>
-                                        <hr class="border-black my-2.5">
-                                        <p class="font-body text-xs text-neutral-700 leading-relaxed mb-4">
-                                            Capacidades analíticas multidimensionales incorporadas en el tablero interactivo.
-                                        </p>
-
-                                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 font-body text-xs">
-                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded space-y-1.5">
-                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-1.5">
-                                                    <span class="material-symbols-outlined text-sm text-[#5A4A96]">filter_alt</span> Rango de Meses y Prorrateo
+                                    <div id="pato-doc-panel-5" class="pato-doc-panel hidden bg-[#FAF8F5] border-2 border-black rounded-xl p-6 shadow-[5px_5px_0px_#000]">
+                                        <h4 class="font-display font-black text-2xl text-neutral-900 leading-tight mb-2">5. Filtros, Métricas y Gráficas</h4>
+                                        <hr class="border-neutral-300 my-4">
+                                        
+                                        <div class="space-y-4 font-body text-xs">
+                                            <div class="bg-white border-2 border-neutral-800 p-4 rounded-xl shadow-sm">
+                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-1.5 mb-2 text-sm">
+                                                    <span class="material-symbols-outlined text-base text-[#38569A]">bar_chart</span> Selector de Rango de Meses y Prorrateo Diario
                                                 </div>
                                                 <p class="text-neutral-700">
-                                                    Permite evaluar el consumo en cualquier periodo continuo. Al activar <strong>Prorrateo Diario</strong>, calcula proporcionalmente los días transcurridos para auditar consumos en curso sin esperar al cierre contable.
+                                                    Permite evaluar el consumo en cualquier periodo histórico continuo (ej. Enero 2025 a Mayo 2025). Al activar el interruptor de Prorrateo Diario, el motor calcula proporcionalmente los días del mes seleccionados (ej. día 1 al 15) para auditar consumos en curso sin esperar al cierre mensual.
                                                 </p>
                                             </div>
 
-                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded space-y-1.5">
-                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-1.5">
-                                                    <span class="material-symbols-outlined text-sm text-emerald-600">bar_chart</span> Visión Financiera Dinámica
+                                            <div class="bg-white border-2 border-neutral-800 p-4 rounded-xl shadow-sm">
+                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-1.5 mb-2 text-sm">
+                                                    <span class="material-symbols-outlined text-base text-[#1E8A37]">swap_horiz</span> Alternancia de Visión Financiera (Gross vs Net)
                                                 </div>
                                                 <p class="text-neutral-700">
-                                                    Con un clic, la plataforma recalcula todos los gráficos para reflejar la perspectiva del cliente (<strong>Gross</strong> / Facturado) o la perspectiva de costo de Google (<strong>Net</strong> / Margen).
+                                                    Con un solo clic en la barra superior, la plataforma recalcula todos los gráficos, barras de avance y tablas para reflejar la perspectiva del cliente (Gross / Facturación) o la perspectiva interna de costo Google (Net / Margen).
                                                 </p>
                                             </div>
                                             
-                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded space-y-1.5 sm:col-span-2">
-                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-1.5">
-                                                    <span class="material-symbols-outlined text-sm text-[#5A4A96]">search</span> Búsqueda y Filtro Multi-Suscripción
+                                            <div class="bg-white border-2 border-neutral-800 p-4 rounded-xl shadow-sm">
+                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-1.5 mb-2 text-sm">
+                                                    <span class="material-symbols-outlined text-base text-[#D97706]">filter_alt</span> Filtro Multi-Suscripción y Búsqueda Reactiva
                                                 </div>
                                                 <p class="text-neutral-700">
-                                                    Filtro desplegable multi-selección (<code>Payment</code>, <code>Prepago</code>, <code>Commit Google</code>, <code>PAYG</code>) con búsqueda por texto y ordenamiento dinámico por margen o volumen de consumo en tiempo real.
+                                                    Filtro desplegable multi-selección para aislar cuentas por tipo de suscripción (<span class="bg-neutral-100 px-1 font-mono rounded">Payment</span>, <span class="bg-neutral-100 px-1 font-mono rounded">Prepago</span>, <span class="bg-neutral-100 px-1 font-mono rounded">Commit Google</span>, <span class="bg-neutral-100 px-1 font-mono rounded">PAYG</span>) con búsqueda por texto y ordenamiento por margen o consumo en tiempo real.
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
 
                                     <!-- TAB 6: IA Y PRIVACIDAD -->
-                                    <div id="pato-doc-panel-6" class="pato-doc-panel hidden bg-white border-2 border-black rounded-xl p-4 sm:p-5 shadow-[3px_3px_0px_#000]">
-                                        <h4 class="font-display font-black text-lg sm:text-xl text-neutral-900 leading-tight">6. IA, Privacidad y Telemetría</h4>
-                                        <hr class="border-black my-2.5">
-                                        <p class="font-body text-xs text-neutral-700 leading-relaxed mb-4">
-                                            Asistencia inteligente y cumplimiento de estándares corporativos de privacidad y seguridad Cloud.
-                                        </p>
+                                    <div id="pato-doc-panel-6" class="pato-doc-panel hidden bg-[#FAF8F5] border-2 border-black rounded-xl p-6 shadow-[5px_5px_0px_#000]">
+                                        <h4 class="font-display font-black text-2xl text-neutral-900 leading-tight mb-2">6. IA, Privacidad y Telemetría</h4>
+                                        <hr class="border-neutral-300 my-4">
 
-                                        <div class="space-y-3 font-body text-xs">
-                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
-                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
-                                                    <span class="material-symbols-outlined text-[#5A4A96] text-sm">shield_lock</span>
+                                        <div class="space-y-4 font-body text-xs">
+                                            <div class="bg-[#F0FDF4] border-2 border-[#1E8A37] p-4 rounded-xl shadow-sm">
+                                                <div class="font-display font-bold text-[#1E8A37] flex items-center gap-1.5 mb-2 text-sm">
+                                                    <span class="material-symbols-outlined text-base">shield_lock</span>
                                                     Privacidad Absoluta de Datos Comerciales
                                                 </div>
-                                                <p class="text-neutral-700 leading-relaxed">
-                                                    Toda la información de facturación y compromisos reside exclusivamente dentro del dominio protegido de Google Workspace de Xertica. No se envían datos financieros a APIs de terceros.
+                                                <p class="text-neutral-800 leading-relaxed font-medium">
+                                                    Toda la información de consumo Gross, Net y compromisos contractuales reside exclusivamente en los repositorios protegidos de Google Workspace de Xertica. La aplicación no transmite datos financieros a APIs de terceros ni almacena información en servidores no autorizados.
                                                 </p>
                                             </div>
 
-                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
-                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
-                                                    <span class="material-symbols-outlined text-emerald-600 text-sm">radar</span>
-                                                    Telemetría de Accesos y Auditoría
+                                            <div class="bg-white border-2 border-neutral-800 p-4 rounded-xl shadow-sm">
+                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-1.5 mb-2 text-sm">
+                                                    <span class="material-symbols-outlined text-base text-[#38569A]">visibility</span>
+                                                    Telemetría de Accesos y Auditoría en Tiempo Real
                                                 </div>
                                                 <p class="text-neutral-700 leading-relaxed">
-                                                    Cada inicio de sesión y marcado de estatus registra una huella de auditoría en <code>PropertiesService</code> y en la pestaña <code>Auditoria_Telemetria</code> (usuario, fecha, dispositivo y acción).
+                                                    Cada inicio de sesión y marcado de estatus registra una huella de auditoría interna protegida mediante <code>PropertiesService</code>, registrando fecha, correo del colaborador y acción realizada para control de gobierno y métricas de adopción.
                                                 </p>
                                             </div>
                                             
-                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded">
-                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-2 mb-1">
-                                                    <span class="material-symbols-outlined text-[#5A4A96] text-sm">lightbulb</span>
-                                                    Motor Heurístico de Recomendaciones
+                                            <div class="bg-white border-2 border-neutral-800 p-4 rounded-xl shadow-sm">
+                                                <div class="font-display font-bold text-neutral-900 flex items-center gap-1.5 mb-2 text-sm">
+                                                    <span class="material-symbols-outlined text-base text-[#D97706]">lightbulb</span>
+                                                    Motor Heurístico de Recomendaciones Tácticas
                                                 </div>
                                                 <p class="text-neutral-700 leading-relaxed">
-                                                    Genera sugerencias comerciales automáticas por cliente, alertando sobre riesgos de subconsumo (<em>under-consumption</em>) o sugiriendo conversiones de PAYG a contratos formalizados con compromisos de volumen.
+                                                    La plataforma genera sugerencias y notas comerciales contextuales para cada cliente, alertando sobre riesgos de subconsumo (under-consumption) o sugiriendo conversiones de PAYG a contratos formalizados con compromisos de volumen.
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
 
                                     <!-- TAB 7: ROADMAP Y EVOLUCION -->
-                                    <div id="pato-doc-panel-7" class="pato-doc-panel hidden bg-white border-2 border-black rounded-xl p-4 sm:p-5 shadow-[3px_3px_0px_#000]">
-                                        <h4 class="font-display font-black text-lg sm:text-xl text-neutral-900 leading-tight">7. Roadmap y Evolución del Proyecto</h4>
-                                        <hr class="border-black my-2.5">
-                                        <p class="font-body text-xs text-neutral-700 leading-relaxed mb-4">
-                                            Evolución continua del motor de telemetría y siguientes hitos de escalabilidad.
-                                        </p>
+                                    <div id="pato-doc-panel-7" class="pato-doc-panel hidden bg-[#FAF8F5] border-2 border-black rounded-xl p-6 shadow-[5px_5px_0px_#000]">
+                                        <h4 class="font-display font-black text-2xl text-neutral-900 leading-tight mb-2">7. Roadmap y Evolución del Proyecto</h4>
+                                        <hr class="border-neutral-300 my-4">
 
-                                        <div class="space-y-2.5 font-body text-xs">
-                                            <div class="border border-neutral-300 p-3 bg-emerald-50 rounded flex items-start gap-2.5">
-                                                <span class="material-symbols-outlined text-emerald-700 text-sm mt-0.5">check_circle</span>
+                                        <div class="space-y-4 font-body text-xs">
+                                            <div class="bg-white border-2 border-neutral-800 p-4 rounded-xl shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                                                 <div>
-                                                    <strong class="text-emerald-900 block font-display">v256 - v261 (Versión Actual en Producción)</strong>
-                                                    <ul class="list-disc list-inside text-emerald-800 text-[11px] mt-1 space-y-0.5">
-                                                        <li>Rediseño y lanzamiento del Portal de Manual & Ficha Técnica.</li>
-                                                        <li>Panel de Telemetría de Solo Lectura con filtros avanzados.</li>
-                                                        <li>Soporte preventivo para nuevo tipo de suscripción (<code>Prepago</code>).</li>
-                                                        <li>Prevención de redundancia visual en nombres de cuenta vs. tipo.</li>
-                                                        <li>Guía de Relevo Operativo (Handover) con snippets interactivos.</li>
-                                                    </ul>
+                                                    <strong class="text-neutral-900 block font-display text-sm mb-1">v256 - v257 (Versión Actual)</strong>
+                                                    <p class="text-neutral-700">Soporte preventivo para nuevo tipo de suscripción (<span class="bg-neutral-100 px-1 font-mono rounded">Prepago</span>) en columna Tipo, eliminación de redundancia visual en grupos empresariales y lanzamiento del Portal de Manual & Ficha Técnica.</p>
                                                 </div>
+                                                <span class="bg-[#1E8A37] text-white text-[10px] px-2 py-1 rounded font-bold uppercase shrink-0 text-center">Producción</span>
                                             </div>
 
-                                            <div class="border border-neutral-300 p-3 bg-neutral-50 rounded flex items-start gap-2.5">
-                                                <span class="material-symbols-outlined text-neutral-500 text-sm mt-0.5">history</span>
+                                            <div class="bg-white border border-neutral-300 p-4 rounded-xl shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-2 opacity-80">
                                                 <div>
-                                                    <strong class="text-neutral-900 block font-display">Histórico de Versiones Recientes</strong>
-                                                    <ul class="list-disc list-inside text-neutral-700 text-[11px] mt-1 space-y-0.5">
-                                                        <li><strong>v255:</strong> Marcado interactivo de Estatus en Radar de Renovaciones con persistencia directa en servidor y filtros por estado.</li>
-                                                        <li><strong>v250 - v254:</strong> Soporte para múltiples contratos cerrados, filtro de prorrateo diario, optimización de velocidad de carga reactiva con bundle inlined.</li>
-                                                    </ul>
+                                                    <strong class="text-neutral-600 block font-display text-sm mb-1">v255</strong>
+                                                    <p class="text-neutral-500">Marcado interactivo de Estatus en Radar de Renovaciones con persistencia directa en servidor y filtro por estado ('Falta revisar', 'En proceso', 'Propuesta enviada', etc.).</p>
                                                 </div>
+                                                <span class="bg-neutral-200 text-neutral-600 text-[10px] px-2 py-1 rounded font-bold uppercase shrink-0 text-center">Completado</span>
                                             </div>
 
-                                            <div class="border border-neutral-300 p-3 bg-blue-50 rounded flex items-start gap-2.5">
-                                                <span class="material-symbols-outlined text-blue-700 text-sm mt-0.5">rocket_launch</span>
+                                            <div class="bg-white border border-neutral-300 p-4 rounded-xl shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-2 opacity-80">
                                                 <div>
-                                                    <strong class="text-blue-900 block font-display">Próximas Integraciones (Planificado)</strong>
-                                                    <ul class="list-disc list-inside text-blue-800 text-[11px] mt-1 space-y-0.5">
+                                                    <strong class="text-neutral-600 block font-display text-sm mb-1">v250 - v254</strong>
+                                                    <p class="text-neutral-500">Soporte para múltiples contratos cerrados por cuenta, filtro de prorrateo diario en rangos de fechas y optimización de velocidad de carga reactiva.</p>
+                                                </div>
+                                                <span class="bg-neutral-200 text-neutral-600 text-[10px] px-2 py-1 rounded font-bold uppercase shrink-0 text-center">Completado</span>
+                                            </div>
+
+                                            <div class="bg-[#FFFFE0] border-2 border-neutral-800 p-4 rounded-xl shadow-sm flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+                                                <div>
+                                                    <strong class="text-neutral-900 block font-display text-sm mb-2">Próximas Integraciones (Roadmap)</strong>
+                                                    <ul class="list-disc list-inside text-neutral-800 space-y-1">
                                                         <li>Conexión bidireccional con Salesforce para sincronización de etapas de oportunidad.</li>
                                                         <li>Notificaciones automatizadas por correo ante desvíos críticos de consumo Gross/Net.</li>
                                                     </ul>
                                                 </div>
+                                                <span class="bg-[#FAF338] text-black border border-black text-[10px] px-2 py-1 rounded font-bold uppercase shrink-0 text-center shadow-sm mt-1 sm:mt-0">Planificado</span>
                                             </div>
                                         </div>
                                     </div>
